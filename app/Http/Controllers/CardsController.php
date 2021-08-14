@@ -39,6 +39,9 @@ class CardsController extends Controller
     public function cards($id, Request $request)
     {
         $p_card =  Card::wherePolicyNo($id)->first();
+        if(!$p_card){
+            return redirect()->back('error_message', 'Something went wrong');
+        }
         $cards = Card::whereId($p_card->id)->orWhere('card_id',$p_card->id)->where('status','!=','draft')->get();
 
         if($request->has('download'))
