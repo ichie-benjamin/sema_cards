@@ -16,6 +16,8 @@ class Card extends Model
 
     protected $primaryKey = 'id';
 
+    protected $appends = ['update_url'];
+
     protected $fillable = [
                   'full_name',
                   'gender',
@@ -64,6 +66,11 @@ class Card extends Model
             return '/images/avatar.jpeg';
         }
         return $value;
+    }
+
+    public function getUpdateUrlAttribute()
+    {
+        return route('cards.update', $this->id);
     }
 
     /**

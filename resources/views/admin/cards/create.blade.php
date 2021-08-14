@@ -184,8 +184,8 @@
 
 
                                 <div class="col-12">
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
-                                    <input name="more" class="btn btn-primary" type="submit" value="Add More People" />
+{{--                                    <button class="btn btn-primary" type="submit">Submit form</button>--}}
+                                    <input name="more" class="btn btn-primary" type="submit" value="Submit Form" />
                                 </div>
                             </div>
 

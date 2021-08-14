@@ -17,7 +17,7 @@
         <!--end card-header-->
 
         <div class="card-body">
-            <form method="POST" class="form-parsley">
+
         <div class="row">
             <div class="col-6">
                 <div class="form-group "><label>Full name</label>
@@ -122,7 +122,6 @@
 
                 <div class="col-6 col-md-3">
                     <div class="form-group "><label>Issue Date</label>
-                        {{ card.issue_date}}
                         <input v-model="card.issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
                     </div>
                 </div>
@@ -169,6 +168,7 @@
                             <td>{{ item.expiry_date }}</td>
                             <td>
                                 <a class="btn btn-danger" href=""><i class="fa fa-trash"></i> </a>
+                                <button type="button" class="btn btn-warning" @click="editMember(item)"><i class="fa fa-edit"></i> </button>
                             </td>
 
                         </tr>
@@ -182,10 +182,10 @@
             <div class="col-12">
                 <button v-if="!more" @click="more = true" class="btn btn-warning" type="button">View more details</button>
                 <button v-else @click="more = false" class="btn btn-danger" type="button">Hide details</button>
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addMore">Add more people</button>
+                <button type="button" class="btn btn-success" @click="addMember"> Add more people</button>
 <!--                <button  @click="update" type="button" class="btn btn-primary" >Save</button>-->
-                <a :href="view_card" v-if="card.paid > 0" class="btn btn-primary" >View Cards</a>
-                <a :href="view_card+'?download'" v-if="card.paid > 0" class="btn btn-success" >Print Cards</a>
+                <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0" class="btn btn-primary" >View Cards</a>
+                <a :href="'/admin/card/'+card.policy_no+'?download'" v-if="card.paid > 0" class="btn btn-success" >Print Cards</a>
                 <a href="#" class="btn btn-primary">Invoice</a>
                 <a href="" class="btn btn-warning" v-if="card.paid > 0">Send Email</a>
 
@@ -193,12 +193,11 @@
         </div>
 
         <!--end form-group-->
-    </form>
-            <div class="modal fade" id="addMore" tabindex="-1" role="dialog" aria-labelledby="addMore" aria-hidden="true">
+            <div class="modal fade" ref="modal" id="addMore" tabindex="-1" role="dialog" aria-labelledby="addMore" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title m-0" id="exampleModalDefaultLogin">Add more member</h6>
+                    <h6 class="modal-title m-0" id="exampleModalDefaultLogin">{{ add_title}}</h6>
                     <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><i class="la la-times"></i></span>
                     </button>
@@ -207,24 +206,24 @@
                 <div class="modal-body">
                     <div class="card-body p-0">
                         <errors :errors="errors" v-if="errors"></errors>
-                        <form @submit.prevent="submitMember" method="POST" class="form-parsley">
+                        <form @submit.prevent="memberSubmit" method="POST" class="form-parsley">
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group "><label>Full name</label>
                                         <input required v-model="form.full_name" type="text" class="form-control" placeholder="Full name" />
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-6">
                                     <div class="form-group "><label>CPR No.</label>
                                         <input required v-model="form.cpr_no" type="text" class="form-control" placeholder="CPR NO" />
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-4">
                                     <div class="form-group "><label>Email.</label>
-                                        <input required v-model="form.email" type="text" class="form-control" placeholder="Email Address" />
+                                        <input v-model="form.email" type="text" class="form-control" placeholder="Email Address" />
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-4">
                                     <div class="form-group "><label>Gender</label>
                                         <select class="form-control" v-model="form.gender">
                                             <option value="male">Male</option>
@@ -233,22 +232,43 @@
                                     </div>
                                 </div>
 
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-4">
                                     <div class="form-group "><label>Mobile No.</label>
                                         <input required v-model="form.mobile" type="text" class="form-control" placeholder="mobile number" />
                                     </div>
                                 </div>
 
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-4">
                                     <div class="form-group "><label>Phone No.</label>
                                         <input required v-model="form.phone" type="text" class="form-control" placeholder="phone number" />
                                     </div>
                                 </div>
 
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-4">
+
                                     <div class="form-group "><label>Card Status</label>
                                         <select class="form-control" v-model="form.status">
                                             <option v-for="item in status">{{ item }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-4">
+                                    <div class="form-group "><label>Package Type</label>
+                                        <select class="form-control" v-model="card.package_type">
+                                            <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-4">
+                                    <div class="form-group "><label>Period</label>
+                                        <select class="form-control" v-model="card.period">
+                                            <option value="3">3 Months</option>
+                                            <option value="6">6 Months</option>
+                                            <option value="12">1 Year</option>
+                                            <option value="24">2 Years</option>
+                                            <option value="60">5 Years</option>
                                         </select>
                                     </div>
                                 </div>
@@ -268,7 +288,7 @@
 
 
                                 <div class="col-12">
-                                    <button  class="btn btn-primary" type="submit">Save Member</button>
+                                    <button  class="btn btn-primary" type="submit">{{ edit ? 'Update Member' : 'Save Member'}}</button>
                                 </div>
                             </div>
 
@@ -296,6 +316,8 @@ name: "EditCard",
     data() {
         return {
             more : false,
+            edit : false,
+            add_title : 'Add more member',
             loaded : false,
             errors : null,
             card : null,
@@ -359,17 +381,59 @@ name: "EditCard",
                 }
             })
         },
+        updateMember(){
+            this.loading = true;
+            this.error = null
+            this.loaded = false
+            axios.put(this.form.update_url, this.form).then((res)=>{
+                // this.members = res.data
+                toastr.success('Member details updated successfully')
+                let element = this.$refs.modal
+                $(element).modal('hide')
+            }).catch((error)=>{
+                this.loading = false
+                if (error.response.status === 422){
+                    this.errors = error.response.data.errors;
+                }
+            })
+        },
+        addMember(){
+            this.add_title = 'Add New Member';
+            this.edit = false;
+            this.clearForm();
+            let element = this.$refs.modal
+            $(element).modal('show')
+        },
+        editMember(item){
+            this.edit = true;
+            this.add_title = 'Editing '+ item.full_name;
+            this.form = item
+            // alert(item.update_url)
+            let element = this.$refs.modal
+            $(element).modal('show')
+            console.log(item)
+        },
         clearForm(){
             this.form.full_name = ''; this.form.email = ''; this.form.cpr_no = ''; this.form.gender = ''; this.form.gender = 'male'; this.form.phone = '';
             this.form.card_type = ''; this.form.address = ''; this.form.comment = '';
+        },
+        memberSubmit(){
+            if(this.edit){
+                this.updateMember()
+            }else {
+                this.submitMember();
+            }
         },
         submitMember(){
             this.loading = true;
             this.error = null
             axios.post(this.post_url, this.form).then((res)=>{
-                console.log(res.data);
                 this.loading = false
                 this.members = res.data
+                this.clearForm();
+                let element = this.$refs.modal
+                $(element).modal('hide')
+                toastr.success('New member successfully added');
             }).catch((error)=>{
                 this.loading = false
                 if (error.response.status === 422){

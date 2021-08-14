@@ -100,14 +100,14 @@ class CardsController extends Controller
                 return redirect()->route('cards.edit', $card->id)
                     ->with('success_message', 'Card was successfully added, add more people.');
             }
-            if($request->has('api')){
-                $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
-                return response()->json($members);
+            if($card->is_parent > 0){
+                return redirect()->route('cards.edit', $card->id)
+                    ->with('success_message', 'Card was successfully added, add more people.');
             }else{
 //                return redirect()->route('cards.index')
 //                    ->with('success_message', 'Card was successfully added.');
-                return redirect()->route('cards.edit', $card->id)
-                    ->with('success_message', 'Card was successfully added, add more people.');
+                $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
+                return response()->json($members);
             }
 
     }
@@ -159,7 +159,12 @@ class CardsController extends Controller
             }
             $card->update($data);
             $res = Card::findOrFail($id);
-            return response()->json($res);
+            if($res->is_parent){
+                return response()->json($res);
+            }else{
+                $members = Card::whereCardId($res->id)->whereIsParent(0)->get();
+                return response()->json($members);
+            }
 
     }
 
