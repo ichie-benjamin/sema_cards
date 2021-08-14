@@ -2272,7 +2272,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.loading = true;
       this.error = null;
-      this.loaded = false;
       axios.put(this.form.update_url, this.form).then(function (res) {
         // this.members = res.data
         toastr.success('Member details updated successfully');
