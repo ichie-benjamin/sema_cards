@@ -1,0 +1,10 @@
+[
+    {
+        "model-name": "Card",
+        "resource-file": "cards.json"
+    },
+    {
+        "model-name": "PackageType",
+        "resource-file": "package_types.json"
+    }
+]
