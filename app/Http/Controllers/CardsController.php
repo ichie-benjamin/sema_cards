@@ -181,7 +181,11 @@ class CardsController extends Controller
 
     private function getPolicy(){
         $card = Card::latest()->first();
-        return $policy = $this->policy() + $card->id + 1;
+        if($card){
+            return $policy = $this->policy() + $card->id + 1;
+        }else{
+            return $policy = $this->policy() + 1;
+        }
     }
     protected function getData(Request $request)
     {
