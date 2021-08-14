@@ -30,7 +30,7 @@ class HomeController extends Controller
         $agents = User::whereRoleIs('agent')->count();
         $cards = Card::query();
         $agent_cards = Card::where('agent_id','!=',$agent->id)->count();
-        $expired_cards = Card::where('expired_date', '<=', Carbon::now())->count();
+        $expired_cards = Card::where('expiry_date', '<=', Carbon::now())->count();
         $users = User::whereRoleIs('user')->get();
         return view('admin.dashboard',compact('users','cards','agents','agent_cards','expired_cards'));
     }
