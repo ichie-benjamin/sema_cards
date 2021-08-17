@@ -35,45 +35,49 @@
                     @foreach($cards as $item)
                         <input type="checkbox" name="id[]" value="{{ $item->id }}"> {{ $item->policy_no }}
                     @endforeach
+                    <input  name="design" value="{{ $design  }}" />
                 </div>
                 <div class="col-auto align-self-center">
                     <button type="submit" class="btn btn-success">PRINT CARD</button>
                     <a href="{{ request()->url() }}?download" class="btn btn-primary">PRINT ALL</a>
+                    @if ($design)
+                        <a href="{{ request()->url() }}?no_design" class="btn btn-warning">No design</a>
+                    @else
+                        <a href="{{ request()->url() }}" class="btn btn-warning">Add design</a>
+                    @endif
                 </div>
         </div>
         </form>
-        <div class="row bg-white p-4">
+        <div class="row -white p-4" style="background-color: #837e7e;">
 
             <div class="col-12">
 
                 @foreach($cards as $item)
-                <div class="sema-card" style="background-image: url('/img/bg.jpeg')">
+                    @if ($design)
+                        <div class="sema-card" style="background-image: url('/images/card.jpeg')">
+                            @else
+                                <div class="sema-card">
+                                @endif
                     <div class="header">
-                        <h3>{{ $item->full_name }}</h3>
-                        <p>Medical Discount Program</p>
+
                     </div>
                     <div class="body">
-                        <div class="photo" style="width: 30%; height: 100%; background-image: url({{ $item->photo }})" >
+                        <div class="photo" style="width: 30%; height: 100%; background-image: url({{ $item->img }})" >
 {{--                            <img src="/assets/images/users/user-1.jpg" />--}}
                         </div>
                         <div class="detail">
                             <table>
-                                <tr><td>Full name </td><td>{{ $item->full_name }}i</td></tr>
-                                <tr><td>Card No. </td><td>{{ number_format($item->policy_no,'0',' ',' ') }}</td></tr>
-                                <tr><td>Valid till </td><td>{{ $item->expiry_date }}</td></tr>
+                                <tr><td>Name </td><td style="text-transform: capitalize">:{{ $item->full_name }}</td></tr>
+                                <tr><td>CPR </td><td>:{{ $item->cpr_no }}</td></tr>
+                                <tr><td>ID No. </td><td>:{{ number_format($item->policy_no,'0',' ',' ') }}</td></tr>
+                                <tr><td>Valid till </td><td>:{{ $item->expiry_date }}</td></tr>
                             </table>
 
-                            <h4 style="margin-top: 13px">This is not an issurance card</h4>
+                            <h4 style="margin-top: 13px"><strong>This is Not Insurance Card</strong></h4>
 
                         </div>
                     </div>
                     <div class="foot">
-                        <div class="foot-1">
-
-                        </div>
-                        <div class="foot-2">
-                            <img src="/img/semalogo.png" />
-                        </div>
                     </div>
 
 
@@ -95,69 +99,35 @@
     <style>
 
         .sema-card {
-            border-radius: 40px;
-
+            /*border-radius: 40px;*/
+            background-color: white;
+            background-position: center !important;
+            background-size: cover!important;
+            background-repeat: no-repeat;
             position:relative;
             height:350px;
             width:550px;
             margin:20px auto;
-            background:#ECECEC;
-            /*border-radius:4px;*/
-
-            box-shadow:
-                inset 0 0 0 1px rgba(0, 0, 0, .4),
-                0 0 10px rgba(0, 0, 0, .55),
-                0 2px 10px rgba(0, 0, 0, .6);
         }
         .sema-card .header {
-            position:relative;
-            background:#4e0b71;
-            height:90px;
+            height:80px;
             width:100%;
-            border-top-left-radius:40px;
-            border-top-right-radius:40px;
-            border-bottom:2px solid rgb(78, 11, 113);
-            /*border-top:1px solid rgb(33, 2, 48);*/
-            box-shadow:
-                inset 0 1px 0 0 rgb(31, 3, 45),
-                0 1px 2px rgba(0, 0, 0, .4)
-        ;
-
             padding:15px 20px;
-            opacity:.9;
-        }
-        .sema-card .foot-2{
-            float : right;
-        }
-        .sema-card .foot{
-            height: 50px;
-        }
-        .sema-card .foot-2 img{
-            width: 100px;
-            height: 100%;
-            margin: 10px;
-        }
-        .header p {
-            color: white!important;
-        }
-        .header h3, .header h5, .header h6 .header p {
-            color: white!important;
         }
         .sema-card .body {
-            padding: 20px 10px;
+            padding: 10px 10px;
             height: 180px;
-            background: #ccc;
+            /*background: #ccc;*/
         }
         .sema-card .body td {
             padding-right: 15px;
+            font-weight: 400;
             font-size: 1.5em;
         }
         .sema-card .body .detail {
             float: left;
         }
-        .sema-card .footer {
 
-        }
         .sema-card .body .photo {
             margin-right: 15px;
             background-repeat: no-repeat;

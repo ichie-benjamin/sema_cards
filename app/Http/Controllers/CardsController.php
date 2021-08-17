@@ -7,6 +7,7 @@ use App\Models\PackageType;
 use App\Models\User;
 use App\Models\Card;
 use Carbon\Carbon;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +39,7 @@ class CardsController extends Controller
 
     public function cards($id, Request $request)
     {
+        $design = $request->has('no_design') ? false : true;
         $p_card =  Card::wherePolicyNo($id)->first();
         if(!$p_card){
             return redirect()->back('error_message', 'Something went wrong');
@@ -46,13 +48,15 @@ class CardsController extends Controller
 
         if($request->has('download'))
         {
-            $pdf = PDF::loadView('admin.cards.print_cards',compact('cards'));
+            $design = $request->has('no_design') ? false : true;
+            $pdf = PDF::loadView('admin.cards.print_cards',compact('cards','design'));
             return $pdf->download($id.'.pdf');
         }
 
-        return view('admin.cards.cards', compact('cards'));
+        return view('admin.cards.cards', compact('cards','design'));
     }
     public function printCards(Request $request){
+//        $dompdf = new Dompdf();
         if(!$request->get('id')){
             return redirect()->back()->with('error_message', 'Pls select cards to print');
         }
@@ -61,17 +65,22 @@ class CardsController extends Controller
             $ids[] = (int)$value;
         }
         $cards = Card::whereIn('id', $ids)->get();
-        $pdf = PDF::loadView('admin.cards.print_cards',compact('cards'));
+        $design = $request['design'];
+        $pdf = PDF::loadView('admin.cards.print_cards',compact('cards','design'));
+        $pdf->setPaper(array(30,-30,450,240),'portrait');
         return $pdf->download($ids[0].'.pdf');
     }
-    public function printCard($id)
+    public function printCard($id, Request $request)
     {
 //        $cards = Card::whereId($id)->with('agent','cards')->get();
+
+        $design = $request->has('no_design') ? false : true;
+
 
         $cards = Card::whereId($id)->orWhere('policy_no',$id)->orWhere('card_id',$id)->where('status','!=',null)->get();
 
 
-        return view('admin.cards.print_cards', compact('cards'));
+        return view('admin.cards.print_cards', compact('cards','design'));
     }
 
     public function create()

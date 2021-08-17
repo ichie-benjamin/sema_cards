@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+    <card-table :status="{{ json_encode($status) }}" :cards="{{ json_encode($cards) }}" inline-template>
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
@@ -26,6 +26,9 @@
             <!--end col-->
         </div>
         <!--end row--><!-- end page title end breadcrumb -->
+
+
+
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -82,36 +85,38 @@
                                         <th data-priority="3">Phone No.</th>
                                         <th data-priority="1">Extra <br /> People</th>
                                         <th data-priority="3">Email</th>
-                                        <th data-priority="3">Status</th>
+                                        <th width="15%" data-priority="3">Status</th>
                                         <th data-priority="3">Package Type</th>
                                         <th data-priority="6">Paid</th>
                                         <th data-priority="6">Expiry Date</th>
-                                        <th data-priority="6">Action</th>
+                                        <th width="10%" data-priority="6">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($cards as $item)
-                                    <tr>
-                                        <td class="text-capitalize">{{ optional($item->agent)->full_name }}</td>
-                                        <td class="text-capitalize">{{ $item->full_name }}</td>
-                                        <td>{{ $item->cpr_no }}</td>
-                                        <td>{{ $item->phone }}</td>
-                                        <td>{{ count($item->cards) }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td class=" text-uppercase">{{ $item->status }}</td>
-                                        <td class="text-capitalize">{{ optional($item->package)->name }}</td>
-                                        <td>{{ $item->paid ? 'Yes' : 'No' }}</td>
-                                        <td>{{ $item->expiry_date }}</td>
+                                    <tr v-for="i in cards.data">
+                                        <td class="text-capitalize">@{{ i.agent.full_name }}</td>
+                                        <td class="text-capitalize">@{{ i.full_name }}</td>
+                                        <td>@{{ i.cpr_no }}</td>
+                                        <td>@{{ i.phone }}</td>
+                                        <td>@{{ i.cards.length }}</td>
+                                        <td>@{{ i.email }}</td>
+                                        <td class=" text-uppercase">
+
+                                            <select v-model="i.status" @change="updateStatus(i.status, i)" class="form-control">
+                                                <option v-for="it in status" :value="it"> @{{ it }}</option>
+                                            </select>
+                                        </td>
+                                        <td class="text-capitalize">@{{ i.package.name }}</td>
+                                        <td>@{{ i.paid ? 'Yes' : 'No' }}</td>
+                                        <td>@{{ i.expiry_date }}</td>
                                         <td>
-                                            <a class="btn btn-warning" href="{{ route('cards.edit', $item->id) }}"><i class="fa fa-edit"></i> </a>
-                                            @if ($item->paid)
-                                                <a class="btn btn-success" href="{{ route('cards', $item->policy_no) }}">View Cards</a>
-                                            @endif
+{{--                                            <a class="btn btn-warning" href="{{ route('cards.edit', i.id) }}"><i class="fa fa-edit"></i> </a>--}}
+                                            <a class="btn btn-warning" :href="i.edit_url"><i class="fa fa-edit"></i> </a>
+                                                <a v-if="i.paid" class="btn btn-success" :href="i.view_url">View</a>
                                             <a class="btn btn-danger" href=""><i class="fa fa-trash"></i> </a>
                                         </td>
 
                                     </tr>
-                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -128,8 +133,8 @@
             <!-- end col -->
         </div>
         <!-- end row -->
-
     </div>
+    </card-table>
 @endsection
 
 
@@ -138,6 +143,7 @@
     <script src="https://mannatthemes.com/dastyle/plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js"></script>
 
     <script src="/assets/pages/jquery.responsive-table.init.js"></script>
+
 @endsection
 
 @section('styles')

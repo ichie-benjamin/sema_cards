@@ -8,117 +8,88 @@
     <style>
 
         .sema-card {
-            border-radius: 40px;
-            position:relative;
-            height:340px;
+            /*border-radius: 40px;*/
+            background-color: transparent;
+            background-position: center !important;
+            background-size: cover!important;
+            background-repeat: no-repeat;
+            position:fixed;
+            height:350px;
             width:550px;
-            margin:20px auto;
-            background:#ECECEC;
-            /*border-radius:4px;*/
-
-            box-shadow:
-                inset 0 0 0 1px rgba(0, 0, 0, .4),
-                0 0 10px rgba(0, 0, 0, .55),
-                0 2px 10px rgba(0, 0, 0, .6);
+            /*margin:20px auto;*/
         }
         .sema-card .header {
-            position:relative;
-            background:#4e0b71;
-            height:70px;
-            /*width:100%;*/
-            border-top-left-radius:40px;
-            border-top-right-radius:40px;
-            border-bottom:2px solid rgb(78, 11, 113);
-            /*border-top:1px solid rgb(33, 2, 48);*/
-            box-shadow:
-                inset 0 1px 0 0 rgb(31, 3, 45),
-                0 1px 2px rgba(0, 0, 0, .4)
-        ;
-
+            height:60px;
+            width:100%;
             padding:8px 20px;
-            opacity:.9;
-        }
-        .sema-card .foot-2{
-            float : right;
-        }
-        .sema-card .foot{
-            height: 50px;
-        }
-        .sema-card .foot-2 img{
-            width: 100px;
-            height: 100%;
-            margin: 10px;
-        }
-        .header p {
-            color: white!important;
-        }
-        .header h3, .header h5, .header h6 .header p {
-            color: white!important;
         }
         .sema-card .body {
-            padding: 10px 10px;
-            height: 155px;
-            background: #ccc;
+            padding: 17px 10px;
+            height: 160px;
+            /*background: #ccc;*/
         }
         .sema-card .body td {
-            padding-right: 15px;
-            font-size: 1.5em;
+            /*padding-right: 5px;*/
+            font-weight: 400!important;
+            font-size: 1.25em;
+        }
+        .sema-card .body h3 {
+            /*padding-right: 5px;*/
+            font-weight: 800!important;
+
+            font-size: 1.35em;
         }
         .sema-card .body .detail {
             float: left;
         }
-        .sema-card .footer {
 
-        }
         .sema-card .body .photo {
-            margin-right: 25px;
+            margin-right: 15px;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 150px;
             float: left;
         }
         .page-break {
+            @if(count($cards) > 1)
             page-break-after: always;
+            @endif
         }
     </style>
 </head>
 <body>
-<div style="padding: 50px">
-
+<div>
     @foreach($cards as $item)
-        <div class="sema-card  page-break" style="background-image: url({{ public_path('img/bg.jpeg') }})">
-            <div class="header">
-                <h3>{{ $item->full_name }}</h3>
-                <p>Medical Discount Program</p>
+        @if ($design)
+            <div class="sema-card page-break" style="background-image: url({{ public_path('images/card2.jpeg') }})">
+                @else
+                    <div class="sema-card page-break">
+                        @endif
+                        <div class="header">
+
+                        </div>
+                        <div class="body">
+
+                            <div class="photo" style="width: 30%; ;background-image: url({{ public_path($item->photo) }})"></div>
+                            <div class="detail">
+                                <table>
+                                    <tr><td>Name </td><td style="text-transform: capitalize">:{{ $item->full_name }}</td></tr>
+                                    <tr><td>CPR No.</td><td>:{{ $item->cpr_no }}</td></tr>
+                                    <tr><td>ID No. </td><td>:{{ number_format($item->policy_no,'0',' ',' ') }}</td></tr>
+                                    <tr><td>Valid till </td><td>:{{ $item->expiry_date }}</td></tr>
+                                </table>
+
+                                <h3 style="margin-top: 13px"><strong>This is Not Insurance Card</strong></h3>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    @endforeach
+
+
             </div>
-            <div class="body">
-                <div class="photo" style="width: 30%; ;background-image: url({{ public_path($item->photo) }})" >
-                </div>
-                <div class="detail">
-                    <table>
-                        <tr><td>Full name </td><td>{{ $item->full_name }}</td></tr>
-                        <tr><td>Card No. </td><td>{{ number_format($item->policy_no,'0',' ',' ') }}</td></tr>
-                        <tr><td>Valid till </td><td>{{ $item->expiry_date }}</td></tr>
-                    </table>
-
-                    <h4 style="margin-top: 13px">This is not an issurance card</h4>
-
-                </div>
-            </div>
-            <div class="foot">
-                <div class="foot-1">
-
-                </div>
-                <div class="foot-2">
-                    <img src="{{ public_path('img/semalogo.png') }}" />
-                </div>
-            </div>
-
-
-        </div>
-    @endforeach
-
 </div>
 </body>
 
+</html>

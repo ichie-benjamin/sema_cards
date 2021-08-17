@@ -20,7 +20,7 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('card-table-item', require('./components/CardTableItem.vue').default);
+Vue.component('card-table', require('./components/CardTable.vue').default);
 Vue.component('edit-card', require('./components/EditCard.vue').default);
 
 /**
@@ -31,4 +31,14 @@ Vue.component('edit-card', require('./components/EditCard.vue').default);
 
 const app = new Vue({
     el: '#app',
+
+    mounted(){
+        console.log('mouneted in root')
+    },
+    data(){
+        return {
+            hello : 'Hello from root'
+        }
+    }
+
 });

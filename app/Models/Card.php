@@ -16,7 +16,7 @@ class Card extends Model
 
     protected $primaryKey = 'id';
 
-    protected $appends = ['update_url'];
+    protected $appends = ['update_url','img','edit_url','view_url'];
 
     protected $fillable = [
                   'full_name',
@@ -62,15 +62,33 @@ class Card extends Model
 
     public function getPhotoAttribute($value)
     {
-        if(!$value){
+//        if(!$value){
+//            return '/images/avatar.jpeg';
+//        }
+        return $value;
+    }
+
+    public function getImgAttribute()
+    {
+        if(!$this->photo){
             return '/images/avatar.jpeg';
         }
-        return $value;
+        return $this->photo;
     }
 
     public function getUpdateUrlAttribute()
     {
         return route('cards.update', $this->id);
+    }
+
+    public function getEditUrlAttribute()
+    {
+        return route('cards.edit', $this->id);
+    }
+
+    public function getViewUrlAttribute()
+    {
+        return route('cards', $this->policy_no);
     }
 
     /**
