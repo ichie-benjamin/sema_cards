@@ -35,6 +35,29 @@
             color: #fff;
         }
     </style>
+
+    <style>
+        .upload-image .dropzone {
+            min-height: 150px;
+            border: 2px dashed #000;
+            background: #f8f8f8;
+        }
+        .dropzone {
+            position: relative;
+        }
+        .dropzone .dz-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+    </style>
+
     @yield('styles')
 </head>
 <body class="dark-sidenav">
@@ -213,6 +236,11 @@
 
 <script src="/js/app.js"></script>
 
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+
+<script>
+    $('.lfm').filemanager('image');
+</script>
 
 @if(Session::has('error_message'))
     <script>

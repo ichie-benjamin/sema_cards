@@ -11,14 +11,10 @@ class sendCard extends Notification
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $card;
+    public function __construct($card)
     {
-        //
+        return $this->card = $card;
     }
 
     /**
@@ -41,9 +37,11 @@ class sendCard extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject(" Sema Health Saver Card")
+            ->greeting("Hy ".$this->card->full_name)
+            ->line('Your Sema Health Card is available for printing')
+            ->line('----------------------------------------------------------')
+            ->action('Print Card', route('cards.index'));
     }
 
     /**

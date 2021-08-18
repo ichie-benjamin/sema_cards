@@ -35,7 +35,7 @@
                     @foreach($cards as $item)
                         <input type="checkbox" name="id[]" value="{{ $item->id }}"> {{ $item->policy_no }}
                     @endforeach
-                    <input  name="design" value="{{ $design  }}" />
+                    <input type="hidden" name="design" value="{{ $design  }}" />
                 </div>
                 <div class="col-auto align-self-center">
                     <button type="submit" class="btn btn-success">PRINT CARD</button>

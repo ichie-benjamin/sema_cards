@@ -2180,16 +2180,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Errors: _Errors__WEBPACK_IMPORTED_MODULE_0__.default
   },
-  props: ['card_data', 'url', 'p_methods', 'con_methods', 'status', 'post_url', 'members', 'p_types', 'card_types', 'view_card'],
+  props: ['card_data', 'url', 'send_mail', 'p_methods', 'con_methods', 'status', 'post_url', 'members', 'p_types', 'card_types', 'view_card'],
   name: "EditCard",
   data: function data() {
     return {
       more: false,
+      editImg: '',
       edit: false,
       add_title: 'Add more member',
       loaded: false,
@@ -2235,6 +2270,22 @@ __webpack_require__.r(__webpack_exports__);
     toast: function toast() {
       toastr.success('Have fun storming the castle!', 'Miracle Max Says');
     },
+    saveEditImage: function saveEditImage() {
+      var img = $('input[id=editImg]').val();
+
+      if (img) {
+        this.card.photo = img;
+        this.update();
+      } else {
+        toastr.error('No new photo uploaded');
+      }
+    },
+    updateCardStatus: function updateCardStatus(status, item) {
+      axios.put(item.update_url, item).then(function (res) {
+        console.log(res.data);
+        toastr.success('Card Status successfully updated');
+      });
+    },
     updateStatus: function updateStatus(status) {
       this.card.status = status;
     },
@@ -2246,6 +2297,7 @@ __webpack_require__.r(__webpack_exports__);
       this.loaded = false;
       axios.put(this.url, this.card).then(function (res) {
         console.log(res.data);
+        _this2.loading = false;
         _this2.card = res.data;
         toastr.success('Card information updated');
         setTimeout(function () {
@@ -2259,13 +2311,33 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
+    sendEmail: function sendEmail(id) {
+      axios.post(this.send_mail, {
+        id: id
+      }).then(function (res) {
+        if (res.data.status === 1) {
+          toastr.success('Mail successfully sent to card user');
+        } else if (res.data.status === 2) {
+          toastr.error('Invalid email address, pls correct card email address to send mail');
+        } else {
+          toastr.success('Something went wrong');
+        }
+      });
+    },
     updateMember: function updateMember() {
       var _this3 = this;
 
       this.loading = true;
       this.error = null;
+      var img = $('input[id=memImg]').val();
+
+      if (img) {
+        this.form.photo = img;
+      }
+
       axios.put(this.form.update_url, this.form).then(function (res) {
         // this.members = res.data
+        _this3.loading = false;
         toastr.success('Member details updated successfully');
         var element = _this3.$refs.modal;
         $(element).modal('hide');
@@ -2316,6 +2388,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.loading = true;
       this.error = null;
+      this.form.photo = $('input[id=memImg]').val();
       axios.post(this.post_url, this.form).then(function (res) {
         _this4.loading = false;
         _this4.members = res.data;
@@ -2353,6 +2426,11 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         _this5.loading = false;
       });
+    }
+  },
+  computed: {
+    pImg: function pImg() {
+      return $('input[id=editImg]').val();
     }
   },
   watch: {
@@ -20369,11 +20447,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      placeholder: "Email Address"
-                    },
+                    attrs: { type: "text", placeholder: "Email Address" },
                     domProps: { value: _vm.card.email },
                     on: {
                       input: function($event) {
@@ -20450,11 +20524,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      placeholder: "mobile number"
-                    },
+                    attrs: { type: "text", placeholder: "mobile number" },
                     domProps: { value: _vm.card.mobile },
                     on: {
                       input: function($event) {
@@ -20482,11 +20552,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      placeholder: "phone number"
-                    },
+                    attrs: { type: "text", placeholder: "phone number" },
                     domProps: { value: _vm.card.phone },
                     on: {
                       input: function($event) {
@@ -20564,11 +20630,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      placeholder: "address"
-                    },
+                    attrs: { type: "text", placeholder: "address" },
                     domProps: { value: _vm.card.address },
                     on: {
                       input: function($event) {
@@ -20582,7 +20644,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-12" }, [
+              _c("div", { staticClass: "col-6" }, [
                 _c("div", { staticClass: "form-group" }, [
                   _c("label", [_vm._v("Comment ")]),
                   _vm._v(" "),
@@ -20596,6 +20658,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
+                    attrs: { rows: "4" },
                     domProps: { value: _vm.card.comment },
                     on: {
                       input: function($event) {
@@ -20603,6 +20666,34 @@ var render = function() {
                           return
                         }
                         _vm.$set(_vm.card, "comment", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "upload-image" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.editImg,
+                        expression: "editImg"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { id: "editImg", type: "hidden", name: "photo" },
+                    domProps: { value: _vm.editImg },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.editImg = $event.target.value
                       }
                     }
                   })
@@ -20992,7 +21083,7 @@ var render = function() {
                             attrs: { id: "tech-companies-1" }
                           },
                           [
-                            _vm._m(0),
+                            _vm._m(1),
                             _vm._v(" "),
                             _c(
                               "tbody",
@@ -21009,7 +21100,61 @@ var render = function() {
                                   _c("td", [_vm._v(_vm._s(item.email))]),
                                   _vm._v(" "),
                                   _c("td", { staticClass: "text-capitalize" }, [
-                                    _vm._v(_vm._s(item.status))
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: item.status,
+                                            expression: "item.status"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: [
+                                            function($event) {
+                                              var $$selectedVal = Array.prototype.filter
+                                                .call(
+                                                  $event.target.options,
+                                                  function(o) {
+                                                    return o.selected
+                                                  }
+                                                )
+                                                .map(function(o) {
+                                                  var val =
+                                                    "_value" in o
+                                                      ? o._value
+                                                      : o.value
+                                                  return val
+                                                })
+                                              _vm.$set(
+                                                item,
+                                                "status",
+                                                $event.target.multiple
+                                                  ? $$selectedVal
+                                                  : $$selectedVal[0]
+                                              )
+                                            },
+                                            function($event) {
+                                              return _vm.updateCardStatus(
+                                                item.status,
+                                                item
+                                              )
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      _vm._l(_vm.status, function(it) {
+                                        return _c(
+                                          "option",
+                                          { domProps: { value: it } },
+                                          [_vm._v(" " + _vm._s(it))]
+                                        )
+                                      }),
+                                      0
+                                    )
                                   ]),
                                   _vm._v(" "),
                                   _c("td", [
@@ -21019,7 +21164,7 @@ var render = function() {
                                   _c("td", [_vm._v(_vm._s(item.expiry_date))]),
                                   _vm._v(" "),
                                   _c("td", [
-                                    _vm._m(1, true),
+                                    _vm._m(2, true),
                                     _vm._v(" "),
                                     _c(
                                       "button",
@@ -21116,10 +21261,28 @@ var render = function() {
                   [_vm._v("Invoice")]
                 ),
                 _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success",
+                    attrs: { type: "button" },
+                    on: { click: _vm.saveEditImage }
+                  },
+                  [_vm._v("Save Photo")]
+                ),
+                _vm._v(" "),
                 _vm.card.paid > 0
                   ? _c(
-                      "a",
-                      { staticClass: "btn btn-warning", attrs: { href: "" } },
+                      "button",
+                      {
+                        staticClass: "btn btn-warning",
+                        attrs: { type: "button", disabled: _vm.loading },
+                        on: {
+                          click: function($event) {
+                            return _vm.sendEmail(_vm.card.id)
+                          }
+                        }
+                      },
                       [_vm._v("Send Email")]
                     )
                   : _vm._e()
@@ -21160,7 +21323,7 @@ var render = function() {
                         [_vm._v(_vm._s(_vm.add_title))]
                       ),
                       _vm._v(" "),
-                      _vm._m(2)
+                      _vm._m(3)
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "modal-body" }, [
@@ -21367,7 +21530,6 @@ var render = function() {
                                       ],
                                       staticClass: "form-control",
                                       attrs: {
-                                        required: "",
                                         type: "text",
                                         placeholder: "mobile number"
                                       },
@@ -21403,7 +21565,6 @@ var render = function() {
                                       ],
                                       staticClass: "form-control",
                                       attrs: {
-                                        required: "",
                                         type: "text",
                                         placeholder: "phone number"
                                       },
@@ -21629,7 +21790,6 @@ var render = function() {
                                       ],
                                       staticClass: "form-control",
                                       attrs: {
-                                        required: "",
                                         type: "text",
                                         placeholder: "address"
                                       },
@@ -21650,7 +21810,7 @@ var render = function() {
                                   ])
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "col-12" }, [
+                                _c("div", { staticClass: "col-6 col-md-6" }, [
                                   _c("div", { staticClass: "form-group" }, [
                                     _c("label", [_vm._v("Comment ")]),
                                     _vm._v(" "),
@@ -21664,6 +21824,7 @@ var render = function() {
                                         }
                                       ],
                                       staticClass: "form-control",
+                                      attrs: { rows: "4" },
                                       domProps: { value: _vm.form.comment },
                                       on: {
                                         input: function($event) {
@@ -21680,6 +21841,8 @@ var render = function() {
                                     })
                                   ])
                                 ]),
+                                _vm._v(" "),
+                                _vm._m(4),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "col-12" }, [
                                   _c(
@@ -21716,6 +21879,44 @@ var render = function() {
     : _vm._e()
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "dropzone dropzone-area dz-clickable",
+        staticStyle: { width: "100%" },
+        attrs: { "data-input": "editImg", "data-preview": "editImg_holder" }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "dz-message lfm",
+            attrs: { "data-input": "editImg", "data-preview": "editImg_holder" }
+          },
+          [
+            _c("br"),
+            _vm._v(" "),
+            _c("div", {
+              staticStyle: {
+                "margin-top": "15px",
+                "margin-bottom": "20px",
+                "max-height": "200px"
+              },
+              attrs: { id: "editImg_holder" }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-center text-capitalize" }, [
+          _vm._v("Click to select image ")
+        ])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -21768,6 +21969,53 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-6 col-md-6" }, [
+      _c("div", { staticClass: "upload-image" }, [
+        _c(
+          "div",
+          {
+            staticClass: "dropzone dropzone-area dz-clickable",
+            staticStyle: { width: "100%" },
+            attrs: { "data-input": "memImg", "data-preview": "mem_holder" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "dz-message lfm",
+                attrs: { "data-input": "memImg", "data-preview": "mem_holder" }
+              },
+              [
+                _c("br"),
+                _vm._v(" "),
+                _c("div", {
+                  staticStyle: {
+                    "margin-top": "15px",
+                    "margin-bottom": "20px",
+                    "max-height": "200px"
+                  },
+                  attrs: { id: "mem_holder" }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-center text-capitalize" }, [
+              _vm._v("Click to select image ")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { id: "memImg", type: "hidden", name: "memImg" }
+        })
+      ])
+    ])
   }
 ]
 render._withStripped = true

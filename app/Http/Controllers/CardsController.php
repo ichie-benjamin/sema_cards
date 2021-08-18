@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\PackageType;
 use App\Models\User;
 use App\Models\Card;
+use App\Notifications\sendCard;
 use Carbon\Carbon;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 use PDF;
 
 
@@ -19,8 +21,9 @@ class CardsController extends Controller
 
     public function index(Request $request)
     {
-        $status = ['draft', 'renewal' ,'expired','done','paid','print'];
-        $card = Card::whereIsParent(1)->with('agent','cards','package');
+        $status = ['draft', 'pending' ,'expired','done','paid','print'];
+        $card = Card::with('agent','cards','package');
+//        $card = Card::whereIsParent(1)->with('agent','cards','package');
         if($request->get('cpr')){
             $card->where('cpr_no',$request->get('cpr'));
         }
@@ -40,11 +43,11 @@ class CardsController extends Controller
     public function cards($id, Request $request)
     {
         $design = $request->has('no_design') ? false : true;
-        $p_card =  Card::wherePolicyNo($id)->first();
+       $p_card =  Card::wherePolicyNo($id)->first();
         if(!$p_card){
             return redirect()->back('error_message', 'Something went wrong');
         }
-        $cards = Card::whereId($p_card->id)->orWhere('card_id',$p_card->id)->where('status','!=','draft')->get();
+     $cards = Card::whereId($p_card->id)->orWhere('card_id',$p_card->id)->where('status','!=','draft')->get();
 
         if($request->has('download'))
         {
@@ -89,7 +92,7 @@ class CardsController extends Controller
         $agents = User::whereRoleIs(['agent'])->get();
         $p_methods = ['card','benefit','cash'];
         $con_methods = ['call','whatsapp','online'];
-        $status = ['draft', 'renewal' ,'expired','done','paid','print'];
+        $status = ['draft', 'pending' ,'expired','done','paid','print'];
         $card_types =  ['sama healthsaver card'];
         $p_type = PackageType::all();
 
@@ -101,7 +104,9 @@ class CardsController extends Controller
 
             $data = $this->getData($request);
 
-            $data['expiry_date'] = $this->setExpiryDate($data['issue_date'], $data['period']);
+        $request->validate(['cpr_no' => 'required|string|unique:cards,cpr_no']);
+
+        $data['expiry_date'] = $this->setExpiryDate($data['issue_date'], $data['period']);
 
             $card = Card::create($data);
 
@@ -132,7 +137,7 @@ class CardsController extends Controller
     {
         $p_methods = ['card','benefit','cash'];
         $con_methods = ['call','whatsapp','online'];
-        $status = ['draft', 'renewal' ,'expired','done','paid','print'];
+        $status = ['draft', 'pending' ,'expired','done','paid','print'];
         $p_types = PackageType::all();
         $card_types =  ['sama healthsaver card'];
         $members = Card::whereCardId($id)->whereIsParent(0)->get();
@@ -156,6 +161,23 @@ class CardsController extends Controller
     private function setExpiryDate($date, $month){
         $newDate = new Carbon($date);
         return $newDate->addMonths($month);
+    }
+
+    public function sendEmail(Request $request){
+        $data = [];
+        $card = Card::whereId($request['id'])->first();
+        if(!$card){
+            $data['status'] = 0;
+        }
+        if($card){
+            if($card->email && filter_var($card->email, FILTER_VALIDATE_EMAIL)){
+                $data['status'] = 1;
+                Notification::route('mail', $card->email)->notify(new sendCard($card));
+            }else{
+                $data['status'] = 2;
+            }
+        }
+        return response()->json($data);
     }
 
     public function update($id, Request $request)
@@ -210,10 +232,11 @@ class CardsController extends Controller
                 'full_name' => 'string|min:1|required',
             'gender' => 'string|min:1|nullable',
             'cpr_no' => 'nullable',
-            'mobile' => 'required',
+            'mobile' => 'nullable',
             'mobile2' => 'nullable',
             'phone' => 'nullable',
-            'address' => 'required',
+            'photo' => 'nullable',
+            'address' => 'nullable',
             'card_type' => 'nullable',
             'payment_method' => 'string|min:1|required',
             'contact_method' => 'string|min:1|required',

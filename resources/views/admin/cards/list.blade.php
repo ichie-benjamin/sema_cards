@@ -79,12 +79,12 @@
                                 <table id="tech-companies-1" class="table table-striped table-bordered mb-0">
                                     <thead>
                                     <tr>
-                                        <th>Agent</th>
+                                        <th width="15%">Issue Date / Agent</th>
                                         <th>Full name</th>
                                         <th data-priority="1">CPR No</th>
-                                        <th data-priority="3">Phone No.</th>
+{{--                                        <th data-priority="3">Phone No.</th>--}}
                                         <th data-priority="1">Extra <br /> People</th>
-                                        <th data-priority="3">Email</th>
+                                        <th data-priority="3">Email / Phone</th>
                                         <th width="15%" data-priority="3">Status</th>
                                         <th data-priority="3">Package Type</th>
                                         <th data-priority="6">Paid</th>
@@ -94,12 +94,16 @@
                                     </thead>
                                     <tbody>
                                     <tr v-for="i in cards.data">
-                                        <td class="text-capitalize">@{{ i.agent.full_name }}</td>
+                                        <td class="text-capitalize">
+                                            @{{ i.issue_date }} <br/>
+                                            @{{ i.agent.full_name }}</td>
                                         <td class="text-capitalize">@{{ i.full_name }}</td>
                                         <td>@{{ i.cpr_no }}</td>
-                                        <td>@{{ i.phone }}</td>
+{{--                                        <td>@{{ i.phone }}</td>--}}
                                         <td>@{{ i.cards.length }}</td>
-                                        <td>@{{ i.email }}</td>
+                                        <td>@{{ i.email }}
+                                        <br/> @{{ i.phone }}
+                                        </td>
                                         <td class=" text-uppercase">
 
                                             <select v-model="i.status" @change="updateStatus(i.status, i)" class="form-control">

@@ -37,6 +37,7 @@
 
                 <edit-card :card_data='@json($card)' :members='@json($members)' :p_methods='@json($p_methods)'
                            :status='@json($status)' url="{{ route('cards.update', $card->id) }}" view_card="{{ route('cards', $card->policy_no) }}"
+                           send_mail="{{ route('send.email.cards') }}"
                            post_url="{{ route('cards.store') }}" :p_types='@json($p_types)' :card_types='@json($card_types)'
                            :con_methods='@json($con_methods)'></edit-card>
 

@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="col-md-3 col-6">
                                     <div class="form-group "><label>Email.</label>
-                                        <input required value="{{ old('email') }}" name="email" type="text" class="form-control" placeholder="Email Address" />
+                                        <input  value="{{ old('email') }}" name="email" type="text" class="form-control" placeholder="Email Address" />
                                         {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
 
                                 <div class="col-md-3 col-6">
                                     <div class="form-group "><label>Mobile No.</label>
-                                        <input required value="{{ old('mobile') }}" name="mobile" type="text" class="form-control" placeholder="mobile number" />
+                                        <input  value="{{ old('mobile') }}" name="mobile" type="text" class="form-control" placeholder="mobile number" />
                                         {!! $errors->first('mobile', '<p class="help-block">:message</p>') !!}
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
 
                                 <div class="col-12">
                                     <div class="form-group "><label>Address (Bld/house / Flat / Road , Block , Place , Country)</label>
-                                        <input required value="{{ old('address') }}" name="address" type="text" class="form-control" placeholder="address" />
+                                        <input  value="{{ old('address') }}" name="address" type="text" class="form-control" placeholder="address" />
                                         {!! $errors->first('address', '<p class="help-block">:message</p>') !!}
                                     </div>
                                 </div>
@@ -171,6 +171,11 @@
                                         </select>
                                         {!! $errors->first('status', '<p class="help-block">:message</p>') !!}
                                     </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <label class="form-label" for="description">Upload Image </label>
+                                    @include('admin.inc.image-upload',['field' => 'photo','id' => 'photo'])
                                 </div>
 
                                 <div class="col-12">

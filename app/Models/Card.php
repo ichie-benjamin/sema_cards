@@ -20,7 +20,7 @@ class Card extends Model
 
     protected $fillable = [
                   'full_name',
-                  'gender',
+                  'gender','online',
                   'cpr_no',
                   'mobile',
                   'mobile2',

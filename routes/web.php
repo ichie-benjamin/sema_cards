@@ -37,7 +37,9 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
 
     Route::get('/card/{id}', [CardsController::class, 'cards'])->name('cards');
     Route::get('/preview/{id}', [CardsController::class, 'printCard'])->name('preview');
+
     Route::post('/print/cards', [CardsController::class, 'printCards'])->name('print.cards');
+    Route::post('/card/mail', [CardsController::class, 'sendEmail'])->name('send.email.cards');
 
 
 
@@ -46,6 +48,11 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
         'p_types' => PackageTypesController::class
     ]);
 
+
+
+});
+Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
 

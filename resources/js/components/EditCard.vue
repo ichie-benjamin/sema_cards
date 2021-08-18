@@ -31,7 +31,7 @@
             </div>
             <div class="col-6 col-md-3">
                 <div class="form-group "><label>Email.</label>
-                    <input required v-model="card.email" type="text" class="form-control" placeholder="Email Address" />
+                    <input  v-model="card.email" type="text" class="form-control" placeholder="Email Address" />
                 </div>
             </div>
             <div class="col-6 col-md-3">
@@ -45,13 +45,13 @@
 
             <div class="col-6 col-md-3">
                 <div class="form-group "><label>Mobile No.</label>
-                    <input required v-model="card.mobile" type="text" class="form-control" placeholder="mobile number" />
+                    <input  v-model="card.mobile" type="text" class="form-control" placeholder="mobile number" />
                 </div>
             </div>
 
             <div class="col-6 col-md-3">
                 <div class="form-group "><label>Phone No.</label>
-                    <input required v-model="card.phone" type="text" class="form-control" placeholder="phone number" />
+                    <input  v-model="card.phone" type="text" class="form-control" placeholder="phone number" />
                 </div>
             </div>
 
@@ -65,13 +65,25 @@
 
             <div class="col-12">
                 <div class="form-group "><label>Address (Bld/house / Flat / Road , Block , Place , Country)</label>
-                    <input required  v-model="card.address" type="text" class="form-control" placeholder="address" />
+                    <input   v-model="card.address" type="text" class="form-control" placeholder="address" />
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
                 <div class="form-group"><label>Comment </label>
-                    <textarea class="form-control" v-model="card.comment"></textarea>
+                    <textarea rows="4" class="form-control" v-model="card.comment"></textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="upload-image">
+                    <div class="dropzone dropzone-area dz-clickable" style="width: 100%" data-input="editImg" data-preview="editImg_holder">
+                        <div class="dz-message lfm" data-input="editImg" data-preview="editImg_holder" >
+                            <br />
+                            <div id="editImg_holder" style="margin-top:15px; margin-bottom:20px;max-height:200px;"></div>
+                        </div>
+                        <p class="text-center text-capitalize">Click to select image </p>
+                    </div>
+                    <input v-model="editImg" id="editImg" class="form-control" type="hidden" name="photo">
                 </div>
             </div>
 
@@ -163,7 +175,12 @@
                             <td>{{ item.cpr_no }}</td>
                             <td>{{ item.phone }}</td>
                             <td>{{ item.email }}</td>
-                            <td class="text-capitalize">{{ item.status }}</td>
+                            <td class="text-capitalize">
+                                <select v-model="item.status" @change="updateCardStatus(item.status, item)" class="form-control">
+                                    <option v-for="it in status" :value="it"> {{ it }}</option>
+                                </select>
+<!--                                {{ item.status }}-->
+                            </td>
                             <td>{{ item.paid ? 'Yes' : 'No' }}</td>
                             <td>{{ item.expiry_date }}</td>
                             <td>
@@ -187,7 +204,8 @@
                 <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0" class="btn btn-primary" >View Cards</a>
                 <a :href="'/admin/card/'+card.policy_no+'?download'" v-if="card.paid > 0" class="btn btn-success" >Print Cards</a>
                 <a href="#" class="btn btn-primary">Invoice</a>
-                <a href="" class="btn btn-warning" v-if="card.paid > 0">Send Email</a>
+                <button type="button" @click="saveEditImage" class="btn btn-success">Save Photo</button>
+                <button type="button" @click="sendEmail(card.id)" :disabled="loading" class="btn btn-warning" v-if="card.paid > 0">Send Email</button>
 
             </div>
         </div>
@@ -234,13 +252,13 @@
 
                                 <div class="col-6 col-md-4">
                                     <div class="form-group "><label>Mobile No.</label>
-                                        <input required v-model="form.mobile" type="text" class="form-control" placeholder="mobile number" />
+                                        <input  v-model="form.mobile" type="text" class="form-control" placeholder="mobile number" />
                                     </div>
                                 </div>
 
                                 <div class="col-6 col-md-4">
                                     <div class="form-group "><label>Phone No.</label>
-                                        <input required v-model="form.phone" type="text" class="form-control" placeholder="phone number" />
+                                        <input  v-model="form.phone" type="text" class="form-control" placeholder="phone number" />
                                     </div>
                                 </div>
 
@@ -273,17 +291,33 @@
                                     </div>
                                 </div>
 
+
+
                                 <div class="col-12">
                                     <div class="form-group "><label>Address (Bld/house / Flat / Road , Block , Place , Country)</label>
-                                        <input required  v-model="form.address" type="text" class="form-control" placeholder="address" />
+                                        <input   v-model="form.address" type="text" class="form-control" placeholder="address" />
                                     </div>
                                 </div>
 
-                                <div class="col-12">
+                                <div class="col-6 col-md-6">
                                     <div class="form-group"><label>Comment </label>
-                                        <textarea class="form-control" v-model="form.comment"></textarea>
+                                        <textarea rows="4" class="form-control" v-model="form.comment"></textarea>
                                     </div>
                                 </div>
+
+                                <div class="col-6 col-md-6">
+                                    <div class="upload-image">
+                                        <div class="dropzone dropzone-area dz-clickable" style="width: 100%" data-input="memImg" data-preview="mem_holder">
+                                            <div class="dz-message lfm" data-input="memImg" data-preview="mem_holder" >
+                                                <br />
+                                                <div id="mem_holder" style="margin-top:15px; margin-bottom:20px;max-height:200px;"></div>
+                                            </div>
+                                            <p class="text-center text-capitalize">Click to select image </p>
+                                        </div>
+                                        <input id="memImg" class="form-control" type="hidden" name="memImg">
+                                    </div>
+                                </div>
+
 
 
 
@@ -311,11 +345,12 @@ import Errors from "./Errors";
 export default {
     components: {Errors},
 
-    props:['card_data','url','p_methods','con_methods','status','post_url','members','p_types','card_types','view_card'],
+    props:['card_data','url','send_mail','p_methods','con_methods','status','post_url','members','p_types','card_types','view_card'],
 name: "EditCard",
     data() {
         return {
             more : false,
+            editImg:'',
             edit : false,
             add_title : 'Add more member',
             loaded : false,
@@ -360,6 +395,22 @@ name: "EditCard",
         toast(){
             toastr.success('Have fun storming the castle!', 'Miracle Max Says')
         },
+        saveEditImage(){
+            let img = $('input[id=editImg]').val()
+            if(img){
+                this.card.photo = img;
+                this.update();
+            }else{
+                toastr.error('No new photo uploaded')
+            }
+
+        },
+        updateCardStatus(status, item){
+            axios.put(item.update_url, item).then((res)=> {
+                console.log(res.data);
+                toastr.success('Card Status successfully updated')
+            })
+        },
         updateStatus(status){
             this.card.status = status;
         },
@@ -369,6 +420,7 @@ name: "EditCard",
             this.loaded = false
             axios.put(this.url, this.card).then((res)=>{
                 console.log(res.data);
+                this.loading = false;
                 this.card = res.data
                 toastr.success('Card information updated')
                 setTimeout(()=>{
@@ -381,11 +433,30 @@ name: "EditCard",
                 }
             })
         },
+        sendEmail(id){
+            axios.post(this.send_mail, {id:id}).then((res)=>{
+                if(res.data.status === 1){
+                    toastr.success('Mail successfully sent to card user')
+                }
+                else if(res.data.status === 2){
+                    toastr.error('Invalid email address, pls correct card email address to send mail')
+                }
+                else {
+                    toastr.success('Something went wrong')
+                }
+
+            });
+        },
         updateMember(){
             this.loading = true;
             this.error = null
+            let img = $('input[id=memImg]').val();
+            if(img){
+                this.form.photo = img;
+            }
             axios.put(this.form.update_url, this.form).then((res)=>{
                 // this.members = res.data
+                this.loading = false;
                 toastr.success('Member details updated successfully')
                 let element = this.$refs.modal
                 $(element).modal('hide')
@@ -425,7 +496,9 @@ name: "EditCard",
         },
         submitMember(){
             this.loading = true;
-            this.error = null
+            this.error = null;
+            this.form.photo = $('input[id=memImg]').val();
+
             axios.post(this.post_url, this.form).then((res)=>{
                 this.loading = false
                 this.members = res.data
@@ -441,6 +514,7 @@ name: "EditCard",
             })
         },
         submit(){
+
             this.loading = true;
             axios.post(this.url,{
                 plan_id : this.active_plan.id,
@@ -458,6 +532,11 @@ name: "EditCard",
             })
         }
     },
+    computed : {
+        pImg(){
+            return  $('input[id=editImg]').val();
+        }
+    },
     watch : {
         card: {
             deep: true,
@@ -467,7 +546,8 @@ name: "EditCard",
                     this.update();
                 }
 
-        }
+
+            }
     }
     }
 
