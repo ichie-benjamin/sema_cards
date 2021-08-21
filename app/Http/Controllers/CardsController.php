@@ -155,6 +155,8 @@ class CardsController extends Controller
 
         $cards = Card::whereId($id)->orWhere('policy_no',$id)->orWhere('card_id',$id)->where('status','!=',null)->get();
 
+        $cards = Card::whereId($id)->orWhere('policy_no',$id)->orWhere('card_id',$id)->where('status','!=',null)->get();
+
 
         return view('admin.cards.print_cards', compact('cards','design'));
     }
