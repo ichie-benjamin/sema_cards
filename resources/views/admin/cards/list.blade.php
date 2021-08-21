@@ -48,6 +48,7 @@
                             </div>
                             <div class="col-md-4">
                                 <button class="btn btn-primary mt-4" type="submit">Submit</button>
+                                <a href="{{ route('cards.index') }}?imported" class="btn btn-warning mt-4">View all imported</a>
                             </div>
                             </div>
                         </form>

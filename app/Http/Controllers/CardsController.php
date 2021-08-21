@@ -47,6 +47,9 @@ class CardsController extends Controller
          if($request->has('today')){
             $card->whereDate('issue_date', Carbon::today());
         }
+         if($request->has('imported')){
+            $card->where('imported', 1);
+        }
          if($request->get('from') && $request->get('to')){
              $from = date($request->get('from'));
              $to = date($request->get('to'));
