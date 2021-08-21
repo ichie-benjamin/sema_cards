@@ -36,9 +36,10 @@ class Card extends Model
                   'status',
                   'issue_date',
                   'expiry_date',
-                  'first_issue_date','paid','photo',
+                  'first_issue_date','paid','photo','imported',
                   'email',
                   'card_id',
+                  'online',
                   'is_parent',
                   'policy_no'
               ];

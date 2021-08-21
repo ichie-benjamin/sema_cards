@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Imports\CardImport;
 use App\Models\PackageType;
 use App\Models\User;
 use App\Models\Card;
@@ -12,7 +13,9 @@ use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
+use Maatwebsite\Excel\Facades\Excel;
 use PDF;
 
 
@@ -28,7 +31,14 @@ class CardsController extends Controller
             $card->where('cpr_no',$request->get('cpr'));
         }
          if($request->get('s')){
-            $card->where('status',$request->get('s'));
+             if($request->get('s') == 'paid'){
+                 $card->where('paid',1);
+             }else {
+                 $card->where('status',$request->get('s'));
+             }
+        }
+         if($request->has('online')){
+            $card->where('online',1);
         }
          if($request->get('from') && $request->get('to')){
              $from = date($request->get('from'));
@@ -53,11 +63,64 @@ class CardsController extends Controller
         {
             $design = $request->has('no_design') ? false : true;
             $pdf = PDF::loadView('admin.cards.print_cards',compact('cards','design'));
+            $pdf->setPaper(array(30,-30,450,240),'portrait');
             return $pdf->download($id.'.pdf');
         }
 
+
         return view('admin.cards.cards', compact('cards','design'));
     }
+
+
+    public function cardOnline($id, Request $request)
+    {
+        $design = $request->has('no_design') ? false : true;
+       $card =  Card::wherePolicyNo($id)->first();
+       $cards =  Card::wherePolicyNo($id)->get();
+        if(!$card){
+            return redirect()->route('check')->with('error_message', 'Something went wrong');
+        }
+
+        if($request->has('download'))
+        {
+            $design = $request->has('no_design') ? false : true;
+            $pdf = PDF::loadView('admin.cards.print_cards',compact('cards','design'));
+            $pdf->setPaper(array(30,-30,450,240),'portrait');
+            return $pdf->download($id.'_online.pdf');
+        }
+
+        if($request->has('email'))
+        {
+            if($card->email && filter_var($card->email, FILTER_VALIDATE_EMAIL)) {
+                Notification::route('mail', $card->email)->notify(new sendCard($card));
+                $msg = 'Card successfully emailed to '. $card->email;
+                return redirect()->back()->with('success_message', $msg);
+            }else{
+                return redirect()->back()->with('error_message', 'no valid email found went wrong');
+            }
+        }
+        return view('cards', compact('card','design'));
+    }
+
+    public function onlineSearch(Request  $request){
+        $cpr = $request['cpr'];
+        if($cpr){
+            $card = Card::where('cpr_no', $cpr)->first();
+            if($card){
+                $data['status'] = 1;
+                $data['card'] = $card;
+                return  $data;
+            }else{
+                $data['status'] = 0;
+                return $data;
+            }
+        }else{
+            $data['status'] = 0;
+            return $data;
+        }
+    }
+
+
     public function printCards(Request $request){
 //        $dompdf = new Dompdf();
         if(!$request->get('id')){
@@ -97,6 +160,33 @@ class CardsController extends Controller
         $p_type = PackageType::all();
 
         return view('admin.cards.create', compact('agents','agent','card_types','p_methods','con_methods','p_type','status'));
+    }
+
+    public function importCards(Request $request)
+    {
+        $request->validate([
+            'import_file' => 'required|mimes:csv,txt'
+        ]);
+        Excel::import(new CardImport(),request()->file('import_file'));
+        return back()->with('success_message', 'Cards was successfully imported.');
+    }
+
+    public function onlineStore(Request $request)
+    {
+
+            $data = $this->getData($request);
+
+        $request->validate(['cpr_no' => 'required|string|unique:cards,cpr_no']);
+
+        $data['expiry_date'] = $this->setExpiryDate($data['issue_date'], $data['period']);
+
+        $data['agent_id'] = $this->publicAgent();
+
+            $card = Card::create($data);
+
+        return redirect()->back()
+            ->with('success_message', 'Card was successfully submited');
+
     }
 
     public function store(Request $request)
@@ -143,6 +233,15 @@ class CardsController extends Controller
         $members = Card::whereCardId($id)->whereIsParent(0)->get();
         $card = Card::findOrFail($id);
         return view('admin.cards.edit', compact('card','card_types','p_types','con_methods','status','p_methods','members'));
+    }
+
+    public function publicAgent(){
+        $agent = User::whereUsername('sama')->first();
+        if($agent){
+            return $agent->id;
+        }else{
+            return 1;
+        }
     }
 
     public function cardAgent(){
@@ -201,17 +300,12 @@ class CardsController extends Controller
 
     public function destroy($id)
     {
-        try {
             $card = Card::findOrFail($id);
             $card->delete();
 
             return redirect()->route('cards.card.index')
                 ->with('success_message', 'Card was successfully deleted.');
-        } catch (Exception $exception) {
 
-            return back()->withInput()
-                ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request.']);
-        }
     }
 
     public function policy(){
@@ -248,6 +342,7 @@ class CardsController extends Controller
             'first_issue_date' => 'nullable',
             'email' => 'nullable',
             'paid' => 'nullable',
+            'online' => 'nullable',
             'card_id' => 'nullable',
             'agent_id' => 'nullable',
             'is_parent' => 'boolean|nullable',
@@ -260,6 +355,8 @@ class CardsController extends Controller
         $data['card_type'] = $request->get('card_type') ?: 'sama healthsaver card';
 
         $data['issue_date'] = $request->get('issue_date') ?: Carbon::now();
+        $data['status'] = $request->get('status') ?: 'pending';
+        $data['paid'] = $request->get('paid') ?: 0;
         $data['first_issue_date'] = $data['issue_date'];
 
         if($data['status'] == 'paid'){

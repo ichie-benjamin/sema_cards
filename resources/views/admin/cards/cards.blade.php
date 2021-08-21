@@ -45,6 +45,8 @@
                     @else
                         <a href="{{ request()->url() }}" class="btn btn-warning">Add design</a>
                     @endif
+
+
                 </div>
         </div>
         </form>
@@ -81,8 +83,11 @@
                     </div>
 
 
-                </div>
-                @endforeach
+                                    <a href="{{ route('online.card', $item->policy_no) }}" class="btn btn-primary">View Card Online</a>
+
+                                </div>
+
+                                @endforeach
             </div>
             <!-- end col -->
         </div>

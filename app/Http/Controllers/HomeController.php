@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Card;
+use App\Models\PackageType;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,13 +17,26 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
 
     public function index()
     {
         return redirect()->route('dashboard');
+    }
+
+    public function check(){
+        return view('check');
+    }
+    public function apply(){
+        $p_methods = ['card','benefit','cash'];
+        $con_methods = ['call','whatsapp','online'];
+//        $status = ['draft', 'pending' ,'expired','done','paid','print'];
+        $card_types =  ['sama healthsaver card'];
+        $p_type = PackageType::all();
+        return view('apply', compact('card_types','p_methods','con_methods','p_type'));
+
     }
     public function dashboard()
     {

@@ -12,6 +12,9 @@
                         </div>
                         <!--end col-->
                         <div class="col-auto align-self-center">
+                            <button type="button" @click="toogleImport()" class="btn btn-sm btn-warning" id="Dash_Date">
+                                <span class="day-name">Import Cards</span>
+                            </button>
                             <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
                                 <span class="day-name" id="Day_Name">Today:</span>&nbsp; <span class="" id="Select_date">Jan 11</span> <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
                             </a>
@@ -27,7 +30,30 @@
         </div>
         <!--end row--><!-- end page title end breadcrumb -->
 
+        @include('admin.partials.msg.error')
 
+        <div class="row">
+
+            <div class="col-12" style="padding: 20px">
+                <div class="card">
+
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('cards.import') }}">
+                            {{ csrf_field() }}
+                            <div class="row m-4">
+                            <div class="col-md-4">
+                                <div class="form-group ">
+                                    <label>CSV File</label>
+                                    <input class="form-control" type="file" name="import_file" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary mt-4" type="submit">Submit</button>
+                            </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-12">
@@ -117,7 +143,7 @@
 {{--                                            <a class="btn btn-warning" href="{{ route('cards.edit', i.id) }}"><i class="fa fa-edit"></i> </a>--}}
                                             <a class="btn btn-warning" :href="i.edit_url"><i class="fa fa-edit"></i> </a>
                                                 <a v-if="i.paid" class="btn btn-success" :href="i.view_url">View</a>
-                                            <a class="btn btn-danger" href=""><i class="fa fa-trash"></i> </a>
+                                            <a class="btn btn-danger"  :href="'/admin/card/delete/'+i.id"><i class="fa fa-trash"></i> </a>
                                         </td>
 
                                     </tr>

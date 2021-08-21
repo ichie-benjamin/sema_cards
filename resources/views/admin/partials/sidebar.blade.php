@@ -30,6 +30,9 @@
                         <a class="nav-link" href="{{ route('cards.index') }}"><i class="ti-control-record"></i>All Cards</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cards.index') }}?online"><i class="ti-control-record"></i>Online Cards</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('cards.index') }}"><i class="ti-control-record"></i>Agent Cards</a>
                     </li>
 

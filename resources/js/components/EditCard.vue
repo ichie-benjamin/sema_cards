@@ -7,6 +7,7 @@
                 </div>
                 <div class="col-auto align-self-center">
                     <button @click="updateStatus('draft')" class="btn " :class="card.status === 'draft' ? 'btn-success' : 'btn-outline-success'">Draft</button>
+                    <button @click="updateStatus('pending')" class="btn " :class="card.status === 'pending' ? 'btn-success' : 'btn-outline-success'">Pending</button>
                     <button @click="updateStatus('done')" class="btn " :class="card.status === 'done' ? 'btn-success' : 'btn-outline-success'">Done</button>
                     <button @click="updateStatus('paid')" class="btn " :class="card.status === 'paid' ? 'btn-success' : 'btn-outline-success'">Paid</button>
                     <button @click="updateStatus('print')" class="btn " :class="card.status === 'print' ? 'btn-success' : 'btn-outline-success'">Print</button>

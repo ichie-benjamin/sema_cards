@@ -21,7 +21,7 @@
         .sema-card .header {
             height:60px;
             width:100%;
-            padding:8px 20px;
+            padding:4px 20px;
         }
         .sema-card .body {
             padding: 17px 10px;
@@ -61,7 +61,7 @@
 <div>
     @foreach($cards as $item)
         @if ($design)
-            <div class="sema-card page-break" style="background-image: url({{ public_path('images/card2.jpeg') }})">
+            <div class="sema-card {{ $loop->index+1 < count($cards) ? 'page-break' : '' }} " style="background-image: url({{ public_path('images/card2.jpeg') }})">
                 @else
                     <div class="sema-card page-break">
                         @endif
@@ -79,7 +79,7 @@
                                     <tr><td>Valid till </td><td>:{{ $item->expiry_date }}</td></tr>
                                 </table>
 
-                                <h3 style="margin-top: 13px"><strong>This is Not Insurance Card</strong></h3>
+                                <h3 style="margin-top: 10px"><strong>This is Not Insurance Card</strong></h3>
 
                             </div>
 

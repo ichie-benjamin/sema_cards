@@ -21,6 +21,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/check', [HomeController::class, 'check'])->name('check');
+Route::get('/apply', [HomeController::class, 'apply'])->name('apply');
+Route::get('/online/card/{id}', [CardsController::class, 'cardOnline'])->name('online.card');
+
+Route::post('/card/online/store', [CardsController::class, 'onlineStore'])->name('cards.online.store');
+Route::post('/card/online/search', [CardsController::class, 'onlineSearch'])->name('cards.online.search');
+
+
 
 Auth::routes();
 
@@ -39,7 +47,13 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
     Route::get('/preview/{id}', [CardsController::class, 'printCard'])->name('preview');
 
     Route::post('/print/cards', [CardsController::class, 'printCards'])->name('print.cards');
+
     Route::post('/card/mail', [CardsController::class, 'sendEmail'])->name('send.email.cards');
+    Route::get('/card/delete/{id}', [CardsController::class, 'destroy'])->name('card.delete');
+
+
+    Route::post('/card/import', [CardsController::class, 'importCards'])->name('cards.import');
+
 
 
 
