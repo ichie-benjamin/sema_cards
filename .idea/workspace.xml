@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notifications/sendCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/sendCard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/apply.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/apply.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +257,7 @@
       <workItem from="1629447976043" duration="459000" />
       <workItem from="1629477037554" duration="582000" />
       <workItem from="1629492817096" duration="12716000" />
-      <workItem from="1629541151428" duration="13990000" />
+      <workItem from="1629541151428" duration="14968000" />
     </task>
     <servers />
   </component>
@@ -293,7 +290,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>266</line>
+          <line>269</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="setExpiryDate" />

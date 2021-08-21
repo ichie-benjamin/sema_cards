@@ -132,7 +132,7 @@
                                 </div>
                             </div>
 
-                            <input type="hidden" class="form-control" name="status" value="pending" />
+                            <input type="hidden" class="form-control" name="status" value="draft" />
                             <input type="hidden" class="form-control" name="online" value="1" />
 
                             <div class="col-12">
