@@ -120,7 +120,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for="i in cards.data">
+                                    <tr v-for="i in cards.data" :key="i.id">
                                         <td class="text-capitalize">
                                             @{{ i.issue_date }} <br/>
                                             @{{ i.agent.full_name }}</td>
