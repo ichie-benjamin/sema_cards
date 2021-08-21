@@ -2223,6 +2223,73 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2314,6 +2381,7 @@ __webpack_require__.r(__webpack_exports__);
         }, 3000);
       })["catch"](function (error) {
         _this2.loading = false;
+        _this2.loaded = true;
 
         if (error.response.status === 422) {
           _this2.errors = error.response.data.errors;
@@ -2345,7 +2413,9 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.put(this.form.update_url, this.form).then(function (res) {
-        // this.members = res.data
+        // this.members = []
+        // console.log(res.data)
+        _this3.members = res.data;
         _this3.loading = false;
         toastr.success('Member details updated successfully');
         var element = _this3.$refs.modal;
@@ -20565,931 +20635,853 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
-          _c(
-            "div",
-            { staticClass: "row" },
-            [
-              _c("div", { staticClass: "col-6" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [_vm._v("Full name")]),
-                  _vm._v(" "),
-                  _c("input", {
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Payment Method")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.card.full_name,
-                        expression: "card.full_name"
+                        value: _vm.card.payment_method,
+                        expression: "card.payment_method"
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      placeholder: "Full name"
-                    },
-                    domProps: { value: _vm.card.full_name },
                     on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.card, "full_name", $event.target.value)
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "payment_method",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
                       }
                     }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6 col-md-3" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [_vm._v("CPR No.")]),
-                  _vm._v(" "),
-                  _c("input", {
+                  },
+                  _vm._l(_vm.p_methods, function(item) {
+                    return _c("option", { staticClass: "text-capitalize" }, [
+                      _vm._v(_vm._s(item))
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Contact Method")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.card.cpr_no,
-                        expression: "card.cpr_no"
+                        value: _vm.card.contact_method,
+                        expression: "card.contact_method"
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      placeholder: "CPR NO"
-                    },
-                    domProps: { value: _vm.card.cpr_no },
                     on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.card, "cpr_no", $event.target.value)
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "contact_method",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
                       }
                     }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6 col-md-3" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [_vm._v("Email.")]),
-                  _vm._v(" "),
-                  _c("input", {
+                  },
+                  _vm._l(_vm.con_methods, function(item) {
+                    return _c("option", { staticClass: "text-capitalize" }, [
+                      _vm._v(_vm._s(item))
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Package Type")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.card.email,
-                        expression: "card.email"
+                        value: _vm.card.package_type,
+                        expression: "card.package_type"
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "text", placeholder: "Email Address" },
-                    domProps: { value: _vm.card.email },
                     on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.card, "email", $event.target.value)
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "package_type",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
                       }
                     }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6 col-md-3" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [_vm._v("Gender")]),
+                  },
+                  _vm._l(_vm.p_types, function(item) {
+                    return _c(
+                      "option",
+                      {
+                        staticClass: "text-capitalize",
+                        domProps: { value: item.id }
+                      },
+                      [_vm._v(_vm._s(item.name))]
+                    )
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Period")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.period,
+                        expression: "card.period"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "period",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "3" } }, [
+                      _vm._v("3 Months")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "6" } }, [
+                      _vm._v("6 Months")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "12" } }, [
+                      _vm._v("1 Year")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "24" } }, [
+                      _vm._v("2 Years")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "60" } }, [
+                      _vm._v("5 Years")
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Status")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.status,
+                        expression: "card.status"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "status",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  _vm._l(_vm.status, function(item) {
+                    return _c("option", { staticClass: "text-capitalize" }, [
+                      _vm._v(_vm._s(item))
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Issue Date")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.issue_date,
+                      expression: "card.issue_date"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "date", placeholder: "2021-06-04" },
+                  domProps: { value: _vm.card.issue_date },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "issue_date", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("First Issue Date")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.first_issue_date,
+                      expression: "card.first_issue_date"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "date", placeholder: "2021-06-04" },
+                  domProps: { value: _vm.card.first_issue_date },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.card,
+                        "first_issue_date",
+                        $event.target.value
+                      )
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Full name")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.full_name,
+                      expression: "card.full_name"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    required: "",
+                    type: "text",
+                    placeholder: "Full name"
+                  },
+                  domProps: { value: _vm.card.full_name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "full_name", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("CPR No.")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.cpr_no,
+                      expression: "card.cpr_no"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { required: "", type: "text", placeholder: "CPR NO" },
+                  domProps: { value: _vm.card.cpr_no },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "cpr_no", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Email.")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.email,
+                      expression: "card.email"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Email Address" },
+                  domProps: { value: _vm.card.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "email", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Gender")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.gender,
+                        expression: "card.gender"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "gender",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "male" } }, [
+                      _vm._v("Male")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "female" } }, [
+                      _vm._v("Female")
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Mobile No.")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.mobile,
+                      expression: "card.mobile"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "mobile number" },
+                  domProps: { value: _vm.card.mobile },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "mobile", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Phone No.")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.phone,
+                      expression: "card.phone"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "phone number" },
+                  domProps: { value: _vm.card.phone },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "phone", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Card Type")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.card_type,
+                        expression: "card.card_type"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "card_type",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  _vm._l(_vm.card_types, function(item) {
+                    return _c("option", { domProps: { value: item } }, [
+                      _vm._v(_vm._s(item))
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [
+                  _vm._v(
+                    "Address (Bld/house / Flat / Road , Block , Place , Country)"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.address,
+                      expression: "card.address"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "address" },
+                  domProps: { value: _vm.card.address },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "address", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Comment ")]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.card.comment,
+                      expression: "card.comment"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { rows: "4" },
+                  domProps: { value: _vm.card.comment },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.card, "comment", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6" }, [
+              _c("div", { staticClass: "upload-image" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.editImg,
+                      expression: "editImg"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "editImg", type: "hidden", name: "photo" },
+                  domProps: { value: _vm.editImg },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.editImg = $event.target.value
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.members.length > 0
+              ? _c("div", { staticClass: "col-12 mb-2" }, [
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("h4", [
+                    _vm._v("Members (" + _vm._s(_vm.members.length) + ")")
+                  ]),
                   _vm._v(" "),
                   _c(
-                    "select",
+                    "div",
                     {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.card.gender,
-                          expression: "card.gender"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.card,
-                            "gender",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        }
-                      }
+                      staticClass: "table-responsive mb-0",
+                      attrs: { "data-pattern": "priority-columns" }
                     },
                     [
-                      _c("option", { attrs: { value: "male" } }, [
-                        _vm._v("Male")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "female" } }, [
-                        _vm._v("Female")
-                      ])
+                      _c(
+                        "table",
+                        {
+                          staticClass:
+                            "table table-striped table-bordered mb-0",
+                          attrs: { id: "tech-companies-1" }
+                        },
+                        [
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            _vm._l(_vm.members, function(item) {
+                              return _c("tr", [
+                                _c("td", { staticClass: "text-capitalize" }, [
+                                  _vm._v(_vm._s(item.full_name))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [_vm._v(_vm._s(item.cpr_no))]),
+                                _vm._v(" "),
+                                _c("td", [_vm._v(_vm._s(item.phone))]),
+                                _vm._v(" "),
+                                _c("td", [_vm._v(_vm._s(item.email))]),
+                                _vm._v(" "),
+                                _c("td", { staticClass: "text-capitalize" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: item.status,
+                                          expression: "item.status"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      on: {
+                                        change: [
+                                          function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              item,
+                                              "status",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          },
+                                          function($event) {
+                                            return _vm.updateCardStatus(
+                                              item.status,
+                                              item
+                                            )
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    _vm._l(_vm.status, function(it) {
+                                      return _c(
+                                        "option",
+                                        { domProps: { value: it } },
+                                        [_vm._v(" " + _vm._s(it))]
+                                      )
+                                    }),
+                                    0
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _vm._v(_vm._s(item.paid ? "Yes" : "No"))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [_vm._v(_vm._s(item.expiry_date))]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _vm._m(2, true),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-warning",
+                                      attrs: { type: "button" },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.editMember(item)
+                                        }
+                                      }
+                                    },
+                                    [_c("i", { staticClass: "fa fa-edit" })]
+                                  )
+                                ])
+                              ])
+                            }),
+                            0
+                          )
+                        ]
+                      )
                     ]
                   )
                 ])
-              ]),
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  attrs: { type: "button" },
+                  on: { click: _vm.update }
+                },
+                [_vm._v("Update")]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-6 col-md-3" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [_vm._v("Mobile No.")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.mobile,
-                        expression: "card.mobile"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text", placeholder: "mobile number" },
-                    domProps: { value: _vm.card.mobile },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.card, "mobile", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button" },
+                  on: { click: _vm.addMember }
+                },
+                [_vm._v(" Add more people")]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-6 col-md-3" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [_vm._v("Phone No.")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.phone,
-                        expression: "card.phone"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text", placeholder: "phone number" },
-                    domProps: { value: _vm.card.phone },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.card, "phone", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6 col-md-3" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [_vm._v("Card Type")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
+              _vm.card.paid > 0
+                ? _c(
+                    "a",
                     {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.card.card_type,
-                          expression: "card.card_type"
-                        }
-                      ],
-                      staticClass: "form-control",
+                      staticClass: "btn btn-primary",
+                      attrs: { href: "/admin/card/" + _vm.card.policy_no }
+                    },
+                    [_vm._v("View Cards")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.card.paid > 0
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: {
+                        href: "/admin/card/" + _vm.card.policy_no + "?download"
+                      }
+                    },
+                    [_vm._v("Print Cards")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                [_vm._v("Invoice")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button" },
+                  on: { click: _vm.saveEditImage }
+                },
+                [_vm._v("Save Photo")]
+              ),
+              _vm._v(" "),
+              _vm.card.paid > 0
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-warning",
+                      attrs: { type: "button", disabled: _vm.loading },
                       on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.card,
-                            "card_type",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
+                        click: function($event) {
+                          return _vm.sendEmail(_vm.card.id)
                         }
                       }
                     },
-                    _vm._l(_vm.card_types, function(item) {
-                      return _c("option", { domProps: { value: item } }, [
-                        _vm._v(_vm._s(item))
-                      ])
-                    }),
-                    0
+                    [_vm._v("Send Email")]
                   )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-12" }, [
-                _c("div", { staticClass: "form-group " }, [
-                  _c("label", [
-                    _vm._v(
-                      "Address (Bld/house / Flat / Road , Block , Place , Country)"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.address,
-                        expression: "card.address"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text", placeholder: "address" },
-                    domProps: { value: _vm.card.address },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.card, "address", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Comment ")]),
-                  _vm._v(" "),
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.comment,
-                        expression: "card.comment"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { rows: "4" },
-                    domProps: { value: _vm.card.comment },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.card, "comment", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6" }, [
-                _c("div", { staticClass: "upload-image" }, [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.editImg,
-                        expression: "editImg"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { id: "editImg", type: "hidden", name: "photo" },
-                    domProps: { value: _vm.editImg },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.editImg = $event.target.value
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _vm.more
-                ? [
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("Payment Method")]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.card.payment_method,
-                                expression: "card.payment_method"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.card,
-                                  "payment_method",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          _vm._l(_vm.p_methods, function(item) {
-                            return _c(
-                              "option",
-                              { staticClass: "text-capitalize" },
-                              [_vm._v(_vm._s(item))]
-                            )
-                          }),
-                          0
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("Contact Method")]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.card.contact_method,
-                                expression: "card.contact_method"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.card,
-                                  "contact_method",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          _vm._l(_vm.con_methods, function(item) {
-                            return _c(
-                              "option",
-                              { staticClass: "text-capitalize" },
-                              [_vm._v(_vm._s(item))]
-                            )
-                          }),
-                          0
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("Package Type")]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.card.package_type,
-                                expression: "card.package_type"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.card,
-                                  "package_type",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          _vm._l(_vm.p_types, function(item) {
-                            return _c(
-                              "option",
-                              {
-                                staticClass: "text-capitalize",
-                                domProps: { value: item.id }
-                              },
-                              [_vm._v(_vm._s(item.name))]
-                            )
-                          }),
-                          0
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("Period")]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.card.period,
-                                expression: "card.period"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.card,
-                                  "period",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { attrs: { value: "3" } }, [
-                              _vm._v("3 Months")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "6" } }, [
-                              _vm._v("6 Months")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "12" } }, [
-                              _vm._v("1 Year")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "24" } }, [
-                              _vm._v("2 Years")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "60" } }, [
-                              _vm._v("5 Years")
-                            ])
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("Status")]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.card.status,
-                                expression: "card.status"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.card,
-                                  "status",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          _vm._l(_vm.status, function(item) {
-                            return _c(
-                              "option",
-                              { staticClass: "text-capitalize" },
-                              [_vm._v(_vm._s(item))]
-                            )
-                          }),
-                          0
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("Issue Date")]),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.card.issue_date,
-                              expression: "card.issue_date"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "date", placeholder: "2021-06-04" },
-                          domProps: { value: _vm.card.issue_date },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.card,
-                                "issue_date",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("Expiry Date")]),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.card.expiry_date,
-                              expression: "card.expiry_date"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            disabled: "",
-                            placeholder: "2021-06-04"
-                          },
-                          domProps: { value: _vm.card.expiry_date },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.card,
-                                "expiry_date",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6 col-md-3" }, [
-                      _c("div", { staticClass: "form-group " }, [
-                        _c("label", [_vm._v("First Issue Date")]),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.card.first_issue_date,
-                              expression: "card.first_issue_date"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "date", placeholder: "2021-06-04" },
-                          domProps: { value: _vm.card.first_issue_date },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.card,
-                                "first_issue_date",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  ]
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.members.length > 0
-                ? _c("div", { staticClass: "col-12 mb-2" }, [
-                    _c("hr"),
-                    _vm._v(" "),
-                    _c("h4", [
-                      _vm._v("Members (" + _vm._s(_vm.members.length) + ")")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "table-responsive mb-0",
-                        attrs: { "data-pattern": "priority-columns" }
-                      },
-                      [
-                        _c(
-                          "table",
-                          {
-                            staticClass:
-                              "table table-striped table-bordered mb-0",
-                            attrs: { id: "tech-companies-1" }
-                          },
-                          [
-                            _vm._m(1),
-                            _vm._v(" "),
-                            _c(
-                              "tbody",
-                              _vm._l(_vm.members, function(item) {
-                                return _c("tr", [
-                                  _c("td", { staticClass: "text-capitalize" }, [
-                                    _vm._v(_vm._s(item.full_name))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", [_vm._v(_vm._s(item.cpr_no))]),
-                                  _vm._v(" "),
-                                  _c("td", [_vm._v(_vm._s(item.phone))]),
-                                  _vm._v(" "),
-                                  _c("td", [_vm._v(_vm._s(item.email))]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-capitalize" }, [
-                                    _c(
-                                      "select",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: item.status,
-                                            expression: "item.status"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        on: {
-                                          change: [
-                                            function($event) {
-                                              var $$selectedVal = Array.prototype.filter
-                                                .call(
-                                                  $event.target.options,
-                                                  function(o) {
-                                                    return o.selected
-                                                  }
-                                                )
-                                                .map(function(o) {
-                                                  var val =
-                                                    "_value" in o
-                                                      ? o._value
-                                                      : o.value
-                                                  return val
-                                                })
-                                              _vm.$set(
-                                                item,
-                                                "status",
-                                                $event.target.multiple
-                                                  ? $$selectedVal
-                                                  : $$selectedVal[0]
-                                              )
-                                            },
-                                            function($event) {
-                                              return _vm.updateCardStatus(
-                                                item.status,
-                                                item
-                                              )
-                                            }
-                                          ]
-                                        }
-                                      },
-                                      _vm._l(_vm.status, function(it) {
-                                        return _c(
-                                          "option",
-                                          { domProps: { value: it } },
-                                          [_vm._v(" " + _vm._s(it))]
-                                        )
-                                      }),
-                                      0
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", [
-                                    _vm._v(_vm._s(item.paid ? "Yes" : "No"))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", [_vm._v(_vm._s(item.expiry_date))]),
-                                  _vm._v(" "),
-                                  _c("td", [
-                                    _vm._m(2, true),
-                                    _vm._v(" "),
-                                    _c(
-                                      "button",
-                                      {
-                                        staticClass: "btn btn-warning",
-                                        attrs: { type: "button" },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.editMember(item)
-                                          }
-                                        }
-                                      },
-                                      [_c("i", { staticClass: "fa fa-edit" })]
-                                    )
-                                  ])
-                                ])
-                              }),
-                              0
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-12" }, [
-                !_vm.more
-                  ? _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-warning",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.more = true
-                          }
-                        }
-                      },
-                      [_vm._v("View more details")]
-                    )
-                  : _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-danger",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.more = false
-                          }
-                        }
-                      },
-                      [_vm._v("Hide details")]
-                    ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-success",
-                    attrs: { type: "button" },
-                    on: { click: _vm.addMember }
-                  },
-                  [_vm._v(" Add more people")]
-                ),
-                _vm._v(" "),
-                _vm.card.paid > 0
-                  ? _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary",
-                        attrs: { href: "/admin/card/" + _vm.card.policy_no }
-                      },
-                      [_vm._v("View Cards")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.card.paid > 0
-                  ? _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-success",
-                        attrs: {
-                          href:
-                            "/admin/card/" + _vm.card.policy_no + "?download"
-                        }
-                      },
-                      [_vm._v("Print Cards")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "btn btn-primary", attrs: { href: "#" } },
-                  [_vm._v("Invoice")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-success",
-                    attrs: { type: "button" },
-                    on: { click: _vm.saveEditImage }
-                  },
-                  [_vm._v("Save Photo")]
-                ),
-                _vm._v(" "),
-                _vm.card.paid > 0
-                  ? _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-warning",
-                        attrs: { type: "button", disabled: _vm.loading },
-                        on: {
-                          click: function($event) {
-                            return _vm.sendEmail(_vm.card.id)
-                          }
-                        }
-                      },
-                      [_vm._v("Send Email")]
-                    )
-                  : _vm._e()
-              ])
-            ],
-            2
-          ),
+                : _vm._e()
+            ])
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -21549,6 +21541,320 @@ var render = function() {
                             },
                             [
                               _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Payment Method")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.payment_method,
+                                            expression: "form.payment_method"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "payment_method",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      _vm._l(_vm.p_methods, function(item) {
+                                        return _c(
+                                          "option",
+                                          { staticClass: "text-capitalize" },
+                                          [_vm._v(_vm._s(item))]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Contact Method")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact_method,
+                                            expression: "form.contact_method"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact_method",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      _vm._l(_vm.con_methods, function(item) {
+                                        return _c(
+                                          "option",
+                                          { staticClass: "text-capitalize" },
+                                          [_vm._v(_vm._s(item))]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Package Type")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.package_type,
+                                            expression: "form.package_type"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "package_type",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      _vm._l(_vm.p_types, function(item) {
+                                        return _c(
+                                          "option",
+                                          {
+                                            staticClass: "text-capitalize",
+                                            domProps: { value: item.id }
+                                          },
+                                          [_vm._v(_vm._s(item.name))]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Period")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.period,
+                                            expression: "form.period"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "period",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "3" } },
+                                          [_vm._v("3 Months")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "6" } },
+                                          [_vm._v("6 Months")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "12" } },
+                                          [_vm._v("1 Year")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "24" } },
+                                          [_vm._v("2 Years")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "60" } },
+                                          [_vm._v("5 Years")]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Issue Date")]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.issue_date,
+                                          expression: "form.issue_date"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: {
+                                        type: "date",
+                                        placeholder: "2021-06-04"
+                                      },
+                                      domProps: { value: _vm.form.issue_date },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "issue_date",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    })
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("First Issue Date")]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.first_issue_date,
+                                          expression: "form.first_issue_date"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: {
+                                        type: "date",
+                                        placeholder: "2021-06-04"
+                                      },
+                                      domProps: {
+                                        value: _vm.form.first_issue_date
+                                      },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "first_issue_date",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    })
+                                  ])
+                                ]),
+                                _vm._v(" "),
                                 _c("div", { staticClass: "col-6" }, [
                                   _c("div", { staticClass: "form-group " }, [
                                     _c("label", [_vm._v("Full name")]),

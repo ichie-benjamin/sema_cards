@@ -137,7 +137,7 @@
                                                 <option v-for="it in status" :value="it"> @{{ it }}</option>
                                             </select>
                                         </td>
-                                        <td class="text-capitalize">@{{ i.package.name }}</td>
+                                        <td class="text-capitalize">@{{ i.p_name }}</td>
                                         <td>@{{ i.paid ? 'Yes' : 'No' }}</td>
                                         <td>@{{ i.expiry_date }}</td>
                                         <td>

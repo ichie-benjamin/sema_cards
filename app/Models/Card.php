@@ -16,7 +16,7 @@ class Card extends Model
 
     protected $primaryKey = 'id';
 
-    protected $appends = ['update_url','img','edit_url','view_url'];
+    protected $appends = ['update_url','img','edit_url','view_url','p_name'];
 
     protected $fillable = [
                   'full_name',
@@ -67,6 +67,14 @@ class Card extends Model
 //            return '/images/avatar.jpeg';
 //        }
         return $value;
+    }
+    public function getPNameAttribute()
+    {
+        if($this->package){
+            return optional($this->package)->name;
+        }else{
+            return 'none';
+        }
     }
 
     public function getImgAttribute()

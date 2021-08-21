@@ -291,7 +291,8 @@ class CardsController extends Controller
 
     public function update($id, Request $request)
     {
-            $data = $this->getData($request);
+
+     $data = $this->getData($request);
             $card = Card::findOrFail($id);
 
             if($data['issue_date'] != $card->issue_date || $data['period'] != $card->period){
@@ -302,7 +303,7 @@ class CardsController extends Controller
             if($res->is_parent){
                 return response()->json($res);
             }else{
-                $members = Card::whereCardId($res->id)->whereIsParent(0)->get();
+                $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
                 return response()->json($members);
             }
 
@@ -334,7 +335,7 @@ class CardsController extends Controller
     {
         $rules = [
                 'full_name' => 'string|min:1|required',
-            'gender' => 'string|min:1|nullable',
+            'gender' => 'string|nullable',
             'cpr_no' => 'nullable',
             'mobile' => 'nullable',
             'mobile2' => 'nullable',
@@ -342,12 +343,12 @@ class CardsController extends Controller
             'photo' => 'nullable',
             'address' => 'nullable',
             'card_type' => 'nullable',
-            'payment_method' => 'string|min:1|required',
-            'contact_method' => 'string|min:1|required',
-            'package_type' => 'numeric|required',
+            'payment_method' => 'nullable',
+            'contact_method' => 'nullable',
+            'package_type' => 'nullable',
             'comment' => 'nullable',
-            'period' => 'required',
-            'status' => 'string|min:1|required',
+            'period' => 'nullable',
+            'status' => 'nullable',
             'issue_date' => 'nullable',
             'first_issue_date' => 'nullable',
             'email' => 'nullable',
@@ -367,6 +368,7 @@ class CardsController extends Controller
         $data['issue_date'] = $request->get('issue_date') ?: Carbon::now();
         $data['status'] = $request->get('status') ?: 'pending';
         $data['paid'] = $request->get('paid') ?: 0;
+        $data['package_type'] = $request->get('package_type') ?: PackageType::first()->id;
         $data['first_issue_date'] = $data['issue_date'];
 
         if($data['status'] == 'paid'){

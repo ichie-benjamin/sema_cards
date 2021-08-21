@@ -125,7 +125,7 @@
             /*background: #ccc;*/
         }
         .sema-card .body td {
-            padding-right: 15px;
+            /*padding-right: 15px;*/
             font-weight: 400;
             font-size: 1.5em;
         }

@@ -19,7 +19,76 @@
 
         <div class="card-body">
 
+
+<!--            <template v-if="more">-->
+
+
+<!--            </template>-->
+
+
         <div class="row">
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Payment Method</label>
+                    <select class="form-control" v-model="card.payment_method">
+                        <option class="text-capitalize" v-for="item in p_methods">{{ item }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Contact Method</label>
+                    <select class="form-control" v-model="card.contact_method">
+                        <option class="text-capitalize" v-for="item in con_methods">{{ item }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Package Type</label>
+                    <select class="form-control" v-model="card.package_type">
+                        <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Period</label>
+                    <select class="form-control" v-model="card.period">
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">1 Year</option>
+                        <option value="24">2 Years</option>
+                        <option value="60">5 Years</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Status</label>
+                    <select class="form-control" v-model="card.status">
+                        <option class="text-capitalize" v-for="item in status">{{ item }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Issue Date</label>
+                    <input v-model="card.issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
+                </div>
+            </div>
+<!--            <div class="col-6 col-md-3">-->
+<!--                <div class="form-group "><label>Expiry Date</label>-->
+<!--                    <input v-model="card.expiry_date" type="text" disabled class="form-control" placeholder="2021-06-04"  />-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>First Issue Date</label>
+                    <input v-model="card.first_issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
+                </div>
+            </div>
+
+
+
+
             <div class="col-6">
                 <div class="form-group "><label>Full name</label>
                     <input required v-model="card.full_name" type="text" class="form-control" placeholder="Full name" />
@@ -88,68 +157,7 @@
                 </div>
             </div>
 
-            <template v-if="more">
 
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>Payment Method</label>
-                        <select class="form-control" v-model="card.payment_method">
-                            <option class="text-capitalize" v-for="item in p_methods">{{ item }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>Contact Method</label>
-                        <select class="form-control" v-model="card.contact_method">
-                            <option class="text-capitalize" v-for="item in con_methods">{{ item }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>Package Type</label>
-                        <select class="form-control" v-model="card.package_type">
-                            <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>Period</label>
-                        <select class="form-control" v-model="card.period">
-                            <option value="3">3 Months</option>
-                            <option value="6">6 Months</option>
-                            <option value="12">1 Year</option>
-                            <option value="24">2 Years</option>
-                            <option value="60">5 Years</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>Status</label>
-                        <select class="form-control" v-model="card.status">
-                            <option class="text-capitalize" v-for="item in status">{{ item }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>Issue Date</label>
-                        <input v-model="card.issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>Expiry Date</label>
-                        <input v-model="card.expiry_date" type="text" disabled class="form-control" placeholder="2021-06-04"  />
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="form-group "><label>First Issue Date</label>
-                        <input v-model="card.first_issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
-                    </div>
-                </div>
-
-            </template>
 
 
 
@@ -198,8 +206,8 @@
 
 
             <div class="col-12">
-                <button v-if="!more" @click="more = true" class="btn btn-warning" type="button">View more details</button>
-                <button v-else @click="more = false" class="btn btn-danger" type="button">Hide details</button>
+<!--                <button v-if="!more" @click="more = true" class="btn btn-warning" type="button">View more details</button>-->
+                <button  @click="update" class="btn btn-danger" type="button">Update</button>
                 <button type="button" class="btn btn-success" @click="addMember"> Add more people</button>
 <!--                <button  @click="update" type="button" class="btn btn-primary" >Save</button>-->
                 <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0" class="btn btn-primary" >View Cards</a>
@@ -227,6 +235,65 @@
                         <errors :errors="errors" v-if="errors"></errors>
                         <form @submit.prevent="memberSubmit" method="POST" class="form-parsley">
                             <div class="row">
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Payment Method</label>
+                                        <select class="form-control" v-model="form.payment_method">
+                                            <option class="text-capitalize" v-for="item in p_methods">{{ item }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Contact Method</label>
+                                        <select class="form-control" v-model="form.contact_method">
+                                            <option class="text-capitalize" v-for="item in con_methods">{{ item }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Package Type</label>
+                                        <select class="form-control" v-model="form.package_type">
+                                            <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Period</label>
+                                        <select class="form-control" v-model="form.period">
+                                            <option value="3">3 Months</option>
+                                            <option value="6">6 Months</option>
+                                            <option value="12">1 Year</option>
+                                            <option value="24">2 Years</option>
+                                            <option value="60">5 Years</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Issue Date</label>
+                                        <input v-model="form.issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
+                                    </div>
+                                </div>
+<!--                                <div class="col-6 col-md-3">-->
+<!--                                    <div class="form-group "><label>Expiry Date</label>-->
+<!--                                        <input v-model="form.expiry_date" type="text" disabled class="form-control" placeholder="2021-06-04"  />-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>First Issue Date</label>
+                                        <input v-model="form.first_issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
                                 <div class="col-6">
                                     <div class="form-group "><label>Full name</label>
                                         <input required v-model="form.full_name" type="text" class="form-control" placeholder="Full name" />
@@ -429,6 +496,7 @@ name: "EditCard",
                 },3000);
             }).catch((error)=>{
                 this.loading = false
+                this.loaded = true
                 if (error.response.status === 422){
                     this.errors = error.response.data.errors;
                 }
@@ -456,7 +524,9 @@ name: "EditCard",
                 this.form.photo = img;
             }
             axios.put(this.form.update_url, this.form).then((res)=>{
-                // this.members = res.data
+                // this.members = []
+                // console.log(res.data)
+                this.members = res.data
                 this.loading = false;
                 toastr.success('Member details updated successfully')
                 let element = this.$refs.modal
