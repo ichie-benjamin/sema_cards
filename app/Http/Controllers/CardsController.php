@@ -40,6 +40,13 @@ class CardsController extends Controller
          if($request->has('online')){
             $card->where('online',1);
         }
+         if($request->has('agent')){
+             $agent = $this->cardAgent();
+            $card->where('agent_id','!=',$agent);
+        }
+         if($request->has('today')){
+            $card->whereDate('issue_date', Carbon::today());
+        }
          if($request->get('from') && $request->get('to')){
              $from = date($request->get('from'));
              $to = date($request->get('to'));

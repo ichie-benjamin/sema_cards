@@ -256,7 +256,7 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Sama Cards</p>
-                                <h3 class="my-2">{{ $cards->whereIsParent(1)->count() }}</h3>
+                                <h3 class="my-2">{{ \App\Models\Card::count() }}</h3>
                                 <p class="mb-0 text-truncate text-muted">
                                     <span class="text-success"><i class="mdi mdi-trending-up"></i><a href="{{ route('cards.index') }}">All created cards</a></span>
                                 </p>
@@ -300,7 +300,7 @@
                                 <p class="text-dark mb-1 font-weight-semibold">Agent Cards</p>
                                 <h3 class="my-2">{{ $agent_cards }}</h3>
                                 <p class="mb-0 text-truncate text-muted">
-                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> All agent registered cards</a></span>
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="{{ route('cards.index') }}?agent"> All agent registered cards</a></span>
                                 </p>
                             </div>
                             <div class="col-auto align-self-center">
@@ -429,7 +429,7 @@
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
-                                    <a href="">
+                                    <a href="{{ route('cards.index') }}?today">
                                         <i data-feather="package" class="align-self-center text-muted icon-md"></i>
                                     </a>
                                 </div>

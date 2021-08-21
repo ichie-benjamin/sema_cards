@@ -41,7 +41,7 @@ class sendCard extends Notification
             ->greeting("Hy ".$this->card->full_name)
             ->line('Your Sema Health Card is available for printing')
             ->line('----------------------------------------------------------')
-            ->action('Print Card', route('cards.index'));
+            ->action('Print Card', route('online.card', $this->card->policy_no));
     }
 
     /**

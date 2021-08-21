@@ -5,147 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/front/css/owl.video.play.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/plugins.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/template.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/Simple-Line-Iconsb26c.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/Simple-Line-Iconsb26c.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/Simple-Line-Iconsb26c.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/Simple-Line-Iconsb26c.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/Simple-Line-Iconsb26c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/themify9f24.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/themify9f24.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/themify9f24.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/themify9f24.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/fonts/themifyd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/apple-touch-icon-114x114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/apple-touch-icon-72x72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/avatar/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/avatar/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/avatar/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/avatar/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/blog/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/blog/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/blog/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/blog/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/blog/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/blog/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/blog/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/clients/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/clients/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/clients/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/clients/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/clients/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/clients/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/clients/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/demo/op-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/features/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/features/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/features/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/logo-light-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/about-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/about-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/about-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/ipad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/iphone-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/iphone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/macbook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/mega-mockup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/notebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/player.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/main/services-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/menu-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/menu-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/menu-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/module-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/module-18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/module-21.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/module-25.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/module-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/module-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/portfolio/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/shop/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/team/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/team/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/team/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/team/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/team/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/team/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/images/widgets/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/bootstrap/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/custom/custom.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/custom/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/custom/plugins.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/custom/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Search.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/apply.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cards.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/check.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel_admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel_admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Card.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Card.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/CardTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CardTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/EditCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EditCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cards/cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cards/cards.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cards/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cards/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cards/print_cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cards/print_cards.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/sendCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/sendCard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -396,7 +260,7 @@
       <workItem from="1629447976043" duration="459000" />
       <workItem from="1629477037554" duration="582000" />
       <workItem from="1629492817096" duration="12716000" />
-      <workItem from="1629541151428" duration="11965000" />
+      <workItem from="1629541151428" duration="13990000" />
     </task>
     <servers />
   </component>
@@ -429,7 +293,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>259</line>
+          <line>266</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="setExpiryDate" />
