@@ -313,7 +313,7 @@ class CardsController extends Controller
             $card = Card::findOrFail($id);
             $card->delete();
 
-            return redirect()->route('cards.card.index')
+            return redirect()->back()
                 ->with('success_message', 'Card was successfully deleted.');
 
     }
