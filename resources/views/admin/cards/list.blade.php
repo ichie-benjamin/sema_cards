@@ -125,7 +125,7 @@
                                             @{{ i.issue_date }} <br/>
                                             @{{ i.agent.full_name }}</td>
                                         <td class="text-capitalize">@{{ i.full_name }}</td>
-                                        <td>@{{ i.cpr_no }}</td>
+                                        <td>@{{ i.cpr_no }} / @{{ i.policy_no }}</td>
 {{--                                        <td>@{{ i.phone }}</td>--}}
                                         <td>@{{ i.cards.length }}</td>
                                         <td>@{{ i.email }}
