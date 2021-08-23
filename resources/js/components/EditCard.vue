@@ -27,6 +27,22 @@
 
 
         <div class="row">
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Issue Date</label>
+                    <input v-model="card.issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Expiry Date</label>
+                    <input v-model="card.expiry_date" type="text" disabled class="form-control" placeholder="2021-06-04"  />
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>First Issue Date</label>
+                    <input v-model="card.first_issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
+                </div>
+            </div>
             <div class="col-6 col-md-3">
                 <div class="form-group "><label>Payment Method</label>
                     <select class="form-control" v-model="card.payment_method">
@@ -70,21 +86,6 @@
                 </div>
             </div>
 
-            <div class="col-6 col-md-3">
-                <div class="form-group "><label>Issue Date</label>
-                    <input v-model="card.issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
-                </div>
-            </div>
-<!--            <div class="col-6 col-md-3">-->
-<!--                <div class="form-group "><label>Expiry Date</label>-->
-<!--                    <input v-model="card.expiry_date" type="text" disabled class="form-control" placeholder="2021-06-04"  />-->
-<!--                </div>-->
-<!--            </div>-->
-            <div class="col-6 col-md-3">
-                <div class="form-group "><label>First Issue Date</label>
-                    <input v-model="card.first_issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
-                </div>
-            </div>
 
 
 
