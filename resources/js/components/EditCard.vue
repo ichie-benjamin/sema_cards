@@ -534,15 +534,14 @@ name: "EditCard",
             item.is_package = true;
 
             axios.put(item.update_url, item).then((res)=>{
+                this.loading = false;
                 this.getPayments();
                 console.log(item)
                 if(item.is_parent){
-
                 }else {
                     console.log(res.data)
                     this.members = res.data
                 }
-                this.loading = false;
                 toastr.success('Package details updated successfully')
             }).catch((error)=>{
                 this.loading = false
@@ -614,6 +613,7 @@ name: "EditCard",
             });
         },
         updateMember(){
+            this.errors = null;
             this.loading = true;
             this.error = null
             let img = $('input[id=memImg]').val();

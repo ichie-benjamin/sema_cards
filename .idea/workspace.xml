@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/js/components/EditCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EditCard.vue" afterDir="false" />
-    </list>
+    <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,7 +258,7 @@
       <workItem from="1629570255330" duration="3577000" />
       <workItem from="1629612109305" duration="573000" />
       <workItem from="1629646578290" duration="119000" />
-      <workItem from="1629695009368" duration="15294000" />
+      <workItem from="1629695009368" duration="15612000" />
     </task>
     <servers />
   </component>
@@ -322,13 +320,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/EditCard.vue</url>
-          <line>133</line>
+          <line>169</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/EditCard.vue</url>
-          <line>309</line>
+          <line>345</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
