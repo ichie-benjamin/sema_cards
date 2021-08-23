@@ -1,0 +1,4 @@
+full_name,email,phone,status,paid,gender,cpr_no,parent,contact_method,mobile,mobile2,address,payment_method,package_type,period,issue_date,first_issue_date,agent
+Ben chuksa ,benji@gmail.com,29929,pending,0,male,9200299,9200192001,,,,,,,6,,,
+Ben chuksa ,benji@gmail.com,29929,,,,92002909,,,,,,,,,,,
+Ben chuksa ,benji@gmail.com,29929,,,,92002993,9200192001,,,,,,,,,,

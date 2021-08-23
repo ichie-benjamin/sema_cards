@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use phpDocumentor\Reflection\Types\Integer;
 
 class Card extends Model
 {
@@ -48,7 +49,9 @@ class Card extends Model
                'deleted_at'
            ];
 
-    protected $casts = [];
+    protected $casts = [
+        'is_parent' => 'boolean'
+    ];
 
 
     public function agent()

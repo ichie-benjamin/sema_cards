@@ -173,7 +173,7 @@
                             <th data-priority="3">Phone No.</th>
                             <th data-priority="3">Email</th>
                             <th data-priority="3">Status</th>
-                            <th data-priority="6">Paid</th>
+                            <th data-priority="6">Amount / Paid</th>
                             <th data-priority="6">Expiry Date</th>
                             <th data-priority="6">Action</th>
                         </tr>
@@ -190,12 +190,69 @@
                                 </select>
 <!--                                {{ item.status }}-->
                             </td>
-                            <td>{{ item.paid ? 'Yes' : 'No' }}</td>
+                            <td>${{ formatPrice(item.package.price) }} /<br/>
+                                {{ item.paid ? 'Yes' : 'No' }}</td>
                             <td>{{ item.expiry_date }}</td>
                             <td>
-                                <a class="btn btn-danger" href=""><i class="fa fa-trash"></i> </a>
+                                <button class="btn btn-danger" @click="deleteUser(item.id)"><i class="fa fa-trash"></i> </button>
                                 <button type="button" class="btn btn-warning" @click="editMember(item)"><i class="fa fa-edit"></i> </button>
                             </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 mb-2" v-if="payments">
+                <hr />
+                <h4>Payments ({{ payments.length}})</h4>
+                <div class="table-responsive mb-0" data-pattern="priority-columns">
+                    <table class="table table-striped table-bordered mb-0">
+                        <thead>
+                        <tr>
+                            <th>Package</th>
+                            <th>Full name</th>
+                            <th data-priority="1">CPR No</th>
+                            <th data-priority="3">Phone No.</th>
+                            <th data-priority="3">Email</th>
+                            <th data-priority="3">Status</th>
+                            <th data-priority="6">Expiry Date</th>
+                            <th data-priority="6">Amount / Paid</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="item in payments">
+                            <td> <select @change="updatePackage(item)" class="form-control" v-model="item.package_type">
+                                <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
+                            </select>
+                            </td>
+                            <td class="text-capitalize">{{ item.full_name }}</td>
+                            <td>{{ item.cpr_no }}</td>
+                            <td>{{ item.phone }}</td>
+                            <td>{{ item.email }}</td>
+                            <td class="text-capitalize">
+                                <select v-model="item.status" @change="updatePackage(item)" class="form-control">
+                                    <option v-for="it in status" :value="it"> {{ it }}</option>
+                                </select>
+<!--                                {{ item.status }}-->
+                            </td>
+                            <td>{{ item.expiry_date }}</td>
+                            <td>${{ formatPrice(item.package.price) }}
+                              </td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-capitalize">
+                             TOTAL
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                            <td>${{ formatPrice(totalPrice)}}</td>
 
                         </tr>
                         </tbody>
@@ -272,7 +329,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-3" v-if="edit">
                                     <div class="form-group "><label>Issue Date</label>
                                         <input v-model="form.issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
                                     </div>
@@ -282,17 +339,11 @@
 <!--                                        <input v-model="form.expiry_date" type="text" disabled class="form-control" placeholder="2021-06-04"  />-->
 <!--                                    </div>-->
 <!--                                </div>-->
-                                <div class="col-6 col-md-3">
+                                <div class="col-6 col-md-3" v-if="edit">
                                     <div class="form-group "><label>First Issue Date</label>
                                         <input v-model="form.first_issue_date" type="date" class="form-control" placeholder="2021-06-04"  />
                                     </div>
                                 </div>
-
-
-
-
-
-
 
                                 <div class="col-6">
                                     <div class="form-group "><label>Full name</label>
@@ -413,12 +464,13 @@ import Errors from "./Errors";
 export default {
     components: {Errors},
 
-    props:['card_data','url','send_mail','p_methods','con_methods','status','post_url','members','p_types','card_types','view_card'],
+    props:['card_data','mems','payment','url','send_mail','p_methods','con_methods','status','post_url','members','p_types','card_types','view_card'],
 name: "EditCard",
     data() {
         return {
             more : false,
             editImg:'',
+            payments : null,
             edit : false,
             add_title : 'Add more member',
             loaded : false,
@@ -454,12 +506,48 @@ name: "EditCard",
     },
     mounted() {
         this.card = this.card_data
-
+        this.getPayments()
         setTimeout(()=>{
             this.loaded = true
         },3000);
     },
     methods : {
+        deleteUser(id){
+            if(confirm("Do you really want to delete this card ?")){
+                axios.get('/admin/card/destroy/'+id).then((res)=> {
+                    this.getMems();
+                    this.getPayments();
+                });
+            }
+        },
+        getMems(){
+            axios.get(this.mems).then((res)=>{
+                this.members = res.data;
+            })
+        },
+        updatePackage(item){
+            this.loading = true;
+            this.error = null;
+            item.is_package = true;
+
+            axios.put(item.update_url, item).then((res)=>{
+                this.getPayments();
+                console.log(item)
+                if(item.is_parent){
+
+                }else {
+                    console.log(res.data)
+                    this.members = res.data
+                }
+                this.loading = false;
+                toastr.success('Package details updated successfully')
+            }).catch((error)=>{
+                this.loading = false
+                if (error.response.status === 422){
+                    this.errors = error.response.data.errors;
+                }
+            })
+        },
         toast(){
             toastr.success('Have fun storming the castle!', 'Miracle Max Says')
         },
@@ -478,6 +566,7 @@ name: "EditCard",
                 console.log(res.data);
                 toastr.success('Card Status successfully updated')
             })
+            this.getPayments();
         },
         updateStatus(status){
             this.card.status = status;
@@ -502,6 +591,11 @@ name: "EditCard",
                 }
             })
         },
+        getPayments(){
+            axios.get(this.payment).then((res)=>{
+                this.payments = res.data;
+            })
+        },
         sendEmail(id){
             axios.post(this.send_mail, {id:id}).then((res)=>{
                 if(res.data.status === 1){
@@ -524,8 +618,6 @@ name: "EditCard",
                 this.form.photo = img;
             }
             axios.put(this.form.update_url, this.form).then((res)=>{
-                // this.members = []
-                // console.log(res.data)
                 this.members = res.data
                 this.loading = false;
                 toastr.success('Member details updated successfully')
@@ -537,11 +629,13 @@ name: "EditCard",
                     this.errors = error.response.data.errors;
                 }
             })
+            this.getPayments();
         },
         addMember(){
             this.add_title = 'Add New Member';
             this.edit = false;
             this.clearForm();
+            this.getPayments();
             let element = this.$refs.modal
             $(element).modal('show')
         },
@@ -565,6 +659,10 @@ name: "EditCard",
                 this.submitMember();
             }
         },
+        formatPrice(value) {
+            let val = (value/1).toFixed(2).replace('.', '.')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        },
         submitMember(){
             this.loading = true;
             this.error = null;
@@ -572,6 +670,7 @@ name: "EditCard",
 
             axios.post(this.post_url, this.form).then((res)=>{
                 this.loading = false
+                this.getPayments();
                 this.members = res.data
                 this.clearForm();
                 let element = this.$refs.modal
@@ -606,6 +705,13 @@ name: "EditCard",
     computed : {
         pImg(){
             return  $('input[id=editImg]').val();
+        },
+        totalPrice: function(){
+            let sum = 0;
+            for(let i = 0; i < this.payments.length; i++){
+                sum += (parseFloat(this.payments[i].package.price));
+            }
+            return sum;
         }
     },
     watch : {

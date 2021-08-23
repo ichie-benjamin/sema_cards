@@ -50,6 +50,9 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
 
     Route::post('/card/mail', [CardsController::class, 'sendEmail'])->name('send.email.cards');
     Route::get('/card/delete/{id}', [CardsController::class, 'destroy'])->name('card.delete');
+    Route::get('/card/destroy/{id}', [CardsController::class, 'delete']);
+    Route::get('/card/payments/{id}', [CardsController::class, 'payments'])->name('card.payments');
+    Route::get('/card/mems/{id}', [CardsController::class, 'members'])->name('card.mems');
 
 
     Route::post('/card/import', [CardsController::class, 'importCards'])->name('cards.import');

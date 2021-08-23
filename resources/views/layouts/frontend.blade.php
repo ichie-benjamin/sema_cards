@@ -119,7 +119,7 @@
 <script src="/front/js/custom/plugins.min.js"></script>
 <script src="/front/js/custom/custom.min.js"></script>
 
-<script src="/js/app.js"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 
 
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>

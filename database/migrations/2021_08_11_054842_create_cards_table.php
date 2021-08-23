@@ -17,7 +17,7 @@ class CreateCardsTable extends Migration
             $table->id();
             $table->string('full_name');
             $table->string('gender')->nullable();
-            $table->string('cpr_no');
+            $table->string('cpr_no')->unique();
             $table->string('mobile')->nullable();
             $table->string('mobile2')->nullable();
             $table->string('phone')->nullable();
@@ -36,7 +36,7 @@ class CreateCardsTable extends Migration
             $table->string('email')->nullable();
             $table->bigInteger('card_id')->unsigned()->nullable()->index();
             $table->boolean('is_parent')->default(1);
-            $table->string('policy_no')->nullable();
+            $table->string('policy_no')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

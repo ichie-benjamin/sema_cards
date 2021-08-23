@@ -7,6 +7,8 @@
     <meta content="Sama Cards" name="description" />
     <meta content="" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- App favicon -->
     <link rel="shortcut icon" href="/assets/images/favicon.ico" />
     <!-- jvectormap -->
@@ -234,7 +236,12 @@
 <script src="/assets/js/app.js"></script>
 
 
-<script src="/js/app.js"></script>
+{{--<script src="/js/app.js"></script>--}}
+
+
+<script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
+
+<script src="{{ mix('js/app.js') }}"></script>
 
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 

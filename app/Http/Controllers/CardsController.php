@@ -28,7 +28,9 @@ class CardsController extends Controller
         $card = Card::with('agent','cards','package');
 //        $card = Card::whereIsParent(1)->with('agent','cards','package');
         if($request->get('cpr')){
-            $card->where('cpr_no',$request->get('cpr'));
+            $card->where('cpr_no',$request->get('cpr'))
+                ->orWhere('full_name', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('phone', 'like', '%'.$request->get('cpr').'%');
         }
          if($request->get('s')){
              if($request->get('s') == 'paid'){
@@ -300,7 +302,10 @@ class CardsController extends Controller
             }
             $card->update($data);
             $res = Card::findOrFail($id);
-            if($res->is_parent){
+//        if($request->has('is_package')){
+//            return response()->json($res);
+//        }else
+           if($res->is_parent){
                 return response()->json($res);
             }else{
                 $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
@@ -319,16 +324,41 @@ class CardsController extends Controller
 
     }
 
+    public function delete($id)
+    {
+            $card = Card::findOrFail($id);
+            $card->delete();
+            return response()->json($card);
+    }
+
     public function policy(){
-        return (int) 333100001;
+        return (int) 222200000;
+    }
+
+    public function payments($id){
+        $cards = Card::whereId($id)->orWhere('card_id',$id)->get();
+        return response()->json($cards);
+    }
+
+    public function members($id){
+        $members = Card::whereCardId($id)->whereIsParent(0)->get();
+        return response()->json($members);
     }
 
     private function getPolicy(){
-        $card = Card::latest()->first();
+       $card = Card::orderBy('id', 'desc')->first();
         if($card){
-            return $policy = $this->policy() + $card->id + 1;
+            $policy = $card->policy_no + 1;
+            if(Card::where('policy_no',$policy)->count() > 0){
+                $policy = $policy + 1;
+            }
+            return $policy;
         }else{
-            return $policy = $this->policy() + 1;
+            $policy = $this->policy() + 1;
+            if(Card::where('policy_no',$policy)->count() > 0){
+                $policy = $policy + 1;
+            }
+            return $policy;
         }
     }
     protected function getData(Request $request)
@@ -336,6 +366,7 @@ class CardsController extends Controller
         $rules = [
                 'full_name' => 'string|min:1|required',
             'gender' => 'string|nullable',
+            'policy_no' => 'nullable',
             'cpr_no' => 'nullable',
             'mobile' => 'nullable',
             'mobile2' => 'nullable',
@@ -357,7 +388,6 @@ class CardsController extends Controller
             'card_id' => 'nullable',
             'agent_id' => 'nullable',
             'is_parent' => 'boolean|nullable',
-            'policy_no' => 'nullable',
         ];
 
         $data = $request->validate($rules);
