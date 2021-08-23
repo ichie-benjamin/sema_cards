@@ -64,8 +64,8 @@ class CardImport implements ToCollection, WithHeadingRow
                     'paid' => isset($row['paid']) ? (int)$row['paid'] : 0,
                     'is_parent' => $is_parent,
                     'card_id' => $card_id,
-                    'gender' => isset($row['gender']) ? (int)$row['gender'] : null,
-                    'issue_date' => isset($row['issue_date']) ? (int)$row['issue_date'] : Carbon::now(),
+                    'gender' => isset($row['gender']) ? $row['gender'] : null,
+                    'issue_date' => isset($row['issue_date']) ? $row['issue_date'] : Carbon::now(),
                     'agent_id' => $user ? $user->id : User::whereRoleIs(['agent'])->first()->id,
                     'package_type' => $package_id,
                 ]);
