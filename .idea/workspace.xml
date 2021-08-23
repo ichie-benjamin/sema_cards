@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/EditCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EditCard.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,7 +260,7 @@
       <workItem from="1629570255330" duration="3577000" />
       <workItem from="1629612109305" duration="573000" />
       <workItem from="1629646578290" duration="119000" />
-      <workItem from="1629695009368" duration="14990000" />
+      <workItem from="1629695009368" duration="15294000" />
     </task>
     <servers />
   </component>
@@ -323,15 +322,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/EditCard.vue</url>
-          <line>166</line>
+          <line>133</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/EditCard.vue</url>
-          <line>342</line>
+          <line>309</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/EditCard.vue</url>
+          <line>45</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

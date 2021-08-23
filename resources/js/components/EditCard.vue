@@ -51,40 +51,6 @@
                 </div>
             </div>
 
-            <div class="col-6 col-md-3">
-                <div class="form-group "><label>Contact Method</label>
-                    <select class="form-control" v-model="card.contact_method">
-                        <option class="text-capitalize" v-for="item in con_methods">{{ item }}</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="form-group "><label>Package Type</label>
-                    <select class="form-control" v-model="card.package_type">
-                        <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="form-group "><label>Period</label>
-                    <select class="form-control" v-model="card.period">
-                        <option value="3">3 Months</option>
-                        <option value="6">6 Months</option>
-                        <option value="12">1 Year</option>
-                        <option value="24">2 Years</option>
-                        <option value="60">5 Years</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="form-group "><label>Status</label>
-                    <select class="form-control" v-model="card.status">
-                        <option class="text-capitalize" v-for="item in status">{{ item }}</option>
-                    </select>
-                </div>
-            </div>
 
 
 
@@ -139,6 +105,42 @@
                     <input   v-model="card.address" type="text" class="form-control" placeholder="address" />
                 </div>
             </div>
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Contact Method</label>
+                    <select class="form-control" v-model="card.contact_method">
+                        <option class="text-capitalize" v-for="item in con_methods">{{ item }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Package Type</label>
+                    <select class="form-control" v-model="card.package_type">
+                        <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Period</label>
+                    <select class="form-control" v-model="card.period">
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">1 Year</option>
+                        <option value="24">2 Years</option>
+                        <option value="60">5 Years</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-group "><label>Status</label>
+                    <select class="form-control" v-model="card.status">
+                        <option class="text-capitalize" v-for="item in status">{{ item }}</option>
+                    </select>
+                </div>
+            </div>
+
 
             <div class="col-6">
                 <div class="form-group"><label>Comment </label>

@@ -2342,6 +2342,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -20897,210 +20899,6 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-6 col-md-3" }, [
-              _c("div", { staticClass: "form-group " }, [
-                _c("label", [_vm._v("Contact Method")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.contact_method,
-                        expression: "card.contact_method"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.card,
-                          "contact_method",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  },
-                  _vm._l(_vm.con_methods, function(item) {
-                    return _c("option", { staticClass: "text-capitalize" }, [
-                      _vm._v(_vm._s(item))
-                    ])
-                  }),
-                  0
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-6 col-md-3" }, [
-              _c("div", { staticClass: "form-group " }, [
-                _c("label", [_vm._v("Package Type")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.package_type,
-                        expression: "card.package_type"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.card,
-                          "package_type",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  },
-                  _vm._l(_vm.p_types, function(item) {
-                    return _c(
-                      "option",
-                      {
-                        staticClass: "text-capitalize",
-                        domProps: { value: item.id }
-                      },
-                      [_vm._v(_vm._s(item.name))]
-                    )
-                  }),
-                  0
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-6 col-md-3" }, [
-              _c("div", { staticClass: "form-group " }, [
-                _c("label", [_vm._v("Period")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.period,
-                        expression: "card.period"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.card,
-                          "period",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "3" } }, [
-                      _vm._v("3 Months")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "6" } }, [
-                      _vm._v("6 Months")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "12" } }, [
-                      _vm._v("1 Year")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "24" } }, [
-                      _vm._v("2 Years")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "60" } }, [
-                      _vm._v("5 Years")
-                    ])
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-6 col-md-3" }, [
-              _c("div", { staticClass: "form-group " }, [
-                _c("label", [_vm._v("Status")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.card.status,
-                        expression: "card.status"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.card,
-                          "status",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  },
-                  _vm._l(_vm.status, function(item) {
-                    return _c("option", { staticClass: "text-capitalize" }, [
-                      _vm._v(_vm._s(item))
-                    ])
-                  }),
-                  0
-                )
-              ])
-            ]),
-            _vm._v(" "),
             _c("div", { staticClass: "col-6" }, [
               _c("div", { staticClass: "form-group " }, [
                 _c("label", [_vm._v("Full name")]),
@@ -21369,6 +21167,210 @@ var render = function() {
                     }
                   }
                 })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Contact Method")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.contact_method,
+                        expression: "card.contact_method"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "contact_method",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  _vm._l(_vm.con_methods, function(item) {
+                    return _c("option", { staticClass: "text-capitalize" }, [
+                      _vm._v(_vm._s(item))
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Package Type")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.package_type,
+                        expression: "card.package_type"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "package_type",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  _vm._l(_vm.p_types, function(item) {
+                    return _c(
+                      "option",
+                      {
+                        staticClass: "text-capitalize",
+                        domProps: { value: item.id }
+                      },
+                      [_vm._v(_vm._s(item.name))]
+                    )
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Period")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.period,
+                        expression: "card.period"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "period",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "3" } }, [
+                      _vm._v("3 Months")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "6" } }, [
+                      _vm._v("6 Months")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "12" } }, [
+                      _vm._v("1 Year")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "24" } }, [
+                      _vm._v("2 Years")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "60" } }, [
+                      _vm._v("5 Years")
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group " }, [
+                _c("label", [_vm._v("Status")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.card.status,
+                        expression: "card.status"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.card,
+                          "status",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  _vm._l(_vm.status, function(item) {
+                    return _c("option", { staticClass: "text-capitalize" }, [
+                      _vm._v(_vm._s(item))
+                    ])
+                  }),
+                  0
+                )
               ])
             ]),
             _vm._v(" "),
