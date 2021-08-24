@@ -101,7 +101,7 @@
                                                 <input name="_method" value="DELETE" type="hidden">
 
 
-                                                <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#editAgent{{ $item->id }}" ><i class="fa fa-edit"></i> </button>
+                                                <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#editPack{{ $item->id }}" ><i class="fa fa-edit"></i> </button>
 
 
                                                 <button type="submit" class="btn btn-danger" title="Delete Package type" onclick="return confirm('Are you sure you want to delete this package type ??')">
