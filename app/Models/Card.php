@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use phpDocumentor\Reflection\Types\Integer;
@@ -158,16 +159,18 @@ class Card extends Model
 //     */
     public function getIssueDateAttribute($value)
     {
-        $date = new Carbon($value);
+        $date = $this->validateDate($value) ? new Carbon($value) : Carbon::now();
         return $date->format('Y-m-d');
     }
-//
-//    /**
-//     * Get expiry_date in array format
-//     *
-//     * @param  string  $value
-//     * @return array
-//     */
+
+    function validateDate($date, $format = 'Y-m-d')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
+        return $d && $d->format($format) === $date;
+    }
+
+
     public function getExpiryDateAttribute($value)
     {
         $date = new Carbon($value);

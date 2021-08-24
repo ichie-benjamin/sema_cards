@@ -156,6 +156,8 @@
                         </div>
                         <p class="text-center text-capitalize">Click to select image </p>
                     </div>
+                    <img v-if="card.photo" :src="card.photo" width="150px" height="100px" />
+
                     <input v-model="editImg" id="editImg" class="form-control" type="hidden" name="photo">
                 </div>
             </div>
@@ -270,7 +272,7 @@
                 <button  @click="update" class="btn btn-danger" type="button">Update</button>
                 <button type="button" class="btn btn-success" @click="addMember"> Add more people</button>
 <!--                <button  @click="update" type="button" class="btn btn-primary" >Save</button>-->
-                <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0" class="btn btn-primary" >View Cards</a>
+                <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0 || card.status === 'done' || card.status === 'pending' "  class="btn btn-primary" >View Cards</a>
                 <a :href="'/admin/card/'+card.policy_no+'?download'" v-if="card.paid > 0" class="btn btn-success" >Print Cards</a>
                 <a href="#" class="btn btn-primary">Invoice</a>
                 <button type="button" @click="saveEditImage" class="btn btn-success">Save Photo</button>
@@ -295,42 +297,6 @@
                         <errors :errors="errors" v-if="errors"></errors>
                         <form @submit.prevent="memberSubmit" method="POST" class="form-parsley">
                             <div class="row">
-
-                                <div class="col-6 col-md-3">
-                                    <div class="form-group "><label>Payment Method</label>
-                                        <select class="form-control" v-model="form.payment_method">
-                                            <option class="text-capitalize" v-for="item in p_methods">{{ item }}</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-6 col-md-3">
-                                    <div class="form-group "><label>Contact Method</label>
-                                        <select class="form-control" v-model="form.contact_method">
-                                            <option class="text-capitalize" v-for="item in con_methods">{{ item }}</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-6 col-md-3">
-                                    <div class="form-group "><label>Package Type</label>
-                                        <select class="form-control" v-model="form.package_type">
-                                            <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-6 col-md-3">
-                                    <div class="form-group "><label>Period</label>
-                                        <select class="form-control" v-model="form.period">
-                                            <option value="3">3 Months</option>
-                                            <option value="6">6 Months</option>
-                                            <option value="12">1 Year</option>
-                                            <option value="24">2 Years</option>
-                                            <option value="60">5 Years</option>
-                                        </select>
-                                    </div>
-                                </div>
 
                                 <div class="col-6 col-md-3" v-if="edit">
                                     <div class="form-group "><label>Issue Date</label>
@@ -421,6 +387,44 @@
                                     </div>
                                 </div>
 
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Payment Method</label>
+                                        <select class="form-control" v-model="form.payment_method">
+                                            <option class="text-capitalize" v-for="item in p_methods">{{ item }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Contact Method</label>
+                                        <select class="form-control" v-model="form.contact_method">
+                                            <option class="text-capitalize" v-for="item in con_methods">{{ item }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Package Type</label>
+                                        <select class="form-control" v-model="form.package_type">
+                                            <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="form-group "><label>Period</label>
+                                        <select class="form-control" v-model="form.period">
+                                            <option value="3">3 Months</option>
+                                            <option value="6">6 Months</option>
+                                            <option value="12">1 Year</option>
+                                            <option value="24">2 Years</option>
+                                            <option value="60">5 Years</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
                                 <div class="col-6 col-md-6">
                                     <div class="form-group"><label>Comment </label>
                                         <textarea rows="4" class="form-control" v-model="form.comment"></textarea>
@@ -436,6 +440,7 @@
                                             </div>
                                             <p class="text-center text-capitalize">Click to select image </p>
                                         </div>
+                                        <img v-if="form.photo" :src="form.photo" width="100px" height="100px" />
                                         <input id="memImg" class="form-control" type="hidden" name="memImg">
                                     </div>
                                 </div>
@@ -557,7 +562,9 @@ name: "EditCard",
             let img = $('input[id=editImg]').val()
             if(img){
                 this.card.photo = img;
+                $('#editImg_holder img').hide()
                 this.update();
+
             }else{
                 toastr.error('No new photo uploaded')
             }
@@ -619,6 +626,8 @@ name: "EditCard",
             let img = $('input[id=memImg]').val();
             if(img){
                 this.form.photo = img;
+                $('#mem_holder img').hide()
+
             }
             axios.put(this.form.update_url, this.form).then((res)=>{
                 this.members = res.data
@@ -653,7 +662,7 @@ name: "EditCard",
         },
         clearForm(){
             this.form.full_name = ''; this.form.email = ''; this.form.cpr_no = ''; this.form.gender = ''; this.form.gender = 'male'; this.form.phone = '';
-            this.form.card_type = ''; this.form.address = ''; this.form.comment = '';
+            this.form.card_type = ''; this.form.address = ''; this.form.comment = ''; this.form.photo = null;
         },
         memberSubmit(){
             if(this.edit){
@@ -670,7 +679,7 @@ name: "EditCard",
             this.loading = true;
             this.error = null;
             this.form.photo = $('input[id=memImg]').val();
-
+            $('#mem_holder img').hide()
             axios.post(this.post_url, this.form).then((res)=>{
                 this.loading = false
                 this.getPayments();

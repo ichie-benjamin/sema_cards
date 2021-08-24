@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 use Maatwebsite\Excel\Facades\Excel;
 use PDF;
+use Illuminate\Support\Facades\Validator;
+
 
 
 class CardsController extends Controller
@@ -345,21 +347,20 @@ class CardsController extends Controller
         return response()->json($members);
     }
 
+
     private function getPolicy(){
-       $card = Card::orderBy('id', 'desc')->first();
+//       $card = Card::latest()->first();
+       $card = Card::orderBy('policy_no', 'desc')->first();
         if($card){
             $policy = $card->policy_no + 1;
-            if(Card::where('policy_no',$policy)->count() > 0){
-                $policy = $policy + 1;
-            }
-            return $policy;
         }else{
             $policy = $this->policy() + 1;
-            if(Card::where('policy_no',$policy)->count() > 0){
-                $policy = $policy + 1;
-            }
-            return $policy;
         }
+//        $validator = Validator::make(['policy_no' => $policy],['policy_no'=>'unique:cards,policy_no']);
+//        if($validator->fails()){
+//            return $this->getPolicy();
+//        }
+        return $policy;
     }
     protected function getData(Request $request)
     {

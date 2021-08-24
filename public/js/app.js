@@ -2344,6 +2344,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2424,6 +2429,8 @@ __webpack_require__.r(__webpack_exports__);
       this.error = null;
       item.is_package = true;
       axios.put(item.update_url, item).then(function (res) {
+        _this4.loading = false;
+
         _this4.getPayments();
 
         console.log(item);
@@ -2433,7 +2440,6 @@ __webpack_require__.r(__webpack_exports__);
           _this4.members = res.data;
         }
 
-        _this4.loading = false;
         toastr.success('Package details updated successfully');
       })["catch"](function (error) {
         _this4.loading = false;
@@ -2451,6 +2457,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (img) {
         this.card.photo = img;
+        $('#editImg_holder img').hide();
         this.update();
       } else {
         toastr.error('No new photo uploaded');
@@ -2512,12 +2519,14 @@ __webpack_require__.r(__webpack_exports__);
     updateMember: function updateMember() {
       var _this7 = this;
 
+      this.errors = null;
       this.loading = true;
       this.error = null;
       var img = $('input[id=memImg]').val();
 
       if (img) {
         this.form.photo = img;
+        $('#mem_holder img').hide();
       }
 
       axios.put(this.form.update_url, this.form).then(function (res) {
@@ -2562,6 +2571,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.card_type = '';
       this.form.address = '';
       this.form.comment = '';
+      this.form.photo = null;
     },
     memberSubmit: function memberSubmit() {
       if (this.edit) {
@@ -2580,6 +2590,7 @@ __webpack_require__.r(__webpack_exports__);
       this.loading = true;
       this.error = null;
       this.form.photo = $('input[id=memImg]').val();
+      $('#mem_holder img').hide();
       axios.post(this.post_url, this.form).then(function (res) {
         _this8.loading = false;
 
@@ -21406,6 +21417,16 @@ var render = function() {
               _c("div", { staticClass: "upload-image" }, [
                 _vm._m(0),
                 _vm._v(" "),
+                _vm.card.photo
+                  ? _c("img", {
+                      attrs: {
+                        src: _vm.card.photo,
+                        width: "150px",
+                        height: "100px"
+                      }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
                 _c("input", {
                   directives: [
                     {
@@ -21805,7 +21826,9 @@ var render = function() {
                 [_vm._v(" Add more people")]
               ),
               _vm._v(" "),
-              _vm.card.paid > 0
+              _vm.card.paid > 0 ||
+              _vm.card.status === "done" ||
+              _vm.card.status === "pending"
                 ? _c(
                     "a",
                     {
@@ -21921,248 +21944,6 @@ var render = function() {
                             },
                             [
                               _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-6 col-md-3" }, [
-                                  _c("div", { staticClass: "form-group " }, [
-                                    _c("label", [_vm._v("Payment Method")]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "select",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.payment_method,
-                                            expression: "form.payment_method"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        on: {
-                                          change: function($event) {
-                                            var $$selectedVal = Array.prototype.filter
-                                              .call(
-                                                $event.target.options,
-                                                function(o) {
-                                                  return o.selected
-                                                }
-                                              )
-                                              .map(function(o) {
-                                                var val =
-                                                  "_value" in o
-                                                    ? o._value
-                                                    : o.value
-                                                return val
-                                              })
-                                            _vm.$set(
-                                              _vm.form,
-                                              "payment_method",
-                                              $event.target.multiple
-                                                ? $$selectedVal
-                                                : $$selectedVal[0]
-                                            )
-                                          }
-                                        }
-                                      },
-                                      _vm._l(_vm.p_methods, function(item) {
-                                        return _c(
-                                          "option",
-                                          { staticClass: "text-capitalize" },
-                                          [_vm._v(_vm._s(item))]
-                                        )
-                                      }),
-                                      0
-                                    )
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-6 col-md-3" }, [
-                                  _c("div", { staticClass: "form-group " }, [
-                                    _c("label", [_vm._v("Contact Method")]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "select",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.contact_method,
-                                            expression: "form.contact_method"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        on: {
-                                          change: function($event) {
-                                            var $$selectedVal = Array.prototype.filter
-                                              .call(
-                                                $event.target.options,
-                                                function(o) {
-                                                  return o.selected
-                                                }
-                                              )
-                                              .map(function(o) {
-                                                var val =
-                                                  "_value" in o
-                                                    ? o._value
-                                                    : o.value
-                                                return val
-                                              })
-                                            _vm.$set(
-                                              _vm.form,
-                                              "contact_method",
-                                              $event.target.multiple
-                                                ? $$selectedVal
-                                                : $$selectedVal[0]
-                                            )
-                                          }
-                                        }
-                                      },
-                                      _vm._l(_vm.con_methods, function(item) {
-                                        return _c(
-                                          "option",
-                                          { staticClass: "text-capitalize" },
-                                          [_vm._v(_vm._s(item))]
-                                        )
-                                      }),
-                                      0
-                                    )
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-6 col-md-3" }, [
-                                  _c("div", { staticClass: "form-group " }, [
-                                    _c("label", [_vm._v("Package Type")]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "select",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.package_type,
-                                            expression: "form.package_type"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        on: {
-                                          change: function($event) {
-                                            var $$selectedVal = Array.prototype.filter
-                                              .call(
-                                                $event.target.options,
-                                                function(o) {
-                                                  return o.selected
-                                                }
-                                              )
-                                              .map(function(o) {
-                                                var val =
-                                                  "_value" in o
-                                                    ? o._value
-                                                    : o.value
-                                                return val
-                                              })
-                                            _vm.$set(
-                                              _vm.form,
-                                              "package_type",
-                                              $event.target.multiple
-                                                ? $$selectedVal
-                                                : $$selectedVal[0]
-                                            )
-                                          }
-                                        }
-                                      },
-                                      _vm._l(_vm.p_types, function(item) {
-                                        return _c(
-                                          "option",
-                                          {
-                                            staticClass: "text-capitalize",
-                                            domProps: { value: item.id }
-                                          },
-                                          [_vm._v(_vm._s(item.name))]
-                                        )
-                                      }),
-                                      0
-                                    )
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-6 col-md-3" }, [
-                                  _c("div", { staticClass: "form-group " }, [
-                                    _c("label", [_vm._v("Period")]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "select",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.period,
-                                            expression: "form.period"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        on: {
-                                          change: function($event) {
-                                            var $$selectedVal = Array.prototype.filter
-                                              .call(
-                                                $event.target.options,
-                                                function(o) {
-                                                  return o.selected
-                                                }
-                                              )
-                                              .map(function(o) {
-                                                var val =
-                                                  "_value" in o
-                                                    ? o._value
-                                                    : o.value
-                                                return val
-                                              })
-                                            _vm.$set(
-                                              _vm.form,
-                                              "period",
-                                              $event.target.multiple
-                                                ? $$selectedVal
-                                                : $$selectedVal[0]
-                                            )
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "option",
-                                          { attrs: { value: "3" } },
-                                          [_vm._v("3 Months")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "option",
-                                          { attrs: { value: "6" } },
-                                          [_vm._v("6 Months")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "option",
-                                          { attrs: { value: "12" } },
-                                          [_vm._v("1 Year")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "option",
-                                          { attrs: { value: "24" } },
-                                          [_vm._v("2 Years")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "option",
-                                          { attrs: { value: "60" } },
-                                          [_vm._v("5 Years")]
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]),
-                                _vm._v(" "),
                                 _vm.edit
                                   ? _c(
                                       "div",
@@ -22722,6 +22503,248 @@ var render = function() {
                                   ])
                                 ]),
                                 _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Payment Method")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.payment_method,
+                                            expression: "form.payment_method"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "payment_method",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      _vm._l(_vm.p_methods, function(item) {
+                                        return _c(
+                                          "option",
+                                          { staticClass: "text-capitalize" },
+                                          [_vm._v(_vm._s(item))]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Contact Method")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.contact_method,
+                                            expression: "form.contact_method"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "contact_method",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      _vm._l(_vm.con_methods, function(item) {
+                                        return _c(
+                                          "option",
+                                          { staticClass: "text-capitalize" },
+                                          [_vm._v(_vm._s(item))]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Package Type")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.package_type,
+                                            expression: "form.package_type"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "package_type",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      _vm._l(_vm.p_types, function(item) {
+                                        return _c(
+                                          "option",
+                                          {
+                                            staticClass: "text-capitalize",
+                                            domProps: { value: item.id }
+                                          },
+                                          [_vm._v(_vm._s(item.name))]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-6 col-md-3" }, [
+                                  _c("div", { staticClass: "form-group " }, [
+                                    _c("label", [_vm._v("Period")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.period,
+                                            expression: "form.period"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.form,
+                                              "period",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "3" } },
+                                          [_vm._v("3 Months")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "6" } },
+                                          [_vm._v("6 Months")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "12" } },
+                                          [_vm._v("1 Year")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "24" } },
+                                          [_vm._v("2 Years")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "60" } },
+                                          [_vm._v("5 Years")]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]),
+                                _vm._v(" "),
                                 _c("div", { staticClass: "col-6 col-md-6" }, [
                                   _c("div", { staticClass: "form-group" }, [
                                     _c("label", [_vm._v("Comment ")]),
@@ -22754,7 +22777,30 @@ var render = function() {
                                   ])
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(4),
+                                _c("div", { staticClass: "col-6 col-md-6" }, [
+                                  _c("div", { staticClass: "upload-image" }, [
+                                    _vm._m(4),
+                                    _vm._v(" "),
+                                    _vm.form.photo
+                                      ? _c("img", {
+                                          attrs: {
+                                            src: _vm.form.photo,
+                                            width: "100px",
+                                            height: "100px"
+                                          }
+                                        })
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      staticClass: "form-control",
+                                      attrs: {
+                                        id: "memImg",
+                                        type: "hidden",
+                                        name: "memImg"
+                                      }
+                                    })
+                                  ])
+                                ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "col-12" }, [
                                   _c(
@@ -22904,48 +22950,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-6 col-md-6" }, [
-      _c("div", { staticClass: "upload-image" }, [
+    return _c(
+      "div",
+      {
+        staticClass: "dropzone dropzone-area dz-clickable",
+        staticStyle: { width: "100%" },
+        attrs: { "data-input": "memImg", "data-preview": "mem_holder" }
+      },
+      [
         _c(
           "div",
           {
-            staticClass: "dropzone dropzone-area dz-clickable",
-            staticStyle: { width: "100%" },
+            staticClass: "dz-message lfm",
             attrs: { "data-input": "memImg", "data-preview": "mem_holder" }
           },
           [
-            _c(
-              "div",
-              {
-                staticClass: "dz-message lfm",
-                attrs: { "data-input": "memImg", "data-preview": "mem_holder" }
-              },
-              [
-                _c("br"),
-                _vm._v(" "),
-                _c("div", {
-                  staticStyle: {
-                    "margin-top": "15px",
-                    "margin-bottom": "20px",
-                    "max-height": "200px"
-                  },
-                  attrs: { id: "mem_holder" }
-                })
-              ]
-            ),
+            _c("br"),
             _vm._v(" "),
-            _c("p", { staticClass: "text-center text-capitalize" }, [
-              _vm._v("Click to select image ")
-            ])
+            _c("div", {
+              staticStyle: {
+                "margin-top": "15px",
+                "margin-bottom": "20px",
+                "max-height": "200px"
+              },
+              attrs: { id: "mem_holder" }
+            })
           ]
         ),
         _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { id: "memImg", type: "hidden", name: "memImg" }
-        })
-      ])
-    ])
+        _c("p", { staticClass: "text-center text-capitalize" }, [
+          _vm._v("Click to select image ")
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true

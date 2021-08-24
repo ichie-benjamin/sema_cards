@@ -6,6 +6,7 @@ use App\Models\Card;
 use App\Models\PackageType;
 use App\Models\User;
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -17,16 +18,32 @@ class CardImport implements ToCollection, WithHeadingRow
     public function __construct()
     {
     }
+    public function setExpiryDate($date, $month){
+        $newDate = new Carbon($date);
+        return $newDate->addMonths($month);
+    }
+    public function getPolicy(){
+        $pol =  (int) 222200000;
+        $card = Card::orderBy('policy_no', 'desc')->first();
+        if($card){
+            $policy = $card->policy_no + 1;
+        }else{
+            $policy = $pol + 1;
+        }
+        return $policy;
+    }
+
     public function collection(Collection $rows)
     {
-        $card = Card::latest()->first();
-        if($card){
-            $policy = $card->policy + 1;
-        }else{
-            $policy = 222200000;
-        }
+//        $card = Card::orderBy('policy_no', 'desc')->first();
+//        if($card){
+//            $policy = $card->policy_no + 1;
+//        }else{
+//            $policy = 222200001;
+//        }
 
         foreach ($rows as $row) {
+            $policy = $this->getPolicy();
             $is_parent = 1;
             $card_id = null;
             if (isset($row['parent'])) {
@@ -45,12 +62,15 @@ class CardImport implements ToCollection, WithHeadingRow
             } else {
                 $package_id = PackageType::latest()->first()->id;
             }
+
             $user = User::where('username', $agent)->first();
             $e_card = Card::where('cpr_no',$row['cpr_no'])->orWhere('policy_no',$policy)->first();
+            $issue_date = $this->validateDate($row['issue_date']) ? $row['issue_date'] : Carbon::now();
+            $period = isset($row['period']) ? $row['period'] : 3;
             if (isset($row['cpr_no']) && !$e_card) {
                 Card::create([
                     'cpr_no' => $row['cpr_no'],
-                    'policy_no' => $policy++,
+                    'policy_no' => $policy,
                     'imported' => 1,
                     'full_name' => isset($row['full_name']) ? $row['full_name'] : null,
                     'email' => isset($row['email']) ? $row['email'] : null,
@@ -59,17 +79,25 @@ class CardImport implements ToCollection, WithHeadingRow
                     'address' => isset($row['address']) ? $row['address'] : null,
                     'card_type' => isset($row['card_type']) ? $row['card_type'] : null,
                     'payment_method' => isset($row['payment_method']) ? $row['payment_method'] : null,
-                    'period' => isset($row['period']) ? $row['period'] : 3,
+                    'period' => $period,
                     'contact_method' => isset($row['contact_method']) ? $row['contact_method'] : null,
                     'paid' => isset($row['paid']) ? (int)$row['paid'] : 0,
                     'is_parent' => $is_parent,
                     'card_id' => $card_id,
                     'gender' => isset($row['gender']) ? $row['gender'] : null,
-                    'issue_date' => isset($row['issue_date']) ? $row['issue_date'] : Carbon::now(),
+                    'issue_date' => $issue_date,
                     'agent_id' => $user ? $user->id : User::whereRoleIs(['agent'])->first()->id,
                     'package_type' => $package_id,
+                    'expiry_date' =>$this->setExpiryDate($issue_date, $period)
                 ]);
             }
         }
+    }
+
+    function validateDate($date, $format = 'Y-m-d')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
+        return $d && $d->format($format) === $date;
     }
 }
