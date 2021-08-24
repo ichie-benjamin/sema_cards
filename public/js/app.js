@@ -21550,7 +21550,7 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("td", [
                                   _vm._v(
-                                    "$" +
+                                    "BD" +
                                       _vm._s(
                                         _vm.formatPrice(item.package.price)
                                       ) +
@@ -21759,7 +21759,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
-                                      "$" +
+                                      "BD" +
                                         _vm._s(
                                           _vm.formatPrice(item.package.price)
                                         ) +
@@ -21790,7 +21790,7 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("td", [
                                   _vm._v(
-                                    "$" +
+                                    "BD" +
                                       _vm._s(_vm.formatPrice(_vm.totalPrice))
                                   )
                                 ])

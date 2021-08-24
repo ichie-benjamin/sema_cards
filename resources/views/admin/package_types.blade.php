@@ -93,7 +93,7 @@
                                     @foreach($types as $item)
                                     <tr>
                                         <td class="text-capitalize">{{ $item->name }}</td>
-                                        <td>{{ $item->price }}</td>
+                                        <td>BD{{ $item->price }}</td>
                                         <td>
                                             <form method="POST" action="{!! route('p_types.destroy', $item->id) !!}" accept-charset="UTF-8">
                                                 {{ csrf_field() }}

@@ -195,7 +195,7 @@
                                 </select>
 <!--                                {{ item.status }}-->
                             </td>
-                            <td>${{ formatPrice(item.package.price) }} /<br/>
+                            <td>BD{{ formatPrice(item.package.price) }} /<br/>
                                 {{ item.paid ? 'Yes' : 'No' }}</td>
                             <td>{{ item.expiry_date }}</td>
                             <td>
@@ -242,7 +242,7 @@
 <!--                                {{ item.status }}-->
                             </td>
                             <td>{{ item.expiry_date }}</td>
-                            <td>${{ formatPrice(item.package.price) }}
+                            <td>BD{{ formatPrice(item.package.price) }}
                               </td>
 
                         </tr>
@@ -257,7 +257,7 @@
                             <td></td>
                             <td></td>
 
-                            <td>${{ formatPrice(totalPrice)}}</td>
+                            <td>BD{{ formatPrice(totalPrice)}}</td>
 
                         </tr>
                         </tbody>
