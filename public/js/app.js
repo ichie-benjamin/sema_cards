@@ -2349,6 +2349,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -21854,7 +21855,10 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "a",
-                { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { href: "/admin/card/invoice/" + _vm.card.id }
+                },
                 [_vm._v("Invoice")]
               ),
               _vm._v(" "),

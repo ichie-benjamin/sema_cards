@@ -274,8 +274,9 @@
 <!--                <button  @click="update" type="button" class="btn btn-primary" >Save</button>-->
                 <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0 || card.status === 'done' || card.status === 'pending' "  class="btn btn-primary" >View Cards</a>
                 <a :href="'/admin/card/'+card.policy_no+'?download'" v-if="card.paid > 0" class="btn btn-success" >Print Cards</a>
-                <a href="#" class="btn btn-primary">Invoice</a>
+                <a :href="'/admin/card/invoice/'+card.id" class="btn btn-primary">Invoice</a>
                 <button type="button" @click="saveEditImage" class="btn btn-success">Save Photo</button>
+
                 <button type="button" @click="sendEmail(card.id)" :disabled="loading" class="btn btn-warning" v-if="card.paid > 0">Send Email</button>
 
             </div>

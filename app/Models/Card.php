@@ -11,7 +11,7 @@ use phpDocumentor\Reflection\Types\Integer;
 class Card extends Model
 {
 
-    use SoftDeletes;
+//    use SoftDeletes;
 
 
     protected $table = 'cards';

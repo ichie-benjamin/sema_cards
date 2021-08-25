@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "laravelcollective/html": "^6.2",
+        "laraveldaily/laravel-invoices": "^2.0",
         "maatwebsite/excel": "^3.1",
         "nicoaudy/laravelmanthra": "dev-master",
         "santigarcor/laratrust": "^6.3",
