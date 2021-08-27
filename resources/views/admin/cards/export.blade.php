@@ -193,7 +193,7 @@
                                 <th class="text-capitalize">Package</th>
                                 <th class="text-capitalize">paid</th>
                                 <th class="text-capitalize">expiry date</th>
-                                <th class="text-capitalize">price</th>
+                                <th class="text-capitalize">price (BD)</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -219,7 +219,7 @@
                                 <td>{{ $item->p_name }}</td>
                                 <td>{{ $item->paid ? 'Yes' : 'No' }}</td>
                                 <td>{{ $item->expiry_date }}</td>
-                                <td>BD{{ $item->price }}</td>
+                                <td>{{ $item->price }}</td>
 
                             </tr>
                             @endforeach
