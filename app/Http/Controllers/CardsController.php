@@ -26,12 +26,15 @@ class CardsController extends Controller
 
     public function index(Request $request)
     {
-        $status = ['draft', 'pending' ,'expired','done','paid','print'];
+        $status = ['draft', 'pending','done','paid','print'];
         $card = Card::with('agent','cards','package');
 //        $card = Card::whereIsParent(1)->with('agent','cards','package');
         if($request->get('cpr')){
             $card->where('cpr_no',$request->get('cpr'))
                 ->orWhere('full_name', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('mobile', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('mobile2', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('email', 'like', '%'.$request->get('cpr').'%')
                 ->orWhere('phone', 'like', '%'.$request->get('cpr').'%');
         }
          if($request->get('s')){
@@ -54,13 +57,23 @@ class CardsController extends Controller
          if($request->has('imported')){
             $card->where('imported', 1);
         }
+         if($request->has('expired')){
+            $card->where('expiry_date', '<=', Carbon::now());
+        }
+         if($request->has('renewal')){
+            $card->where('expiry_date', '<=', Carbon::now()->subDays(20));
+        }
          if($request->get('from') && $request->get('to')){
              $from = date($request->get('from'));
              $to = date($request->get('to'));
             $card->whereBetween('issue_date', [$from, $to]);
         }
 
-        $cards = $card->paginate(50);
+        $cards = $card->with('card')->paginate(50);
+
+         if($request->has('export')){
+             return view('admin.cards.export', compact('cards','status'));
+         }
         return view('admin.cards.list', compact('cards','status'));
     }
 
@@ -208,9 +221,15 @@ class CardsController extends Controller
 
             $data = $this->getData($request);
 
-        $request->validate(['cpr_no' => 'required|string|unique:cards,cpr_no']);
+            $request->validate(['cpr_no' => 'required|string|unique:cards,cpr_no']);
 
-        $data['expiry_date'] = $this->setExpiryDate($data['issue_date'], $data['period']);
+            if($request->get('price')){
+                $data['price'] = $request->get('price');
+            }else{
+                $data['price'] = $this->setPrice($data['package_type']);
+            }
+
+            $data['expiry_date'] = $this->setExpiryDate($data['issue_date'], $data['period']);
 
             $card = Card::create($data);
 
@@ -275,6 +294,14 @@ class CardsController extends Controller
         $newDate = new Carbon($date);
         return $newDate->addMonths($month);
     }
+    private function setPrice($package){
+        $p_type = PackageType::whereId($package)->first();
+        if($p_type){
+            return $p_type->price;
+        }else{
+            return 10;
+        }
+    }
 
     public function sendEmail(Request $request){
         $data = [];
@@ -296,12 +323,22 @@ class CardsController extends Controller
     public function update($id, Request $request)
     {
 
-     $data = $this->getData($request);
+
+        $data = $this->getData($request);
             $card = Card::findOrFail($id);
 
             if($data['issue_date'] != $card->issue_date || $data['period'] != $card->period){
                 $data['expiry_date'] = $this->setExpiryDate($data['issue_date'], $data['period']);
             }
+
+            if($data['package_type'] != $card->package_type){
+                $data['price'] = $this->setPrice($data['package_type']);
+            }
+
+//            if($data['price'] != $card->price){
+//                $data['price'] = $data['price'];
+//            }
+
             $card->update($data);
             $res = Card::findOrFail($id);
 //        if($request->has('is_package')){
@@ -384,6 +421,7 @@ class CardsController extends Controller
             'issue_date' => 'nullable',
             'first_issue_date' => 'nullable',
             'email' => 'nullable',
+            'price' => 'nullable',
             'paid' => 'nullable',
             'online' => 'nullable',
             'card_id' => 'nullable',

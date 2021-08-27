@@ -27,6 +27,7 @@ class Card extends Model
                   'mobile',
                   'mobile2',
                   'phone',
+                  'price',
                   'address',
                   'card_type',
                   'payment_method',
@@ -58,6 +59,11 @@ class Card extends Model
     public function agent()
     {
         return $this->belongsTo(User::class,'agent_id');
+    }
+
+    public function card()
+    {
+        return $this->belongsTo(Card::class,'card_id');
     }
 
     public function package()
@@ -109,10 +115,10 @@ class Card extends Model
      *
      * @return App\Models\Card
      */
-    public function card()
-    {
-        return $this->belongsTo('App\Models\Card','card_id');
-    }
+//    public function card()
+//    {
+//        return $this->belongsTo('App\Models\Card','card_id');
+//    }
     public function cards()
     {
         return $this->hasMany(Card::class,'card_id');

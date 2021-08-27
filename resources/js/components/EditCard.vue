@@ -2,16 +2,23 @@
     <div class="card" v-if="card">
         <div class="card-header">
             <div class="row">
-                <div class="col">
-                    <h4 class="card-title">Editing {{ card.full_name }} Card</h4>
+                <div class="col align-self-center">
+                    <button  @click="update" class="btn btn-danger" type="button">Update</button>
+                    <button type="button" class="btn btn-success" @click="addMember"> Add more people</button>
+                    <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0 || card.status === 'done' || card.status === 'pending' "  class="btn btn-primary" >View Cards</a>
+                    <a :href="'/admin/card/'+card.policy_no+'?download'" v-if="card.paid > 0" class="btn btn-success" >Print Cards</a>
+                    <a :href="'/admin/card/invoice/'+card.id" class="btn btn-primary">Invoice</a>
+                    <button type="button" @click="saveEditImage" class="btn btn-success">Save Photo</button>
+
+                    <button type="button" @click="sendEmail(card.id)" :disabled="loading" class="btn btn-warning" v-if="card.paid > 0">Send Email</button>
+
                 </div>
                 <div class="col-auto align-self-center">
                     <button @click="updateStatus('draft')" class="btn " :class="card.status === 'draft' ? 'btn-success' : 'btn-outline-success'">Draft</button>
                     <button @click="updateStatus('pending')" class="btn " :class="card.status === 'pending' ? 'btn-success' : 'btn-outline-success'">Pending</button>
                     <button @click="updateStatus('done')" class="btn " :class="card.status === 'done' ? 'btn-success' : 'btn-outline-success'">Done</button>
+                    <button @click="updateStatus('cancelled')" class="btn " :class="card.status === 'cancelled' ? 'btn-success' : 'btn-outline-success'">Cancelled</button>
                     <button @click="updateStatus('paid')" class="btn " :class="card.status === 'paid' ? 'btn-success' : 'btn-outline-success'">Paid</button>
-                    <button @click="updateStatus('print')" class="btn " :class="card.status === 'print' ? 'btn-success' : 'btn-outline-success'">Print</button>
-                    <button @click="updateStatus('expired')" class="btn " :class="card.status === 'expired' ? 'btn-success' : 'btn-outline-success'">Expired</button>
                 </div>
             </div>
         </div>
@@ -100,9 +107,14 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-9">
                 <div class="form-group "><label>Address (Bld/house / Flat / Road , Block , Place , Country)</label>
                     <input   v-model="card.address" type="text" class="form-control" placeholder="address" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group "><label>Price (Overides package price)</label>
+                    <input   v-model="card.price" type="number" step="any" class="form-control" />
                 </div>
             </div>
 
@@ -195,8 +207,19 @@
                                 </select>
 <!--                                {{ item.status }}-->
                             </td>
-                            <td>BD{{ formatPrice(item.package.price) }} /<br/>
-                                {{ item.paid ? 'Yes' : 'No' }}</td>
+                            <td>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">BD</span>
+                                    </div>
+                                        <input @change="updatePackage(item)" class="form-control" type="number" step="any" v-model="item.price" />
+
+                                    <div class="input-group-append"><span class="input-group-text">
+                                        {{ item.paid ? 'Yes' : 'No' }}
+                                    </span></div>
+                                </div>
+
+                            </td>
                             <td>{{ item.expiry_date }}</td>
                             <td>
                                 <button class="btn btn-danger" @click="deleteUser(item.id)"><i class="fa fa-trash"></i> </button>
@@ -208,6 +231,8 @@
                     </table>
                 </div>
             </div>
+
+
             <div class="col-12 mb-2" v-if="payments">
                 <hr />
                 <h4>Payments ({{ payments.length}})</h4>
@@ -242,7 +267,16 @@
 <!--                                {{ item.status }}-->
                             </td>
                             <td>{{ item.expiry_date }}</td>
-                            <td>BD{{ formatPrice(item.package.price) }}
+                            <td>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">BD</span>
+                                    </div>
+                                    <input @change="updatePackage(item)" class="form-control" type="number" step="any" v-model="item.price" />
+                                    <div class="input-group-append"><span class="input-group-text">
+                                        {{ item.paid ? 'Yes' : 'No' }}
+                                    </span></div>
+                                </div>
                               </td>
 
                         </tr>
@@ -268,10 +302,8 @@
 
 
             <div class="col-12">
-<!--                <button v-if="!more" @click="more = true" class="btn btn-warning" type="button">View more details</button>-->
                 <button  @click="update" class="btn btn-danger" type="button">Update</button>
                 <button type="button" class="btn btn-success" @click="addMember"> Add more people</button>
-<!--                <button  @click="update" type="button" class="btn btn-primary" >Save</button>-->
                 <a :href="'/admin/card/'+card.policy_no" v-if="card.paid > 0 || card.status === 'done' || card.status === 'pending' "  class="btn btn-primary" >View Cards</a>
                 <a :href="'/admin/card/'+card.policy_no+'?download'" v-if="card.paid > 0" class="btn btn-success" >Print Cards</a>
                 <a :href="'/admin/card/invoice/'+card.id" class="btn btn-primary">Invoice</a>
@@ -320,7 +352,7 @@
                                         <input required v-model="form.full_name" type="text" class="form-control" placeholder="Full name" />
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-6">
+                                <div class="col-6 col-md-4">
                                     <div class="form-group "><label>CPR No.</label>
                                         <input required v-model="form.cpr_no" type="text" class="form-control" placeholder="CPR NO" />
                                     </div>
@@ -360,31 +392,15 @@
                                     </div>
                                 </div>
 
-                                <div class="col-6 col-md-4">
-                                    <div class="form-group "><label>Package Type</label>
-                                        <select class="form-control" v-model="card.package_type">
-                                            <option class="text-capitalize"  v-for="item in p_types" :value="item.id">{{ item.name }}</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="col-6 col-md-4">
-                                    <div class="form-group "><label>Period</label>
-                                        <select class="form-control" v-model="card.period">
-                                            <option value="3">3 Months</option>
-                                            <option value="6">6 Months</option>
-                                            <option value="12">1 Year</option>
-                                            <option value="24">2 Years</option>
-                                            <option value="60">5 Years</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-12">
+                                <div class="col-8">
                                     <div class="form-group "><label>Address (Bld/house / Flat / Road , Block , Place , Country)</label>
                                         <input   v-model="form.address" type="text" class="form-control" placeholder="address" />
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="form-group "><label>Price (This overides package price)</label>
+                                        <input   v-model="form.price" type="number" step="any" class="form-control" />
                                     </div>
                                 </div>
 
@@ -492,6 +508,7 @@ name: "EditCard",
                 'period' : this.card_data.period,
                 'cpr_no' : '',
                 'mobile' : '',
+                'price' : '',
                 'mobile2' : '',
                 'phone' : '',
                 'address' : '',
@@ -538,7 +555,6 @@ name: "EditCard",
             this.loading = true;
             this.error = null;
             item.is_package = true;
-
             axios.put(item.update_url, item).then((res)=>{
                 this.loading = false;
                 this.getPayments();
@@ -548,7 +564,7 @@ name: "EditCard",
                     console.log(res.data)
                     this.members = res.data
                 }
-                toastr.success('Package details updated successfully')
+                toastr.success('Details updated successfully')
             }).catch((error)=>{
                 this.loading = false
                 if (error.response.status === 422){
@@ -588,7 +604,8 @@ name: "EditCard",
             axios.put(this.url, this.card).then((res)=>{
                 console.log(res.data);
                 this.loading = false;
-                this.card = res.data
+                this.card = res.data;
+                this.getPayments();
                 toastr.success('Card information updated')
                 setTimeout(()=>{
                     this.loaded = true
@@ -722,7 +739,7 @@ name: "EditCard",
         totalPrice: function(){
             let sum = 0;
             for(let i = 0; i < this.payments.length; i++){
-                sum += (parseFloat(this.payments[i].package.price));
+                sum += (parseFloat(this.payments[i].price));
             }
             return sum;
         }

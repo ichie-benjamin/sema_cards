@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPriceToCards extends Migration
+class AddPriceFeildToCards extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddPriceToCards extends Migration
     public function up()
     {
         Schema::table('cards', function (Blueprint $table) {
-            //
+            $table->decimal('price')->default(10)->after('phone');
         });
     }
 
@@ -26,7 +26,7 @@ class AddPriceToCards extends Migration
     public function down()
     {
         Schema::table('cards', function (Blueprint $table) {
-            //
+            $table->dropColumn('price');
         });
     }
 }

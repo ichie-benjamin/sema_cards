@@ -193,6 +193,16 @@
                 </li>
                 <li class="creat-btn">
                     <div class="nav-link">
+                        <a class="btn btn-sm btn-soft-primary" href="{{ route('dashboard') }}" role="button"><i class="fas fa-list mr-2"></i>Dashboard</a>
+                    </div>
+                </li>
+                <li class="creat-btn">
+                    <div class="nav-link">
+                        <a class="btn btn-sm btn-soft-primary" href="{{ url()->previous() }}" role="button"><i class="fas fa-arrow-left mr-2"></i>Previous Page</a>
+                    </div>
+                </li>
+                <li class="creat-btn">
+                    <div class="nav-link">
                         <a class="btn btn-sm btn-soft-primary" href="{{ route('cards.create') }}" role="button"><i class="fas fa-plus mr-2"></i>New Card</a>
                     </div>
                 </li>

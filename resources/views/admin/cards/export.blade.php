@@ -56,6 +56,7 @@
             </div>
         </div>
 
+        @section('old')
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -91,7 +92,6 @@
                             <div class="col-3">
                                 <button class="btn btn-primary mt-4" type="submit">Search</button>
                                 <a href="{{ route('cards.index') }}" class="btn btn-danger mt-4">Reset</a>
-                                <a href="{{url()->current()}}?export" class="btn btn-success mt-4">Export Data</a>
 
                             </div>
 
@@ -165,6 +165,71 @@
             <!-- end col -->
         </div>
         <!-- end row -->
+        @endsection
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Export Data</h4>
+                        <p class="text-muted mb-0">
+                            Export either in CSV, EXCEL or PDF (select columns to export)
+                        </p>
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body table-responsive">
+                        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <thead>
+                            <tr>
+                                <th class="text-capitalize">Parent CPR</th>
+                                <th class="text-capitalize">cpr</th>
+                                <th class="text-capitalize">Issue Date</th>
+                                <th class="text-capitalize">agent</th>
+                                <th class="text-capitalize">Name</th>
+                                <th class="text-capitalize">Dependents</th>
+                                <th class="text-capitalize">email</th>
+                                <th class="text-capitalize">phone</th>
+                                <th class="text-capitalize">status</th>
+                                <th class="text-capitalize">Package</th>
+                                <th class="text-capitalize">paid</th>
+                                <th class="text-capitalize">expiry date</th>
+                                <th class="text-capitalize">price</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($cards as $item)
+                            <tr>
+                                <td>
+                                    @if ($item->is_parent)
+                                        ++++++
+                                    @else
+                                        {{ optional($item->card)->cpr_no }}<br/>
+                                        [{{ optional($item->card)->full_name }}]
+
+                                    @endif
+                                </td>
+                                <td>{{ $item->cpr_no }}</td>
+                                <td>{{ $item->issue_date }}</td>
+                                <td>{{ optional($item->agent)->full_name }}</td>
+                                <td>{{ $item->full_name }}</td>
+                                <td>{{ count($item->cards) }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->phone }}</td>
+                                <td>{{ $item->status }}</td>
+                                <td>{{ $item->p_name }}</td>
+                                <td>{{ $item->paid ? 'Yes' : 'No' }}</td>
+                                <td>{{ $item->expiry_date }}</td>
+                                <td>BD{{ $item->price }}</td>
+
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
     </div>
     </card-table>
 @endsection
@@ -172,12 +237,27 @@
 
 
 @section('js')
-    <script src="https://mannatthemes.com/dastyle/plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js"></script>
-
-    <script src="/assets/pages/jquery.responsive-table.init.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/jszip.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/pdfmake.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/vfs_fonts.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/buttons.print.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="https://mannatthemes.com/dastyle/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="/assets/pages/jquery.datatable.init.js"></script>
+    <!-- App js -->
 
 @endsection
 
 @section('styles')
-    <link href="https://mannatthemes.com/dastyle/plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- DataTables -->
+    <link href="https://mannatthemes.com/dastyle/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://mannatthemes.com/dastyle/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 @endsection
