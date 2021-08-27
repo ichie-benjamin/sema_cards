@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+@section('title')
+Export Data
+@endsection
 @section('content')
     <card-table :status="{{ json_encode($status) }}" :cards="{{ json_encode($cards) }}" inline-template>
     <div class="container-fluid">
