@@ -69,7 +69,8 @@
 
                     </div>
                     <div class="body">
-                        <div class="photo" style="width: 30%; height: 100%; background-image: url({{ $item->photo }})" >
+                        <div class="photo" style="width: 30%; height: 100%" >
+                            <img style="max-height: 160px" src="{{ $item->photo }}" />
 {{--                            <img src="/assets/images/users/user-1.jpg" />--}}
                         </div>
                         <div class="detail">
