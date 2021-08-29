@@ -75,7 +75,9 @@
                         </div>
                         <div class="body">
 
-                            <div class="photo" style="width: 27%; ;background-image: url({{ $item->photo }})"></div>
+                            <div class="photo" style="width: 27%;">
+                                <img style="max-height: 160px; width: 100%" src="{{ $item->photo }}" />
+                            </div>
                             <div class="detail">
                                 <table>
                                     <tr><td>Name </td><td style="text-transform: capitalize">: {{ $item->full_name }}</td></tr>
