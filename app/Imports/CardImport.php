@@ -81,7 +81,7 @@ class CardImport implements ToCollection, WithHeadingRow
                     'payment_method' => isset($row['payment_method']) ? $row['payment_method'] : null,
                     'period' => $period,
                     'contact_method' => isset($row['contact_method']) ? $row['contact_method'] : null,
-                    'paid' => isset($row['paid']) ? (int)$row['paid'] : 0,
+                    'paid' => isset($row['paid']) ? $row['paid'] : 0,
                     'price' => isset($row['paid']) ? $row['price'] : 10,
                     'is_parent' => $is_parent,
                     'card_id' => $card_id,
