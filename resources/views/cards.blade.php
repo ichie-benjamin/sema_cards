@@ -35,8 +35,8 @@
 
                 <div class="row" >
                     <div class="col-md-6 mx-auto">
-                        <a href="{{ route('online.card', $card->policy_no) }}?download&no_design" class="btn btn-outline-success" >Print Plain</a>
-                        <a href="{{ route('online.card', $card->policy_no) }}?download"  class="btn btn-success" >Print With Design</a>
+{{--                        <a href="{{ route('online.card', $card->policy_no) }}?download&no_design" class="btn btn-outline-success" >Print Plain</a>--}}
+                        <a href="{{ route('online.card', $card->policy_no) }}?download"  class="btn btn-success" >Download</a>
                         <a href="{{ route('online.card', $card->policy_no) }}?email"  class="btn btn-warning" >Email</a>
                     </div>
                 </div>
