@@ -53,7 +53,8 @@ class Card extends Model
            ];
 
     protected $casts = [
-        'is_parent' => 'boolean'
+        'is_parent' => 'boolean',
+        'paid' => 'boolean'
     ];
 
 
