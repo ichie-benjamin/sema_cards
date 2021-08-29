@@ -38,11 +38,16 @@
                     <input type="hidden" name="design" value="{{ $design  }}" />
                 </div>
                 <div class="col-auto align-self-center">
+                    <a href="{{ route('card.policy.show', $id) }}" type="submit" class="btn btn-warning">EDIT CARD</a>
                     <button type="submit" class="btn btn-success">PRINT CARD</button>
-                    <a href="{{ request()->url() }}?download" class="btn btn-primary">PRINT ALL</a>
                     @if ($design)
+                        <a href="{{ request()->url() }}?download" class="btn btn-primary">PRINT ALL</a>
+
+
                         <a href="{{ request()->url() }}?no_design" class="btn btn-warning">No design</a>
                     @else
+                        <a href="{{ request()->url() }}?no_design&download" class="btn btn-primary">PRINT ALL</a>
+
                         <a href="{{ request()->url() }}" class="btn btn-warning">Add design</a>
                     @endif
 
@@ -64,7 +69,7 @@
 
                     </div>
                     <div class="body">
-                        <div class="photo" style="width: 30%; height: 100%; background-image: url({{ $item->img }})" >
+                        <div class="photo" style="width: 30%; height: 100%; background-image: url({{ $item->photo }})" >
 {{--                            <img src="/assets/images/users/user-1.jpg" />--}}
                         </div>
                         <div class="detail">
@@ -128,6 +133,11 @@
             /*padding-right: 15px;*/
             font-weight: 400;
             font-size: 1.5em;
+
+            max-width: 270px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .sema-card .body .detail {
             float: left;

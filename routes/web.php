@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
 
     Route::get('/card/{id}', [CardsController::class, 'cards'])->name('cards');
     Route::get('/preview/{id}', [CardsController::class, 'printCard'])->name('preview');
+    Route::get('/card/policy/{p}', [CardsController::class, 'policyShow'])->name('card.policy.show');
 
     Route::post('/print/cards', [CardsController::class, 'printCards'])->name('print.cards');
 

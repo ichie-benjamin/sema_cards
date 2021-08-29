@@ -95,7 +95,7 @@ class CardsController extends Controller
         }
 
 
-        return view('admin.cards.cards', compact('cards','design'));
+        return view('admin.cards.cards', compact('cards','design','id'));
     }
 
 
@@ -163,6 +163,10 @@ class CardsController extends Controller
         $pdf->setPaper(array(30,-30,450,240),'portrait');
         return $pdf->download($ids[0].'.pdf');
     }
+
+
+
+
     public function printCard($id, Request $request)
     {
 //        $cards = Card::whereId($id)->with('agent','cards')->get();
@@ -254,6 +258,14 @@ class CardsController extends Controller
         $card = Card::with('agent','card')->findOrFail($id);
 
         return view('cards.show', compact('card'));
+    }
+
+    public function policyShow($p)
+    {
+        $card = Card::with('agent','card')->where('policy_no',$p)->firstOrFail();
+
+        return redirect()->route('cards.edit',$card->id);
+
     }
 
     public function edit($id)

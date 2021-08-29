@@ -10,10 +10,10 @@
                     <div class="col-md-6 mx-auto">
                         <div class="sema-card" style="background-image: url('/images/card.jpeg')">
                             <div class="row">
-                                <div class="col-4 mx-auto text-center">
+                                <div class="col-4 mx-auto text-center" >
                                     @if ($card->photo)
-                                        <div class="photo" style="width: 100%; height: 100%;">
-                                            <img src="{{ $card->photo }}" />
+                                        <div class="photo" style="width: 100%;">
+                                            <img style="max-height: 160px" src="{{ $card->photo }}" />
                                         </div>
                                     @endif
                                 </div>

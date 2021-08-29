@@ -20732,7 +20732,7 @@ var render = function() {
                   staticClass: "btn btn-primary",
                   attrs: { href: "/admin/card/invoice/" + _vm.card.id }
                 },
-                [_vm._v("Invoice")]
+                [_vm._v("View Invoice")]
               ),
               _vm._v(" "),
               _c(
@@ -22052,7 +22052,7 @@ var render = function() {
                   staticClass: "btn btn-primary",
                   attrs: { href: "/admin/card/invoice/" + _vm.card.id }
                 },
-                [_vm._v("Invoice")]
+                [_vm._v("View Invoice")]
               ),
               _vm._v(" "),
               _c(

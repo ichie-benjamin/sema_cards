@@ -7,6 +7,7 @@
     <meta content="Sama Cards" name="description" />
     <style>
 
+
         .sema-card {
             /*border-radius: 40px;*/
             background-color: transparent;
@@ -24,27 +25,31 @@
             padding:4px 20px;
         }
         .sema-card .body {
-            padding: 17px 10px;
+            padding: 17px 1px;
             height: 160px;
             /*background: #ccc;*/
         }
         .sema-card .body td {
             /*padding-right: 5px;*/
-            font-weight: 400!important;
+            font-weight: 500!important;
             font-size: 1.25em;
+            max-width: 270px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .sema-card .body h3 {
             /*padding-right: 5px;*/
             font-weight: 800!important;
 
-            font-size: 1.35em;
+            font-size: 1.55em;
         }
         .sema-card .body .detail {
             float: left;
         }
 
         .sema-card .body .photo {
-            margin-right: 15px;
+            margin-right: 7px;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -70,16 +75,16 @@
                         </div>
                         <div class="body">
 
-                            <div class="photo" style="width: 30%; ;background-image: url({{ public_path($item->photo) }})"></div>
+                            <div class="photo" style="width: 27%; ;background-image: url({{ $item->photo }})"></div>
                             <div class="detail">
                                 <table>
-                                    <tr><td>Name </td><td style="text-transform: capitalize">:{{ $item->full_name }}</td></tr>
-                                    <tr><td>CPR No.</td><td>:{{ $item->cpr_no }}</td></tr>
-                                    <tr><td>ID No. </td><td>:{{ number_format($item->policy_no,'0',' ',' ') }}</td></tr>
-                                    <tr><td>Valid till </td><td>:{{ $item->expiry_date }}</td></tr>
+                                    <tr><td>Name </td><td style="text-transform: capitalize">: {{ $item->full_name }}</td></tr>
+                                    <tr><td>CPR No.</td><td>: {{ $item->cpr_no }}</td></tr>
+                                    <tr><td>ID No. </td><td>: {{ number_format($item->policy_no,'0',' ',' ') }}</td></tr>
+                                    <tr><td>Valid till </td><td>: {{ $item->expiry_date }}</td></tr>
                                 </table>
 
-                                <h3 style="margin-top: 10px"><strong>This is Not Insurance Card</strong></h3>
+                                <h3 style="margin-top: 10px">This is Not Insurance Card</h3>
 
                             </div>
 

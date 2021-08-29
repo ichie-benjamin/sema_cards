@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\Integer;
 
 class Card extends Model
@@ -98,6 +99,10 @@ class Card extends Model
     public function getUpdateUrlAttribute()
     {
         return route('cards.update', $this->id);
+    }
+
+    public function getFullNameAttribute($value){
+        return Str::limit($value, 27,'');
     }
 
     public function getEditUrlAttribute()
