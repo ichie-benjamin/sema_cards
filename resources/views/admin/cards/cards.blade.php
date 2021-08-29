@@ -70,7 +70,7 @@
                     </div>
                     <div class="body">
                         <div class="photo" style="width: 30%; height: 100%" >
-                            <img style="max-height: 160px" src="{{ $item->photo }}" />
+                            <img style="max-height: 160px; width: 100%" src="{{ $item->photo }}" />
 {{--                            <img src="/assets/images/users/user-1.jpg" />--}}
                         </div>
                         <div class="detail">
