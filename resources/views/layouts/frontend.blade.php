@@ -111,6 +111,9 @@
 
 <!-- To top button--><a class="scroll-top" href="#top"><i class="fas fa-angle-up"></i></a>
 
+
+<script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
+
 <!-- Scripts-->
 <script src="/front/js/custom/jquery.min.js"></script>
 <script src="/front/js/custom/popper.min.js"></script>
@@ -132,8 +135,6 @@
 <script>
     $('.lfm').filemanager('image');
 </script>
-
-<script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
 
 @if(Session::has('error_message'))
     <script>
