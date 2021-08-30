@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Imports/CardImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/CardImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Card.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Card.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +273,7 @@
       <workItem from="1630186321663" duration="594000" />
       <workItem from="1630265361762" duration="9960000" />
       <workItem from="1630300631469" duration="2001000" />
-      <workItem from="1630346296419" duration="3200000" />
+      <workItem from="1630346296419" duration="3593000" />
     </task>
     <servers />
   </component>

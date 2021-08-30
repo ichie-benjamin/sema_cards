@@ -65,8 +65,8 @@ class CardImport implements ToCollection, WithHeadingRow
 
             $user = User::where('username', $agent)->first();
             $e_card = Card::where('cpr_no',$row['cpr_no'])->orWhere('policy_no',$policy)->first();
-            $issue_date = $this->validateDate($row['issue_date']) ? $row['issue_date'] : Carbon::now();
-            $first_issue_date = $this->validateDate($row['first_issue_date']) ? $row['first_issue_date'] : $issue_date;
+            $issue_date = $this->validateDate($row['issue_date']) ? $this->converDate($row['issue_date']) : Carbon::now();
+            $first_issue_date = $this->validateDate($row['first_issue_date']) ? $this->converDate($row['first_issue_date']) : $issue_date;
             $period = isset($row['period']) ? $row['period'] : 3;
             if (isset($row['cpr_no']) && !$e_card) {
                 Card::create([
@@ -95,6 +95,10 @@ class CardImport implements ToCollection, WithHeadingRow
                 ]);
             }
         }
+    }
+
+    function converDate($date){
+        return Carbon::createFromFormat('d/m/Y', $date)->format('d-m-Y');
     }
 
     function validateDate($date, $format = 'd/m/Y')
