@@ -133,6 +133,8 @@
     $('.lfm').filemanager('image');
 </script>
 
+<script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
+
 @if(Session::has('error_message'))
     <script>
         toastr.error("{!! session('error_message') !!}")
