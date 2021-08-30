@@ -66,6 +66,7 @@ class CardImport implements ToCollection, WithHeadingRow
             $user = User::where('username', $agent)->first();
             $e_card = Card::where('cpr_no',$row['cpr_no'])->orWhere('policy_no',$policy)->first();
             $issue_date = $this->validateDate($row['issue_date']) ? $row['issue_date'] : Carbon::now();
+            $first_issue_date = $this->validateDate($row['first_issue_date']) ? $row['first_issue_date'] : $issue_date;
             $period = isset($row['period']) ? $row['period'] : 3;
             if (isset($row['cpr_no']) && !$e_card) {
                 Card::create([
@@ -87,6 +88,7 @@ class CardImport implements ToCollection, WithHeadingRow
                     'card_id' => $card_id,
                     'gender' => isset($row['gender']) ? $row['gender'] : null,
                     'issue_date' => $issue_date,
+                    'first_issue_date' => $first_issue_date,
                     'agent_id' => $user ? $user->id : User::whereRoleIs(['agent'])->first()->id,
                     'package_type' => $package_id,
                     'expiry_date' =>$this->setExpiryDate($issue_date, $period)
