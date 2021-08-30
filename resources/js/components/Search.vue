@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-4 mx-auto text-center">
                             <div class="photo" style="width: 100%; height: 100%;" v-if="card.photo">
-                                <img :src="card.photo" />
+                                <img style="max-height: 160px; width: 100%" :src="card.photo" />
                             </div>
                         </div>
                         <div class="col-8">
@@ -37,8 +37,7 @@
 
         <div class="row" >
             <div class="col-md-6 mx-auto">
-                <a :href="'/online/card/'+card.policy_no+'?download&no_design'" class="btn btn-outline-success" >Print Plain</a>
-                <a :href="'/online/card/'+card.policy_no+'?download'" class="btn btn-success" >Print With Design</a>
+                <a :href="'/online/card/'+card.policy_no+'?download'" class="btn btn-success" >Download</a>
                 <a :href="'/online/card/'+card.policy_no+'?email'" class="btn btn-warning" >Email</a>
             </div>
         </div>

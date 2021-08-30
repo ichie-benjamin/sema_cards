@@ -2812,7 +2812,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Search",
   props: ['url'],
@@ -23270,7 +23269,15 @@ var render = function() {
                                 staticClass: "photo",
                                 staticStyle: { width: "100%", height: "100%" }
                               },
-                              [_c("img", { attrs: { src: _vm.card.photo } })]
+                              [
+                                _c("img", {
+                                  staticStyle: {
+                                    "max-height": "160px",
+                                    width: "100%"
+                                  },
+                                  attrs: { src: _vm.card.photo }
+                                })
+                              ]
                             )
                           : _vm._e()
                       ]),
@@ -23319,26 +23326,12 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    staticClass: "btn btn-outline-success",
-                    attrs: {
-                      href:
-                        "/online/card/" +
-                        _vm.card.policy_no +
-                        "?download&no_design"
-                    }
-                  },
-                  [_vm._v("Print Plain")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
                     staticClass: "btn btn-success",
                     attrs: {
                       href: "/online/card/" + _vm.card.policy_no + "?download"
                     }
                   },
-                  [_vm._v("Print With Design")]
+                  [_vm._v("Download")]
                 ),
                 _vm._v(" "),
                 _c(

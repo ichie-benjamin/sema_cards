@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Search.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +272,7 @@
       <workItem from="1629989377272" duration="351000" />
       <workItem from="1630007707623" duration="14896000" />
       <workItem from="1630186321663" duration="594000" />
-      <workItem from="1630265361762" duration="8374000" />
+      <workItem from="1630265361762" duration="8875000" />
     </task>
     <servers />
   </component>
