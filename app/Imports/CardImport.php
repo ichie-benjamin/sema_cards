@@ -98,7 +98,7 @@ class CardImport implements ToCollection, WithHeadingRow
     }
 
     function converDate($date){
-        return Carbon::createFromFormat('d/m/Y', $date)->format('d-m-Y');
+        return Carbon::createFromFormat('d/m/Y', $date)->format('Y-m-d');
     }
 
     function validateDate($date, $format = 'd/m/Y')

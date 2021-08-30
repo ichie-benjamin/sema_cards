@@ -140,23 +140,6 @@ class Card extends Model
 //    {
 //        $this->attributes['issue_date'] = !empty($value) ? \DateTime::createFromFormat('[% date_format %]', $value) : null;
 //    }
-
-    public function setIssueDateAttribute($value)
-    {
-        $this->attributes['issue_date'] =  Carbon::parse($value);
-    }
-
-    public function setFirstIssueDateAttribute($value)
-    {
-        $this->attributes['first_issue_date'] =  Carbon::parse($value);
-    }
-
-    public function setExpiryDateAttribute($value)
-    {
-        $this->attributes['first_issue_date'] =  Carbon::parse($value);
-    }
-
-
 //
 //    /**
 //     * Set the expiry_date.
@@ -215,6 +198,23 @@ class Card extends Model
 //    public function getFirstIssueDateAttribute($value)
 //    {
 //        return \DateTime::createFromFormat($this->getDateFormat(), $value)->format('j/n/Y');
+//    }
+
+
+
+    public function setIssueDateAttribute($value)
+    {
+        $this->attributes['issue_date'] =  Carbon::parse($value);
+    }
+
+//    public function setFirstIssueDateAttribute($value)
+//    {
+//        $this->attributes['first_issue_date'] =  Carbon::parse($value);
+//    }
+//
+//    public function setExpiryDateAttribute($value)
+//    {
+//        $this->attributes['first_issue_date'] =  Carbon::parse($value);
 //    }
 
 }
