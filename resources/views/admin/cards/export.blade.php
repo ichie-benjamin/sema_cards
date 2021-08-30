@@ -74,6 +74,7 @@ Export Data
                             <thead>
                             <tr>
                                 <th class="text-capitalize">Parent CPR</th>
+                                <th class="text-capitalize">Parent Name</th>
                                 <th class="text-capitalize">cpr</th>
                                 <th class="text-capitalize">Issue Date</th>
                                 <th class="text-capitalize">First Issue Date</th>
@@ -90,6 +91,7 @@ Export Data
                                 <th class="text-capitalize">Period (months)</th>
                                 <th class="text-capitalize">paid</th>
                                 <th class="text-capitalize">expiry date</th>
+                                <th class="text-capitalize">address</th>
                                 <th class="text-capitalize">price (BD)</th>
                             </tr>
                             </thead>
@@ -103,6 +105,13 @@ Export Data
                                         {{ optional($item->card)->cpr_no }}<br/>
                                         [{{ optional($item->card)->full_name }}]
 
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($item->is_parent)
+
+                                    @else
+                                        {{ optional($item->card)->full_name }}<br/>
                                     @endif
                                 </td>
                                 <td>{{ $item->cpr_no }}</td>
@@ -121,6 +130,7 @@ Export Data
                                 <td>{{ $item->period }}</td>
                                 <td>{{ $item->paid ? 'Yes' : 'No' }}</td>
                                 <td>{{ $item->expiry_date }}</td>
+                                <td>{{ $item->address }}</td>
                                 <td>{{ $item->price }}</td>
 
                             </tr>
