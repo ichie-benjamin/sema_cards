@@ -33,7 +33,7 @@
             /*padding-right: 5px;*/
             font-weight: 500!important;
             font-size: 1.25em;
-            max-width: 270px;
+            max-width: 300px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -75,7 +75,7 @@
                         </div>
                         <div class="body">
 
-                            <div class="photo" style="width: 27%;">
+                            <div class="photo" style="width: 25%;">
                                 <img style="max-height: 160px; width: 100%" src="{{ $item->photo }}" />
                             </div>
                             <div class="detail">

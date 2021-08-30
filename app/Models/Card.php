@@ -103,7 +103,7 @@ class Card extends Model
     }
 
     public function getFullNameAttribute($value){
-        return Str::limit($value, 27,'');
+        return Str::limit($value, 33,'');
     }
 
     public function getEditUrlAttribute()

@@ -69,7 +69,7 @@
 
                     </div>
                     <div class="body">
-                        <div class="photo" style="width: 30%; height: 100%" >
+                        <div class="photo" style="width: 25%; height: 100%" >
                             <img style="max-height: 160px; width: 100%" src="{{ $item->photo }}" />
 {{--                            <img src="/assets/images/users/user-1.jpg" />--}}
                         </div>
@@ -135,7 +135,7 @@
             font-weight: 400;
             font-size: 1.5em;
 
-            max-width: 270px;
+            max-width: 300px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;

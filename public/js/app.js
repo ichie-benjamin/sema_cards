@@ -23261,7 +23261,7 @@ var render = function() {
                   },
                   [
                     _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-4 mx-auto text-center" }, [
+                      _c("div", { staticClass: "col-3 mx-auto text-center" }, [
                         _vm.card.photo
                           ? _c(
                               "div",
@@ -23282,7 +23282,7 @@ var render = function() {
                           : _vm._e()
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-8" }, [
+                      _c("div", { staticClass: "col-9 card-data" }, [
                         _c("table", [
                           _c("tr", [
                             _c("td", [_vm._v("Name ")]),

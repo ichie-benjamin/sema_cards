@@ -14,12 +14,12 @@
             <div class="col-md-6 mx-auto">
                 <div class="sema-card" style="background-image: url('/images/card.jpeg')">
                     <div class="row">
-                        <div class="col-4 mx-auto text-center">
+                        <div class="col-3 mx-auto text-center">
                             <div class="photo" style="width: 100%; height: 100%;" v-if="card.photo">
                                 <img style="max-height: 160px; width: 100%" :src="card.photo" />
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-9 card-data">
                             <table>
                                 <tr><td>Name </td><td style="text-transform: capitalize">:{{ card.full_name }}</td></tr>
                                 <tr><td>CPR </td><td>:{{ card.cpr_no }}</td></tr>

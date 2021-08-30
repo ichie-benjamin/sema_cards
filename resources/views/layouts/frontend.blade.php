@@ -37,8 +37,13 @@
         }
 
         .sema-card td {
-            font-size: 1.2em;
-            font-weight: 800;
+
+            font-weight: 500!important;
+            font-size: 1.25em;
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
     </style>
