@@ -70,7 +70,7 @@ Export Data
                     </div>
                     <!--end card-header-->
                     <div class="card-body table-responsive">
-                        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <table id="cards_table" class="table table-striped table-bordered dt-responsive" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
                                 <th class="text-capitalize">Parent CPR</th>
@@ -163,9 +163,37 @@ Export Data
     <!-- Responsive examples -->
     <script src="https://mannatthemes.com/dastyle/plugins/datatables/dataTables.responsive.min.js"></script>
     <script src="https://mannatthemes.com/dastyle/plugins/datatables/responsive.bootstrap4.min.js"></script>
-    <script src="/assets/pages/jquery.datatable.init.js"></script>
+{{--    <script src="/assets/pages/jquery.datatable.init.js"></script>--}}
     <!-- App js -->
 
+    <script>
+        $(document).ready(function () {
+            $('#cards_table').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        exportOptions: {
+                            columns: [ 0, ':visible' ]
+                        }
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    'colvis'
+                ]
+            } );
+        });
+    </script>
 @endsection
 
 @section('styles')

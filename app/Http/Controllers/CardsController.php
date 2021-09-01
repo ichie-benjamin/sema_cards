@@ -132,7 +132,7 @@ class CardsController extends Controller
     public function onlineSearch(Request  $request){
         $cpr = $request['cpr'];
         if($cpr){
-            $card = Card::where('cpr_no', $cpr)->first();
+            $card = Card::wherePaid(1)->where('cpr_no', $cpr)->first();
             if($card){
                 $data['status'] = 1;
                 $data['card'] = $card;
