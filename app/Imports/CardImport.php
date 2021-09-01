@@ -63,7 +63,7 @@ class CardImport implements ToCollection, WithHeadingRow
                 $package_id = PackageType::latest()->first()->id;
             }
 
-            $user = User::where('username', $agent)->first();
+            $user = User::where('username', $agent)->orWhere('email',$agent)->first();
             $e_card = Card::where('cpr_no',$row['cpr_no'])->orWhere('policy_no',$policy)->first();
             $issue_date = $this->validateDate($row['issue_date']) ? $this->converDate($row['issue_date']) : Carbon::now();
             $first_issue_date = $this->validateDate($row['first_issue_date']) ? $this->converDate($row['first_issue_date']) : $issue_date;
@@ -86,6 +86,8 @@ class CardImport implements ToCollection, WithHeadingRow
                     'price' => isset($row['paid']) ? $row['price'] : 10,
                     'is_parent' => $is_parent,
                     'card_id' => $card_id,
+                    'mobile' => isset($row['mobile']) ? $row['mobile'] : null,
+                    'mobile2' => isset($row['mobile2']) ? $row['mobile2'] : null,
                     'gender' => isset($row['gender']) ? $row['gender'] : null,
                     'issue_date' => $issue_date,
                     'first_issue_date' => $first_issue_date,

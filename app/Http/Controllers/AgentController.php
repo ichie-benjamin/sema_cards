@@ -35,9 +35,10 @@ class AgentController extends Controller
     public function update($id, Request $request){
         $request->validate([
             'full_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,'.$id],
-            'username' => ['required', 'string', 'max:255', 'unique:users,'.$id],
-            'phone' => ['required', 'string', 'max:255', 'unique:users,'.$id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$id],
+            'username' => ['required', 'string', 'max:255', 'unique:users,username,'.$id],
+            'phone' => ['required', 'string', 'max:255', 'unique:users,phone,'.$id],
+//            'email' => 'required|email|unique:users,email,'.$user->id,
         ]);
         $user = User::findOrFail($id);
         $user->full_name = $request['full_name'];

@@ -108,6 +108,7 @@
                                     <tr>
                                         <th>Full name</th>
                                         <th data-priority="1">Email</th>
+                                        <th data-priority="1">Username</th>
                                         <th data-priority="3">Total Cards</th>
                                         <th data-priority="3">Draft Cards</th>
                                         <th data-priority="3">Done Cards</th>
@@ -121,6 +122,7 @@
                                     <tr>
                                         <td class="text-capitalize">{{ $item->full_name }}</td>
                                         <td>{{ $item->email }}</td>
+                                        <td>{{ $item->username }}</td>
                                         <td>{{ $item->cards()->count() }}</td>
                                         <td>{{ $item->cards()->whereStatus('draft')->count() }}</td>
                                         <td>{{ $item->cards()->whereStatus('done')->count() }}</td>
