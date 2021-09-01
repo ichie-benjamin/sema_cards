@@ -12,6 +12,9 @@
                         </div>
                         <!--end col-->
                         <div class="col-auto align-self-center">
+                            <a href="{{ route('card.delete.all_cards') }}" onclick="return confirm('Are you sure you want to delete all cards ?')" class="btn btn-danger">
+                                Delete all cards
+                            </a>
                             <button type="button" @click="toogleImport()" class="btn btn-sm btn-warning" id="Dash_Date">
                                 <span class="day-name">Import Cards</span>
                             </button>

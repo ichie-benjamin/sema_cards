@@ -55,7 +55,9 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
     Route::get('/card/destroy/{id}', [CardsController::class, 'delete']);
     Route::get('/card/payments/{id}', [CardsController::class, 'payments'])->name('card.payments');
     Route::get('/card/mems/{id}', [CardsController::class, 'members'])->name('card.mems');
+
     Route::get('/card/invoice/{id}', [InvoiceController::class, 'makeInvoice'])->name('card.invoice');
+
 
 
     Route::post('/card/import', [CardsController::class, 'importCards'])->name('cards.import');
@@ -68,6 +70,8 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
         'p_types' => PackageTypesController::class
     ]);
 
+
+    Route::get('delete/all/cards', [CardsController::class, 'deleteAllCards'])->name('card.delete.all_cards');
 
 
 });

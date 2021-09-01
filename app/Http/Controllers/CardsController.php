@@ -98,6 +98,11 @@ class CardsController extends Controller
         return view('admin.cards.cards', compact('cards','design','id'));
     }
 
+    public function deleteAllCards(){
+
+        Card::truncate();
+        return back()->with('success_message', 'All cards successfully deleted.');
+    }
 
     public function cardOnline($id, Request $request)
     {
