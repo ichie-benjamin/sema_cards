@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/ApplyCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/apply.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/apply.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/invoices/templates/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/invoices/templates/default.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +279,7 @@
       <workItem from="1630485671395" duration="2531000" />
       <workItem from="1630498804024" duration="3217000" />
       <workItem from="1630532298891" duration="598000" />
-      <workItem from="1630668204384" duration="14984000" />
+      <workItem from="1630668204384" duration="16099000" />
     </task>
     <servers />
   </component>
@@ -328,12 +321,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>420</line>
+          <line>435</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="getPolicy" />
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
+          <line>388</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\CardsController" />
+            <option name="methodName" value="destroy" />
+          </properties>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/vendor/laravelroles/laravelroles/crud/dashboard.blade.php</url>

@@ -388,7 +388,16 @@ class CardsController extends Controller
 
     public function destroy($id)
     {
-            $card = Card::findOrFail($id);
+      $members = Card::whereCardId($id)->whereIsParent(0);
+
+      $count = Card::whereCardId($id)->whereIsParent(0)->count();
+
+        if($count > 0){
+            $members->delete();
+        }
+
+        $card = Card::findOrFail($id);
+
             $card->delete();
 
             return redirect()->back()
@@ -398,7 +407,13 @@ class CardsController extends Controller
 
     public function delete($id)
     {
-            $card = Card::findOrFail($id);
+       $members = Card::whereCardId($id)->whereIsParent(0)->get();
+
+        if(count($members) > 0){
+            $members->delete();
+        }
+
+        $card = Card::findOrFail($id);
             $card->delete();
             return response()->json($card);
     }
