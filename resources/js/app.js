@@ -23,6 +23,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('card-table', require('./components/CardTable.vue').default);
 Vue.component('edit-card', require('./components/EditCard.vue').default);
 Vue.component('Search', require('./components/Search.vue').default);
+Vue.component('apply-card', require('./components/ApplyCard.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

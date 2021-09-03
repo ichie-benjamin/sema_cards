@@ -17,7 +17,8 @@ class InvoiceController extends Controller
         $customer = new Buyer([
             'name'          => $card->full_name,
             'address' => $card->address,
-            'code' => '#'.$card->policy_no.'_'.$card->cpr_no,
+            'phone' => $card->phone ?: $card->mobile,
+//            'code' => '#'.$card->policy_no.'_'.$card->cpr_no,
             'custom_fields' => [
                 'email' => $card->email,
                 'cpr_no' => $card->cpr_no,
@@ -50,13 +51,12 @@ class InvoiceController extends Controller
             ->logo(public_path('images/s_logo.png'))
             ->sequence($card->id)
             ->serialNumberFormat('{SEQUENCE}/{SERIES}')
-            ->date(now()->subWeeks(3))
             ->dateFormat('m/d/Y')
-            ->payUntilDays(14)
             ->currencyFormat('{SYMBOL}{VALUE}')
             ->currencyThousandsSeparator('.')
             ->currencyDecimalPoint(',')
             ->filename($card->policy_no . ' => sama_card')
+            ->totalAmount(0)
             ->addItems($items->toArray());
 
         return $invoice->stream();

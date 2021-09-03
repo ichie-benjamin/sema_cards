@@ -214,14 +214,25 @@ class CardsController extends Controller
 
         $request->validate(['cpr_no' => 'required|string|unique:cards,cpr_no']);
 
+
+        $data['price'] = $this->setPrice($data['package_type']);
+
         $data['expiry_date'] = $this->setExpiryDate($data['issue_date'], $data['period']);
 
         $data['agent_id'] = $this->publicAgent();
 
+        $data['online'] = true;
+
             $card = Card::create($data);
 
-        return redirect()->back()
-            ->with('success_message', 'Card was successfully submited');
+        if($card->is_parent > 0){
+            return response()->json($card);
+        }else{
+            $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
+            return response()->json($members);
+        }
+
+
 
     }
 
@@ -252,6 +263,7 @@ class CardsController extends Controller
             }else{
 //                return redirect()->route('cards.index')
 //                    ->with('success_message', 'Card was successfully added.');
+
                 $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
                 return response()->json($members);
             }
@@ -361,6 +373,10 @@ class CardsController extends Controller
 //        if($request->has('is_package')){
 //            return response()->json($res);
 //        }else
+        if($res->online){
+            $members = Card::whereCardId($id)->whereIsParent(0)->get();
+            return response()->json($members);
+        }
            if($res->is_parent){
                 return response()->json($res);
             }else{

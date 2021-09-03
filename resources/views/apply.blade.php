@@ -18,6 +18,7 @@
     <link href="/assets/css/jquery-ui.min.css" rel="stylesheet" />
     <link href="/assets/css/website.css" rel="stylesheet" />
 
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="dir-ltr">
@@ -27,7 +28,7 @@
 </div>
 
 <div class="body-bg"></div>
-<div class="row d-flex w-100">
+<div class="row d-flex w-100" id="app">
     <div class="container">
 
         <div class="row d-flex w-100">
@@ -56,141 +57,7 @@
 
         <div class="row d-flex w-100"></div>
 
-        <form method="post" action="" class="col-sm-12 col-sm-8 col-lg-8 m-auto form-data">
-            <div class="requset-crad-form">
-                <div class="form-group">
-                    <div class="col-sm-12 col-sm-offset-2">
-
-                    </div>
-                </div>
-                <div class="form-group col-12">
-                    <input required="" type="text" class="form-control text-left dir-ltr" id="name" name="name" autocomplete="off" placeholder="Name">
-                </div>
-
-                <div class="form-group col-12">
-                    <select required="" class="custom-select text-left ltr" name="gender" id="gender">
-                        <option value="Male" selected="selected">Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-12">
-                    <input required="" type="text" class="form-control text-left dir-ltr" id="card_id" name="card_id" autocomplete="off" placeholder="CPR No.">
-                </div>
-
-                <div class="form-group col-12">
-                    <input required="" type="text" class="form-control text-left dir-ltr" id="mobile" name="mobile" autocomplete="off" placeholder="Mobile 1">
-                </div>
-                <div class="form-group col-12">
-                    <input required="" type="text" class="form-control text-left dir-ltr" id="mobile_2" name="mobile_2" autocomplete="off" placeholder="Mobile 2">
-                </div>
-
-                <div class="form-group col-12">
-                    <input type="text" class="form-control text-left dir-ltr" id="block" name="block" autocomplete="off" placeholder="Block">
-                </div>
-                <div class="form-group col-12">
-                    <input type="text" class="form-control text-left dir-ltr" id="road" name="road" autocomplete="off" placeholder="Road">
-                </div>
-                <div class="form-group col-12">
-                    <input type="text" class="form-control text-left dir-ltr" id="building" name="building" autocomplete="off" placeholder="Building">
-                </div>
-                <div class="form-group col-12">
-                    <input type="text" class="form-control text-left dir-ltr" id="flat" name="flat" autocomplete="off" placeholder="Flat">
-                </div>
-
-                <div class="form-group col-12">
-                    <input type="text" class="form-control text-left dir-ltr" id="place" name="place" autocomplete="off" placeholder="Place">
-                </div>
-
-                <div required="" class="form-group col-12">
-                    <input type="email" class="form-control text-left dir-ltr" id="email" name="email" autocomplete="off" placeholder="Email">
-                </div>
-
-                <div class="form-group col-12">
-                    <textarea class="form-control text-left dir-ltr" name="note" id="note" rows="2" autocomplete="off" placeholder="Notes"></textarea>
-                </div>
-            </div>
-
-
-            <div class="add-more">
-                <br>
-                <hr class="row d-flex m-0 w-100">
-                <br>
-
-                <div class="row min-form-additional-data">
-                    <h4 class="d-block row w-100 text-info text-center">Add Other People</h4>
-                    <br>
-                    <div class="row m-0 input-list">
-                        <div class="form-group col-12 col-md-6 float-left">
-                            <input type="text" class="form-control text-left" id="additional_name" name="additional_name[]" autocomplete="off" placeholder="Name">
-                        </div>
-
-                        <div class="form-group col-12 col-md-6">
-                            <select class="custom-select text-left ltr" name="additional_gender[]" id="additional_gender">
-                                <option value="Male" selected="selected">Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_card_id" name="additional_card_id[]" autocomplete="off" placeholder="CPR No.">
-                        </div>
-
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_mobile" name="additional_mobile[]" autocomplete="off" placeholder="Mobile 1">
-                        </div>
-
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_mobile" name="additional_mobile_2[]" autocomplete="off" placeholder="Mobile 2">
-                        </div>
-
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_block" name="additional_block[]" autocomplete="off" placeholder="Block">
-                        </div>
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_road" name="additional_road[]" autocomplete="off" placeholder="Road">
-                        </div>
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_building" name="additional_building[]" autocomplete="off" placeholder="Building">
-                        </div>
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_flat" name="additional_flat[]" autocomplete="off" placeholder="Flat">
-                        </div>
-
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" id="additional_place" name="additional_place[]" autocomplete="off" placeholder="Place">
-                        </div>
-
-                        <div class="form-group col-12 col-md-6">
-                            <input type="email" class="form-control text-left" id="additional_email" name="additional_email[]" autocomplete="off" placeholder="Email">
-                        </div>
-
-                        <span class="remove_this" data-icon="&#xe906"></span>
-                    </div>
-
-                    <div class="row m-0 p-3 w-100 d-flex add-more-btn">
-                        <button type="button" class="btn btn-info save-data-and-add-more col-4 btn-block p-1 m-auto">
-                            <span data-icon="&#xe973"></span>Add More                        </button>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row m-0 p-3 w-100 d-flex">
-                <br>
-                <button type="submit" class="btn btn-dark btn-send-data col-4 col-md-4 p-1 ml-auto" name="submit">
-                    <span data-icon="&#xf1f6"></span> Send                </button>
-
-                <button type="button" class="btn btn-light btn-add-more col-8 col-md-4 p-1 mr-auto">
-                    <span data-icon="&#xf067"></span> Add Other People                </button>
-
-            </div>
-
-        </form>
-
+        <apply-card post_url="{{ route('cards.online.store') }}"></apply-card>
     </div>
 </div>
 
@@ -204,63 +71,11 @@
 <script src="/assets/js/jquery-ui.min.js"></script>
 
 
-<script>
-    var $_tpl = '';
-    $(document).ready(function(){
-        $('body').on('click', '.dropdown-item', function(e){
+<script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
 
-            let lang = $(this).attr('data-lang');
-            let url = location.href;
-            url = new URL(url);
-            url.searchParams.set('lang', lang);
-            location.href = url;
+<script src="{{ mix('js/app.js') }}"></script>
 
-            e.preventDefault();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        })
-
-        var $_list_of_elements = $('*'),
-            $_count_of_elements = ($_list_of_elements.length > 0 ? ($_list_of_elements.length - 1) : $_list_of_elements.length);
-        $_list_of_elements.each(function (element_index) {
-            if ($(element_index).on('ready')) {
-                if (element_index < $_count_of_elements) {
-                    setTimeout(function () {
-                        $_percentage = Math.ceil(element_index * 100 / $_count_of_elements);
-                        $(".progress-page-load .progress-bar").css("width", $_percentage + "%");
-                        $(".progress-page-load .progress-bar").attr("aria-valuenow", $_percentage);
-                    }, 100);
-                }
-            }
-        });
-
-        $_tpl = new String($('.input-list').html());
-
-        $('.requset-card').on('click', function () {
-            var position = $('.form-data').position();
-            $('body,html').animate({
-                scrollTop: (position.top - 8)
-            }, 250);
-        });
-
-        $('.btn-add-more').on('click', function () {
-            $('.form-data .add-more').slideToggle(250);
-        });
-        $('.remove_this').on('click', function () {
-            var $_thisindex = $('.remove_this').index(this);
-            $('.input-list').eq($_thisindex).remove();
-        });
-
-
-        $('.save-data-and-add-more').on('click', function () {
-            var $_htlm = '<div class="row m-0 input-list"><hr class="row d-flex m-0 w-100"><br>' + $_tpl + '</div>';
-            $('.add-more-btn').before($_htlm);
-            $('.remove_this').off('click');
-            $('.remove_this').on('click', function () {
-                var $_thisindex = $('.remove_this').index(this);
-                $('.input-list').eq($_thisindex).remove();
-            });
-        });
-    })
-</script>
 </body>
 </html>
