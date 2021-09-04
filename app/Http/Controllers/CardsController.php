@@ -377,11 +377,11 @@ class CardsController extends Controller
             $members = Card::whereCardId($id)->whereIsParent(0)->get();
             return response()->json($members);
         }
-           if($res->is_parent){
-                return response()->json($res);
+           if($request->has('is_member')){
+               $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
+               return response()->json($members);
             }else{
-                $members = Card::whereCardId($card->card_id)->whereIsParent(0)->get();
-                return response()->json($members);
+               return response()->json($res);
             }
 
     }

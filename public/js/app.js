@@ -2943,6 +2943,7 @@ __webpack_require__.r(__webpack_exports__);
       this.errors = null;
       this.loading = true;
       this.error = null;
+      this.form.is_member = true;
       var img = $('input[id=memImg]').val();
 
       if (img) {
@@ -2976,11 +2977,9 @@ __webpack_require__.r(__webpack_exports__);
     editMember: function editMember(item) {
       this.edit = true;
       this.add_title = 'Editing ' + item.full_name;
-      this.form = item; // alert(item.update_url)
-
+      this.form = item;
       var element = this.$refs.modal;
       $(element).modal('show');
-      console.log(item);
     },
     clearForm: function clearForm() {
       this.form.full_name = '';

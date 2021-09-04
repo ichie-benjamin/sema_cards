@@ -640,7 +640,8 @@ name: "EditCard",
         updateMember(){
             this.errors = null;
             this.loading = true;
-            this.error = null
+            this.error = null;
+            this.form.is_member = true;
             let img = $('input[id=memImg]').val();
             if(img){
                 this.form.photo = img;
@@ -673,10 +674,10 @@ name: "EditCard",
             this.edit = true;
             this.add_title = 'Editing '+ item.full_name;
             this.form = item
-            // alert(item.update_url)
+
             let element = this.$refs.modal
-            $(element).modal('show')
-            console.log(item)
+            $(element).modal('show');
+
         },
         clearForm(){
             this.form.full_name = ''; this.form.email = ''; this.form.cpr_no = ''; this.form.gender = ''; this.form.gender = 'male'; this.form.phone = '';
