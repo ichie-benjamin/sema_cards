@@ -373,7 +373,7 @@ class CardsController extends Controller
 //        if($request->has('is_package')){
 //            return response()->json($res);
 //        }else
-        if($res->online){
+        if($request->has('is_online')){
             $members = Card::whereCardId($id)->whereIsParent(0)->get();
             return response()->json($members);
         }

@@ -26,14 +26,14 @@
                 </div>
 
                 <div class="form-group col-12">
-                    <input required="" v-model="form.cpr_no" type="text" class="form-control text-left " autocomplete="off" placeholder="CPR No.">
+                    <input required v-model="form.cpr_no" type="text" class="form-control text-left"  placeholder="CPR No.">
                 </div>
 
                 <div class="form-group col-12">
                     <input v-model="form.mobile" required="" type="text" class="form-control text-left " id="mobile" name="mobile" autocomplete="off" placeholder="Mobile 1">
                 </div>
                 <div class="form-group col-12">
-                    <input v-model="form.mobile2" required="" type="text" class="form-control text-left " id="mobile_2" autocomplete="off" placeholder="Mobile 2">
+                    <input v-model="form.mobile2" type="text" class="form-control text-left " id="mobile_2" autocomplete="off" placeholder="Mobile 2">
                 </div>
 
                 <div class="form-group col-12">
@@ -195,6 +195,7 @@ export default {
                 'api' : true,
                 'gender' : 'male',
                 'cpr_no' : '',
+                'is_online' : 1,
                 'mobile' : '',
                 'status' : 'cancelled',
                 'price' : '',
@@ -310,7 +311,10 @@ export default {
 
         submitForm(){
             this.form.status = 'pending';
-            this.update();
+            if(!this.can_add){
+                this.submitCard();
+            }
+            // this.update();
             this.done = true;
             toastr.success('Card successfully submit')
             this.clearForm();
@@ -322,7 +326,7 @@ export default {
 
         addMoreMember(){
             if(this.formMember.full_name.length < 2 || this.formMember.cpr_no.length < 2){
-                toastr.success('Enter name and cpr number')
+                toastr.error('Enter name and cpr number')
             }else{
                 this.submitMember();
             }

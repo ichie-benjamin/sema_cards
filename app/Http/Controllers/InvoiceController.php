@@ -14,23 +14,22 @@ class InvoiceController extends Controller
     public function makeInvoice($card){
         $card = Card::findOrFail($card);
         $members = Card::whereCardId($card->id)->orWhere('id',$card->id)->get();
+        $paid = Card::wherePaid(1)->whereCardId($card->id)->orWhere('id',$card->id)->sum('price');
+        $total_paid = Card::whereCardId($card->id)->orWhere('id',$card->id)->sum('price');
         $customer = new Buyer([
             'name'          => $card->full_name,
             'address' => $card->address,
             'phone' => $card->phone ?: $card->mobile,
 //            'code' => '#'.$card->policy_no.'_'.$card->cpr_no,
-            'custom_fields' => [
-                'email' => $card->email,
-                'cpr_no' => $card->cpr_no,
-            ],
+
         ]);
 
         $seller = new Party([
-            'name' => 'Sama Health Saver',
-            'code' => '123 318 9486',
+            'name' => 'Sama Bahrain Card',
+//            'code' => '77690000',
             'custom_fields' => [
-                'address' => 'Sama address',
-                'phone' => '123 123 2233',
+//                'address' => 'Sama address',
+                'phone' => '77690000',
             ],
         ]);
 
@@ -51,12 +50,12 @@ class InvoiceController extends Controller
             ->logo(public_path('images/s_logo.png'))
             ->sequence($card->id)
             ->serialNumberFormat('{SEQUENCE}/{SERIES}')
-            ->dateFormat('m/d/Y')
+            ->dateFormat('d/m/Y')
             ->currencyFormat('{SYMBOL}{VALUE}')
             ->currencyThousandsSeparator('.')
-            ->currencyDecimalPoint(',')
+            ->currencyDecimalPoint('.')
             ->filename($card->policy_no . ' => sama_card')
-            ->totalAmount(0)
+            ->totalAmount($paid)
             ->addItems($items->toArray());
 
         return $invoice->stream();

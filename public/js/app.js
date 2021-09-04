@@ -2042,6 +2042,7 @@ __webpack_require__.r(__webpack_exports__);
         'api': true,
         'gender': 'male',
         'cpr_no': '',
+        'is_online': 1,
         'mobile': '',
         'status': 'cancelled',
         'price': '',
@@ -2163,7 +2164,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     submitForm: function submitForm() {
       this.form.status = 'pending';
-      this.update();
+
+      if (!this.can_add) {
+        this.submitCard();
+      } // this.update();
+
+
       this.done = true;
       toastr.success('Card successfully submit');
       this.clearForm();
@@ -2176,7 +2182,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     addMoreMember: function addMoreMember() {
       if (this.formMember.full_name.length < 2 || this.formMember.cpr_no.length < 2) {
-        toastr.success('Enter name and cpr number');
+        toastr.error('Enter name and cpr number');
       } else {
         this.submitMember();
       } // toastr.success('Add more member')
@@ -21267,13 +21273,8 @@ var render = function() {
                       expression: "form.cpr_no"
                     }
                   ],
-                  staticClass: "form-control text-left ",
-                  attrs: {
-                    required: "",
-                    type: "text",
-                    autocomplete: "off",
-                    placeholder: "CPR No."
-                  },
+                  staticClass: "form-control text-left",
+                  attrs: { required: "", type: "text", placeholder: "CPR No." },
                   domProps: { value: _vm.form.cpr_no },
                   on: {
                     input: function($event) {
@@ -21329,7 +21330,6 @@ var render = function() {
                   ],
                   staticClass: "form-control text-left ",
                   attrs: {
-                    required: "",
                     type: "text",
                     id: "mobile_2",
                     autocomplete: "off",

@@ -7,8 +7,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong></strong></h1>
-                        <p class="m-b-40">Lucky Card Holder free <br> 6 or 3 months subscription in Sama Card.</p>
-                        <p><a class="btn btn-lg btn-circle btn-brand" href="{{ route('apply') }}">Get a card</a><a class="btn btn-lg btn-circle btn-outline-new-white" href="#search">Search card</a></p>
+{{--                        <p class="m-b-40">Lucky Card Holder free <br> 6 or 3 months subscription in Sama Card.</p>--}}
+                        <p><a class="btn btn-lg btn-circle btn-brand" href="{{ route('apply') }}">Request a card</a><a class="btn btn-lg btn-circle btn-outline-new-white" href="#search">Search card</a></p>
                     </div>
                 </div>
             </div>
@@ -20,16 +20,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 m-auto ">
-                        <h1>Search and download your card.</h1>
+                        <h5>Search and download your card.</h5>
                         <p class="lead">Enter your Cpr No to view and download your card</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="space" data-MY="60px"></div>
-                    </div>
-                </div>
-
 
                 <Search url="{{ route('cards.online.search') }}"></Search>
 
