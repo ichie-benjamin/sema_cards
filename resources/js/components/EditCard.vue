@@ -742,6 +742,7 @@ name: "EditCard",
             for(let i = 0; i < this.payments.length; i++){
                 sum += (parseFloat(this.payments[i].price));
             }
+
             return sum;
         }
     },
@@ -751,7 +752,9 @@ name: "EditCard",
             // We have to move our method to a handler field
             handler(){
                 if(this.loaded){
-                    this.update();
+                    setTimeout(()=>{
+                        this.update();
+                    },3000);
                 }
 
 

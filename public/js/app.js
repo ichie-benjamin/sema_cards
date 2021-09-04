@@ -3072,8 +3072,12 @@ __webpack_require__.r(__webpack_exports__);
       deep: true,
       // We have to move our method to a handler field
       handler: function handler() {
+        var _this10 = this;
+
         if (this.loaded) {
-          this.update();
+          setTimeout(function () {
+            _this10.update();
+          }, 3000);
         }
       }
     }
