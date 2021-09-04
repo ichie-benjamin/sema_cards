@@ -46,16 +46,24 @@ class HomeController extends Controller
         $cards = Card::query();
         $l_cards = $cards->with('agent','cards','package')->whereIsParent(1)->latest()->paginate(100);
         $agent_cards = Card::where('agent_id','!=',$agent->id)->count();
+        $agent_cards_price = Card::where('agent_id','!=',$agent->id)->sum('price');
         $online = Card::whereOnline(1)->count();
         $paid = Card::wherePaid(1)->count();
+        $paid_price = Card::wherePaid(1)->sum('price');
         $imported_cards = Card::whereImported(1)->count();
         $pending = Card::where('status','pending')->count();
+        $pending_price = Card::where('status','pending')->sum('price');
         $done = Card::where('status','done')->count();
+        $done_price = Card::where('status','done')->sum('price');
         $draft = Card::where('status','draft')->count();
+        $draft_price = Card::where('status','draft')->sum('price');
 //        $renewal = Card::where('status','renewal')->count();
         $today = Card::whereDate('issue_date', Carbon::today())->count();
+        $today_price = Card::whereDate('issue_date', Carbon::today())->sum('price');
         $expired_cards = Card::where('expiry_date', '<=', Carbon::now())->count();
+        $expired_cards_price = Card::where('expiry_date', '<=', Carbon::now())->sum('price');
         $renewal = Card::where('expiry_date', '<=', Carbon::now()->subDays(20))->count();
+        $renewal_price = Card::where('expiry_date', '<=', Carbon::now()->subDays(20))->sum('price');
         $data['expired'] = $expired_cards;
         $data['online'] = $online;
         $data['done'] = $done;
@@ -65,6 +73,6 @@ class HomeController extends Controller
         $data['paid'] = $paid;
         $data['draft'] = $draft;
         $users = User::whereRoleIs('user')->get();
-        return view('admin.dashboard',compact('users','data','l_cards','imported_cards','cards','agents','agent_cards','expired_cards','status'));
+        return view('admin.dashboard',compact('paid_price','today_price','renewal_price','expired_cards_price','draft_price','users','done_price','pending_price','agent_cards_price','data','l_cards','imported_cards','cards','agents','agent_cards','expired_cards','status'));
     }
 }

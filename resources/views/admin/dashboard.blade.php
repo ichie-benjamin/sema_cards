@@ -82,7 +82,7 @@
                                 <p class="text-dark mb-1 font-weight-semibold">Agent Cards</p>
                                 <h3 class="my-2">{{ $agent_cards }}</h3>
                                 <p class="mb-0 text-truncate text-muted">
-                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="{{ route('cards.index') }}?agent"> All agent registered cards</a></span>
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="{{ route('cards.index') }}?agent"> {{ $agent_cards_price }}</a></span>
                                 </p>
                             </div>
                             <div class="col-auto align-self-center">
@@ -124,6 +124,9 @@
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Draft </p>
                                 <h3 class="my-0">{{ $data['draft'] }}</h3>
+                                <p class="mb-0 text-truncate text-muted">
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> {{ $draft_price }}BD</a></span>
+                                </p>
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
@@ -145,6 +148,9 @@
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Pending  </p>
                                 <h3 class="my-0">{{ $data['pending'] }}</h3>
+                                <p class="mb-0 text-truncate text-muted">
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> {{ $pending_price }}BD</a></span>
+                                </p>
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
@@ -166,6 +172,9 @@
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Renewal   </p>
                                 <h3 class="my-0">{{ $data['renewal'] }}</h3>
+                                <p class="mb-0 text-truncate text-muted">
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> {{ $renewal_price }}BD</a></span>
+                                </p>
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
@@ -187,6 +196,9 @@
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Expired    </p>
                                 <h3 class="my-0">{{ $data['expired'] }}</h3>
+                                <p class="mb-0 text-truncate text-muted">
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> {{ $expired_cards_price }}BD</a></span>
+                                </p>
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
@@ -208,6 +220,9 @@
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Today sales</p>
                                 <h3 class="my-0">{{ $data['today'] }}</h3>
+                                <p class="mb-0 text-truncate text-muted">
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> {{ $today_price }}BD</a></span>
+                                </p>
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
@@ -229,6 +244,9 @@
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Done</p>
                                 <h3 class="my-0">{{ $data['done'] }}</h3>
+                                <p class="mb-0 text-truncate text-muted">
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> {{ $done_price }}BD</a></span>
+                                </p>
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
@@ -250,6 +268,9 @@
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Paid</p>
                                 <h3 class="my-0">{{ $data['paid'] }}</h3>
+                                <p class="mb-0 text-truncate text-muted">
+                                    <span class="text-success"><i class="mdi mdi-trending-down"></i><a href="#"> {{ $paid_price }}BD</a></span>
+                                </p>
                             </div>
                             <div class="col-auto align-self-center">
                                 <div class="report-main-icon bg-light-alt">
