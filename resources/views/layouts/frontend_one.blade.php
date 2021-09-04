@@ -73,21 +73,21 @@
         <div class="inner-navigation collapse">
             <div class="inner-nav">
                 <ul>
-{{--                    <li class=""><a href="#">--}}
-{{--                            <span class="menu-item-span">--}}
-{{--                                                <img width="100" height="60" src="/images/m_logo.png" />--}}
-{{--                            </span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
+                    <li class=""><a href="#">
+                            <span class="menu-item-span">
+                                                <img width="100" height="60" src="/images/m_logo.png" />
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
-{{--        <div class="extra-nav">--}}
-{{--            <ul>--}}
-{{--                <li><a class="off-canvas-open" href="#"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>--}}
-{{--                <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
+        <div class="extra-nav">
+            <ul>
+                <li><a class="off-canvas-open" href="#"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+                <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+            </ul>
+        </div>
     </div>
 </header>
 <!-- Header end-->
