@@ -19,7 +19,8 @@ class InvoiceController extends Controller
         $customer = new Buyer([
             'name'          => $card->full_name,
             'address' => $card->address,
-            'phone' => $card->phone ?: $card->mobile,
+            'phone' => $card->phone,
+            'mobile' => $card->mobile,
 //            'code' => '#'.$card->policy_no.'_'.$card->cpr_no,
 
         ]);
