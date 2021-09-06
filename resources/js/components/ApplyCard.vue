@@ -257,7 +257,7 @@ export default {
                 toastr.error('Enter your full name and cpr before adding members')
             }else {
                 if(!this.can_add){
-                    this.submitCard();
+                    this.submitCardP();
                 }else{
                     this.toggleCard();
                 }
@@ -268,7 +268,32 @@ export default {
             this.show_add = !this.show_add
         },
 
-        submitCard(){
+        submitForm(){
+            if(this.formMember.full_name.length > 2){
+                if(this.form.cpr_no.length < 2){
+                    toastr.error('Enter member CPR number to proceed')
+                }else {
+                    this.formMember.card_id = this.form.id;
+                    this.errors = null;
+                    axios.post(this.post_url, this.formMember).then((res)=>{
+                        this.loading = false
+                        this.members = res.data
+                        console.log(this.members)
+                        this.clearForm();
+                        this.submitCard();
+                    }).catch((error)=>{
+                        this.loading = false
+                        if (error.response.status === 422){
+                            this.errors = error.response.data.errors;
+                        }
+                    })
+                }
+            }else{
+                this.submitCard();
+            }
+        },
+
+        submitCardP(){
             this.loading = true;
             this.errors = null;
             axios.post(this.post_url, this.form).then((res)=>{
@@ -309,12 +334,12 @@ export default {
             })
         },
 
-        submitForm(){
+        submitCard(){
             this.form.status = 'pending';
             if(!this.can_add){
-                this.submitCard();
+                this.submitCardP();
             }
-            // this.update();
+            this.update();
             this.done = true;
             toastr.success('Card successfully submit')
             this.clearForm();

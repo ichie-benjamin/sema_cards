@@ -2104,7 +2104,7 @@ __webpack_require__.r(__webpack_exports__);
         toastr.error('Enter your full name and cpr before adding members');
       } else {
         if (!this.can_add) {
-          this.submitCard();
+          this.submitCardP();
         } else {
           this.toggleCard();
         }
@@ -2113,46 +2113,53 @@ __webpack_require__.r(__webpack_exports__);
     toggleCard: function toggleCard() {
       this.show_add = !this.show_add;
     },
-    submitCard: function submitCard() {
+    submitForm: function submitForm() {
       var _this2 = this;
+
+      if (this.formMember.full_name.length > 2) {
+        if (this.form.cpr_no.length < 2) {
+          toastr.error('Enter member CPR number to proceed');
+        } else {
+          this.formMember.card_id = this.form.id;
+          this.errors = null;
+          axios.post(this.post_url, this.formMember).then(function (res) {
+            _this2.loading = false;
+            _this2.members = res.data;
+            console.log(_this2.members);
+
+            _this2.clearForm();
+
+            _this2.submitCard();
+          })["catch"](function (error) {
+            _this2.loading = false;
+
+            if (error.response.status === 422) {
+              _this2.errors = error.response.data.errors;
+            }
+          });
+        }
+      } else {
+        this.submitCard();
+      }
+    },
+    submitCardP: function submitCardP() {
+      var _this3 = this;
 
       this.loading = true;
       this.errors = null;
       axios.post(this.post_url, this.form).then(function (res) {
-        _this2.loading = false;
-        _this2.form.id = res.data.id;
-        _this2.formMember.period = res.data.period;
-        _this2.formMember.package_type = res.data.package_type;
-        _this2.form.update_url = res.data.update_url;
-        _this2.form.price = res.data.price;
-        _this2.form.package_type = res.data.package_type;
-
-        _this2.toggleCard();
-
-        _this2.can_add = true;
-        _this2.loaded = true;
-        toastr.success('New member successfully added');
-      })["catch"](function (error) {
-        _this2.loading = false;
-
-        if (error.response.status === 422) {
-          _this2.errors = error.response.data.errors;
-        }
-      });
-    },
-    submitMember: function submitMember() {
-      var _this3 = this;
-
-      this.loading = true;
-      this.formMember.card_id = this.form.id;
-      this.errors = null;
-      axios.post(this.post_url, this.formMember).then(function (res) {
         _this3.loading = false;
-        _this3.members = res.data;
-        console.log(_this3.members);
+        _this3.form.id = res.data.id;
+        _this3.formMember.period = res.data.period;
+        _this3.formMember.package_type = res.data.package_type;
+        _this3.form.update_url = res.data.update_url;
+        _this3.form.price = res.data.price;
+        _this3.form.package_type = res.data.package_type;
 
-        _this3.clearForm();
+        _this3.toggleCard();
 
+        _this3.can_add = true;
+        _this3.loaded = true;
         toastr.success('New member successfully added');
       })["catch"](function (error) {
         _this3.loading = false;
@@ -2162,14 +2169,36 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
-    submitForm: function submitForm() {
+    submitMember: function submitMember() {
+      var _this4 = this;
+
+      this.loading = true;
+      this.formMember.card_id = this.form.id;
+      this.errors = null;
+      axios.post(this.post_url, this.formMember).then(function (res) {
+        _this4.loading = false;
+        _this4.members = res.data;
+        console.log(_this4.members);
+
+        _this4.clearForm();
+
+        toastr.success('New member successfully added');
+      })["catch"](function (error) {
+        _this4.loading = false;
+
+        if (error.response.status === 422) {
+          _this4.errors = error.response.data.errors;
+        }
+      });
+    },
+    submitCard: function submitCard() {
       this.form.status = 'pending';
 
       if (!this.can_add) {
-        this.submitCard();
-      } // this.update();
+        this.submitCardP();
+      }
 
-
+      this.update();
       this.done = true;
       toastr.success('Card successfully submit');
       this.clearForm();
@@ -2196,24 +2225,24 @@ __webpack_require__.r(__webpack_exports__);
       this.formMember.mobile = '';
     },
     update: function update() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.loading = true;
       this.error = null;
       this.loaded = false;
       axios.put(this.form.update_url, this.form).then(function (res) {
-        _this4.members = res.data;
-        _this4.loading = false; // toastr.success('Card information updated')
+        _this5.members = res.data;
+        _this5.loading = false; // toastr.success('Card information updated')
 
         setTimeout(function () {
-          _this4.loaded = true;
+          _this5.loaded = true;
         }, 3000);
       })["catch"](function (error) {
-        _this4.loading = false;
-        _this4.loaded = true;
+        _this5.loading = false;
+        _this5.loaded = true;
 
         if (error.response.status === 422) {
-          _this4.errors = error.response.data.errors;
+          _this5.errors = error.response.data.errors;
         }
       });
     }
