@@ -4,6 +4,8 @@
 
 
         <section class="module divider-bottom" id="search" style="margin-top: 70px">
+
+            @foreach($cards as $card)
             <div class="container">
 
                 <div class="row" >
@@ -42,6 +44,7 @@
                 </div>
 
             </div>
+            @endforeach
         </section>
 
     <!-- Footer-->

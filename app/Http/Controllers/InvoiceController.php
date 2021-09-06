@@ -36,11 +36,18 @@ class InvoiceController extends Controller
         $items = collect();
         foreach ($members as $member) {
             $item = new InvoiceItem();
-            $item->title('Sama Health Saver => '. $member->policy_no)
+            $item->title('Sama Health Saver => '. $member->policy_no.' (' . $member->pay_status . ')')
                 ->pricePerUnit($member->price);
 
             $items->push($item);
         }
+
+        $notes = [
+            'Total amount :'.$total_paid,
+            ' Total paid : '.$paid,
+            ' Balance : '. ((int)$total_paid - (int)$paid),
+        ];
+        $notes = implode("<br>", $notes);
 
         $invoice = Invoice::make()
             ->buyer($customer)
@@ -54,9 +61,12 @@ class InvoiceController extends Controller
             ->currencyFormat('{SYMBOL}{VALUE}')
             ->currencyThousandsSeparator('.')
             ->currencyDecimalPoint('.')
+            ->notes($notes)
             ->filename($card->policy_no . ' => sama_card')
-            ->totalAmount($paid)
+//            ->totalAmount($paid)
             ->addItems($items->toArray());
+
+
 
         return $invoice->stream();
     }

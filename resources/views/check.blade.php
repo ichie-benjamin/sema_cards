@@ -2,7 +2,7 @@
 @section('content')
     <div class="wrapper" id="app">
         <!-- Hero-->
-        <section class="module-cover parallax text-center fullscreen" data-background="front/images/module-2.jpeg" data-overlay="0.6">
+        <section class="module-cover parallax text-center fullscreen" data-background="/images/bg.jpg" data-overlay="0.6">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -11,24 +11,32 @@
                         <p><a class="btn btn-lg btn-circle btn-brand" href="{{ route('apply') }}">Request a card</a><a class="btn btn-lg btn-circle btn-outline-new-white" href="#search">Search card</a></p>
                     </div>
                 </div>
+
             </div>
         </section>
         <!-- Hero end-->
 
         <!-- About-->
-        <section class="module divider-bottom" id="search">
+        <section class="module divider-bottom" id="search" style="background-color: #480896">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 m-auto ">
-                        <h5>Search and download your card.</h5>
+                        <h5 class="text-white">Search and download your card.</h5>
                         <p class="lead">Enter your Cpr No to view and download your card</p>
                     </div>
                 </div>
 
                 <Search url="{{ route('cards.online.search') }}"></Search>
 
+            </div>
+        </section>
 
-                <div class="row mt-4">
+
+
+        <section class="module divider-bottom" >
+
+            <div class="container">
+                <div class="row">
                     <div class="col-md-12 mx-auto text-center">
                         <a class="btn btn-primary" href="https://samacardbh.net/the-hospital-pdf/">Hospital Card %</a>
                     </div>

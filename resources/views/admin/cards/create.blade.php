@@ -104,6 +104,9 @@
                                     </div>
                                 </div>
 
+                                <hr />
+
+                                <div class="row bg-secondary p-2" style="margin: 10px ">
 
                                 <div class="col-md-3 col-6">
                                     <div class="form-group "><label>Card Type</label>
@@ -177,6 +180,8 @@
                                     <label class="form-label" for="description">Upload Image </label>
                                     @include('admin.inc.image-upload',['field' => 'photo','id' => 'photo'])
                                 </div>
+                                </div>
+
 
                                 <div class="col-12">
                                     <div class="form-group"><label>Comment </label>

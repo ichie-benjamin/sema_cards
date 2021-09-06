@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/images/bg.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ApplyCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ApplyCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Card.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Card.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cards/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cards/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cards.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/check.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/check.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,18 +186,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/js/components" />
       <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/cards" />
-      <recent name="$PROJECT_DIR$/public/front" />
     </key>
   </component>
   <component name="RunManager">
@@ -283,7 +290,9 @@
       <workItem from="1630532298891" duration="598000" />
       <workItem from="1630668204384" duration="20557000" />
       <workItem from="1630784462140" duration="5822000" />
-      <workItem from="1630823908185" duration="4462000" />
+      <workItem from="1630823908185" duration="6358000" />
+      <workItem from="1630937054570" duration="679000" />
+      <workItem from="1630955270176" duration="4046000" />
     </task>
     <servers />
   </component>
@@ -316,7 +325,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>321</line>
+          <line>322</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="setExpiryDate" />
@@ -325,7 +334,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>435</line>
+          <line>436</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="getPolicy" />
@@ -334,12 +343,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>388</line>
+          <line>389</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="destroy" />
           </properties>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
+          <line>106</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\CardsController" />
+            <option name="methodName" value="cardOnline" />
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/vendor/laravelroles/laravelroles/crud/dashboard.blade.php</url>
@@ -363,17 +381,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php</url>
-          <line>60</line>
+          <line>69</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>245</line>
+          <line>246</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>362</line>
+          <line>363</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

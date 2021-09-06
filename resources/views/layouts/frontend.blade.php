@@ -42,6 +42,7 @@
             font-size: 1.25em;
             max-width: 300px;
             overflow: hidden;
+            color: black;
             text-overflow: ellipsis;
             white-space: nowrap;
         }

@@ -108,7 +108,8 @@ class CardsController extends Controller
     {
         $design = $request->has('no_design') ? false : true;
        $card =  Card::wherePolicyNo($id)->first();
-       $cards =  Card::wherePolicyNo($id)->get();
+//       $cards =  Card::wherePolicyNo($id)->get();
+     $cards =  Card::wherePaid(1)->whereId($card->id)->orWhere('card_id',$card->id)->where('status','!=','pending')->get();
         if(!$card){
             return redirect()->route('check')->with('error_message', 'Something went wrong');
         }
@@ -131,7 +132,7 @@ class CardsController extends Controller
                 return redirect()->back()->with('error_message', 'no valid email found went wrong');
             }
         }
-        return view('cards', compact('card','design'));
+        return view('cards', compact('card','cards','design'));
     }
 
     public function onlineSearch(Request  $request){

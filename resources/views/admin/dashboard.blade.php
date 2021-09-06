@@ -34,7 +34,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-blue-50">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Sama Cards</p>
@@ -55,7 +55,7 @@
             <!--end col-->
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-primary-50">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Agents</p>
@@ -76,7 +76,7 @@
             <!--end col-->
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-blue">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Agent Cards</p>
@@ -97,7 +97,7 @@
             <!--end col-->
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-primary">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Imported Cards</p>
@@ -119,7 +119,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-success">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Draft </p>
@@ -143,7 +143,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-purple">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Pending  </p>
@@ -167,7 +167,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-purple-50">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Renewal   </p>
@@ -191,7 +191,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-purple-gradient">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Expired    </p>
@@ -215,7 +215,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-warning">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Today sales</p>
@@ -239,7 +239,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-warning-50">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Done</p>
@@ -263,7 +263,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card report-card">
-                    <div class="card-body">
+                    <div class="card-body bg-secondary">
                         <div class="row d-flex justify-content-center">
                             <div class="col">
                                 <p class="text-dark mb-1 font-weight-semibold">Total Paid</p>

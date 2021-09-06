@@ -19,7 +19,7 @@ class Card extends Model
 
     protected $primaryKey = 'id';
 
-    protected $appends = ['update_url','img','edit_url','view_url','p_name'];
+    protected $appends = ['update_url','img','edit_url','view_url','p_name','pay_status'];
 
     protected $fillable = [
                   'full_name',
@@ -86,6 +86,15 @@ class Card extends Model
             return optional($this->package)->name;
         }else{
             return 'none';
+        }
+    }
+
+    public function getPayStatusAttribute()
+    {
+        if($this->paid){
+            return 'Paid';
+        }else{
+            return 'Not paid';
         }
     }
 
