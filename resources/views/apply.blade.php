@@ -36,10 +36,10 @@
             <div class="container">
                 <div class="dropdown">
                     <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        English                    </button>
+                        {{ $lang == 'ar' ? 'Arabic' : 'English' }}                    </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                        <a href="#" class="dropdown-item text-left" data-lang="ar">عربي</a>
-                        <a href="#" class="dropdown-item text-left" data-lang="en">English</a>
+                        <a href="{{ route('apply') }}?lang=ar" class="dropdown-item text-left" data-lang="ar">عربي</a>
+                        <a href="{{ route('apply') }}" class="dropdown-item text-left" data-lang="en">English</a>
                     </div>
                 </div>
             </div>
@@ -50,14 +50,19 @@
 
         <div class="col-sm-12 col-md-12 col-lg-6 p-0 m-auto d-flex text-center">
             <div class="row d-flex w-100 align-self-center primary-links">
-                <a href="http://samacardbh.com/downloadpdf" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">Hospitals Directory</a>
-                <a class="col-sm-12 col-md-5 col-lg-5 align-self-center primary-link requset-card clicked">Request Card</a>
+                @if ($lang == 'en')
+                    <a href="http://samacardbh.com/downloadpdf" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">Hospitals Directory</a>
+                    <a class="col-sm-12 col-md-5 col-lg-5 align-self-center primary-link requset-card clicked">Request Card</a>
+                @else
+                    <a href="https://samacardbh.net/%d9%82%d8%a7%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%8a%d8%a7%d8%aa-pdf/" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">دليل المستشفيات</a>
+                    <a class="col-sm-12 col-md-5 col-lg-5 align-self-center primary-link requset-card clicked"> أطلب البطاقة</a>
+                @endif
             </div>
         </div>
 
         <div class="row d-flex w-100"></div>
 
-        <apply-card post_url="{{ route('cards.online.store') }}"></apply-card>
+        <apply-card lang="{{ $lang }}" post_url="{{ route('cards.online.store') }}"></apply-card>
     </div>
 </div>
 

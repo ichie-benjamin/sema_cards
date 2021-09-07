@@ -2,7 +2,7 @@
     <div class="">
 
         <form v-if="done" style="color: #000" class="col-sm-12 col-sm-8 col-lg-8 m-auto form-data">
-            <h3 class="text-center mt-4 mb-4" >Form successfully submitted</h3>
+            <h3 class="text-center mt-4 mb-4" >{{  lang.successful }}</h3>
         </form>
         <form v-else @submit.prevent="submitForm" method="POST"  class="col-sm-12 col-sm-8 col-lg-8 m-auto form-data">
             <errors :errors="errors" v-if="errors"></errors>
@@ -13,39 +13,40 @@
 
                     </div>
                 </div>
+
                 <div class="form-group col-12">
-                    <input required="" type="text" class="form-control text-left " id="name" v-model="form.full_name" autocomplete="off" placeholder="Full Name">
+                    <input required="" type="text" class="form-control text-left " id="name" v-model="form.full_name" autocomplete="off" :placeholder="lang === 'en' ? en.name : ar.name">
                 </div>
 
                 <div class="form-group col-12">
                     <select v-model="form.gender" required="" class="custom-select text-left ltr">
-                        <option  value="male" selected="selected">Gender</option>
+                        <option  value="male" selected="selected">{{ lang === 'en' ? en.gender : ar.gender }}</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                 </div>
 
                 <div class="form-group col-12">
-                    <input required v-model="form.cpr_no" type="text" class="form-control text-left"  placeholder="CPR No.">
+                    <input required v-model="form.cpr_no" type="text" class="form-control text-left"  :placeholder="lang === 'en' ? en.cpr : ar.cpr">
                 </div>
 
                 <div class="form-group col-12">
-                    <input v-model="form.mobile" required="" type="text" class="form-control text-left " id="mobile" name="mobile" autocomplete="off" placeholder="Mobile 1">
+                    <input v-model="form.mobile" required="" type="text" class="form-control text-left " id="mobile" name="mobile" autocomplete="off" :placeholder="lang === 'en' ? en.mobile : ar.mobile">
                 </div>
                 <div class="form-group col-12">
-                    <input v-model="form.mobile2" type="text" class="form-control text-left " id="mobile_2" autocomplete="off" placeholder="Mobile 2">
+                    <input v-model="form.mobile2" type="text" class="form-control text-left " id="mobile_2" autocomplete="off" :placeholder="lang === 'en' ? en.mobile2 : ar.mobile2">
                 </div>
 
                 <div class="form-group col-12">
-                    <input type="text" v-model="form.address" class="form-control text-left " id="block" autocomplete="off" placeholder="Address">
+                    <input type="text" v-model="form.address" class="form-control text-left " id="block" autocomplete="off" :placeholder="lang === 'en' ? en.address : ar.address">
                 </div>
 
                 <div required="" class="form-group col-12">
-                    <input type="email" v-model="form.email" class="form-control text-left "  autocomplete="off" placeholder="Email">
+                    <input type="email" v-model="form.email" class="form-control text-left "  autocomplete="off" :placeholder="lang === 'en' ? en.address : ar.address">
                 </div>
 
                 <div class="form-group col-12">
-                    <textarea v-model="form.comment" class="form-control text-left " rows="2" autocomplete="off" placeholder="Notes"></textarea>
+                    <textarea v-model="form.comment" class="form-control text-left " rows="2" autocomplete="off" :placeholder="lang === 'en' ? en.note : ar.note"></textarea>
                 </div>
             </div>
 
@@ -57,37 +58,37 @@
 
                 <div class="row min-form-additional-data" v-if="members.length > 0">
 
-                    <h4 class="d-block row w-100 text-info text-center">More People</h4>
+                    <h4 class="d-block row w-100 text-info text-center">{{ lang === 'en' ? en.more : ar.more }}</h4>
                     <br>
 
                     <template v-for="i in members">
                     <div class="row m-0 input-list">
                         <div class="form-group col-12 col-md-6 float-left">
-                            <input v-model="i.full_name" disabled type="text" class="form-control text-left"  autocomplete="off" placeholder="Full Name">
+                            <input v-model="i.full_name" disabled type="text" class="form-control text-left"  autocomplete="off" :placeholder="lang === 'en' ? en.name : ar.name">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
                             <select disabled v-model="i.gender" class="custom-select text-left ltr">
-                                <option value="male" selected="selected">Gender</option>
+                                <option value="male" selected="selected">{{ lang === 'en' ? en.gender : ar.gender }}</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input disabled type="text" class="form-control text-left" v-model="i.cpr_no" autocomplete="off" placeholder="CPR No.">
+                            <input disabled type="text" class="form-control text-left" v-model="i.cpr_no" autocomplete="off" :placeholder="lang === 'en' ? en.cpr : ar.cpr">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input disabled type="text" class="form-control text-left" v-model="i.mobile" autocomplete="off" placeholder="Mobile 1">
+                            <input disabled type="text" class="form-control text-left" v-model="i.mobile" autocomplete="off" :placeholder="lang === 'en' ? en.mobile : ar.mobile">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input disabled type="text" class="form-control text-left" v-model="i.mobile2" autocomplete="off" placeholder="Mobile 2">
+                            <input disabled type="text" class="form-control text-left" v-model="i.mobile2" autocomplete="off" :placeholder="lang === 'en' ? en.mobile2 : ar.mobile2">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input disabled type="text" class="form-control text-left"  v-model="i.address" autocomplete="off" placeholder="Address">
+                            <input disabled type="text" class="form-control text-left"  v-model="i.address" autocomplete="off" :placeholder="lang === 'en' ? en.address : ar.address">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
@@ -96,7 +97,7 @@
 
 
                         <div class="form-group col-12 col-md-6">
-                            <input disabled type="email" class="form-control text-left" v-model="i.email" autocomplete="off" placeholder="Email">
+                            <input disabled type="email" class="form-control text-left" v-model="i.email" autocomplete="off" :placeholder="lang === 'en' ? en.email : ar.email">
                         </div>
 
                     </div>
@@ -106,50 +107,50 @@
 
 
                 <div class="row min-form-additional-data">
-                    <h4 class="d-block row w-100 text-info text-center">Add Other People</h4>
+                    <h4 class="d-block row w-100 text-info text-center">{{  lang === 'en' ? en.add_other : ar.add_other }}</h4>
                     <div v-if="can_add">
                         <errors :errors="errors" v-if="errors"></errors>
                     </div>
                     <br>
                     <div class="row m-0 input-list">
                         <div class="form-group col-12 col-md-6 float-left">
-                            <input v-model="formMember.full_name" type="text" class="form-control text-left"  autocomplete="off" placeholder="Full Name">
+                            <input v-model="formMember.full_name" type="text" class="form-control text-left"  autocomplete="off" :placeholder="lang === 'en' ? en.name : ar.name">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
                             <select v-model="formMember.gender" class="custom-select text-left ltr">
-                                <option value="male" selected="selected">Gender</option>
+                                <option value="male" selected="selected">{{  lang === 'en' ? en.gender : ar.gender }}</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" v-model="formMember.cpr_no" autocomplete="off" placeholder="CPR No.">
+                            <input type="text" class="form-control text-left" v-model="formMember.cpr_no" autocomplete="off" :placeholder="lang === 'en' ? en.cpr : ar.cpr">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" v-model="formMember.mobile" autocomplete="off" placeholder="Mobile 1">
+                            <input type="text" class="form-control text-left" v-model="formMember.mobile" autocomplete="off" :placeholder="lang === 'en' ? en.mobile : ar.mobile">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left" v-model="formMember.mobile2" autocomplete="off" placeholder="Mobile 2">
+                            <input type="text" class="form-control text-left" v-model="formMember.mobile2" autocomplete="off" :placeholder="lang === 'en' ? en.mobile2 : ar.mobile2">
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control text-left"  v-model="formMember.address" autocomplete="off" placeholder="Address">
+                            <input type="text" class="form-control text-left"  v-model="formMember.address" autocomplete="off" :placeholder="lang === 'en' ? en.address : ar.address">
                         </div>
 
 
                         <div class="form-group col-12 col-md-6">
-                            <input type="email" class="form-control text-left" id="additional_email" v-model="formMember.email" autocomplete="off" placeholder="Email">
+                            <input type="email" class="form-control text-left" id="additional_email" v-model="formMember.email" autocomplete="off" :placeholder="lang === 'en' ? en.email : ar.email">
                         </div>
 
                     </div>
 
                     <div class="row m-0 p-3 w-100 d-flex add-more-btn">
                         <button @click="addMoreMember" type="button" class="btn btn-info save-data-and-add-more col-4 btn-block p-1 m-auto">
-                            <span data-icon="&#xe973"></span>Add More                        </button>
+                            <span data-icon="&#xe973"></span>{{  lang === 'en' ? en.more : ar.more }}                       </button>
 
                     </div>
 
@@ -159,10 +160,10 @@
             <div class="row m-0 p-3 w-100 d-flex">
                 <br>
                 <button type="submit" class="btn btn-dark btn-send-data col-4 col-md-4 p-1 ml-auto" name="submit">
-                    <span data-icon="&#xf1f6"></span> Send                </button>
+                    <span data-icon="&#xf1f6"></span> {{ lang === 'en' ? en.send : ar.send  }}                </button>
 
                 <button @click="addMembers" type="button" class="btn btn-light btn-add-more col-8 col-md-4 p-1 mr-auto">
-                    <span data-icon="&#xf067"></span> Add Other People                </button>
+                    <span data-icon="&#xf067"></span> {{  lang === 'en' ? en.add_other : ar.add_other  }}                </button>
 
             </div>
 
@@ -176,7 +177,7 @@ import Errors from "./Errors";
 export default {
     components: {Errors},
 
-    props:['post_url'],
+    props:['post_url','lang'],
 
     name: "EditCard",
     data() {
@@ -190,6 +191,34 @@ export default {
             errors : null,
             members : [],
             can_add:false,
+            en : {
+                'add_other' : "Add other people",
+                'more' : "More People",
+                'send' : 'Send',
+                'successful' : 'Your request is Successfully',
+                'name' : 'Full name',
+                'gender' : 'Gender',
+                'cpr' : 'CPR No',
+                'mobile' : 'Mobile',
+                'mobile2' : 'Mobile 2',
+                'address' : 'Address',
+                'email' : 'Email',
+                'note' : 'Note',
+            },
+            ar : {
+                'add_other' : "إضافة افراد",
+                'more' : "إضافة افراد",
+                'send' : 'أرسل',
+                'successful' : 'تم أرسال طلبك بنجاح',
+                'name' : 'الاسم الكامل',
+                'gender' : 'الجنس',
+                'cpr' : 'الرقم الشخصي',
+                'mobile' : 'الموبايل',
+                'mobile2' : 'الهاتف',
+                'address' : 'العنوان',
+                'email' : 'الإيميل',
+                'note' : 'ملاحظة',
+            },
             form: {
                 'full_name' : '',
                 'api' : true,

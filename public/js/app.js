@@ -2019,12 +2019,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Errors: _Errors__WEBPACK_IMPORTED_MODULE_0__.default
   },
-  props: ['post_url'],
+  props: ['post_url', 'lang'],
   name: "EditCard",
   data: function data() {
     return {
@@ -2037,6 +2038,34 @@ __webpack_require__.r(__webpack_exports__);
       errors: null,
       members: [],
       can_add: false,
+      en: {
+        'add_other': "Add other people",
+        'more': "More People",
+        'send': 'Send',
+        'successful': 'Your request is Successfully',
+        'name': 'Full name',
+        'gender': 'Gender',
+        'cpr': 'CPR No',
+        'mobile': 'Mobile',
+        'mobile2': 'Mobile 2',
+        'address': 'Address',
+        'email': 'Email',
+        'note': 'Note'
+      },
+      ar: {
+        'add_other': "إضافة افراد",
+        'more': "إضافة افراد",
+        'send': 'أرسل',
+        'successful': 'تم أرسال طلبك بنجاح',
+        'name': 'الاسم الكامل',
+        'gender': 'الجنس',
+        'cpr': 'الرقم الشخصي',
+        'mobile': 'الموبايل',
+        'mobile2': 'الهاتف',
+        'address': 'العنوان',
+        'email': 'الإيميل',
+        'note': 'ملاحظة'
+      },
       form: {
         'full_name': '',
         'api': true,
@@ -21189,7 +21218,7 @@ var render = function() {
           },
           [
             _c("h3", { staticClass: "text-center mt-4 mb-4" }, [
-              _vm._v("Form successfully submitted")
+              _vm._v(_vm._s(_vm.lang.successful))
             ])
           ]
         )
@@ -21229,7 +21258,7 @@ var render = function() {
                     type: "text",
                     id: "name",
                     autocomplete: "off",
-                    placeholder: "Full Name"
+                    placeholder: _vm.lang === "en" ? _vm.en.name : _vm.ar.name
                   },
                   domProps: { value: _vm.form.full_name },
                   on: {
@@ -21281,7 +21310,13 @@ var render = function() {
                     _c(
                       "option",
                       { attrs: { value: "male", selected: "selected" } },
-                      [_vm._v("Gender")]
+                      [
+                        _vm._v(
+                          _vm._s(
+                            _vm.lang === "en" ? _vm.en.gender : _vm.ar.gender
+                          )
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c("option", { attrs: { value: "male" } }, [
@@ -21306,7 +21341,11 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control text-left",
-                  attrs: { required: "", type: "text", placeholder: "CPR No." },
+                  attrs: {
+                    required: "",
+                    type: "text",
+                    placeholder: _vm.lang === "en" ? _vm.en.cpr : _vm.ar.cpr
+                  },
                   domProps: { value: _vm.form.cpr_no },
                   on: {
                     input: function($event) {
@@ -21336,7 +21375,8 @@ var render = function() {
                     id: "mobile",
                     name: "mobile",
                     autocomplete: "off",
-                    placeholder: "Mobile 1"
+                    placeholder:
+                      _vm.lang === "en" ? _vm.en.mobile : _vm.ar.mobile
                   },
                   domProps: { value: _vm.form.mobile },
                   on: {
@@ -21365,7 +21405,8 @@ var render = function() {
                     type: "text",
                     id: "mobile_2",
                     autocomplete: "off",
-                    placeholder: "Mobile 2"
+                    placeholder:
+                      _vm.lang === "en" ? _vm.en.mobile2 : _vm.ar.mobile2
                   },
                   domProps: { value: _vm.form.mobile2 },
                   on: {
@@ -21394,7 +21435,8 @@ var render = function() {
                     type: "text",
                     id: "block",
                     autocomplete: "off",
-                    placeholder: "Address"
+                    placeholder:
+                      _vm.lang === "en" ? _vm.en.address : _vm.ar.address
                   },
                   domProps: { value: _vm.form.address },
                   on: {
@@ -21425,7 +21467,8 @@ var render = function() {
                     attrs: {
                       type: "email",
                       autocomplete: "off",
-                      placeholder: "Email"
+                      placeholder:
+                        _vm.lang === "en" ? _vm.en.address : _vm.ar.address
                     },
                     domProps: { value: _vm.form.email },
                     on: {
@@ -21454,7 +21497,7 @@ var render = function() {
                   attrs: {
                     rows: "2",
                     autocomplete: "off",
-                    placeholder: "Notes"
+                    placeholder: _vm.lang === "en" ? _vm.en.note : _vm.ar.note
                   },
                   domProps: { value: _vm.form.comment },
                   on: {
@@ -21488,7 +21531,13 @@ var render = function() {
                               staticClass:
                                 "d-block row w-100 text-info text-center"
                             },
-                            [_vm._v("More People")]
+                            [
+                              _vm._v(
+                                _vm._s(
+                                  _vm.lang === "en" ? _vm.en.more : _vm.ar.more
+                                )
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c("br"),
@@ -21517,7 +21566,10 @@ var render = function() {
                                         disabled: "",
                                         type: "text",
                                         autocomplete: "off",
-                                        placeholder: "Full Name"
+                                        placeholder:
+                                          _vm.lang === "en"
+                                            ? _vm.en.name
+                                            : _vm.ar.name
                                       },
                                       domProps: { value: i.full_name },
                                       on: {
@@ -21589,7 +21641,15 @@ var render = function() {
                                               selected: "selected"
                                             }
                                           },
-                                          [_vm._v("Gender")]
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.lang === "en"
+                                                  ? _vm.en.gender
+                                                  : _vm.ar.gender
+                                              )
+                                            )
+                                          ]
                                         ),
                                         _vm._v(" "),
                                         _c(
@@ -21626,7 +21686,10 @@ var render = function() {
                                         disabled: "",
                                         type: "text",
                                         autocomplete: "off",
-                                        placeholder: "CPR No."
+                                        placeholder:
+                                          _vm.lang === "en"
+                                            ? _vm.en.cpr
+                                            : _vm.ar.cpr
                                       },
                                       domProps: { value: i.cpr_no },
                                       on: {
@@ -21663,7 +21726,10 @@ var render = function() {
                                         disabled: "",
                                         type: "text",
                                         autocomplete: "off",
-                                        placeholder: "Mobile 1"
+                                        placeholder:
+                                          _vm.lang === "en"
+                                            ? _vm.en.mobile
+                                            : _vm.ar.mobile
                                       },
                                       domProps: { value: i.mobile },
                                       on: {
@@ -21700,7 +21766,10 @@ var render = function() {
                                         disabled: "",
                                         type: "text",
                                         autocomplete: "off",
-                                        placeholder: "Mobile 2"
+                                        placeholder:
+                                          _vm.lang === "en"
+                                            ? _vm.en.mobile2
+                                            : _vm.ar.mobile2
                                       },
                                       domProps: { value: i.mobile2 },
                                       on: {
@@ -21737,7 +21806,10 @@ var render = function() {
                                         disabled: "",
                                         type: "text",
                                         autocomplete: "off",
-                                        placeholder: "Address"
+                                        placeholder:
+                                          _vm.lang === "en"
+                                            ? _vm.en.address
+                                            : _vm.ar.address
                                       },
                                       domProps: { value: i.address },
                                       on: {
@@ -21796,7 +21868,10 @@ var render = function() {
                                         disabled: "",
                                         type: "email",
                                         autocomplete: "off",
-                                        placeholder: "Email"
+                                        placeholder:
+                                          _vm.lang === "en"
+                                            ? _vm.en.email
+                                            : _vm.ar.email
                                       },
                                       domProps: { value: i.email },
                                       on: {
@@ -21828,7 +21903,15 @@ var render = function() {
                       {
                         staticClass: "d-block row w-100 text-info text-center"
                       },
-                      [_vm._v("Add Other People")]
+                      [
+                        _vm._v(
+                          _vm._s(
+                            _vm.lang === "en"
+                              ? _vm.en.add_other
+                              : _vm.ar.add_other
+                          )
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _vm.can_add
@@ -21865,7 +21948,8 @@ var render = function() {
                             attrs: {
                               type: "text",
                               autocomplete: "off",
-                              placeholder: "Full Name"
+                              placeholder:
+                                _vm.lang === "en" ? _vm.en.name : _vm.ar.name
                             },
                             domProps: { value: _vm.formMember.full_name },
                             on: {
@@ -21923,7 +22007,15 @@ var render = function() {
                               {
                                 attrs: { value: "male", selected: "selected" }
                               },
-                              [_vm._v("Gender")]
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.lang === "en"
+                                      ? _vm.en.gender
+                                      : _vm.ar.gender
+                                  )
+                                )
+                              ]
                             ),
                             _vm._v(" "),
                             _c("option", { attrs: { value: "male" } }, [
@@ -21951,7 +22043,8 @@ var render = function() {
                           attrs: {
                             type: "text",
                             autocomplete: "off",
-                            placeholder: "CPR No."
+                            placeholder:
+                              _vm.lang === "en" ? _vm.en.cpr : _vm.ar.cpr
                           },
                           domProps: { value: _vm.formMember.cpr_no },
                           on: {
@@ -21983,7 +22076,8 @@ var render = function() {
                           attrs: {
                             type: "text",
                             autocomplete: "off",
-                            placeholder: "Mobile 1"
+                            placeholder:
+                              _vm.lang === "en" ? _vm.en.mobile : _vm.ar.mobile
                           },
                           domProps: { value: _vm.formMember.mobile },
                           on: {
@@ -22015,7 +22109,10 @@ var render = function() {
                           attrs: {
                             type: "text",
                             autocomplete: "off",
-                            placeholder: "Mobile 2"
+                            placeholder:
+                              _vm.lang === "en"
+                                ? _vm.en.mobile2
+                                : _vm.ar.mobile2
                           },
                           domProps: { value: _vm.formMember.mobile2 },
                           on: {
@@ -22047,7 +22144,10 @@ var render = function() {
                           attrs: {
                             type: "text",
                             autocomplete: "off",
-                            placeholder: "Address"
+                            placeholder:
+                              _vm.lang === "en"
+                                ? _vm.en.address
+                                : _vm.ar.address
                           },
                           domProps: { value: _vm.formMember.address },
                           on: {
@@ -22080,7 +22180,8 @@ var render = function() {
                             type: "email",
                             id: "additional_email",
                             autocomplete: "off",
-                            placeholder: "Email"
+                            placeholder:
+                              _vm.lang === "en" ? _vm.en.email : _vm.ar.email
                           },
                           domProps: { value: _vm.formMember.email },
                           on: {
@@ -22113,7 +22214,11 @@ var render = function() {
                           },
                           [
                             _c("span", { attrs: { "data-icon": "&#xe973" } }),
-                            _vm._v("Add More                        ")
+                            _vm._v(
+                              _vm._s(
+                                _vm.lang === "en" ? _vm.en.more : _vm.ar.more
+                              ) + "                       "
+                            )
                           ]
                         )
                       ]
@@ -22125,7 +22230,22 @@ var render = function() {
             _c("div", { staticClass: "row m-0 p-3 w-100 d-flex" }, [
               _c("br"),
               _vm._v(" "),
-              _vm._m(1),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "btn btn-dark btn-send-data col-4 col-md-4 p-1 ml-auto",
+                  attrs: { type: "submit", name: "submit" }
+                },
+                [
+                  _c("span", { attrs: { "data-icon": "&#xf1f6" } }),
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.lang === "en" ? _vm.en.send : _vm.ar.send) +
+                      "                "
+                  )
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "button",
@@ -22137,7 +22257,13 @@ var render = function() {
                 },
                 [
                   _c("span", { attrs: { "data-icon": "&#xf067" } }),
-                  _vm._v(" Add Other People                ")
+                  _vm._v(
+                    " " +
+                      _vm._s(
+                        _vm.lang === "en" ? _vm.en.add_other : _vm.ar.add_other
+                      ) +
+                      "                "
+                  )
                 ]
               )
             ])
@@ -22154,22 +22280,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "form-group" }, [
       _c("div", { staticClass: "col-sm-12 col-sm-offset-2" })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn btn-dark btn-send-data col-4 col-md-4 p-1 ml-auto",
-        attrs: { type: "submit", name: "submit" }
-      },
-      [
-        _c("span", { attrs: { "data-icon": "&#xf1f6" } }),
-        _vm._v(" Send                ")
-      ]
-    )
   }
 ]
 render._withStripped = true

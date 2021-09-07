@@ -74,6 +74,13 @@
         <div class="inner-navigation collapse">
             <div class="inner-nav">
                 <ul>
+                    <li class="menu-item-has-children"><a href="#"><span class="menu-item-span"> {{ $lang == 'ar' ? 'Arabic' : 'English' }}    </span></a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ request()->url() }}?lang=ar">عربي</a></li>
+                            <li><a href="{{ request()->url() }}?lang=en">English</a></li>
+                        </ul>
+                    </li>
+
 {{--                    <li class=""><a href="#">--}}
 {{--                            <span class="menu-item-span">--}}
 {{--                                                <img width="100" height="60" src="/images/m_logo.png" />--}}
@@ -124,7 +131,6 @@
 <script src="/front/js/custom/jquery.min.js"></script>
 <script src="/front/js/custom/popper.min.js"></script>
 <script src="/front/js/bootstrap/bootstrap.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0rANX07hh6ASNKdBr4mZH0KZSqbHYc3Q"></script>
 <script src="/front/js/custom/plugins.min.js"></script>
 <script src="/front/js/custom/custom.min.js"></script>
 

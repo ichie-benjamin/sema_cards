@@ -8,7 +8,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong></strong></h1>
 {{--                        <p class="m-b-40">Lucky Card Holder free <br> 6 or 3 months subscription in Sama Card.</p>--}}
-                        <p><a class="btn btn-lg btn-circle btn-brand" href="{{ route('apply') }}">Request a card</a><a class="btn btn-lg btn-circle btn-outline-new-white" href="#search">Search card</a></p>
+                        <p><a class="btn btn-lg btn-circle btn-brand" href="{{ route('apply') }}">{{ $lan['request_card'] }}</a><a class="btn btn-lg btn-circle btn-outline-new-white" href="#search">{{ $lan['search_card'] }}</a></p>
                     </div>
                 </div>
 
@@ -21,8 +21,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 m-auto ">
-                        <h5 class="text-white">Search and download your card.</h5>
-                        <p class="lead">Enter your Cpr No to view and download your card</p>
+                        <h5 class="text-white">{{ $lan['search_download'] }}</h5>
+                        <p class="lead">{{ $lan['enter_cpr'] }}</p>
                     </div>
                 </div>
 
@@ -38,7 +38,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 mx-auto text-center">
-                        <a class="btn btn-primary" href="https://samacardbh.net/the-hospital-pdf/">Hospital Card %</a>
+                        @if ($lang == 'en')
+                            <a class="btn btn-primary" href="https://samacardbh.net/the-hospital-pdf/">{{ $lan['hospital'] }} %</a>
+                        @else
+                            <a class="btn btn-primary" href="https://samacardbh.net/%d9%82%d8%a7%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%8a%d8%a7%d8%aa-pdf/">{{ $lan['hospital'] }}</a>
+                        @endif
                     </div>
 
                 </div>
@@ -56,22 +60,22 @@
                 <div class="row">
                     <div class="col-md-12 m-auto text-center">
                         <div class="text-center">
-                            <h1>Sama HealthSaver Card.</h1>
-                            <p class="lead">A membership that entitle you to get an immediate discount in all medical services within a wide range of private hospital/clinic who’s contracted with Sama Bahrain Card</p>
+                            <h1>{{ $lan['heading'] }}</h1>
+                            <p class="lead">{{ $lan['sub_heading'] }}</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="row mt-4">
-                    <h1 class="mt-4">Benefit Of Sama Card :</h1>
+                    <h1 class="mt-4">{{ $lan['benefits'] }}</h1>
 
                 </div>
                 <div class="row">
                     <div class="elementor-widget-container">
-                        <ul><li>Immediate Usage</li>
-                            <li>Unlimited Usage</li>
-                            <li>Covered chronic Pre-existing Conditions</li>
-                            <li>Network Growing</li></ul>
+                        <ul><li>{{ $lan['bene_1'] }}</li>
+                            <li>{{ $lan['bene_2'] }}</li>
+                            <li>{{ $lan['bene_3'] }}</li>
+                            <li>{{ $lan['bene_4'] }}</li></ul>
                     </div>
                 </div>
 
