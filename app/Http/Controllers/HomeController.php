@@ -100,6 +100,7 @@ class HomeController extends Controller
         $lang['benefits'] = 'Benefit Of Sama Card';
         $lang['heading'] = 'Sama HealthSaver Card';
         $lang['enter_cpr'] = 'Enter your Cpr No to view and download your card';
+        $lang['enter_cpr_policy'] = 'ENTER CPR NO OR POLICY NO';
         $lang['search_download'] = 'Search and download your card';
         $lang['sub_heading'] = 'A membership that entitle you to get an immediate discount in
         all medical services within a wide range of private hospital/clinic who’s contracted with Sama Bahrain Card';
@@ -107,6 +108,7 @@ class HomeController extends Controller
     }
     public function arLang(){
         $lang['enter_cpr'] = 'أدخل رقمك الشخصي او رقم البوليصة';
+        $lang['enter_cpr_policy'] = 'أدخل رقمك الشخصي او رقم البوليصة';
         $lang['search_download'] = 'احصل على بطاقتك الإلكترونية';
         $lang['request_card'] = 'اطلب البطاقة';
         $lang['search_card'] = ' ابحث عن بطاقتك';

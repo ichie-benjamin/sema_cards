@@ -3,7 +3,7 @@
     <div class="row ">
         <div class="col-md-6 mx-auto text-center">
             <div class="form-group">
-                <input v-model="cpr_no" class="form-control" type="text" placeholder="Enter card cpr or policy no">
+                <input v-model="cpr_no" class="form-control" type="text" :placeholder="placeholder">
             </div>
             <img v-if="loading" height="30" width="30" src="/images/search.gif" />
          </div>
@@ -49,7 +49,7 @@
 <script>
 export default {
 name: "Search",
-    props : ['url'],
+    props : ['url','placeholder'],
     data (){
     return {
         loading : false,

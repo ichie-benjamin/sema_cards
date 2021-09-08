@@ -42,7 +42,7 @@
                 </div>
 
                 <div required="" class="form-group col-12">
-                    <input type="email" v-model="form.email" class="form-control text-left "  autocomplete="off" :placeholder="lang === 'en' ? en.address : ar.address">
+                    <input type="email" v-model="form.email" class="form-control text-left "  autocomplete="off" :placeholder="lang === 'en' ? en.email : ar.email">
                 </div>
 
                 <div class="form-group col-12">

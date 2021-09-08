@@ -10,7 +10,7 @@
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/ApplyCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ApplyCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/apply.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/apply.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Search.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/check.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/check.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
     </list>
@@ -290,7 +290,8 @@
       <workItem from="1630823908185" duration="6358000" />
       <workItem from="1630937054570" duration="679000" />
       <workItem from="1630955270176" duration="4835000" />
-      <workItem from="1631027453821" duration="5970000" />
+      <workItem from="1631027453821" duration="6679000" />
+      <workItem from="1631081051123" duration="786000" />
     </task>
     <servers />
   </component>

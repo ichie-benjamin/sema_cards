@@ -3275,7 +3275,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Search",
-  props: ['url'],
+  props: ['url', 'placeholder'],
   data: function data() {
     return {
       loading: false,
@@ -21468,7 +21468,7 @@ var render = function() {
                       type: "email",
                       autocomplete: "off",
                       placeholder:
-                        _vm.lang === "en" ? _vm.en.address : _vm.ar.address
+                        _vm.lang === "en" ? _vm.en.email : _vm.ar.email
                     },
                     domProps: { value: _vm.form.email },
                     on: {
@@ -24853,10 +24853,7 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: {
-                type: "text",
-                placeholder: "Enter card cpr or policy no"
-              },
+              attrs: { type: "text", placeholder: _vm.placeholder },
               domProps: { value: _vm.cpr_no },
               on: {
                 input: function($event) {

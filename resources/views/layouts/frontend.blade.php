@@ -23,6 +23,12 @@
 
 
     <style>
+        .form-control {
+            border-width: 1px;
+            padding: 1.0625rem .875rem;
+            color: black;
+            font-size: 1.2rem;
+        }
         .sema-card {
             /*border-radius: 40px;*/
             background-color: white;

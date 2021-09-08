@@ -22,11 +22,11 @@
                 <div class="row">
                     <div class="col-md-6 m-auto ">
                         <h5 class="text-white">{{ $lan['search_download'] }}</h5>
-                        <p class="lead">{{ $lan['enter_cpr'] }}</p>
+                        <p class="text-white">{{ $lan['enter_cpr'] }}</p>
                     </div>
                 </div>
 
-                <Search url="{{ route('cards.online.search') }}"></Search>
+                <Search placeholder="{{ $lan['enter_cpr_policy'] }}" url="{{ route('cards.online.search') }}"></Search>
 
             </div>
         </section>
