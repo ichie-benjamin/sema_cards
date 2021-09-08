@@ -72,10 +72,13 @@
                 </div>
                 <div class="row">
                     <div class="elementor-widget-container">
-                        <ul><li>{{ $lan['bene_1'] }}</li>
-                            <li>{{ $lan['bene_2'] }}</li>
-                            <li>{{ $lan['bene_3'] }}</li>
-                            <li>{{ $lan['bene_4'] }}</li></ul>
+                        <ul><li><i class="fa fa-arrow-right"></i> {{ $lan['bene_1'] }}</li>
+                            <li><i class="fa fa-arrow-right"></i> {{ $lan['bene_2'] }}</li>
+                            <li><i class="fa fa-arrow-right"></i> {{ $lan['bene_3'] }}</li>
+                            <li><i class="fa fa-arrow-right"></i> {{ $lan['bene_4'] }}</li>
+                            <li><i class="fa fa-arrow-right"></i> {{ $lan['bene_5'] }}</li>
+                            <li><i class="fa fa-arrow-right"></i> {{ $lan['bene_6'] }}</li>
+                        </ul>
                     </div>
                 </div>
 

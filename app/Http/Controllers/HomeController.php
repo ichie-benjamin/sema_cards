@@ -92,8 +92,9 @@ class HomeController extends Controller
         $lang['bene_1'] = 'Immediate Usage';
         $lang['bene_2'] = 'Unlimited Usage';
         $lang['bene_3'] = 'Covered chronic Pre-existing Conditions';
-        $lang['bene_4'] = 'Covered Bahraini';
-        $lang['bene_4'] = 'Network Growing ';
+        $lang['bene_4'] = 'Covered Old Ages';
+        $lang['bene_5'] = 'Covered Bahraini , Residence and visitors ';
+        $lang['bene_6'] = 'Network Growing';
         $lang['request_card'] = 'Request A Card';
         $lang['search_card'] = 'Search Card';
         $lang['hospital'] = 'Hospital Card';
@@ -115,8 +116,9 @@ class HomeController extends Controller
         $lang['bene_1'] = 'استخدام فوري';
         $lang['bene_2'] = 'عدد غير محدود من الاستخدام';
         $lang['bene_3'] = 'تغطي الأمراض المسبقة والمزمنة';
-        $lang['bene_4'] = 'لجميع فئات المجتمع البحريني ، والمقيم والزائ';
-        $lang['bene_5'] = 'شبكة متنامية';
+        $lang['bene_4'] = 'تغطي كبار السن وليس لها علاقة بالعمر';
+        $lang['bene_5'] = 'لجميع فئات المجتمع البحريني ، والمقيم والزائر';
+        $lang['bene_6'] = 'شبكة متنامية';
         $lang['hospital'] = 'قائمة المستشفيات';
         $lang['benefits'] = 'مزايا بطاقة سما للرعاية الصحية';
         $lang['heading'] = 'بطاقة سما للرعاية الصحية';
