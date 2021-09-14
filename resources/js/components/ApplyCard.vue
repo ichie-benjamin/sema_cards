@@ -249,7 +249,7 @@ export default {
                 'mobile' : '',
                 'mobile2' : '',
                 'is_parent' : 0,
-                'status' : 'pending',
+                'status' : 'draft',
                 'phone' : '',
                 'address' : '',
                 'comment' : '',
@@ -364,7 +364,7 @@ export default {
         },
 
         submitCard(){
-            this.form.status = 'pending';
+            this.form.status = 'draft';
             if(!this.can_add){
                 this.submitCardP();
             }

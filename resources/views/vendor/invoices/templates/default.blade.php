@@ -231,6 +231,11 @@
                                 {{ __('invoices::invoice.phone') }}: {{ $invoice->buyer->phone }}
                             </p>
                         @endif
+                        @if($invoice->buyer->mobile)
+                            <p class="buyer-phone">
+                                Mobile : {{ $invoice->buyer->mobile }}
+                            </p>
+                        @endif
 
                         @foreach($invoice->buyer->custom_fields as $key => $value)
                             <p class="buyer-custom-field">

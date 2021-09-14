@@ -2096,7 +2096,7 @@ __webpack_require__.r(__webpack_exports__);
         'mobile': '',
         'mobile2': '',
         'is_parent': 0,
-        'status': 'pending',
+        'status': 'draft',
         'phone': '',
         'address': '',
         'comment': '',
@@ -2221,7 +2221,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     submitCard: function submitCard() {
-      this.form.status = 'pending';
+      this.form.status = 'draft';
 
       if (!this.can_add) {
         this.submitCardP();

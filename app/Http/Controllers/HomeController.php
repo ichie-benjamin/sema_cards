@@ -69,7 +69,7 @@ class HomeController extends Controller
         $draft = Card::where('status','draft')->count();
         $draft_price = Card::where('status','draft')->sum('price');
 //        $renewal = Card::where('status','renewal')->count();
-        $today = Card::whereDate('issue_date', Carbon::today())->count();
+        $today = Card::whereDate('issue_date', Carbon::today())->wherePaid(1)->count();
         $today_price = Card::whereDate('issue_date', Carbon::today())->sum('price');
         $expired_cards = Card::where('expiry_date', '<=', Carbon::now())->count();
         $expired_cards_price = Card::where('expiry_date', '<=', Carbon::now())->sum('price');

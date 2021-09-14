@@ -126,6 +126,7 @@
                                         <th data-priority="3">Package Type</th>
                                         <th data-priority="6">Paid</th>
                                         <th data-priority="6">Expiry Date</th>
+                                        <th data-priority="6">Comment</th>
                                         <th width="10%" data-priority="6">Action</th>
                                     </tr>
                                     </thead>
@@ -150,6 +151,7 @@
                                         <td class="text-capitalize">@{{ i.p_name }}</td>
                                         <td>@{{ i.paid ? 'Yes' : 'No' }}</td>
                                         <td>@{{ i.expiry_date }}</td>
+                                        <td>@{{ i.comment }}</td>
                                         <td>
 {{--                                            <a class="btn btn-warning" href="{{ route('cards.edit', i.id) }}"><i class="fa fa-edit"></i> </a>--}}
                                             <a class="btn btn-warning" :href="i.edit_url"><i class="fa fa-edit"></i> </a>

@@ -69,7 +69,7 @@ class CardsController extends Controller
             $card->whereBetween('issue_date', [$from, $to]);
         }
 
-        $cards = $card->with('card')->paginate(50);
+        $cards = $card->with('card')->orderBy('id','desc')->paginate(50);
 
          if($request->has('export')){
              return view('admin.cards.export', compact('cards','status'));
