@@ -14,7 +14,7 @@ class PackageType extends Model
 
     protected $fillable = [
                   'name',
-                  'price'
+                  'price','show_online',
               ];
 
     protected $dates = [];

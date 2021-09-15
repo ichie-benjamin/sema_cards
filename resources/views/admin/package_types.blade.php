@@ -86,6 +86,7 @@
                                     <tr>
                                         <th>Name </th>
                                         <th>Price </th>
+                                        <th>Show Online </th>
                                         <th>Action </th>
                                     </tr>
                                     </thead>
@@ -94,6 +95,7 @@
                                     <tr>
                                         <td class="text-capitalize">{{ $item->name }}</td>
                                         <td>BD{{ $item->price }}</td>
+                                        <td>{{ $item->show_online ? 'Yes' : 'No' }}</td>
                                         <td>
                                             <form method="POST" action="{!! route('p_types.destroy', $item->id) !!}" accept-charset="UTF-8">
                                                 {{ csrf_field() }}

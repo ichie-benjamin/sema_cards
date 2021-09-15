@@ -750,15 +750,15 @@ name: "EditCard",
         card: {
             deep: true,
             // We have to move our method to a handler field
-            handler(){
-                if(this.loaded){
-                    setTimeout(()=>{
-                        this.update();
-                    },3000);
-                }
-
-
-            }
+            // handler(){
+            //     if(this.loaded){
+            //         setTimeout(()=>{
+            //             this.update();
+            //         },3000);
+            //     }
+            //
+            //
+            // }
     }
     }
 

@@ -2,7 +2,7 @@
     <div class="">
 
         <form v-if="done" style="color: #000" class="col-sm-12 col-sm-8 col-lg-8 m-auto form-data">
-            <h3 class="text-center mt-4 mb-4" >{{  lang.successful }}</h3>
+            <h3 class="text-center mt-4 mb-4" >{{ lang === 'en' ? en.successful : ar.successful }}</h3>
         </form>
         <form v-else @submit.prevent="submitForm" method="POST"  class="col-sm-12 col-sm-8 col-lg-8 m-auto form-data">
             <errors :errors="errors" v-if="errors"></errors>
@@ -26,6 +26,7 @@
                     </select>
                 </div>
 
+
                 <div class="form-group col-12">
                     <input required v-model="form.cpr_no" type="text" class="form-control text-left"  :placeholder="lang === 'en' ? en.cpr : ar.cpr">
                 </div>
@@ -47,6 +48,14 @@
 
                 <div class="form-group col-12">
                     <textarea v-model="form.comment" class="form-control text-left " rows="2" autocomplete="off" :placeholder="lang === 'en' ? en.note : ar.note"></textarea>
+                </div>
+
+
+                <div class="form-group col-12">
+                    <select v-model="form.package_type" class="custom-select text-left ltr">
+                        <option  value="" selected="selected">Select Package</option>
+                        <option v-for="i in p_types" :value="i.id">{{ i.name }}</option>
+                    </select>
                 </div>
             </div>
 
@@ -177,7 +186,7 @@ import Errors from "./Errors";
 export default {
     components: {Errors},
 
-    props:['post_url','lang'],
+    props:['post_url','lang','p_types'],
 
     name: "EditCard",
     data() {
@@ -225,6 +234,7 @@ export default {
                 'gender' : 'male',
                 'cpr_no' : '',
                 'is_online' : 1,
+                'package_type' : '',
                 'mobile' : '',
                 'status' : 'cancelled',
                 'price' : '',
@@ -246,6 +256,7 @@ export default {
                 'full_name' : '',
                 'cpr_no' : '',
                 'gender' : 'male',
+                'package_type' : '',
                 'mobile' : '',
                 'mobile2' : '',
                 'is_parent' : 0,
@@ -265,6 +276,7 @@ export default {
                 'address' : '',
                 'is_parent' : 0,
                 'comment' : '',
+                'init' : false,
                 'email' : '',
             },
             loading:false,
@@ -282,6 +294,7 @@ export default {
             }
         },
         addMembers(){
+            this.init = false;
             if(this.form.full_name.length < 2 || this.form.cpr_no.length < 2){
                 toastr.error('Enter your full name and cpr before adding members')
             }else {
@@ -299,6 +312,7 @@ export default {
 
         submitForm(){
             if(this.formMember.full_name.length > 2){
+                this.init = false
                 if(this.form.cpr_no.length < 2){
                     toastr.error('Enter member CPR number to proceed')
                 }else {
@@ -318,6 +332,8 @@ export default {
                     })
                 }
             }else{
+                this.done = true;
+                this.init = true;
                 this.submitCard();
             }
         },
@@ -420,7 +436,7 @@ export default {
             deep: true,
             // We have to move our method to a handler field
             handler(){
-                if(this.can_add && this.loaded){
+                if(this.can_add && this.loaded && !this.init){
                     this.update();
                 }
 

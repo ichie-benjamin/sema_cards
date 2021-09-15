@@ -44,9 +44,10 @@ class HomeController extends Controller
         }
         $p_methods = ['card','benefit','cash'];
         $con_methods = ['call','whatsapp','online'];
+        $p_types = PackageType::whereShowOnline(1)->get();
 //        $status = ['draft', 'pending' ,'expired','done','paid','print'];
         $card_types =  ['sama healthsaver card'];
-        return view('apply', compact('card_types','p_methods','con_methods','lang'));
+        return view('apply', compact('card_types','p_methods','con_methods','lang','p_types'));
 
     }
     public function dashboard()

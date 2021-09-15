@@ -2020,12 +2020,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Errors: _Errors__WEBPACK_IMPORTED_MODULE_0__.default
   },
-  props: ['post_url', 'lang'],
+  props: ['post_url', 'lang', 'p_types'],
   name: "EditCard",
   data: function data() {
     return {
@@ -2072,6 +2081,7 @@ __webpack_require__.r(__webpack_exports__);
         'gender': 'male',
         'cpr_no': '',
         'is_online': 1,
+        'package_type': '',
         'mobile': '',
         'status': 'cancelled',
         'price': '',
@@ -2093,6 +2103,7 @@ __webpack_require__.r(__webpack_exports__);
         'full_name': '',
         'cpr_no': '',
         'gender': 'male',
+        'package_type': '',
         'mobile': '',
         'mobile2': '',
         'is_parent': 0,
@@ -2112,6 +2123,7 @@ __webpack_require__.r(__webpack_exports__);
         'address': '',
         'is_parent': 0,
         'comment': '',
+        'init': false,
         'email': ''
       },
       loading: false
@@ -2129,6 +2141,8 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     addMembers: function addMembers() {
+      this.init = false;
+
       if (this.form.full_name.length < 2 || this.form.cpr_no.length < 2) {
         toastr.error('Enter your full name and cpr before adding members');
       } else {
@@ -2146,6 +2160,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       if (this.formMember.full_name.length > 2) {
+        this.init = false;
+
         if (this.form.cpr_no.length < 2) {
           toastr.error('Enter member CPR number to proceed');
         } else {
@@ -2168,6 +2184,8 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
       } else {
+        this.done = true;
+        this.init = true;
         this.submitCard();
       }
     },
@@ -2282,7 +2300,7 @@ __webpack_require__.r(__webpack_exports__);
       deep: true,
       // We have to move our method to a handler field
       handler: function handler() {
-        if (this.can_add && this.loaded) {
+        if (this.can_add && this.loaded && !this.init) {
           this.update();
         }
       }
@@ -3127,17 +3145,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     card: {
-      deep: true,
-      // We have to move our method to a handler field
-      handler: function handler() {
-        var _this10 = this;
+      deep: true // We have to move our method to a handler field
+      // handler(){
+      //     if(this.loaded){
+      //         setTimeout(()=>{
+      //             this.update();
+      //         },3000);
+      //     }
+      //
+      //
+      // }
 
-        if (this.loaded) {
-          setTimeout(function () {
-            _this10.update();
-          }, 3000);
-        }
-      }
     }
   }
 });
@@ -21218,7 +21236,11 @@ var render = function() {
           },
           [
             _c("h3", { staticClass: "text-center mt-4 mb-4" }, [
-              _vm._v(_vm._s(_vm.lang.successful))
+              _vm._v(
+                _vm._s(
+                  _vm.lang === "en" ? _vm.en.successful : _vm.ar.successful
+                )
+              )
             ])
           ]
         )
@@ -21509,6 +21531,56 @@ var render = function() {
                     }
                   }
                 })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group col-12" }, [
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.package_type,
+                        expression: "form.package_type"
+                      }
+                    ],
+                    staticClass: "custom-select text-left ltr",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.form,
+                          "package_type",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c(
+                      "option",
+                      { attrs: { value: "", selected: "selected" } },
+                      [_vm._v("Select Package")]
+                    ),
+                    _vm._v(" "),
+                    _vm._l(_vm.p_types, function(i) {
+                      return _c("option", { domProps: { value: i.id } }, [
+                        _vm._v(_vm._s(i.name))
+                      ])
+                    })
+                  ],
+                  2
+                )
               ])
             ]),
             _vm._v(" "),

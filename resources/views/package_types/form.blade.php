@@ -14,4 +14,13 @@
         {!! $errors->first('price', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+<div class="form-group {{ $errors->has('show_online') ? 'has-error' : '' }}">
+    <label for="price" class="col-md-2 control-label">Show online</label>
+    <div class="col-md-10">
+        <select name="show_online">
+            <option {{ old('show_online', optional($packageType)->show_online)  == 1 ? 'selected' : ''}} value="1" >Yes</option>
+            <option {{ old('show_online', optional($packageType)->show_online) == 1 ? ' ' : 'selected' }} value="0">No</option>
+        </select>
+    </div>
+</div>
 

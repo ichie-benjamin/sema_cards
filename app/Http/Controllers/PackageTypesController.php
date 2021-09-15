@@ -74,6 +74,7 @@ class PackageTypesController extends Controller
         $rules = [
                 'name' => 'string|min:1|max:255|nullable',
             'price' => 'required',
+            'show_online' => 'nullable',
         ];
 
         $data = $request->validate($rules);

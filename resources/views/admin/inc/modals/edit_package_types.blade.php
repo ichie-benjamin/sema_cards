@@ -28,6 +28,17 @@
 
                                 </div>
                             </div>
+
+                            <div class="col-12 {{ $errors->has('show_online') ? 'has-error' : '' }}">
+                                <label for="price" class="form-group">Show online</label>
+{{--                                <div class="col-md-12">--}}
+                                    <select name="show_online" class="form-control">
+                                        <option {{ old('show_online', optional($item)->show_online)  == 1 ? 'selected' : ''}} value="1" >Yes</option>
+                                        <option {{ old('show_online', optional($item)->show_online) == 1 ? ' ' : 'selected' }} value="0">No</option>
+                                    </select>
+{{--                                </div>--}}
+                            </div>
+
                             <div class="col-12">
                                 <button  class="btn btn-primary" type="submit">Save Package</button>
                             </div>

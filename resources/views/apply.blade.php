@@ -62,7 +62,7 @@
 
         <div class="row d-flex w-100"></div>
 
-        <apply-card lang="{{ $lang }}" post_url="{{ route('cards.online.store') }}"></apply-card>
+        <apply-card :p_types='@json($p_types)' lang="{{ $lang }}" post_url="{{ route('cards.online.store') }}"></apply-card>
     </div>
 </div>
 
