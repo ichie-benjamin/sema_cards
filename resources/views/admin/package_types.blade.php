@@ -43,9 +43,15 @@
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="form-group "><label>Name</label>
+                                        <div class="form-group "><label>Name In English</label>
                                             <input required name="name" type="text" class="form-control" placeholder="name" />
                                             {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group "><label>Name In Arabic</label>
+                                            <input value="" name="ar" type="text" class="form-control" placeholder="arabic" />
+                                            {!! $errors->first('ar', '<p class="help-block">:message</p>') !!}
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -55,6 +61,16 @@
 
                                         </div>
                                     </div>
+                                    <div class="col-12 {{ $errors->has('show_online') ? 'has-error' : '' }}">
+                                        <label for="price" class="form-group">Show online</label>
+                                        {{--                                <div class="col-md-12">--}}
+                                        <select name="show_online" class="form-control">
+                                            <option {{ old('show_online')  == 1 ? 'selected' : ''}} value="1" >Yes</option>
+                                            <option {{ old('show_online') == 1 ? ' ' : 'selected' }} value="0">No</option>
+                                        </select>
+                                        {{--                                </div>--}}
+                                    </div>
+
                                     <div class="col-12">
                                         <button  class="btn btn-primary" type="submit">Save Package</button>
                                     </div>
@@ -79,12 +95,16 @@
                     @include('admin.partials.msg.error')
                     <!--end card-header-->
                     <div class="card-body">
+
                         <div class="">
                             <div class="table-responsive mb-0">
+
                                 <table id="datatable" class="dt-responsive table table-striped table-bordered mb-0">
+
                                     <thead>
                                     <tr>
-                                        <th>Name </th>
+                                        <th>Name In English </th>
+                                        <th>Name In Arabic </th>
                                         <th>Price </th>
                                         <th>Show Online </th>
                                         <th>Action </th>
@@ -94,6 +114,7 @@
                                     @foreach($types as $item)
                                     <tr>
                                         <td class="text-capitalize">{{ $item->name }}</td>
+                                        <td class="text-capitalize">{{ $item->ar }}</td>
                                         <td>BD{{ $item->price }}</td>
                                         <td>{{ $item->show_online ? 'Yes' : 'No' }}</td>
                                         <td>

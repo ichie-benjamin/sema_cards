@@ -16,9 +16,15 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <div class="form-group "><label>Name</label>
+                                <div class="form-group "><label>Name In English</label>
                                     <input required value="{{ $item->name }}" name="name" type="text" class="form-control" placeholder="name" />
                                     {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group "><label>Name In Arabic</label>
+                                    <input value="{{ $item->ar }}" name="ar" type="text" class="form-control" placeholder="arabic" />
+                                    {!! $errors->first('ar', '<p class="help-block">:message</p>') !!}
                                 </div>
                             </div>
                             <div class="col-12">

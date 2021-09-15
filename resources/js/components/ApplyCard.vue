@@ -54,7 +54,7 @@
                 <div class="form-group col-12">
                     <select v-model="form.package_type" class="custom-select text-left ltr">
                         <option  value="" selected="selected">Select Package</option>
-                        <option v-for="i in p_types" :value="i.id">{{ i.name }}</option>
+                        <option v-for="i in p_types" :value="i.id">{{ lang === 'en' ? i.name : i.ar }}</option>
                     </select>
                 </div>
             </div>

@@ -52,7 +52,7 @@ class CardsController extends Controller
             $card->where('agent_id','!=',$agent);
         }
          if($request->has('today')){
-            $card->whereDate('issue_date', Carbon::today());
+            $card->whereDate('issue_date', Carbon::today())->wherePaid(1);
         }
          if($request->has('imported')){
             $card->where('imported', 1);

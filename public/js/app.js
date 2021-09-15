@@ -21575,7 +21575,7 @@ var render = function() {
                     _vm._v(" "),
                     _vm._l(_vm.p_types, function(i) {
                       return _c("option", { domProps: { value: i.id } }, [
-                        _vm._v(_vm._s(i.name))
+                        _vm._v(_vm._s(_vm.lang === "en" ? i.name : i.ar))
                       ])
                     })
                   ],
