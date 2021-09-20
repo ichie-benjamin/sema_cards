@@ -12,12 +12,12 @@
                         </div>
                         <!--end col-->
                         <div class="col-auto align-self-center">
-                            <a href="{{ route('card.delete.all_cards') }}" onclick="return confirm('Are you sure you want to delete all cards ?')" class="btn btn-danger">
-                                Delete all cards
-                            </a>
-                            <button type="button" @click="toogleImport()" class="btn btn-sm btn-warning" id="Dash_Date">
-                                <span class="day-name">Import Cards</span>
-                            </button>
+{{--                            <a href="{{ route('card.delete.all_cards') }}" onclick="return confirm('Are you sure you want to delete all cards ?')" class="btn btn-danger">--}}
+{{--                                Delete all cards--}}
+{{--                            </a>--}}
+{{--                            <button type="button" @click="toogleImport()" class="btn btn-sm btn-warning" id="Dash_Date">--}}
+{{--                                <span class="day-name">Import Cards</span>--}}
+{{--                            </button>--}}
                             <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
                                 <span class="day-name" id="Day_Name">Today:</span>&nbsp; <span class="" id="Select_date">{{ date('M d') }}</span> <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
                             </a>

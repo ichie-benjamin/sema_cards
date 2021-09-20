@@ -68,6 +68,44 @@
 @include('admin.partials.sidebar')
 
 
+<div class="modal fade" id="deleteCard" tabindex="-1" role="dialog" aria-labelledby="deleteCard" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title m-0" id="exampleModalDefaultLogin">Delete All Cards</h6>
+                <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                </button>
+            </div>
+            <!--end modal-header-->
+            <div class="modal-body">
+                <div class="card-body p-0">
+                    <h5>Are you sure you want to delete all cards? note that this action is irreversible </h5>
+                    <form action="{{ route('card.delete.all_cards') }}" method="POST" class="form-parsley">
+                        {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group "><label>Enter password to proceed</label>
+                                    <input required name="password" type="text" class="form-control" placeholder="password" />
+                                    {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button  class="btn btn-danger" type="submit">Delete All Cards</button>
+                            </div>
+                        </div>
+
+                        <!--end form-group-->
+                    </form>
+                </div>
+            </div>
+            <!--end modal-body-->
+        </div>
+        <!--end modal-content-->
+    </div>
+    <!--end modal-dialog-->
+</div>
+
 <div class="page-wrapper">
     <!-- Top Bar Start -->
     <div class="topbar">

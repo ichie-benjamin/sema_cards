@@ -98,10 +98,15 @@ class CardsController extends Controller
         return view('admin.cards.cards', compact('cards','design','id'));
     }
 
-    public function deleteAllCards(){
-
-        Card::truncate();
+    public function deleteAllCards(Request $request){
+        $pass = $request['password'];
+        if($pass == '2365'){
+            Card::truncate();
+        }else{
+            return back()->with('error_message', 'Password incorrect.');
+        }
         return back()->with('success_message', 'All cards successfully deleted.');
+
     }
 
     public function cardOnline($id, Request $request)

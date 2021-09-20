@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_09_15_084508_add_arabic_to_package.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CardsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PackageTypesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PackageTypesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PackageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PackageType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ApplyCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ApplyCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/cards/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cards/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/modals/edit_package_types.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/modals/edit_package_types.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/package_types.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/package_types.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +297,10 @@
       <workItem from="1631132048291" duration="546000" />
       <workItem from="1631578889700" duration="2031000" />
       <workItem from="1631683032708" duration="5854000" />
-      <workItem from="1631693580552" duration="992000" />
+      <workItem from="1631693580552" duration="1115000" />
+      <workItem from="1631814901340" duration="1120000" />
+      <workItem from="1631869664825" duration="583000" />
+      <workItem from="1632146944359" duration="3501000" />
     </task>
     <servers />
   </component>
@@ -334,7 +333,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>322</line>
+          <line>327</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="setExpiryDate" />
@@ -343,7 +342,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>436</line>
+          <line>441</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="getPolicy" />
@@ -352,7 +351,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>389</line>
+          <line>394</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="destroy" />
@@ -361,7 +360,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>106</line>
+          <line>111</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\CardsController" />
             <option name="methodName" value="cardOnline" />
@@ -375,7 +374,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php</url>
-          <line>184</line>
+          <line>188</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -395,12 +394,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>246</line>
+          <line>251</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/CardsController.php</url>
-          <line>363</line>
+          <line>368</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

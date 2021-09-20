@@ -52,6 +52,10 @@
                     <i data-feather="columns" class="align-self-center menu-icon"></i><span>Package Types</span>
                 </a>
             </li>
+            <a href="#" data-toggle="modal" data-target="#deleteCard"  class="btn btn-danger">
+                Delete all cards
+            </a>
+
 
 {{--            <li>--}}
 {{--                <a href="javascript: void(0);">--}}
@@ -218,5 +222,7 @@
             <a href="javascript: void(0);" class="btn btn-outline-warning btn-sm">Visit Home</a>
         </div>
     </div>
+
+
 </div>
 <!-- end left-sidenav-->

@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
     ]);
 
 
-    Route::get('delete/all/cards', [CardsController::class, 'deleteAllCards'])->name('card.delete.all_cards');
+    Route::post('delete/all/cards', [CardsController::class, 'deleteAllCards'])->name('card.delete.all_cards');
 
 
 });
