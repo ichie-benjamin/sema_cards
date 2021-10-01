@@ -33,7 +33,14 @@ Route::post('/card/online/search', [CardsController::class, 'onlineSearch'])->na
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'dashboard'])->name('home')->middleware('auth');
+//Route::get('/', [HomeController::class, 'dashboard'])->name('home');
+
+Route::view('/', 'pages.index')->name('home');
+Route::view('/be-a-partner', 'pages.partner')->name('partner');
+Route::view('contact-us', 'pages.contact')->name('contact');
+Route::view('about-us', 'pages.about')->name('about');
+
+
 
 Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'admin'], function () {
 
