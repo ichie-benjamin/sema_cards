@@ -1,12 +1,5 @@
-
-
-
-
-
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from templates.envytheme.com/goldmedi/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Sep 2021 17:11:17 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -69,7 +62,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-2 col-md-3">
-                <a class="navbar-brand" href="{{ route('home') }}"><img src="assets/img/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="{{ route('home') }}"><img src="/images/s_logo.png" alt="logo"></a>
             </div>
             <div class="col-12 col-lg-8 col-md-6">
                 <div class="navbar-toggle-btn">
@@ -119,7 +112,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <p>Copyright @ 2021 GoldMedi. All rights reserved</p>
+                <p>Copyright @ {{ date('Y') }} {{ env('APP_NAME') }}. All rights reserved</p>
             </div>
             <div class="col-lg-6 col-md-6">
                 <ul>
@@ -153,6 +146,4 @@
 
 <script src="{{ asset('frontpage/js/main.js') }}"></script>
 </body>
-
-<!-- Mirrored from templates.envytheme.com/goldmedi/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Sep 2021 17:11:17 GMT -->
 </html>
