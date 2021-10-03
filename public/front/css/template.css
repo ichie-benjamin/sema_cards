@@ -13392,7 +13392,7 @@ img.img-shadow,
     background-repeat: no-repeat;
     background-color: #fff;
     background-size: cover;
-    padding: 120px 0 100px;
+    padding: 80px 0 100px;
 }
 
 .parallax {
@@ -13568,7 +13568,7 @@ img.img-shadow,
 .fullscreen,
 .module-cover-slides {
     padding: 0;
-    height: 100vh;
+    height: 70vh;
 }
 
 .fullscreen .container,
