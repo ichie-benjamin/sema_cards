@@ -1,129 +1,65 @@
 @extends('pages.layouts.app')
 @section('content')
 
-
-    <div id="home" class="main-banner">
-
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-
-                    <div class="row mb-5">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-box">
-                                <i class="icofont-card"></i>
-                                <h3>Card Request</h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-box">
-                                <i class="icofont-search-document"></i>
-                                <h3>Search Your Card</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-5">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-box">
-                                <i class="icofont-user"></i>
-                                <h3>Be A Partner</h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-box">
-                                <i class="icofont-doctor"></i>
-                                <h3>Medical Network</h3>
-                            </div>
+<section class="breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-outer">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ul>
+            </nav>
+            <h2>Contact Us</h2> </div>
+    </div>
+</section>
+<section class="contact pad-bottom-0">
+    <div class="container">
+        <div class="map">
+            <div id="map"></div>
+        </div>
+        <div class="contact-inner">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <div class="contact-detail">
+                        <h2 class="white">Do You want to Reach at the next Level of business Success?</h2>
+                        <p class="white mar-bottom-40">Book a Complimentary Appointment by Visiting or calling Us!</p>
+                        <div class="contact-list">
+                            <p class="contact mar-bottom-10 white"><i class="fa fa-phone" aria-hidden="true"></i> 123-456-79459</p>
+                            <p class="contact mar-bottom-10 white"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2bbbcb4bd92a1a5b3a1a6baabb3fcb1bdbf">[email&#160;protected]</a></p>
+                            <p class="contact white"><i class="fa fa-map-marker" aria-hidden="true"></i> 323 Wintergreen Dr.Englewood, NJ 07631</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <section id="contact" class="contact-area ">
-        <div class="container">
-            <h2 class="mb-4 mt-4">Contact Us</h2>
-            <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="contact-box">
-                            <h3><i class="icofont-google-map"></i> Address</h3>
-                            <p><a href="https://www.google.com/maps/place/Exercisplan+4,+111+49+Stockholm,+Sweden/data=!4m2!3m1!1s0x465f9d5641a77669:0xe02744b36aab9f53?ved=2ahUKEwi38ZaU0rXfAhVWeH0KHY5CBWYQ8gEwAHoECAAQAQ" target="_blank">Exercisplan 4, 111 49 <br> Stockholm,Sweden</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="contact-box">
-                            <h3><i class="icofont-envelope"></i> Email</h3>
-                            <p><a href="#">info@doctor.com</a></p>
-                            <p><a href="#">support@doctor.com</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="contact-box">
-                            <h3><i class="icofont-phone"></i> Phone</h3>
-                            <p><a href="#">+44 4587 458</a></p>
-                            <p><a href="#">+44 4587 459</a></p>
-                        </div>
-                    </div>
-
-
-
-                <div class="col-lg-8 col-md-12">
-                    <form id="contactForm" novalidate="true">
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                    <form>
                         <div class="row">
-
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="first_name" id="first_name" required="" data-error="Please enter your first name" placeholder="First Name">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group">
-                                    <input  type="text" class="form-control" name="last_name" id="last_name" required="" data-error="Please enter your last name" placeholder="Last Name">
-                                    <div class="help-block with-errors"></div>
-                                </div>
+                            <div class="form-group col-xs-6">
+                                <label>Name:</label>
+                                <input type="text" placeholder="Sam smiths"> </div>
+                            <div class="form-group col-xs-6">
+                                <label>Email:</label>
+                                <input type="text" placeholder="abc@xyz.com">
                             </div>
 
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="phone" id="phone" required="" data-error="Please enter your phone number" placeholder="Phone Number">
-                                    <div class="help-block with-errors"></div>
-                                </div>
+                            <div class="form-group col-xs-12">
+                                <label>Your Message</label>
+                                <textarea>Enter your message here</textarea>
                             </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group">
-                                    <input  type="email" class="form-control" name="email" id="email" required="" data-error="Please enter your email" placeholder="Email">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="form-group has-error">
-                                <textarea name="message" class="form-control" id="message" cols="30" rows="4" required="" data-error="Write your message" placeholder="Message"></textarea>
-                                <div class="help-block with-errors"><ul class="list-unstyled"><li>Write your message</li></ul></div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <button type="submit" class="btn disabled" style="pointer-events: all; cursor: pointer;">Send Message</button>
-                                <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="form-btn"> <a class="btn"> Send Message</a> </div>
                             </div>
                         </div>
                     </form>
                 </div>
-
-
-
             </div>
         </div>
-    </section>
-
-    <br>
-
+    </div>
+</section>
 
 
+<script src="{{ asset('frontpage/js/custom-map.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4JwWo5VPt9WyNp3Ne2uc2FMGEePHpqJ8&amp;callback=initMap" async defer></script>
 
 @endsection
 
