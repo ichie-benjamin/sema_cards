@@ -5,63 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/index.2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontpage/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/icofont.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/owl.video.play.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontpage/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/fonts/icofont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/fonts/icofont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/about-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/about-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/about-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/about-img4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/appointment-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/blog-details.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/blog-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/blog-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/blog-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/client-avatar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/client-avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/client-avatar3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/department-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/doctor-img1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/doctor-img2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/doctor-img3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/doctor-img4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/fun-facts-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/gallery-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/gallery-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/gallery-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/gallery-img4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/gallery-img5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/gallery-img6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/hero-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/hero-shape.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/img/pattern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontpage/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/contact-form-script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/form-validator.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/jquery.magnific-popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/jquery.mixitup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontpage/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/s_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/s_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/partner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/partner.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,6 +304,9 @@
       <workItem from="1633079940735" duration="6730000" />
       <workItem from="1633095645857" duration="3268000" />
       <workItem from="1633256424551" duration="8875000" />
+      <workItem from="1633335454324" duration="1452000" />
+      <workItem from="1633338885408" duration="455000" />
+      <workItem from="1633339616407" duration="1271000" />
     </task>
     <servers />
   </component>
@@ -365,11 +316,41 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />

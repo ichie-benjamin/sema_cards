@@ -41,7 +41,7 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ route('home') }}"> <img height="90" src="{{ asset('frontpage/logo_t.png') }}" alt="logo1"> <img src="images/logo.png" alt="logo1"> </a>
+                    <a class="navbar-brand" href="{{ route('home') }}"> <img height="90" src="{{ asset('frontpage/logo_t.png') }}" alt="logo1"> <img src="{{ asset('images/s_logo.png') }}" alt="logo1"> </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="responsive-menu">

@@ -76,7 +76,7 @@
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20"><i class="flaticon-023-otoscope"></i> </div>
                     <div class="service-content">
-                        <h3><a href="department-detail.html">Card Request</a></h3>
+                        <h3><a href="{{ route('apply') }}">Card Request</a></h3>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20 child-2"> <i class="flaticon-020-examine"></i> </div>
                     <div class="service-content">
-                        <h3><a href="department-detail.html">Search Your Card</a></h3>
+                        <h3><a href="{{ route('check') }}">Search Your Card</a></h3>
 {{--                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>--}}
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20 child-3"> <i class="flaticon-003-blood-sample"></i> </div>
                     <div class="service-content">
-                        <h3><a href="department-detail.html">Be A Partner</a></h3>
+                        <h3><a href="{{ route('partner') }}">Be A Partner</a></h3>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20 child-2"> <i class="flaticon-025-serum"></i> </div>
                     <div class="service-content">
-                        <h3><a href="department-detail.html">Medical Network</a></h3>
+                        <h3><a href="#">Medical Network</a></h3>
 
                     </div>
                 </div>
