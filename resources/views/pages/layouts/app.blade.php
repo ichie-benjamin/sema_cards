@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Swasthya | Medical and Health HTML template</title>
+    <title>Sama | Medical and Health Card</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
     <link href="{{ asset('frontpage/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('frontpage/css/default.css') }}" rel="stylesheet" type="text/css">
@@ -163,7 +163,7 @@
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>Copyright © 2019 Swasthye by <a href="https://www.cyclonethemes.com" target="_blank">Cyclone Themes</a></p>
+                    <p>Copyright © {{ date('Y') }} Sama </p>
                 </div>
             </div>
         </div>
