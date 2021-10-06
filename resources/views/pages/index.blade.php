@@ -64,15 +64,15 @@
 
 <section class="services pad-top-0 icon-left">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="section-title">
+{{--        <div class="row">--}}
+{{--            <div class="col-xs-12">--}}
+{{--                <div class="section-title">--}}
 {{--                    <h3>WE OFFER SERVICES</h3>--}}
 {{--                    <h2> <span class="text text-center">Explore</span> </h2> </div>--}}
-            </div>
-        </div>
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20"><i class="flaticon-023-otoscope"></i> </div>
                     <div class="service-content">
@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20 child-2"> <i class="flaticon-020-examine"></i> </div>
                     <div class="service-content">
@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20 child-3"> <i class="flaticon-003-blood-sample"></i> </div>
                     <div class="service-content">
@@ -99,11 +99,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="service-item">
                     <div class="service-icon mar-bottom-20 child-2"> <i class="flaticon-025-serum"></i> </div>
                     <div class="service-content">
-                        <h3><a href="#">Medical Network</a></h3>
+                        <h3><a target="_blank" href="{{ setting('network_en') }}">Medical Network</a></h3>
 
                     </div>
                 </div>

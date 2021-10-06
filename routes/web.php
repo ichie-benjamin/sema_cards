@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\HomeController;
@@ -70,11 +71,15 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
     Route::post('/card/import', [CardsController::class, 'importCards'])->name('cards.import');
 
 
+    Route::get('/settings/network', [SettingsController::class, 'networks'])->name('settings.networks');
+
+
 
 
     Route::resources([
         'cards' => CardsController::class,
-        'p_types' => PackageTypesController::class
+        'p_types' => PackageTypesController::class,
+        'settings' => SettingsController::class,
     ]);
 
 

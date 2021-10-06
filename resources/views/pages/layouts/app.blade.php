@@ -13,6 +13,44 @@
     <link href="{{ asset('frontpage/fonts/flaticon.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js'></script>
+
+    <style>
+        .service-item {
+            background-color: #6f42c1;
+            /*padding: 5px 5px 5px;*/
+        }
+        .service-item a {
+            color: #ffffff;
+        }
+        .service-item h3{
+            /*font-size: 0.9em;*/
+        }
+
+        #preloader {
+            background: #6f42c1;
+        }
+        #status {
+            width: 140px!important;
+            height: 140px!important;
+        }
+
+        @media (max-width: 767px){
+            section.slider #x_023_animated_layers {
+                height: 370px;
+            }
+            .service-item h3{
+                font-size: 0.9em;
+            }
+            .service-item {
+                padding: 15px 5px 5px;
+            }
+            .service-icon {
+                height: 70px;
+                width: 70px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
@@ -24,7 +62,7 @@
         <div class="container">
             <div class="top-bar-content">
                 <div class="contact-info">
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> 123-456-79459</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> {{ setting('site_phone') }}</p>
 {{--                    <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b12151d143b080c1a080f13021a55181416">[email&#160;protected]</a></p>--}}
                 </div>
                 <div class="header-links">
@@ -41,7 +79,7 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ route('home') }}"> <img height="90" src="{{ asset('frontpage/logo_t.png') }}" alt="logo1"> <img src="{{ asset('images/s_logo.png') }}" alt="logo1"> </a>
+                    <a class="navbar-brand" href="{{ route('home') }}"> <img height="90" src="{{ setting('logo_white','/frontpage/logo_t.png') }}" alt="logo1"> <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="logo1"> </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="responsive-menu">
@@ -96,19 +134,19 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="f-contact-inner">
                         <div class="contact-icon"> <i class="fa fa-phone"></i> </div>
-                        <div class="contact-title"> <span class="white">+123-456-79459</span> <span class="white">Have a question? call us now</span> </div>
+                        <div class="contact-title"> <span class="white">{{ setting('site_phone','+00-0000-1111') }}</span> <span class="white">Have a question? call us now</span> </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="f-contact-inner">
                         <div class="contact-icon"> <i class="fa fa-envelope-o"></i> </div>
-                        <div class="contact-title"> <span class="white"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e980878f86a99a9e889a9d819088c78a8684">[email&#160;protected]</a></span> <span class="white">Need support? Drop us an email</span> </div>
+                        <div class="contact-title"> <span class="white"><a href="#" class="__cf_email__" >{{ setting('email') }}</a></span> <span class="white">Need support? Drop us an email</span> </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="f-contact-inner">
                         <div class="contact-icon"> <i class="fa fa-clock-o"></i> </div>
-                        <div class="contact-title"> <span class="white">323 Wintergreen, NJ 07631, USA</span> <span class="white">You can find here</span> </div>
+                        <div class="contact-title"> <span class="white">{{ setting('address') }}</span> <span class="white">You can find here</span> </div>
                     </div>
                 </div>
             </div>
@@ -118,7 +156,7 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-12">
                         <div class="footer-contact mar-right-15">
-                            <div class="footer-logo text-center mar-bottom-15"> <img src="images/logo.png" alt="Image"> </div>
+                            <div class="footer-logo text-center mar-bottom-15"> <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="Image"> </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 <br>
                                 <br> We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
