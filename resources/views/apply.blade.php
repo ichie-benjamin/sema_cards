@@ -51,10 +51,10 @@
         <div class="col-sm-12 col-md-12 col-lg-6 p-0 m-auto d-flex text-center">
             <div class="row d-flex w-100 align-self-center primary-links">
                 @if ($lang == 'en')
-                    <a href="http://samacardbh.com/downloadpdf" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">Hospitals Directory</a>
+                    <a target="_blank" href="{{ setting('network_en') }}" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">Hospitals Directory</a>
                     <a class="col-sm-12 col-md-5 col-lg-5 align-self-center primary-link requset-card clicked">Request Card</a>
                 @else
-                    <a href="https://samacardbh.net/%d9%82%d8%a7%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%8a%d8%a7%d8%aa-pdf/" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">دليل المستشفيات</a>
+                    <a target="_blank" href="{{ setting('network_ar') }}" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">دليل المستشفيات</a>
                     <a class="col-sm-12 col-md-5 col-lg-5 align-self-center primary-link requset-card clicked"> أطلب البطاقة</a>
                 @endif
             </div>

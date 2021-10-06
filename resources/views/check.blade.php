@@ -39,9 +39,9 @@
                 <div class="row">
                     <div class="col-md-12 mx-auto text-center">
                         @if ($lang == 'en')
-                            <a class="btn btn-primary" href="https://samacardbh.net/the-hospital-pdf/">{{ $lan['hospital'] }} %</a>
+                            <a class="btn btn-primary" target="_blank" href="{{ setting('network_en') }}">{{ $lan['hospital'] }} %</a>
                         @else
-                            <a class="btn btn-primary" href="https://samacardbh.net/%d9%82%d8%a7%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%8a%d8%a7%d8%aa-pdf/">{{ $lan['hospital'] }}</a>
+                            <a target="_blank" class="btn btn-primary" href="{{ setting('network_ar') }}">{{ $lan['hospital'] }}</a>
                         @endif
                     </div>
 
