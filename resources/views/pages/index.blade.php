@@ -15,7 +15,9 @@
                     <div class="x_023_animated_layers_txt">
                         <h1 data-animation="animated fadeInLeft">Medial Services that you can trust</h1>
                         <p data-animation="animated fadeInLeft">Need professional help? Our support staff will answer your questions.</p>
-                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p> <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> </div>
+                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
+{{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
+                    </div>
                     <div class="x_023_animated_layers_img" data-animation="animated fadeInUp"> <img src="{{ asset('frontpage/images/home/slider/doc-slider2.png') }}" alt="x_023_animated_layers_image_01"> </div>
                 </div>
             </div>
@@ -24,7 +26,9 @@
                     <div class="x_023_animated_layers_txt">
                         <h1 data-animation="animated fadeInLeft">We make quality health care</h1>
                         <p data-animation="animated fadeInLeft">Passionate About Medicine. Compassionate About People.</p>
-                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p> <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> </div>
+                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
+{{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a>--}}
+                    </div>
                     <div class="x_023_animated_layers_img" data-animation="animated fadeInDown"> <img src="{{ asset('frontpage/images/home/slider/doc-slider1.png') }}" alt="x_023_animated_layers_image_02"> </div>
                 </div>
             </div>
@@ -33,7 +37,9 @@
                     <div class="x_023_animated_layers_txt">
                         <h1 data-animation="animated fadeInLeft">Modern Technology Treatment</h1>
                         <p data-animation="animated fadeInLeft">Doctor’s for health</p>
-                        <p data-animation="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> </div>
+                        <p data-animation="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+{{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
+                    </div>
                     <div class="x_023_animated_layers_img" data-animation="animated fadeInDown"> <img src="{{ asset('frontpage/images/home/slider/doc-slider3.png') }}" alt="x_023_animated_layers_image_02"> </div>
                 </div>
             </div>
