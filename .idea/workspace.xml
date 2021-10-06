@@ -5,47 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/vendor/invoices/sample-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laratrust/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laratrust/laratrust.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laratrust/mix-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/css/cropper.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/css/dropzone.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/css/lfm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/css/mime-icons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/files/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/files/adobe.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/files/folder-1/sleeping-dog.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/files/word.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/images/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/images/test-folder/sleeping-dog.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/images/test-folder/thumbs/sleeping-dog.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/img/152px color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/img/72px color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/img/92px color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/img/Logomark color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/img/folder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/img/loader.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/js/cropper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/js/dropzone.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/js/filemanager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/js/filemanager.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/laravel-filemanager/js/stand-alone-button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/manthra/css/toastr.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/manthra/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/manthra/js/toastr.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/crm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/network.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontpage/images/loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontpage/images/loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +303,7 @@
       <workItem from="1633335454324" duration="1452000" />
       <workItem from="1633338885408" duration="455000" />
       <workItem from="1633339616407" duration="1714000" />
-      <workItem from="1633490370100" duration="5880000" />
+      <workItem from="1633490370100" duration="6270000" />
     </task>
     <servers />
   </component>

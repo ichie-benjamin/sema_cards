@@ -54,9 +54,9 @@
 </head>
 
 <body>
-<div id="preloader">
-    <div id="status"></div>
-</div>
+{{--<div id="preloader">--}}
+{{--    <div id="status"></div>--}}
+{{--</div>--}}
 <header class="main_header_area">
     <div class="top-bar">
         <div class="container">
