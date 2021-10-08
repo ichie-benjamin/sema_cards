@@ -6,11 +6,11 @@
         <div class="breadcrumb-outer">
             <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a style="color: white" href="{{ route('home') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
                 </ul>
             </nav>
-            <h2>Contact Us</h2> </div>
+            <h4>Contact Us</h4> </div>
     </div>
 </section>
 <section class="contact pad-bottom-0">
@@ -25,9 +25,9 @@
                         <h2 class="white">Do You want to Reach at the next Level of business Success?</h2>
                         <p class="white mar-bottom-40">Book a Complimentary Appointment by Visiting or calling Us!</p>
                         <div class="contact-list">
-                            <p class="contact mar-bottom-10 white"><i class="fa fa-phone" aria-hidden="true"></i> 123-456-79459</p>
-                            <p class="contact mar-bottom-10 white"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2bbbcb4bd92a1a5b3a1a6baabb3fcb1bdbf">[email&#160;protected]</a></p>
-                            <p class="contact white"><i class="fa fa-map-marker" aria-hidden="true"></i> 323 Wintergreen Dr.Englewood, NJ 07631</p>
+                            <p class="contact mar-bottom-10 white"><i class="fa fa-phone" aria-hidden="true"></i>{{ setting('site_phone') }}</p>
+                            <p class="contact mar-bottom-10 white"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="#" >{{ setting('email') }}</a></p>
+                            <p class="contact white"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ setting('address') }}</p>
                         </div>
                     </div>
                 </div>

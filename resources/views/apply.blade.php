@@ -20,6 +20,14 @@
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css" />
 
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #3f1998  ;
+            border-color: #3f1998  ;
+        }
+    </style>
+
 </head>
 <body class="dir-ltr">
 <div class="top-logo logo m-auto"></div>
@@ -35,12 +43,17 @@
 
             <div class="container">
                 <div class="dropdown">
+
                     <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ $lang == 'ar' ? 'Arabic' : 'English' }}                    </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                         <a href="{{ route('apply') }}?lang=ar" class="dropdown-item text-left" data-lang="ar">عربي</a>
                         <a href="{{ route('apply') }}" class="dropdown-item text-left" data-lang="en">English</a>
                     </div>
+
+                    <a class="btn btn-primary" type="button" href="{{ route('home') }}">
+                        Home        </a>
+
                 </div>
             </div>
         </div>

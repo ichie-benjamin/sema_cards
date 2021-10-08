@@ -7,11 +7,12 @@
         <div class="breadcrumb-outer">
             <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                    <li class="breadcrumb-item active"><a style="color: white"  href="{{ route('home') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">About Us</li>
                 </ul>
             </nav>
-            <h2>About Us</h2> </div>
+            <h4>About Us</h4>
+        </div>
     </div>
 </section>
 <section class="about-section pad-bottom-0">

@@ -14,6 +14,44 @@
     <script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js'></script>
 
     <style>
+        footer {
+            background: #561193!important;
+        }
+        .nav-small{
+            display: none;
+        }
+        footer .f-contact {
+            background: #3f1998!important;
+        }
+        section.breadcrumb {
+            background: radial-gradient(#561193,#3f1998);
+            border-radius: 0;
+        }
+        p.contact {
+            background: #561193;
+        }
+        .breadcrumb h4 {
+            /*font-size: 70px;*/
+            letter-spacing: -1px;
+            /*font-weight: 900;*/
+            display: inline-block;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 0;
+            margin: 0 0 0 -5px;
+            color: #fff;
+            line-height: 48px;
+            text-shadow: 0 10px 10px #00000020;
+        }
+        .x_023_animated_layers_txt>h4 {
+            color: #fff;
+            font-size: 24px;
+            text-shadow: none;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
         .service-item {
             background-color: #6f42c1;
             /*padding: 5px 5px 5px;*/
@@ -25,31 +63,96 @@
             /*font-size: 0.9em;*/
         }
 
+        section.newsletter {
+            overflow: visible;
+            padding: 20px 0;
+        }
+
+        section.appointment:before {
+            background: #3f1998!important;
+        }
+
+        .service-ite {
+            margin:  5px 0;
+            height: 200px;
+            width: auto;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;;
+        }
+
+        .service-ite  img {
+            max-width: 300px;
+        }
+
         #preloader {
             background: #6f42c1;
         }
+
         #status {
             width: 140px!important;
             height: 140px!important;
         }
 
-        @media (max-width: 767px){
-            section.slider #x_023_animated_layers {
-                height: 370px;
-            }
-            .service-item h3{
-                font-size: 0.9em;
-            }
-            .service-item {
-                padding: 15px 5px 5px;
-            }
-            .service-icon {
-                height: 70px;
-                width: 70px;
-            }
+        .subscribe-form form {
+            margin-top: 0!important;
         }
 
-    </style>
+
+        section.slider #x_023_animated_layers {
+            height: 400px!important;
+        }
+
+            @media (max-width: 767px){
+
+                .nav-small{
+                    display: block;
+                }
+                .nav-small p{
+                    color: white;
+                }
+                .nav-max {
+                    display: none;
+                }
+                .x_023_animated_layers_txt>h4 {
+                    color: #fff;
+                    font-size: 17px;
+                }
+                .subscribe-form a {
+                    position: absolute;
+                    display: inherit;
+                    top: 0;
+                    right: 0;
+                }
+
+                section.slider #x_023_animated_layers {
+                    height: 270px!important;
+                }
+                .service-ite {
+                    margin:  5px 0;
+                    height: 150px;
+                    width: auto;
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;;
+                }
+                .service-ite  img {
+                    max-width: 200px;
+                }
+                .service-item h3{
+                    font-size: 0.9em;
+                }
+
+                .service-item {
+                    padding: 15px 5px 5px;
+                }
+                .service-icon {
+                    height: 70px;
+                    width: 70px;
+                }
+            }
+
+</style>
 </head>
 
 <body>
@@ -77,8 +180,18 @@
     <div class="header_menu affix-top">
         <nav class="navbar navbar-default">
             <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ route('home') }}"> <img height="90" src="{{ setting('logo_white','/frontpage/logo_t.png') }}" alt="logo1"> <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="logo1"> </a>
+                <div class="navbar-header nav-max">
+                    <a class="navbar-brand" href="{{ route('home') }}">
+                        <img height="90" src="{{ setting('logo_white','/frontpage/logo_t.png') }}" alt="logo1">
+                        <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="logo1">
+                    </a>
+                </div>
+                <div class="navbar-header nav-small">
+                    <a class="navbar-brand" href="{{ route('home') }}">
+{{--                        <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="logo1">--}}
+                        <p>{{ setting('site_phone') }}</p>
+                        <p>{{ setting('email') }}</p>
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="responsive-menu">
@@ -87,7 +200,6 @@
                             <a href="{{ route('home') }}" >
                                Home
                             </a>
-
                         </li>
                         <li >
                             <a href="{{ route('partner') }}" >

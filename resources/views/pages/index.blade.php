@@ -13,7 +13,7 @@
             <div class="item active">
                 <div class="x_023_animated_layers_content">
                     <div class="x_023_animated_layers_txt">
-                        <h1 data-animation="animated fadeInLeft">Medial Services that you can trust</h1>
+                        <h4 data-animation="animated fadeInLeft">Medial Services that you can trust</h4>
                         <p data-animation="animated fadeInLeft">Need professional help? Our support staff will answer your questions.</p>
                         <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
 {{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
@@ -24,7 +24,7 @@
             <div class="item">
                 <div class="x_023_animated_layers_content x_023_animated_layers_content_right">
                     <div class="x_023_animated_layers_txt">
-                        <h1 data-animation="animated fadeInLeft">We make quality health care</h1>
+                        <h4 data-animation="animated fadeInLeft">We make quality health care</h4>
                         <p data-animation="animated fadeInLeft">Passionate About Medicine. Compassionate About People.</p>
                         <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
 {{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a>--}}
@@ -35,7 +35,7 @@
             <div class="item">
                 <div class="x_023_animated_layers_content x_023_animated_layers_content_right">
                     <div class="x_023_animated_layers_txt">
-                        <h1 data-animation="animated fadeInLeft">Modern Technology Treatment</h1>
+                        <h4 data-animation="animated fadeInLeft">Modern Technology Treatment</h4>
                         <p data-animation="animated fadeInLeft">Doctor’s for health</p>
                         <p data-animation="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
 {{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
@@ -50,7 +50,6 @@
     <div class="overlay"></div>
 </section>
 
-<br>
 <section class="newsletter">
     <div class="container">
         <div class="newsletter-content">
@@ -65,59 +64,37 @@
         </div>
     </div>
 </section>
-<br>
 
-
-<section class="services pad-top-0 icon-left">
+<section class="services pad-top-0">
     <div class="container">
-{{--        <div class="row">--}}
-{{--            <div class="col-xs-12">--}}
-{{--                <div class="section-title">--}}
-{{--                    <h3>WE OFFER SERVICES</h3>--}}
-{{--                    <h2> <span class="text text-center">Explore</span> </h2> </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="service-item">
-                    <div class="service-icon mar-bottom-20"><i class="flaticon-023-otoscope"></i> </div>
-                    <div class="service-content">
-                        <h3><a href="{{ route('apply') }}">Card Request</a></h3>
-                    </div>
+        <div class="row align-items-center">
+            <div class="col-md-3 col-sm-6 col-xs-6 align-self-end">
+                <a href="{{ route('apply') }}">
+                <div class="service-ite " style="background-image: url('/icons/apply.jpeg')">
                 </div>
+                </a>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="service-item">
-                    <div class="service-icon mar-bottom-20 child-2"> <i class="flaticon-020-examine"></i> </div>
-                    <div class="service-content">
-                        <h3><a href="{{ route('check') }}">Search Your Card</a></h3>
-{{--                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>--}}
-                    </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 ">
+                <a href="{{ route('check') }}">
+                <div class="service-ite" style="background-image: url('/icons/search.jpeg')">
                 </div>
+                </a>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="service-item">
-                    <div class="service-icon mar-bottom-20 child-3"> <i class="flaticon-003-blood-sample"></i> </div>
-                    <div class="service-content">
-                        <h3><a href="{{ route('partner') }}">Be A Partner</a></h3>
-                    </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <a href="{{ route('partner') }}">
+                <div class="service-ite " style="background-image: url('/icons/partner.jpeg')">
                 </div>
+                </a>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="service-item">
-                    <div class="service-icon mar-bottom-20 child-2"> <i class="flaticon-025-serum"></i> </div>
-                    <div class="service-content">
-                        <h3><a target="_blank" href="{{ setting('network_en') }}">Medical Network</a></h3>
-
-                    </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
+                <a target="_blank" href="{{ setting('network_en') }}">
+                <div class="service-ite " style="background-image: url('/icons/hospital.jpeg')">
                 </div>
+                </a>
             </div>
-        </div>
-
 
         </div>
+
     </div>
 </section>
 
@@ -131,8 +108,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <iframe width="1000" height="500" src="https://www.youtube.com/embed/LSR4pyiLfZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/LSR4pyiLfZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
