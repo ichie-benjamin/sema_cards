@@ -52,7 +52,40 @@
                     <i data-feather="columns" class="align-self-center menu-icon"></i><span>Package Types</span>
                 </a>
             </li>
-            <a href="#" data-toggle="modal" data-target="#deleteCard"  class="btn btn-danger">
+            <li>
+                <a href="{{ route('settings.networks') }}">
+                    <i class="fa fa-book menu-icon"></i><span>Networks</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('settings.index') }}">
+                    <i class="fa fa-cogs menu-icon"></i><span>Site Settings</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="javascript: void(0);">
+                    <i data-feather="grid" class="align-self-center menu-icon"></i><span>Networks</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span>
+                </a>
+                <ul class="nav-second-level" aria-expanded="false">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cards.create') }}"><i class="ti-control-record"></i>Add Card</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cards.index') }}"><i class="ti-control-record"></i>All Cards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cards.index') }}?online"><i class="ti-control-record"></i>Online Cards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cards.index') }}?agent"><i class="ti-control-record"></i>Agent Cards</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <a href="#" data-toggle="modal" data-target="#deleteCard"  class="btn btn-danger mt-4">
                 Delete all cards
             </a>
 

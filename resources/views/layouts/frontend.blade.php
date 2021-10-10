@@ -73,7 +73,7 @@
 <header class="header">
     <div class="container-fluid">
         <!-- Brand-->
-        <div class="inner-header"><a class="inner-brand" href="{{ route('check') }}">
+        <div class="inner-header"><a class="inner-brand" href="{{ route('home') }}">
                 <img width="100" height="60" src="/images/s_logo.png" />
             </a></div>
         <!-- Navigation-->

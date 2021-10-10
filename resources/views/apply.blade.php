@@ -20,6 +20,14 @@
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css" />
 
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #3f1998  ;
+            border-color: #3f1998  ;
+        }
+    </style>
+
 </head>
 <body class="dir-ltr">
 <div class="top-logo logo m-auto"></div>
@@ -35,12 +43,17 @@
 
             <div class="container">
                 <div class="dropdown">
+
                     <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ $lang == 'ar' ? 'Arabic' : 'English' }}                    </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                         <a href="{{ route('apply') }}?lang=ar" class="dropdown-item text-left" data-lang="ar">عربي</a>
                         <a href="{{ route('apply') }}" class="dropdown-item text-left" data-lang="en">English</a>
                     </div>
+
+                    <a class="btn btn-primary" type="button" href="{{ route('home') }}">
+                        Home        </a>
+
                 </div>
             </div>
         </div>
@@ -51,10 +64,10 @@
         <div class="col-sm-12 col-md-12 col-lg-6 p-0 m-auto d-flex text-center">
             <div class="row d-flex w-100 align-self-center primary-links">
                 @if ($lang == 'en')
-                    <a href="http://samacardbh.com/downloadpdf" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">Hospitals Directory</a>
+                    <a target="_blank" href="{{ setting('network_en') }}" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">Hospitals Directory</a>
                     <a class="col-sm-12 col-md-5 col-lg-5 align-self-center primary-link requset-card clicked">Request Card</a>
                 @else
-                    <a href="https://samacardbh.net/%d9%82%d8%a7%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%8a%d8%a7%d8%aa-pdf/" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">دليل المستشفيات</a>
+                    <a target="_blank" href="{{ setting('network_ar') }}" class="col-sm-12 col-md-6 col-lg-6 align-self-center primary-link">دليل المستشفيات</a>
                     <a class="col-sm-12 col-md-5 col-lg-5 align-self-center primary-link requset-card clicked"> أطلب البطاقة</a>
                 @endif
             </div>

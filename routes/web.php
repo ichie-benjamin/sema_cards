@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\HomeController;
@@ -40,6 +41,8 @@ Route::get('/be_a_partner', [PagesController::class, 'partnerPage'])->name('part
 Route::get('/contact-us', [PagesController::class, 'contact'])->name('contact');
 Route::get('/about-us', [PagesController::class, 'about'])->name('about');
 
+Route::view('hospital-listing', 'pages.hospital-listing')->name('hospital_listing');
+
 
 
 Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'admin'], function () {
@@ -70,11 +73,15 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
     Route::post('/card/import', [CardsController::class, 'importCards'])->name('cards.import');
 
 
+    Route::get('/settings/network', [SettingsController::class, 'networks'])->name('settings.networks');
+
+
 
 
     Route::resources([
         'cards' => CardsController::class,
-        'p_types' => PackageTypesController::class
+        'p_types' => PackageTypesController::class,
+        'settings' => SettingsController::class,
     ]);
 
 

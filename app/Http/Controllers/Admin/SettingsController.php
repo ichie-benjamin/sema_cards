@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 class SettingsController extends Controller
 {
     public function index(){
-        return view('admin.settings.home');
+        return view('admin.settings.index');
     }
     public function mails(){
         return view('admin.settings.mails');
+    }
+    public function networks(){
+        return view('admin.settings.network');
     }
 
     public function store(Request $request){

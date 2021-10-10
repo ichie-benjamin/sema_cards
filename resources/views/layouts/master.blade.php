@@ -294,7 +294,10 @@
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 
 <script>
-    $('.lfm').filemanager('image');
+    $(document).ready(function() {
+        $('.lfm').filemanager('image');
+        $('.lff').filemanager('file');
+    });
 </script>
 
 @if(Session::has('error_message'))
@@ -306,6 +309,11 @@
 @if(Session::has('success_message'))
     <script>
         toastr.success("{!! session('success_message') !!}")
+    </script>
+@endif
+@if(Session::has('success'))
+    <script>
+        toastr.success("{!! session('success') !!}")
     </script>
 @endif
 

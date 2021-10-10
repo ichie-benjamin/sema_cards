@@ -2,18 +2,19 @@
 @section('content')
 
 
-    <section class="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb-outer">
-                <nav aria-label="breadcrumb">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Be A Partner</li>
-                    </ul>
-                </nav>
-                <h2>Become A Parter</h2> </div>
-        </div>
-    </section>
+{{--    <section class="breadcrumb">--}}
+{{--        <div class="container">--}}
+{{--            <div class="breadcrumb-outer">--}}
+{{--                <nav aria-label="breadcrumb">--}}
+{{--                    <ul class="breadcrumb">--}}
+{{--                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>--}}
+{{--                        <li class="breadcrumb-item active" aria-current="page">Be A Partner</li>--}}
+{{--                    </ul>--}}
+{{--                </nav>--}}
+{{--                <h2>Become A Parter</h2> </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
 
     <section style="margin-top: 50px;"  class="appointment pad-bottom-0">
         <div class="container">

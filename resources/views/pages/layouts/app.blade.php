@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Swasthya | Medical and Health HTML template</title>
+    <title>Sama | Medical and Health Card</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
     <link href="{{ asset('frontpage/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('frontpage/css/default.css') }}" rel="stylesheet" type="text/css">
@@ -13,18 +12,159 @@
     <link href="{{ asset('frontpage/fonts/flaticon.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js'></script>
+
+    <style>
+        footer {
+            background: #561193!important;
+        }
+        .nav-small{
+            display: none;
+        }
+        footer .f-contact {
+            background: #3f1998!important;
+        }
+        section.breadcrumb {
+            background: radial-gradient(#561193,#3f1998);
+            border-radius: 0;
+        }
+        p.contact {
+            background: #561193;
+        }
+        .breadcrumb h4 {
+            /*font-size: 70px;*/
+            letter-spacing: -1px;
+            /*font-weight: 900;*/
+            display: inline-block;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 0;
+            margin: 0 0 0 -5px;
+            color: #fff;
+            line-height: 48px;
+            text-shadow: 0 10px 10px #00000020;
+        }
+        .x_023_animated_layers_txt>h4 {
+            color: #fff;
+            font-size: 24px;
+            text-shadow: none;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+        .service-item {
+            background-color: #6f42c1;
+            /*padding: 5px 5px 5px;*/
+        }
+        .service-item a {
+            color: #ffffff;
+        }
+        .service-item h3{
+            /*font-size: 0.9em;*/
+        }
+
+        section.newsletter {
+            overflow: visible;
+            padding: 20px 0;
+        }
+
+        section.appointment:before {
+            background: #3f1998!important;
+        }
+
+        .service-ite {
+            margin:  5px 0;
+            height: 200px;
+            width: auto;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;;
+        }
+
+        .service-ite  img {
+            max-width: 300px;
+        }
+
+        #preloader {
+            background: #6f42c1;
+        }
+
+        #status {
+            width: 140px!important;
+            height: 140px!important;
+        }
+
+        .subscribe-form form {
+            margin-top: 0!important;
+        }
+
+
+        section.slider #x_023_animated_layers {
+            height: 400px!important;
+        }
+
+            @media (max-width: 767px){
+
+                .nav-small{
+                    display: block;
+                }
+                .nav-small p{
+                    color: white;
+                }
+                .nav-max {
+                    display: none;
+                }
+                .x_023_animated_layers_txt>h4 {
+                    color: #fff;
+                    font-size: 17px;
+                }
+                .subscribe-form a {
+                    position: absolute;
+                    display: inherit;
+                    top: 0;
+                    right: 0;
+                }
+
+                section.slider #x_023_animated_layers {
+                    height: 270px!important;
+                }
+                .service-ite {
+                    margin:  5px 0;
+                    height: 150px;
+                    width: auto;
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;;
+                }
+                .service-ite  img {
+                    max-width: 200px;
+                }
+                .service-item h3{
+                    font-size: 0.9em;
+                }
+
+                .service-item {
+                    padding: 15px 5px 5px;
+                }
+                .service-icon {
+                    height: 70px;
+                    width: 70px;
+                }
+            }
+
+</style>
 </head>
 
 <body>
-<div id="preloader">
-    <div id="status"></div>
-</div>
+{{--<div id="preloader">--}}
+{{--    <div id="status"></div>--}}
+{{--</div>--}}
 <header class="main_header_area">
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-content">
                 <div class="contact-info">
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> 123-456-79459</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> {{ setting('site_phone') }}</p>
 {{--                    <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b12151d143b080c1a080f13021a55181416">[email&#160;protected]</a></p>--}}
                 </div>
                 <div class="header-links">
@@ -40,8 +180,18 @@
     <div class="header_menu affix-top">
         <nav class="navbar navbar-default">
             <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ route('home') }}"> <img height="90" src="{{ asset('frontpage/logo_t.png') }}" alt="logo1"> <img src="images/logo.png" alt="logo1"> </a>
+                <div class="navbar-header nav-max">
+                    <a class="navbar-brand" href="{{ route('home') }}">
+                        <img height="90" src="{{ setting('logo_white','/frontpage/logo_t.png') }}" alt="logo1">
+                        <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="logo1">
+                    </a>
+                </div>
+                <div class="navbar-header nav-small">
+                    <a class="navbar-brand" href="{{ route('home') }}">
+{{--                        <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="logo1">--}}
+                        <p>{{ setting('site_phone') }}</p>
+                        <p>{{ setting('email') }}</p>
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="responsive-menu">
@@ -50,7 +200,6 @@
                             <a href="{{ route('home') }}" >
                                Home
                             </a>
-
                         </li>
                         <li >
                             <a href="{{ route('partner') }}" >
@@ -96,19 +245,19 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="f-contact-inner">
                         <div class="contact-icon"> <i class="fa fa-phone"></i> </div>
-                        <div class="contact-title"> <span class="white">+123-456-79459</span> <span class="white">Have a question? call us now</span> </div>
+                        <div class="contact-title"> <span class="white">{{ setting('site_phone','+00-0000-1111') }}</span> <span class="white">Have a question? call us now</span> </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="f-contact-inner">
                         <div class="contact-icon"> <i class="fa fa-envelope-o"></i> </div>
-                        <div class="contact-title"> <span class="white"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e980878f86a99a9e889a9d819088c78a8684">[email&#160;protected]</a></span> <span class="white">Need support? Drop us an email</span> </div>
+                        <div class="contact-title"> <span class="white"><a href="#" class="__cf_email__" >{{ setting('email') }}</a></span> <span class="white">Need support? Drop us an email</span> </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="f-contact-inner">
                         <div class="contact-icon"> <i class="fa fa-clock-o"></i> </div>
-                        <div class="contact-title"> <span class="white">323 Wintergreen, NJ 07631, USA</span> <span class="white">You can find here</span> </div>
+                        <div class="contact-title"> <span class="white">{{ setting('address') }}</span> <span class="white">You can find here</span> </div>
                     </div>
                 </div>
             </div>
@@ -118,7 +267,7 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-12">
                         <div class="footer-contact mar-right-15">
-                            <div class="footer-logo text-center mar-bottom-15"> <img src="images/logo.png" alt="Image"> </div>
+                            <div class="footer-logo text-center mar-bottom-15"> <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="Image"> </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 <br>
                                 <br> We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
@@ -163,7 +312,7 @@
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>Copyright © 2019 Swasthye by <a href="https://www.cyclonethemes.com" target="_blank">Cyclone Themes</a></p>
+                    <p>Copyright © {{ date('Y') }} Sama </p>
                 </div>
             </div>
         </div>
