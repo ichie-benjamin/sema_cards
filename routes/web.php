@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PackageTypesController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -79,6 +80,7 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
     Route::resources([
         'cards' => CardsController::class,
         'p_types' => PackageTypesController::class,
+        'sliders' => SliderController::class,
         'settings' => SettingsController::class,
     ]);
 

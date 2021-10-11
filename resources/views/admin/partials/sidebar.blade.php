@@ -53,6 +53,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('sliders.index') }}">
+                    <i data-feather="columns" class="align-self-center menu-icon"></i><span>Sliders</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('settings.networks') }}">
                     <i class="fa fa-book menu-icon"></i><span>Networks</span>
                 </a>
