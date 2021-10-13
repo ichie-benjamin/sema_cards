@@ -17,7 +17,7 @@ class CreateHospitalsTable extends Migration
             $table->id();
             $table->text('provider_name')->nullable();
             $table->bigInteger('user_id')->nullable();
-            $table->text('cpr_no')->unique();
+            $table->string('cpr_no')->unique();
             $table->text('contact')->nullable();
             $table->text('contact2')->nullable();
             $table->text('email')->nullable();
