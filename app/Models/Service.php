@@ -14,5 +14,6 @@ class Service extends Model
 //
 //    public $translatable = ['name'];
 
+
     protected $guarded = [];
 }

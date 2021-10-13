@@ -62,7 +62,7 @@
                                 <div class="blog-image"> <img src="{{ $item->image }}" alt="Image"> </div>
                                 <div class="news-content pad-top-20">
                                     <div class="news-title">
-                                        <h3><a href="{{ route('hospital.show','slug') }}">{{ $item->provider_name }}</a></h3> </div>
+                                        <h3><a href="{{ route('hospital.show',$item->id) }}">{{ $item->provider_name }}</a></h3> </div>
                                     <div class="tagcloud mar-bottom-10">
                                         <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ $item->category }}</a>
 {{--                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">health</a>--}}

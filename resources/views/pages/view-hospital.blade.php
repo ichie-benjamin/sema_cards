@@ -7,13 +7,10 @@
             <div class="breadcrumb-outer">
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item"><a href="team.html">Doctors</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Randall Clover</li>
+                        <li class="breadcrumb-item active" aria-current="page">Hospital page</li>
                     </ul>
                 </nav>
-                <h2>Doctor Details</h2>
+                <h4>{{ $hospital->provider_name }}</h4>
             </div>
         </div>
     </section>
@@ -22,17 +19,18 @@
         <div class="container">
             <div class="doctor-title">
                 <div class="doctor-image">
-                    <img src="images/doctordetail.jpg" alt="Image">
+                    <img src="{{ $hospital->image }}" alt="Image">
                 </div>
                 <div class="doctor-title-content">
                     <div class="dt-outer">
-                        <h2>Randall Cover</h2>
+                        <h2>{{ $hospital->provider_name }} Info</h2>
                         <ul>
-                            <li><strong>Hospital Name :</strong> Internist, General Practitioner</li>
-                            <li><strong>Contact :</strong> Reabilitation</li>
-                            <li><strong>Phone :</strong> Since 1988</li>
-                            <li><strong>E-mail:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="24574549454a50410a4756454a41644349454d480a474b49">[email&#160;protected]</a></li>
-                            <li><strong>Website :</strong> 507-452-1254</li>
+                            <li><strong>Provider name :</strong> {{ $hospital->provider_name }}</li>
+                            <li><strong>Phone :</strong> {{ $hospital->contact }} {{ $hospital->contact2 ? ' - ' .$hospital->contact2 : '' }}</li>
+                            <li><strong>E-mail:</strong> {{ $hospital->email }}</li>
+                            <li><strong>Address :</strong> {{ $hospital->address }}</li>
+                            <li><strong>Website :</strong> {{ $hospital->website }}</li>
+
                         </ul>
                     </div>
                 </div>
@@ -46,7 +44,7 @@
                                     <h3>Description</h3>
                                     <span></span>
                                 </div>
-                                <p>Born in Britain, Samanta was the first women to receive a medical degree in America and the first women to be on the UK medical register. Blackwell helped to break down social barriers, enabling women to be accepted as doctors.PM&R physicians (also known as physiatrists) are trained to use physical modalities (stretching, strengthening, heat, cold, etc.) to mechanically enhance healing. They prescribe medications to manage pain, spasticity, nerve injury, and cognitive impairments, while also leveraging the power of physical therapy to increase cardiopulmonary fitness, muscle strength and flexibility.</p>
+                                <p>{{ $hospital->description }}</p>
                             </div>
                             <div class="qualification content-item">
                                 <div class="content-title">
@@ -58,60 +56,44 @@
                                         <thead>
                                         <tr>
                                             <td>S.N</td>
-                                            <td>Qualification</td>
-                                            <td>University</td>
-                                            <td>Passed Year</td>
+                                            <td>Service</td>
+                                            <td>Price</td>
+                                            <td>Discount</td>
+                                            <td>Before Discount</td>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>MBBS</td>
-                                            <td>King George Medical College</td>
-                                            <td>2011</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Doctor of Medicine</td>
-                                            <td>University of Texas</td>
-                                            <td>2001</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Phaco & Uuea Training </td>
-                                            <td>King George Medical College</td>
-                                            <td>1997</td>
-                                        </tr>
+                                        @foreach ($services as $item)
+                                            <tr>
+                                                <td>{{ $loop->index+1 }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td>BD{{ $item->price }}</td>
+                                                <td>{{ $item->discount }}%</td>
+                                                <td>BD{{ $item->price }}</td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="skills content-item">
                                 <div class="content-title">
-                                    <h3>Skills</h3>
+                                    <h3>Specialty</h3>
                                     <span></span>
                                 </div>
                                 <div class="progress-outer">
                                     <div class="progress-item">
-                                        <h4>Rehabilitation</h4>
+                                        <h4>Dentist</h4>
                                         <div class="progress">
-                                            <div class="progress-bar color2" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <span>90%</span>
+                                            <div class="progress-bar color2" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <span>100%</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="progress-item">
-                                        <h4>Surgery</h4>
+                                        <h4>Cosmetics</h4>
                                         <div class="progress">
-                                            <div class="progress-bar color1" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <span>85%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="progress-item">
-                                        <h4>Oncology</h4>
-                                        <div class="progress">
-                                            <div class="progress-bar color3" role="progressbar" style="width: 98%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> <span>98%</span>
+                                            <div class="progress-bar color3" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> <span>100%</span>
                                             </div>
                                         </div>
                                     </div>
@@ -119,18 +101,16 @@
                             </div>
                             <div class="experience content-item">
                                 <div class="content-title">
-                                    <h3>Work Experience</h3>
+                                    <h3>Doctors</h3>
                                     <span></span>
                                 </div>
                                 <ul>
-                                    <li>Chief Consultant Gynaecologist, Norvic international Hospital, Thapathali</li>
-                                    <li>Associate Professor, MD Obstetrics &Gynaecology, National Academy of Medical Sciences, Bir Hospital, Kathmandu, Nepal, 2003</li>
-                                    <li>Honorary Lecturer in Kathmandu Medical College, Sinamangal, Kathmandu 2000</li>
-                                    <li>President, Gynaecology Oncology Society of Nepal (GOSON)</li>
+                                    <li>Dr. Kal</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    @section('hide')
                     <div class="col-md-4">
                         <div class="detail-sidebar">
                             <div class="sidebar-box">
@@ -170,6 +150,7 @@
                             </div>
                         </div>
                     </div>
+                    @endsection
                 </div>
             </div>
         </div>

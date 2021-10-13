@@ -11,6 +11,11 @@ class HospitalController extends Controller
     public function create(){
         return view('admin.hospital.create');
     }
+    public function show($id){
+        $hospital = Hospital::findOrFail($id);
+        $services = Service::where('hospital_id', $id)->get();
+        return view('pages.view-hospital', compact('hospital', 'services'));
+    }
     public function edit($id){
         $hospital = Hospital::findOrFail($id);
         $services = Service::all();
