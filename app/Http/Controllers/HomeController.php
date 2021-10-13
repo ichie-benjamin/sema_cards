@@ -26,6 +26,16 @@ class HomeController extends Controller
         return redirect()->route('dashboard');
     }
 
+    public function changeLang($locale){
+
+        if (isset($locale) && in_array($locale, config('app.available_locales'))) {
+            app()->setLocale($locale);
+            session()->put('locale', $locale);
+//            return $locale;
+        }
+        return redirect()->back();
+    }
+
     public function check(Request $request){
         if($request->get('lang') == 'ar'){
             $lang = 'ar';

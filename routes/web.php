@@ -7,9 +7,11 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PackageTypesController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +28,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/check', [HomeController::class, 'check'])->name('check');
+
+Route::get('/lang/{locale}', [HomeController::class, 'changeLang'])->name('change.lang');
+
+
 Route::get('/apply', [HomeController::class, 'apply'])->name('apply');
 Route::get('/online/card/{id}', [CardsController::class, 'cardOnline'])->name('online.card');
 
@@ -41,8 +47,9 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/be_a_partner', [PagesController::class, 'partnerPage'])->name('partner');
 Route::get('/contact-us', [PagesController::class, 'contact'])->name('contact');
 Route::get('/about-us', [PagesController::class, 'about'])->name('about');
+Route::get('/hospital-listing', [PagesController::class, 'hListing'])->name('hospital_listing');
+Route::get('/hospital/{slug}', [PagesController::class, 'hShow'])->name('hospital.show');
 
-Route::view('hospital-listing', 'pages.hospital-listing')->name('hospital_listing');
 
 
 
@@ -81,6 +88,8 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
 
     Route::resources([
         'cards' => CardsController::class,
+        'service' => ServiceController::class,
+        'hospital' => HospitalController::class,
         'p_types' => PackageTypesController::class,
         'sliders' => SliderController::class,
         'settings' => SettingsController::class,

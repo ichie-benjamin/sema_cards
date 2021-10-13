@@ -6,7 +6,7 @@
     <section class="breadcrumb">
     <div class="container">
         <div class="breadcrumb-outer">
-            <h2>Hospitals</h2> </div>
+            <h4>Hospitals</h4> </div>
     </div>
 </section>
     <section class="newsletter">
@@ -15,8 +15,11 @@
                 <div class="subscribe-form">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
-                            <form>
-                                <input type="email" placeholder="Search Hospital or Service or place"> <a href="#">Search</a> </form>
+                            <form method="get" action="about">
+                                <input name="search" type="text" placeholder="Search Hospital or Service or place" />
+
+                                <a class="" type="submit">Search</a>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -39,12 +42,12 @@
 
                         <div class="sidebar-box">
                             <div class="sidebar-title">
-                                <h3>Regions</h3> </div>
+                                <h3>Specialties</h3> </div>
                             <div class="sidebar-content">
                                 <ul>
-                                    <li class="active"><a href="#">Cardiology</a></li>
+                                    <li class="active"><a href="#">Dentist </a></li>
                                     <li><a href="#">Neurologist</a></li>
-                                    <li><a href="#">Consultant</a></li>
+                                    <li><a href="#">Cosmetics</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -54,51 +57,33 @@
 
                 <div class="col-md-8 col-sm-12">
                     <div class="blog-content">
-                        <div style="box-shadow: 0 0 15px 0 rgba(86, 17, 147);" class="blog-item">
-                            <div class="blog-image"> <img src="{{ asset('frontpage/images/blog/b1.jpg') }}" alt="Image"> </div>
-                            <div class="news-content pad-top-20">
-                                <div class="news-title">
-                                    <h3><a href="#">Specialized Medical Center Hospital - Riyadh</a></h3> </div>
-                                <div class="tagcloud mar-bottom-10">
-                                    <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">doctor</a>
-                                    <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">health</a>
-                                </div>
+                        @foreach ($hospitals as $item)
+                            <div style="box-shadow: 0 0 15px 0 rgba(86, 17, 147);" class="blog-item">
+                                <div class="blog-image"> <img src="{{ $item->image }}" alt="Image"> </div>
+                                <div class="news-content pad-top-20">
+                                    <div class="news-title">
+                                        <h3><a href="{{ route('hospital.show','slug') }}">{{ $item->provider_name }}</a></h3> </div>
+                                    <div class="tagcloud mar-bottom-10">
+                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ $item->category }}</a>
+{{--                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">health</a>--}}
+                                    </div>
 
-                                <p>There’s a good chance Everyday Health .</p>
-                                <hr>
-                                <ul class="mar-top-10">
-                                    <li class="mar-bottom-0 mar-right-10"><i class="fa fa-phone" aria-hidden="true"></i>  0114644434 - 920002063</li>
-                                </ul>
-                                <ul class="mar-top-10">
-                                    <li class="mar-bottom-0 mar-right-10"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh</li>
-                                </ul>
+                                    <p>{{ $item->short_desc }}.</p>
+                                    <hr>
+                                    <ul class="mar-top-10">
+                                        <li class="mar-bottom-0 mar-right-10"><i class="fa fa-phone" aria-hidden="true"></i>
+                                            {{ $item->contact }}  {{ $item->contact2 ? ' - '. $item->contact2 : '' }}</li>
+                                    </ul>
+                                    <ul class="mar-top-10">
+                                        <li class="mar-bottom-0 mar-right-10"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            {{ $item->address }}</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
 
                         <div class="pagination__wrapper">
-                            <ul class="pagination">
-                                <li>
-                                    <button class="prev" title="previous page">❮</button>
-                                </li>
-                                <li>
-                                    <button title="first page - page 1">1</button>
-                                </li>
-                                <li>
-                                    <button>2</button>
-                                </li>
-                                <li>
-                                    <button class="active" title="current page">2</button>
-                                </li>
-                                <li>
-                                    <button>3</button>
-                                </li>
-                                <li>
-                                    <button>4</button>
-                                </li>
-                                <li>
-                                    <button class="next" title="next page">❯</button>
-                                </li>
-                            </ul>
+                            //
                         </div>
                     </div>
                 </div>

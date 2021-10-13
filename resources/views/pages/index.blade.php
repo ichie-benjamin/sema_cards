@@ -87,7 +87,7 @@
                 </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
-                <a target="_blank" href="{{ setting('network_en') }}">
+                <a  href="{{ route('hospital_listing') }}">
                 <div class="service-ite " style="background-image: url('/icons/hospital.jpeg')">
                 </div>
                 </a>

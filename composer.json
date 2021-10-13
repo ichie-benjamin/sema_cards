@@ -23,6 +23,7 @@
         "maatwebsite/excel": "^3.1",
         "nicoaudy/laravelmanthra": "dev-master",
         "santigarcor/laratrust": "^6.3",
+        "spatie/laravel-translatable": "^4.6",
         "tymon/jwt-auth": "^1.0",
         "unisharp/laravel-filemanager": "^2.2",
         "watson/active": "^6.0"

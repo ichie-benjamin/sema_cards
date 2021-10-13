@@ -39,6 +39,20 @@
                 </ul>
             </li>
             <li>
+                <a href="javascript: void(0);">
+                    <i data-feather="grid" class="align-self-center menu-icon"></i><span>Hospitals</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span>
+                </a>
+                <ul class="nav-second-level" aria-expanded="false">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('hospital.create') }}"><i class="ti-control-record"></i>Add Hospital</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('hospital.index') }}"><i class="ti-control-record"></i>All Hospital</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="{{ route('agents') }}">
                     <i data-feather="user" class="align-self-center menu-icon"></i><span>Agents</span>
                 </a>
