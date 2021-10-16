@@ -420,7 +420,7 @@
                                                             <td class="text-capitalize">{{ $item->name }}</td>
                                                             <td class="text-capitalize">{{ $item->ar_name }}</td>
                                                             <td>BD{{ $item->price }}</td>
-                                                            <td>BD{{ $item->discount }}%</td>
+                                                            <td>{{ $item->discount }}%</td>
                                                             <td>
                                                                 <form method="POST" action="{!! route('service.destroy', $item->id) !!}" accept-charset="UTF-8">
                                                                     {{ csrf_field() }}
@@ -452,6 +452,168 @@
                         <!-- end row -->
 
                         @foreach($services as $item)
+
+                            @include('admin.inc.modals.edit_service')
+                        @endforeach
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="contact">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#contact" aria-expanded="false" aria-controls="contact">
+                            HOSPITAL CONTACTS
+                        </button>
+                    </h5>
+                </div>
+                <div id="contact" class="collapse show" aria-labelledby="contact" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="page-title">Listing Contacts</h4>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-auto align-self-center">
+                                            <button data-toggle="modal" data-target="#addC" class="btn btn-sm btn-outline-primary" id="Dash_Date">
+                                                <span class="day-name">Add Contact:</span>&nbsp;  <i data-feather="plus" class="align-self-center icon-xs ml-1"></i>
+                                            </button>
+                                            <a href="#" class="btn btn-sm btn-outline-primary"><i data-feather="download" class="align-self-center icon-xs"></i></a>
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                </div>
+                                <!--end page-title-box-->
+                            </div>
+                            <!--end col-->
+                        </div>
+
+
+                        <div class="modal fade" id="addC" tabindex="-1" role="dialog" aria-labelledby="addC" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h6 class="modal-title m-0" id="exampleModalDefaultLogin">Add Contact</h6>
+                                        <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"><i class="la la-times"></i></span>
+                                        </button>
+                                    </div>
+                                    <!--end modal-header-->
+                                    <div class="modal-body">
+                                        <div class="card-body p-0">
+                                            <form action="{{ route('contact.store') }}" method="POST" class="form-parsley">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{ $hospital->id }}" name="hospital_id">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group "><label>Name </label>
+                                                            <input required name="name" type="text" class="form-control" placeholder="name" />
+                                                            {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group "><label>Position</label>
+                                                            <input value="" name="position" type="text" class="form-control" placeholder="position" />
+                                                            {!! $errors->first('position', '<p class="help-block">:message</p>') !!}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group "><label>Mobile </label>
+                                                            <input required name="mobile" step="any"  value="{{ old('mobile') }}" type="text" class="form-control" placeholder="enter mobile" />
+                                                            {!! $errors->first('mobile', '<p class="help-block">:message</p>') !!}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group "><label>Email </label>
+                                                            <input required name="email" step="any"  value="{{ old('email') }}" type="text" class="form-control" placeholder="enter email" />
+                                                            {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <button  class="btn btn-primary" type="submit">Save Contact</button>
+                                                    </div>
+                                                </div>
+
+                                                <!--end form-group-->
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--end modal-body-->
+                                </div>
+                                <!--end modal-content-->
+                            </div>
+                            <!--end modal-dialog-->
+                        </div>
+
+                        <!--end row--><!-- end page title end breadcrumb -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+
+                                @include('admin.partials.msg.error')
+                                <!--end card-header-->
+                                    <div class="card-body">
+
+                                        <div class="">
+                                            <div class="table-responsive mb-0">
+
+                                                <table id="datatable" class="dt-responsive table table-striped table-bordered mb-0">
+
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Name  </th>
+                                                        <th>Position </th>
+                                                        <th>Email </th>
+                                                        <th>Phone </th>
+                                                        <th>Action </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach($contacts as $item)
+                                                        <tr>
+                                                            <td class="text-capitalize">{{ $item->name }}</td>
+                                                            <td class="text-capitalize">{{ $item->position }}</td>
+                                                            <td>{{ $item->email }}</td>
+                                                            <td>{{ $item->mobile }}</td>
+                                                            <td>
+
+                                                                    <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#editContact{{ $item->id }}" ><i class="fa fa-edit"></i> </button>
+
+                                                                    <a href="{{ route('contact.delete', $item->id) }}" class="btn btn-danger" title="Delete Service" onclick="return confirm('Are you sure you want to delete this contact ??')">
+                                                                        <i class="fa fa-trash"></i>
+                                                                    </a>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        @foreach($services as $item)
+
+                            @include('admin.inc.modals.edit_service')
+                        @endforeach
+
+
+                        @foreach($contacts as $item)
 
                             @include('admin.inc.modals.edit_service')
                         @endforeach

@@ -296,7 +296,7 @@
 <script>
     $(document).ready(function() {
         $('.lfm').filemanager('image');
-        $('.lff').filemanager('file');
+        $('#lff').filemanager('file');
     });
 </script>
 

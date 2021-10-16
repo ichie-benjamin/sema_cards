@@ -102,12 +102,7 @@
                                                 {!! $errors->first('specialty', '<p class="help-block">:message</p>') !!}
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-6">
-                                            <div class="form-group "><label>Contract File</label>
-                                                <input value="{{ old('contract_file') }}" name="contract_file" type="text" class="form-control" placeholder="contract file" />
-                                                {!! $errors->first('contract_file', '<p class="help-block">:message</p>') !!}
-                                            </div>
-                                        </div>
+
 
                                         <div class="col-md-6 col-6">
                                             <div class="form-group "><label>Contract Date</label>
@@ -124,10 +119,25 @@
                                         </div>
 
                                         <div class="col-md-6 col-6">
+                                            <div class="form-group "><label>Contract File </label>
+                                                <div class="input-group">
+                                                    <a id="lff" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                                        <i class="fa fa-picture-o"></i> Choose
+                                                    </a>
+
+                                                    <input id="thumbnail" class="form-control" type="text" name="contract_file">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-6">
                                             <div class="form-group "><label>Image </label>
                                                 @include('admin.inc.image-upload',['field' => 'image','id' => 'Image'])
                                             </div>
                                         </div>
+
 
                                         <div class="col-12">
                                             <div class="form-group "><label>Address (Bld/house / Flat / Road , Block , Place , Country)</label>

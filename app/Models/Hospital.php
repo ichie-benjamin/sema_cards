@@ -13,6 +13,8 @@ class Hospital extends Model
 
     public $translatable = [ ];
 
+    protected $appends = ['edit_url'];
+
 //    public $translatable = [
 //        'provider_name',
 //        'cpr_no',
@@ -30,12 +32,14 @@ class Hospital extends Model
 //        'description'
 //    ];
 
+
     protected $fillable = [
         'provider_name',
         'cpr_no',
         'contact',
         'contact2',
         'email',
+        'expiry_date',
         'address',
         'website',
         'category',
@@ -45,6 +49,14 @@ class Hospital extends Model
         'image',
         'description'
     ];
+
+    public function getEditUrlAttribute(){
+        return route('hospital.edit', $this->id);
+    }
+
+    public function services(){
+        return $this->hasMany(Service::class);
+    }
 
 
     public function getImageAttribute($value){

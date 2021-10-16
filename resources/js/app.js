@@ -21,6 +21,7 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('card-table', require('./components/CardTable.vue').default);
+Vue.component('hospital-table', require('./components/HospitalTable.vue').default);
 Vue.component('edit-card', require('./components/EditCard.vue').default);
 Vue.component('Search', require('./components/Search.vue').default);
 Vue.component('apply-card', require('./components/ApplyCard.vue').default);

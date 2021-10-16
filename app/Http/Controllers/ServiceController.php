@@ -41,4 +41,12 @@ class ServiceController extends Controller
         return $data;
     }
 
+    public function destroy($id)
+    {
+        $ser = Service::findOrFail($id);
+        $ser->delete();
+        return redirect()->back()->with('success_message','Service deleted');
+    }
+
+
 }

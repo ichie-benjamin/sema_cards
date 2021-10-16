@@ -35,12 +35,6 @@ class CardImport implements ToCollection, WithHeadingRow
 
     public function collection(Collection $rows)
     {
-//        $card = Card::orderBy('policy_no', 'desc')->first();
-//        if($card){
-//            $policy = $card->policy_no + 1;
-//        }else{
-//            $policy = 222200001;
-//        }
 
         foreach ($rows as $row) {
             $policy = $this->getPolicy();

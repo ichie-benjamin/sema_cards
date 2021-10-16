@@ -80,6 +80,14 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
 
     Route::post('/card/import', [CardsController::class, 'importCards'])->name('cards.import');
 
+    Route::post('/hospital/import', [HospitalController::class, 'importHospital'])->name('hospital.import');
+
+    Route::post('/contact/store', [HospitalController::class, 'storeContact'])->name('contact.store');
+
+    Route::get('/settings/network', [SettingsController::class, 'networks'])->name('settings.networks');
+
+    Route::get('/contact/{id}', [HospitalController::class, 'destroyContact'])->name('contact.delete');
+    Route::post('/contact/edit/{id}', [HospitalController::class, 'updateContact'])->name('contact.update');
 
     Route::get('/settings/network', [SettingsController::class, 'networks'])->name('settings.networks');
 

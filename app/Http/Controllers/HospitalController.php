@@ -2,12 +2,70 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\HospitalImport;
+use App\Models\Contact;
 use App\Models\Hospital;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HospitalController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        $status = ['new','pending','done'];
+        $hospital = Hospital::with('services');
+//        $card = Card::whereIsParent(1)->with('agent','cards','package');
+        if($request->get('cpr')){
+            $hospital->where('cpr_no',$request->get('cpr'))
+                ->orWhere('provider_name', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('mobile', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('mobile2', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('email', 'like', '%'.$request->get('cpr').'%')
+                ->orWhere('phone', 'like', '%'.$request->get('cpr').'%');
+        }
+        if($request->get('s')){
+            if($request->get('s') == 'paid'){
+                $hospital->where('paid',1);
+            }else {
+                $hospital->where('status',$request->get('s'));
+            }
+        }
+        if($request->has('online')){
+            $hospital->where('online',1);
+        }
+        if($request->has('agent')){
+            $agent = $this->cardAgent();
+            $hospital->where('agent_id','!=',$agent);
+        }
+        if($request->has('today')){
+            $hospital->whereDate('issue_date', Carbon::today())->wherePaid(1);
+        }
+        if($request->has('imported')){
+            $hospital->where('imported', 1);
+        }
+        if($request->has('expired')){
+            $hospital->where('expiry_date', '<=', Carbon::now());
+        }
+        if($request->has('renewal')){
+            $hospital->where('expiry_date', '<=', Carbon::now()->subDays(20));
+        }
+        if($request->get('from') && $request->get('to')){
+            $from = date($request->get('from'));
+            $to = date($request->get('to'));
+            $hospital->whereBetween('issue_date', [$from, $to]);
+        }
+
+        $hospitals = $hospital->orderBy('id','desc')->paginate(50);
+
+        if($request->has('export')){
+            return view('admin.hospital.export', compact('hospitals','status'));
+        }
+        return view('admin.hospital.list', compact('hospitals','status'));
+    }
+
+
     public function create(){
         return view('admin.hospital.create');
     }
@@ -18,9 +76,10 @@ class HospitalController extends Controller
     }
     public function edit($id){
         $hospital = Hospital::findOrFail($id);
-        $services = Service::all();
-//        $services = Service::whereHospitalId($id)->get();
-        return view('admin.hospital.edit', compact('hospital','services'));
+//        $services = Service::all();
+        $services = Service::whereHospitalId($id)->get();
+        $contacts = Contact::whereHospitalId($id)->get();
+        return view('admin.hospital.edit', compact('hospital','services','contacts'));
     }
     public function update(Request $request, $id){
         $hospital = Hospital::findOrFail($id);
@@ -55,6 +114,41 @@ class HospitalController extends Controller
 
     }
 
+    public function storeContact(Request $request){
+        $data  = $this->getContactData($request);
+        Contact::create($data);
+        return redirect()->route('hospital.edit', $request['hospital_id'])->with('success', 'Hospital Contact Successfully added, pls add services');
+    }
+
+    public function importHospital(Request $request)
+    {
+        $request->validate([
+            'import_file' => 'required|mimes:csv,txt'
+        ]);
+        Excel::import(new HospitalImport,request()->file('import_file'));
+        return back()->with('success_message', 'Hospital was successfully imported.');
+    }
+
+
+    public function updateContact(Request $request, $id){
+        $con = Contact::findOrFail($id);
+        $data  = $this->getContactData($request);
+        $con->update($data);
+        return redirect()->route('hospital.edit', $request['hospital_id'])->with('success', 'Hospital Contact Successfully added, pls add services');
+    }
+
+    protected function getContactData(Request $request)
+    {
+        $rules = [
+            'hospital_id' => 'required',
+            'name' => 'string|nullable',
+            'email' => 'string|nullable',
+            'mobile' => 'string|nullable',
+            'position' => 'string|nullable',
+        ];
+        return $request->validate($rules);
+            }
+
     protected function getData(Request $request)
     {
         $rules = [
@@ -77,6 +171,13 @@ class HospitalController extends Controller
         $data = $request->validate($rules);
         $data['user_id'] = auth()->id();
         return $data;
+    }
+
+    public function destroyContact($id)
+    {
+        $item = Contact::findOrFail($id);
+        $item->delete();
+        return redirect()->back()->with('success_message','Contacted deleted');
     }
 
     protected function getRuData(Request $request)
