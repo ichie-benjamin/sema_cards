@@ -110,36 +110,31 @@
                             </div>
                         </div>
                     </div>
-                    @section('hide')
+{{--                    @section('hide')--}}
+                    @if(count($contacts) > 0)
                     <div class="col-md-4">
                         <div class="detail-sidebar">
                             <div class="sidebar-box">
                                 <div class="sidebar-title">
                                     <h3>Fix Appointment</h3>
                                 </div>
+                                @foreach($contacts as $item)
                                 <form>
                                     <div class="form-group">
-                                        <label>Name:</label>
-                                        <input type="text" placeholder="Sam smiths">
+                                        <label>Name: {{ $item->name}}</label>
                                     </div>
                                     <div class="form-group">
-                                        <label>Email:</label>
-                                        <input type="text" placeholder="abc@xyz.com">
+                                        <label>Position: {{ $item->position}}</label>
                                     </div>
                                     <div class="form-group">
-                                        <label>Department</label>
-                                        <select>
-                                            <option>Choose option</option>
-                                            <option>Neurology</option>
-                                            <option>Opthalmology</option>
-                                        </select>
+                                        <label>Email: {{ $item->email}}</label>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="form-btn text-center">
-                                            <a class="btn"> Book Appointment</a>
-                                        </div>
+                                 <div class="form-group">
+                                        <label>Mobile: {{ $item->mobile}}</label>
                                     </div>
+
                                 </form>
+                                @endforeach
                             </div>
                             <div class="sidebar-ad">
                                 <div class="ad-content">
@@ -150,7 +145,8 @@
                             </div>
                         </div>
                     </div>
-                    @endsection
+                    @endif
+{{--                    @endsection--}}
                 </div>
             </div>
         </div>

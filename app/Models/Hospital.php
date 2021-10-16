@@ -43,6 +43,7 @@ class Hospital extends Model
         'address',
         'website',
         'category',
+        'status',
         'specialist',
         'contract_file',
         'logo',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\HospitalImport;
+use App\Models\Card;
 use App\Models\Contact;
 use App\Models\Hospital;
 use App\Models\Service;
@@ -72,7 +73,8 @@ class HospitalController extends Controller
     public function show($id){
         $hospital = Hospital::findOrFail($id);
         $services = Service::where('hospital_id', $id)->get();
-        return view('pages.view-hospital', compact('hospital', 'services'));
+        $contacts = Contact::where('hospital_id', $id)->get();
+        return view('pages.view-hospital', compact('hospital', 'services','contacts'));
     }
     public function edit($id){
         $hospital = Hospital::findOrFail($id);
@@ -170,6 +172,7 @@ class HospitalController extends Controller
         ];
         $data = $request->validate($rules);
         $data['user_id'] = auth()->id();
+        $data['status'] = 'pending';
         return $data;
     }
 

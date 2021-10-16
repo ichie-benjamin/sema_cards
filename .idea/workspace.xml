@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/HospitalTable.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/hospital/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HospitalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HospitalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Imports/CardImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/CardImport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Hospital.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Hospital.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/hospital/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hospital/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/hospital/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hospital/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/modals/edit_service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/modals/edit_service.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/view-hospital.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/view-hospital.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +316,7 @@
       <workItem from="1634084915591" duration="14732000" />
       <workItem from="1634119245817" duration="11840000" />
       <workItem from="1634138283435" duration="5663000" />
-      <workItem from="1634328236768" duration="11596000" />
+      <workItem from="1634328236768" duration="12201000" />
     </task>
     <servers />
   </component>

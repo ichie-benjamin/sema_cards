@@ -15,6 +15,7 @@ class AddMoreFieldsToHospital extends Migration
     {
         Schema::table('hospitals', function (Blueprint $table) {
             $table->text('comment')->nullable();
+            $table->string('status')->default('new');
             $table->boolean('imported')->default(0);
             $table->boolean('online')->default(0);
         });
