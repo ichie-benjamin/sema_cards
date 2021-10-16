@@ -3,51 +3,38 @@
 
 
 <section class="slider">
-    <div id="x_023_animated_layers" class="carousel slide x_023_animated_layers_indicators x_023_animated_layers_control_button thumb_scroll_x swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="8000" data-duration="2000">
-        <ol class="carousel-indicators">
-            <li data-target="#x_023_animated_layers" data-slide-to="0" class="active"></li>
-            <li data-target="#x_023_animated_layers" data-slide-to="1"></li>
-            <li data-target="#x_023_animated_layers" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <div class="x_023_animated_layers_content">
-                    <div class="x_023_animated_layers_txt">
-                        <h4 data-animation="animated fadeInLeft">Medial Services that you can trust</h4>
-                        <p data-animation="animated fadeInLeft">Need professional help? Our support staff will answer your questions.</p>
-                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
-{{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
+    @if (count($sliders) > 10)
+        <div id="x_023_animated_layers" class="carousel slide x_023_animated_layers_indicators x_023_animated_layers_control_button thumb_scroll_x swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="8000" data-duration="2000">
+            <ol class="carousel-indicators">
+                @foreach($sliders as $item)
+                    <li data-target="#x_023_animated_layers" data-slide-to="{{ $loop->index }}" class="{{ $loop->index == 0 ? 'active' : '' }}"></li>
+                @endforeach
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                @foreach($sliders as $item)
+                    <div class="item {{ $loop->index == 0 ? 'active' : '' }} ">
+                        <div class="x_023_animated_layers_content {{ $loop->index != 0 ? 'x_023_animated_layers_content_right' : '' }}">
+                            <div class="x_023_animated_layers_txt">
+                                <h4 data-animation="animated fadeInLeft">{{ $item->head_en }}</h4>
+                                <p data-animation="animated fadeInLeft">{{ $item->sub_head_en }}</p>
+                                {{--                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>--}}
+                                {{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
+                            </div>
+                            <div class="x_023_animated_layers_img" data-animation="animated fadeInUp"> <img src="{{ $item->img }}" alt="x_023_animated_layers_image_01"> </div>
+                        </div>
                     </div>
-                    <div class="x_023_animated_layers_img" data-animation="animated fadeInUp"> <img src="{{ asset('frontpage/images/home/slider/doc-slider2.png') }}" alt="x_023_animated_layers_image_01"> </div>
-                </div>
+                @endforeach
             </div>
-            <div class="item">
-                <div class="x_023_animated_layers_content x_023_animated_layers_content_right">
-                    <div class="x_023_animated_layers_txt">
-                        <h4 data-animation="animated fadeInLeft">We make quality health care</h4>
-                        <p data-animation="animated fadeInLeft">Passionate About Medicine. Compassionate About People.</p>
-                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
-{{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a>--}}
-                    </div>
-                    <div class="x_023_animated_layers_img" data-animation="animated fadeInDown"> <img src="{{ asset('frontpage/images/home/slider/doc-slider1.png') }}" alt="x_023_animated_layers_image_02"> </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="x_023_animated_layers_content x_023_animated_layers_content_right">
-                    <div class="x_023_animated_layers_txt">
-                        <h4 data-animation="animated fadeInLeft">Modern Technology Treatment</h4>
-                        <p data-animation="animated fadeInLeft">Doctor’s for health</p>
-                        <p data-animation="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-{{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
-                    </div>
-                    <div class="x_023_animated_layers_img" data-animation="animated fadeInDown"> <img src="{{ asset('frontpage/images/home/slider/doc-slider3.png') }}" alt="x_023_animated_layers_image_02"> </div>
-                </div>
-            </div>
+            <a class="left carousel-control" href="#x_023_animated_layers" role="button" data-slide="prev"> <span class="fa fa-angle-left"></span> </a>
+            <a class="right carousel-control" href="#x_023_animated_layers" role="button" data-slide="next"> <span class="fa fa-angle-right"></span> </a>
         </div>
-        <a class="left carousel-control" href="#x_023_animated_layers" role="button" data-slide="prev"> <span class="fa fa-angle-left"></span> </a>
-        <a class="right carousel-control" href="#x_023_animated_layers" role="button" data-slide="next"> <span class="fa fa-angle-right"></span> </a>
-    </div>
-    <div class="overlay"></div>
+        <div class="overlay"></div>
+    @else
+        <div style="height: 140px!important;"></div>
+    @endif
+
+        <div class="overlay"></div>
+
 </section>
 
 <section class="newsletter">

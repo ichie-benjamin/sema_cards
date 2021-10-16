@@ -7,6 +7,7 @@ use App\Models\Card;
 use App\Models\Contact;
 use App\Models\Hospital;
 use App\Models\Service;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -18,20 +19,15 @@ class HospitalController extends Controller
         $status = ['new','pending','done'];
         $hospital = Hospital::with('services');
 //        $card = Card::whereIsParent(1)->with('agent','cards','package');
-        if($request->get('cpr')){
-            $hospital->where('cpr_no',$request->get('cpr'))
-                ->orWhere('provider_name', 'like', '%'.$request->get('cpr').'%')
-                ->orWhere('mobile', 'like', '%'.$request->get('cpr').'%')
-                ->orWhere('mobile2', 'like', '%'.$request->get('cpr').'%')
-                ->orWhere('email', 'like', '%'.$request->get('cpr').'%')
-                ->orWhere('phone', 'like', '%'.$request->get('cpr').'%');
+        if($request->get('cr')){
+            $hospital->where('cpr_no',$request->get('cr'))
+                ->orWhere('provider_name', 'like', '%'.$request->get('cr').'%')
+                ->orWhere('contact', 'like', '%'.$request->get('cr').'%')
+                ->orWhere('contact2', 'like', '%'.$request->get('cr').'%')
+                ->orWhere('email', 'like', '%'.$request->get('cr').'%');
         }
         if($request->get('s')){
-            if($request->get('s') == 'paid'){
-                $hospital->where('paid',1);
-            }else {
                 $hospital->where('status',$request->get('s'));
-            }
         }
         if($request->has('online')){
             $hospital->where('online',1);
@@ -156,6 +152,8 @@ class HospitalController extends Controller
         $rules = [
             'provider_name' => 'string|nullable',
             'cpr_no' => 'string|nullable',
+            'place' => 'string|nullable',
+            'comment' => 'nullable',
             'contact' => 'string|nullable',
             'contact2' => 'string|nullable',
             'email' => 'string|nullable',

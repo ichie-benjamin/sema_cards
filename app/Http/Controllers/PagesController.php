@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hospital;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -13,7 +14,8 @@ class PagesController extends Controller
         if($request->get('lang')){
             $lang = $request->get('lang');
         }
-        return view('pages.index',compact('lang'));
+        $sliders = Slider::all();
+        return view('pages.index',compact('lang','sliders'));
     }
 
     public function partnerPage(Request $request){

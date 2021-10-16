@@ -146,6 +146,13 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-12">
+                                            <div class="form-group "><label>Place </label>
+                                                <input  value="{{ old('place') }}" name="place" type="text" class="form-control" placeholder="place" />
+                                                {!! $errors->first('place', '<p class="help-block">:message</p>') !!}
+                                            </div>
+                                        </div>
+
                                         <hr />
 
 
@@ -153,6 +160,12 @@
                                             <div class="form-group"><label>Description </label>
                                                 <textarea class="form-control" name="description">{{ old('description') }}</textarea>
                                                 {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group"><label>Comment </label>
+                                                <textarea class="form-control" name="comment">{{ old('comment') }}</textarea>
+                                                {!! $errors->first('comment', '<p class="help-block">:message</p>') !!}
                                             </div>
                                         </div>
 

@@ -16,6 +16,7 @@ class AddMoreFieldsToHospital extends Migration
         Schema::table('hospitals', function (Blueprint $table) {
             $table->text('comment')->nullable();
             $table->string('status')->default('new');
+            $table->text('place')->nullable();
             $table->boolean('imported')->default(0);
             $table->boolean('online')->default(0);
         });
@@ -29,7 +30,7 @@ class AddMoreFieldsToHospital extends Migration
     public function down()
     {
         Schema::table('hospitals', function (Blueprint $table) {
-            $table->dropColumn('comment','imported','online','status');
+            $table->dropColumn('comment','imported','online','status','place');
         });
     }
 }

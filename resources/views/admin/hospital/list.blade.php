@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-3">
                                 <div class="form-group "><label>Search</label>
-                                    <input value="{{ old('cpr', Request()->get('cpr')) }}" name="cpr" type="text" class="form-control" placeholder="Search by name or CPR NO" />
+                                    <input value="{{ old('cr', Request()->get('cr')) }}" name="cr" type="text" class="form-control" placeholder="Search by name or CR NO" />
                                 </div>
                             </div>
 
@@ -95,7 +95,7 @@
                                 <button class="btn btn-primary mt-4" type="submit">Search</button>
                                 <a href="{{ route('hospital.index') }}" class="btn btn-danger mt-4">Reset</a>
 
-                                @if (request()->getRequestUri() == '/admin/cards')
+                                @if (request()->getRequestUri() == '/admin/hospitals')
                                     <a href="{{url()->current()}}?export" class="btn btn-success mt-4">Export Data</a>
                                 @else
                                     <a href="{{ request()->getRequestUri() }}&export" class="btn btn-success mt-4">Export Data</a>
@@ -116,14 +116,11 @@
                                 <table id="tech-companies-1" class="table table-striped table-bordered mb-0">
                                     <thead>
                                     <tr>
-{{--                                        <th width="15%">Issue Date </th>--}}
                                         <th>Provider Name</th>
                                         <th data-priority="1">CR No</th>
                                         <th data-priority="3">Email </th>
                                         <th data-priority="3">Contact </th>
                                         <th width="15%" data-priority="3">Status</th>
-{{--                                        <th data-priority="6">Expiry Date</th>--}}
-{{--                                        <th data-priority="6">Contact</th>--}}
                                         <th data-priority="6">Category</th>
                                         <th data-priority="6">Expiry Date</th>
                                         <th width="10%" data-priority="6">Action</th>

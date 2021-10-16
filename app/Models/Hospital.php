@@ -41,6 +41,8 @@ class Hospital extends Model
         'email',
         'expiry_date',
         'address',
+        'comment',
+        'place',
         'website',
         'category',
         'status',

@@ -26,7 +26,7 @@ class SliderController extends Controller
 
         Slider::create($data);
 
-        return redirect()->back()->with('success_message', 'Package Type was successfully added.');
+        return redirect()->back()->with('success_message', 'Slider was successfully added.');
 
     }
 
@@ -37,9 +37,7 @@ class SliderController extends Controller
             'head_ar' => 'string|min:1|max:255|nullable',
             'sub_head_en' => 'string|min:1|max:255|nullable',
             'sub_head_ar' => 'string|min:1|max:255|nullable',
-            'price' => 'required',
-            'show_online' => 'nullable',
-            'ar' => 'nullable',
+            'img' => 'required',
         ];
 
         $data = $request->validate($rules);
