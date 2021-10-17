@@ -64,7 +64,8 @@ class HospitalController extends Controller
 
 
     public function create(){
-        return view('admin.hospital.create');
+        $categories = $this->h_cats();
+        return view('admin.hospital.create', compact('categories'));
     }
     public function show($id){
         $hospital = Hospital::findOrFail($id);
@@ -74,10 +75,11 @@ class HospitalController extends Controller
     }
     public function edit($id){
         $hospital = Hospital::findOrFail($id);
+        $categories = $this->h_cats();
 //        $services = Service::all();
         $services = Service::whereHospitalId($id)->get();
         $contacts = Contact::whereHospitalId($id)->get();
-        return view('admin.hospital.edit', compact('hospital','services','contacts'));
+        return view('admin.hospital.edit', compact('hospital','services','contacts','categories'));
     }
     public function update(Request $request, $id){
         $hospital = Hospital::findOrFail($id);
@@ -173,6 +175,14 @@ class HospitalController extends Controller
         $data['status'] = 'pending';
         return $data;
     }
+
+    public function destroy($id)
+    {
+        $hospital = Hospital::findOrFail($id);
+        $hospital->delete();
+        return redirect()->back()->with('success_message','Hospital successfully deleted');
+    }
+
 
     public function destroyContact($id)
     {

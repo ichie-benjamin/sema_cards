@@ -104,11 +104,16 @@
                                                 </div>
 
                                                 <div class="col-md-6 col-6">
-                                                    <div class="form-group "><label>Category</label>
-                                                        <input  value="{{ old('category', $hospital->category) }}" name="website" type="text" class="form-control" placeholder="category" />
-                                                        {!! $errors->first('category', '<p class="help-block">:message</p>') !!}
+                                                    <div class="form-group ">
+                                                        <label>Category</label>
+                                                        <select class="form-control " name="category">
+                                                            @foreach($categories as $item)
+                                                                <option {{ $hospital->category == $item ? 'selected' : '' }} value="{{ $item }}">{{ $item }}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
+
 
                                                 <div class="col-md-6 col-6">
                                                     <div class="form-group "><label>Specialty</label>
@@ -116,16 +121,16 @@
                                                         {!! $errors->first('specialty', '<p class="help-block">:message</p>') !!}
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 col-6">
-                                                    <div class="form-group "><label>Contract File</label>
-                                                        <input value="{{ old('contract_file', $hospital->contract_file) }}" name="contract_file" type="text" class="form-control" placeholder="contract file" />
-                                                        {!! $errors->first('contract_file', '<p class="help-block">:message</p>') !!}
-                                                    </div>
-                                                </div>
+{{--                                                <div class="col-md-6 col-6">--}}
+{{--                                                    <div class="form-group "><label>Contract File</label>--}}
+{{--                                                        <input value="{{ old('contract_file', $hospital->contract_file) }}" name="contract_file" type="text" class="form-control" placeholder="contract file" />--}}
+{{--                                                        {!! $errors->first('contract_file', '<p class="help-block">:message</p>') !!}--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
                                                 <div class="col-md-6 col-6">
                                                     <div class="form-group "><label>Contract Date</label>
-                                                        <input value="{{ old('contract_date', $hospital->contract_date) }}" name="contract_date" type="text" class="form-control" placeholder="contract date" />
+                                                        <input value="{{ old('contract_date', $hospital->contract_date) }}" name="contract_date" type="date" class="form-control" placeholder="contract date" />
                                                         {!! $errors->first('contract_date', '<p class="help-block">:message</p>') !!}
                                                     </div>
                                                 </div>
@@ -143,6 +148,19 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="col-md-12 col-12">
+                                                    <div class="form-group "><label>Contract File </label>
+                                                        <div class="input-group">
+                                                            <a id="lff" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                                                <i class="fa fa-picture-o"></i> Choose
+                                                            </a>
+
+                                                            <input id="thumbnail" class="form-control" type="text" value="{{ $hospital->contract_file }}" name="contract_file">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-12">
                                                     <div class="form-group "><label>Address (Bld/house / Flat / Road , Block , Place , Country)</label>
                                                         <input  value="{{ old('address', $hospital->address) }}" name="address" type="text" class="form-control" placeholder="address" />
@@ -150,8 +168,14 @@
                                                     </div>
                                                 </div>
 
-                                                <hr />
+                                                <div class="col-12">
+                                                    <div class="form-group "><label>Place</label>
+                                                        <input  value="{{ old('place', $hospital->place) }}" name="place" type="text" class="form-control" placeholder="place" />
+                                                        {!! $errors->first('place', '<p class="help-block">:message</p>') !!}
+                                                    </div>
+                                                </div>
 
+                                                <hr />
 
                                                 <div class="col-12">
                                                     <div class="form-group"><label>Description </label>
@@ -492,7 +516,6 @@
                             </div>
                             <!--end col-->
                         </div>
-
 
                         <div class="modal fade" id="addC" tabindex="-1" role="dialog" aria-labelledby="addC" aria-hidden="true">
                             <div class="modal-dialog" role="document">

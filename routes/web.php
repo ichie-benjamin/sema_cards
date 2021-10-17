@@ -70,6 +70,10 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
 
     Route::post('/card/mail', [CardsController::class, 'sendEmail'])->name('send.email.cards');
     Route::get('/card/delete/{id}', [CardsController::class, 'destroy'])->name('card.delete');
+
+    Route::get('/hospital/delete/{id}', [HospitalController::class, 'destroy'])->name('hospital.delete');
+
+
     Route::get('/card/destroy/{id}', [CardsController::class, 'delete']);
     Route::get('/card/payments/{id}', [CardsController::class, 'payments'])->name('card.payments');
     Route::get('/card/mems/{id}', [CardsController::class, 'members'])->name('card.mems');

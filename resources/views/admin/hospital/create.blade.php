@@ -90,9 +90,13 @@
                                         </div>
 
                                         <div class="col-md-6 col-6">
-                                            <div class="form-group "><label>Category</label>
-                                                <input  value="{{ old('category') }}" name="category" type="text" class="form-control" placeholder="category" />
-                                                {!! $errors->first('category', '<p class="help-block">:message</p>') !!}
+                                            <div class="form-group ">
+                                                <label>Category</label>
+                                                <select class="form-control " name="category">
+                                                    @foreach($categories as $item)
+                                                    <option value="{{ $item }}">{{ $item }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
 

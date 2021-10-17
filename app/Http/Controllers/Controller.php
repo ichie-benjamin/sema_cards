@@ -12,6 +12,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function h_cats(){
+        return  ['hospital','dentist','physiotherapy','skin'];
+    }
+
     public function resizeImage($file, $path)
     {
         $resize = Image::make($file)->resize(400, 300, function ($constraint) {

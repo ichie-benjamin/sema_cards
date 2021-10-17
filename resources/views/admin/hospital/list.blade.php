@@ -144,7 +144,7 @@
 {{--                                            <a class="btn btn-warning" href="{{ route('hospitals.edit', i.id) }}"><i class="fa fa-edit"></i> </a>--}}
                                             <a class="btn btn-warning" :href="i.edit_url"><i class="fa fa-edit"></i> </a>
                                                 <a v-if="i.paid" class="btn btn-success" :href="i.view_url">View</a>
-                                            <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this card ?')" :href="'/admin/card/delete/'+i.id"><i class="fa fa-trash"></i> </a>
+                                            <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this hospital ?')" :href="'/admin/hospital/delete/'+i.id"><i class="fa fa-trash"></i> </a>
                                         </td>
 
                                     </tr>

@@ -3,7 +3,7 @@
 
 
 <section class="slider">
-    @if (count($sliders) > 10)
+    @if (count($sliders) > 0)
         <div id="x_023_animated_layers" class="carousel slide x_023_animated_layers_indicators x_023_animated_layers_control_button thumb_scroll_x swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="8000" data-duration="2000">
             <ol class="carousel-indicators">
                 @foreach($sliders as $item)
