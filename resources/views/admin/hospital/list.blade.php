@@ -95,7 +95,7 @@
                                 <button class="btn btn-primary mt-4" type="submit">Search</button>
                                 <a href="{{ route('hospital.index') }}" class="btn btn-danger mt-4">Reset</a>
 
-                                @if (request()->getRequestUri() == '/admin/hospitals')
+                                @if (request()->getRequestUri() == '/admin/hospital')
                                     <a href="{{url()->current()}}?export" class="btn btn-success mt-4">Export Data</a>
                                 @else
                                     <a href="{{ request()->getRequestUri() }}&export" class="btn btn-success mt-4">Export Data</a>
