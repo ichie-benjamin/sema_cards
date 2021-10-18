@@ -41,14 +41,23 @@
                                     {!! $errors->first('sub_head_ar', '<p class="help-block">:message</p>') !!}
                                 </div>
                             </div>
+                            <div class="col-12">
+                                <div class="form-group "><label>Status</label>
+                                    <select class="form-control" name="status">
+                                        <option value="1" {{ $item->status == 1 ? 'selected' : '' }}>Active</option>
+                                        <option value="0" {{ $item->status == 0 ? 'selected' : '' }}>Disable</option>
+                                    </select>
+                                    {!! $errors->first('status', '<p class="help-block">:message</p>') !!}
+                                </div>
+                            </div>
                             <div class="col-md-12 col-12">
                                 <div class="form-group "><label>Image </label>
-                                    @include('admin.inc.image-upload',['field' => 'img','id' => 'Image'])
+                                    @include('admin.inc.image-upload',['field' => 'img','id' => 'Image', 'image' => $item->img])
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <button  class="btn btn-primary" type="submit">Save Slider</button>
+                                <button  class="btn btn-primary" type="submit">Update Slider</button>
                             </div>
 
                         </div>

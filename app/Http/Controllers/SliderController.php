@@ -19,6 +19,15 @@ class SliderController extends Controller
         return view('package_types.create');
     }
 
+    public function destroy($id)
+    {
+        $slider = Slider::findOrFail($id);
+        $slider->delete();
+        return redirect()->back()->with('success_message', 'Slider was successfully deleted.');
+
+    }
+
+
     public function store(Request $request)
     {
 
@@ -30,18 +39,31 @@ class SliderController extends Controller
 
     }
 
+    public function update(Request $request, $id)
+    {
+
+        $data = $this->getData($request);
+
+        $slider = Slider::findOrFail($id);
+
+        $slider->update($data);
+
+        return redirect()->back()->with('success_message', 'Slider was successfully updated.');
+
+    }
+
     protected function getData(Request $request)
     {
         $rules = [
             'head_en' => 'string|min:1|max:255|nullable',
             'head_ar' => 'string|min:1|max:255|nullable',
+            'status' => 'boolean',
             'sub_head_en' => 'string|min:1|max:255|nullable',
             'sub_head_ar' => 'string|min:1|max:255|nullable',
-            'img' => 'required',
+            'img' => 'nullable',
         ];
 
         $data = $request->validate($rules);
-
 
         return $data;
     }

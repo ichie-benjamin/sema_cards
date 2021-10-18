@@ -68,6 +68,17 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-12">
+                                        <div class="form-group "><label>Status</label>
+                                            <select class="form-control" name="status">
+                                                <option value="1" >Active</option>
+                                                <option value="0">Disable</option>
+                                            </select>
+                                            {!! $errors->first('status', '<p class="help-block">:message</p>') !!}
+                                        </div>
+                                    </div>
+
+
                                     <div class="col-md-12 col-12">
                                         <div class="form-group "><label>Image </label>
                                             @include('admin.inc.image-upload',['field' => 'img','id' => 'Image'])
@@ -110,6 +121,7 @@
                                         <th>Heading In Ar</th>
                                         <th>Sub Heading In Eng </th>
                                         <th>Sub Heading In Ar</th>
+                                        <th>Status </th>
                                         <th>Image </th>
                                         <th>Action </th>
                                     </tr>
@@ -121,9 +133,16 @@
                                         <td class="text-capitalize">{{ $item->head_ar }}</td>
                                         <td>{{ $item->sub_head_en }}</td>
                                         <td>{{ $item->sub_head_ar }}</td>
+                                        <td>
+                                            @if ($item->status == 1)
+                                                <span class="btn btn-success">Active</span>
+                                            @else
+                                                <span class="btn btn-danger">Not Active</span>
+                                            @endif
+                                        </td>
                                         <td><img height="50px" width="50px" src="{{ $item->img }}" /> </td>
                                         <td>
-                                            <form method="POST" action="{!! route('p_types.destroy', $item->id) !!}" accept-charset="UTF-8">
+                                            <form method="POST" action="{!! route('sliders.destroy', $item->id) !!}" accept-charset="UTF-8">
                                                 {{ csrf_field() }}
 
                                                 <input name="_method" value="DELETE" type="hidden">
@@ -132,7 +151,7 @@
                                                 <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#edit{{ $item->id }}" ><i class="fa fa-edit"></i> </button>
 
 
-                                                <button type="submit" class="btn btn-danger" title="Delete Slider " onclick="return confirm('Are you sure you want to delete this slider type ??')">
+                                                <button type="submit" class="btn btn-danger" title="Delete Slider " onclick="return confirm('Are you sure you want to delete this slider ??')">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>

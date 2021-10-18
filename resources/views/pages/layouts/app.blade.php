@@ -20,6 +20,9 @@
         .nav-small{
             display: none;
         }
+        section {
+            padding: 12px 0 80px;
+        }
         footer .f-contact {
             background: #3f1998!important;
         }
@@ -287,46 +290,33 @@
 <div class="footer-content">
 <div class="lower-footer pad-bottom-50">
 <div class="row">
-<div class="col-md-5 col-sm-12">
+<div class="col-md-4 col-sm-12">
 <div class="footer-contact mar-right-15">
     <div class="footer-logo text-center mar-bottom-15"> <img src="{{ setting('logo_color','/images/s_logo.png') }}" alt="Image"> </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        <br>
-        <br> We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
+    {!! setting('site_info') !!}
 </div>
 </div>
-<div class="col-md-2 col-sm-4 col-xs-12">
-<div class="departments">
-    <h3>Departments</h3>
-    <ul>
-        <li><a href="#">Radiology</a></li>
-        <li><a href="#">Pedodontics</a></li>
-        <li><a href="#">Pedodontics</a></li>
-        <li><a href="#">Dental Implants</a></li>
-        <li><a href="#">Oral & Maxsillosacial</a></li>
-    </ul>
-</div>
-</div>
-<div class="col-md-2 col-sm-3 col-xs-12">
+<div class="col-md-4 col-xs-12">
 <div class="facility">
-    <h3>Facilities</h3>
+    <h3>Links</h3>
     <ul>
-        <li><a href="#">Blood Bank</a></li>
-        <li><a href="#">Intensive Care Unit</a></li>
-        <li><a href="#">Laboratories</a></li>
-        <li><a href="#">Tooth Care</a></li>
-        <li><a href="#">Scale and Clean</a></li>
+        <li><a href="{{ route('apply') }}">Apply for Sama Card </a></li>
+        <li><a href="{{ route('check') }}">Search Sama Card</a></li>
+        <li><a href="{{ route('partner') }}">Be a partner</a></li>
+        <li><a href="{{ route('about') }}">About Us</a></li>
     </ul>
 </div>
 </div>
-<div class="col-md-3 col-sm-5 col-xs-12">
+<div class="col-md-4 col-xs-12">
 <div class="work-time">
     <h3>Work Time</h3>
     <ul>
-        <li>Monday<span>10 AM - 3 PM</span></li>
-        <li>Tuesday<span>11 AM - 2 PM</span></li>
-        <li>Wednesday<span>10 AM - 3:30 PM</span></li>
-        <li>Thursday<span>9 AM - 2 PM</span></li>
+        <li>Monday<span>8AM - 5PM</span></li>
+        <li>Tuesday<span>8AM - 5PM</span></li>
+        <li>Wednesday<span>8AM - 5PM</span></li>
+        <li>Thursday<span>8AM - 5PM</span></li>
+        <li>Friday<span>8AM - 5PM</span></li>
+        <li>Saturday<span>8AM - 5PM</span></li>
     </ul>
 </div>
 </div>

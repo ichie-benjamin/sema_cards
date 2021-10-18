@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\CardsController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\InvoiceController;
@@ -93,6 +94,8 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
     Route::get('/contact/{id}', [HospitalController::class, 'destroyContact'])->name('contact.delete');
     Route::post('/contact/edit/{id}', [HospitalController::class, 'updateContact'])->name('contact.update');
 
+    Route::get('/settings/home', [SettingsController::class, 'home'])->name('settings.home');
+
     Route::get('/settings/network', [SettingsController::class, 'networks'])->name('settings.networks');
 
 
@@ -105,6 +108,7 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
         'p_types' => PackageTypesController::class,
         'sliders' => SliderController::class,
         'settings' => SettingsController::class,
+        'categories' => CategoriesController::class,
     ]);
 
 
