@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/about.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HospitalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HospitalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Imports/HospitalImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/HospitalImport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Hospital.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Hospital.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_15_223509_add_more_fields_to_hospital.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_15_223509_add_more_fields_to_hospital.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/hospital/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hospital/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/hospital/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hospital/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/hospital/export.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hospital/export.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/hospital-listing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/hospital-listing.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +320,7 @@
       <workItem from="1634551508392" duration="10267000" />
       <workItem from="1634717744264" duration="2588000" />
       <workItem from="1634732222438" duration="1986000" />
-      <workItem from="1634740960521" duration="13855000" />
+      <workItem from="1634740960521" duration="14706000" />
     </task>
     <servers />
   </component>

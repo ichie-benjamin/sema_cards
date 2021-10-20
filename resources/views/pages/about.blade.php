@@ -32,38 +32,38 @@
             </div>
 
             <hr/>
-            <div class="container mb-3">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-6 col-xs-6 align-self-end">
-                        <a href="{{ route('apply') }}">
-                            <div class="service-ite " style="background-image: url('/icons/apply.jpeg')">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 ">
-                        <a href="{{ route('check') }}">
-                            <div class="service-ite" style="background-image: url('/icons/search.jpeg')">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">
-                        <a href="{{ route('partner') }}">
-                            <div class="service-ite " style="background-image: url('/icons/partner.jpeg')">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
-                        <a  href="{{ route('hospital_listing') }}">
-                            <div class="service-ite " style="background-image: url('/icons/hospital.jpeg')">
-                            </div>
-                        </a>
-                    </div>
 
-                </div>
+        </div>
 
+        <div class="row align-items-center">
+            <div class="col-md-3 col-sm-6 col-xs-6 align-self-end">
+                <a href="{{ route('apply') }}">
+                    <div class="service-ite " style="background-image: url('/icons/apply.jpeg')">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 ">
+                <a href="{{ route('check') }}">
+                    <div class="service-ite" style="background-image: url('/icons/search.jpeg')">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <a href="{{ route('partner') }}">
+                    <div class="service-ite " style="background-image: url('/icons/partner.jpeg')">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
+                <a  href="{{ route('hospital_listing') }}">
+                    <div class="service-ite " style="background-image: url('/icons/hospital.jpeg')">
+                    </div>
+                </a>
             </div>
 
         </div>
+
+
     </div>
 </section>
 <section class="add-services">

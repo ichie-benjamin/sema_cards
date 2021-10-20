@@ -50,7 +50,7 @@
                                         <tr>
                                             <td class="text-capitalize">About Heading</td>
                                             <td>
-                                                <input class="form-control" width="70%" name="small_heading" type="text"  required value="{{ setting('about_heading','<h2>Short Story About <span>Sema Bahrain</span> Card.</h2> ') }}">
+                                                <input class="form-control" width="70%" name="about_heading" type="text"  required value="{{ setting('about_heading','<h2>Short Story About <span>Sema Bahrain</span> Card.</h2> ') }}">
                                             </td>
                                         </tr>
                                         <tr>
