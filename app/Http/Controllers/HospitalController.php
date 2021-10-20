@@ -94,22 +94,6 @@ class HospitalController extends Controller
 
         $hospital = Hospital::create($data);
 
-//        $hospital->setLocale('ru');
-//        $hospital->address = $ru_data['ru_address'];
-//        $hospital->provider_name = $ru_data['ru_provider_name'];
-//        $hospital->cpr_no = $ru_data['ru_cpr_no'];
-//        $hospital->contact = $ru_data['ru_contact'];
-//        $hospital->contact2 = $ru_data['ru_contact2'];
-//        $hospital->email = $ru_data['ru_email'];
-//        $hospital->address = $ru_data['ru_address'];
-//        $hospital->website = $ru_data['ru_website'];
-//        $hospital->category = $ru_data['ru_category'];
-//        $hospital->contract_file = $ru_data['ru_contract_file'];
-//        $hospital->image = $ru_data['ru_image'];
-//        $hospital->description = $ru_data['ru_description'];
-//        $hospital->specialist = $ru_data['ru_specialist'];
-//        $hospital->save();
-
         return redirect()->route('hospital.edit', $hospital->id)->with('success', 'Hospital Successfully added, pls add services');
 
     }
@@ -169,6 +153,11 @@ class HospitalController extends Controller
             'logo' => 'string|nullable',
             'image' => 'string|nullable',
             'description' => 'string|nullable',
+            'ar_provider_name' => 'string|nullable',
+            'ar_place' => 'string|nullable',
+            'ar_address' => 'string|nullable',
+            'ar_description' => 'string|nullable',
+            'ar_comment' => 'string|nullable',
         ];
         $data = $request->validate($rules);
         $data['user_id'] = auth()->id();

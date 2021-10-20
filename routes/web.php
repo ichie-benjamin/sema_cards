@@ -98,6 +98,8 @@ Route::group(['middleware' => ['auth','role:admin|super_admin'], 'prefix' => 'ad
 
     Route::get('/settings/network', [SettingsController::class, 'networks'])->name('settings.networks');
 
+    Route::get('/settings/about', [SettingsController::class, 'about'])->name('setting.about');
+
 
 
 

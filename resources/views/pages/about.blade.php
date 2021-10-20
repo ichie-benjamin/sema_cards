@@ -22,51 +22,68 @@
                 <div class="about-content">
                     <div class="section-title mar-bottom-15">
                         <h3>About Us</h3>
-                        <h2>Short Story About <span>Sema Bahrain</span> Card.</h2> </div>
-                    <p>According to studies, our doctors will make an individual program of prevention and treatment of identified diseases, directed to a surgical treatment if necessary.</p>
-                    <br>
-                    <p>Our Clinic has grown to provide a world class facility for the treatment of tooth loss, dental cosmetics and bore advanced restorative dentistry.</p>
+                        {!! setting('about_heading') !!}
+                    </div>
+                    {!! setting('about') !!}
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="about-us-image"> <img src="{{ asset('frontpage/images/home/slider/slider5.jpg') }}" alt="Image"> </div>
+                <div class="about-us-image"> <img src="{{ setting('about_image',asset('frontpage/images/home/slider/slider5.jpg')) }}" alt="Image"> </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="service-item">
-                    <div class="service-icon mar-bottom-20"><i class="flaticon-023-otoscope"></i> </div>
-                    <div class="service-content">
-                        <h3><a href="department-detail.html">Card Request</a></h3>
+
+            <hr/>
+            <div class="container mb-3">
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-sm-6 col-xs-6 align-self-end">
+                        <a href="{{ route('apply') }}">
+                            <div class="service-ite " style="background-image: url('/icons/apply.jpeg')">
+                            </div>
+                        </a>
                     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 ">
+                        <a href="{{ route('check') }}">
+                            <div class="service-ite" style="background-image: url('/icons/search.jpeg')">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <a href="{{ route('partner') }}">
+                            <div class="service-ite " style="background-image: url('/icons/partner.jpeg')">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
+                        <a  href="{{ route('hospital_listing') }}">
+                            <div class="service-ite " style="background-image: url('/icons/hospital.jpeg')">
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
     </div>
 </section>
 <section class="add-services">
     <div class="container">
         <div class="section-title text-center">
-            <h3>Quality Services</h3>
-            <h2><span>Exceptional</span> Service & Care</h2> </div>
+            <h3> {{ setting('small_heading', 'Quality Services') }}</h3>
+            <h2><span>{{ setting('big_heading', 'EXCEPTIONAL SERVICE & CARE') }} </span></h2> </div>
         <div class="row">
-            <div class="col-md-4 col-xs-12">
+            <div class="col-md-6 col-xs-12">
                 <div class="add-services-list text-center">
                     <div class="add-number">01.</div>
                     <h3>OUR MISSION</h3>
-                    <p>When you sit down with one of our pharmacists, you receive one hour of his/her attention. Our pharmacist will listen to your concerns. </p>
+                    <p>{!! setting('mission') !!}</p>
                 </div>
             </div>
-            <div class="col-md-4 col-xs-12">
+            <div class="col-md-6 col-xs-12">
                 <div class="add-services-list text-center">
                     <div class="add-number">02.</div>
                     <h3>VISION STATEMENT</h3>
-                    <p>Our patients receive personalized care that is affordable and attentive, with many of them being with us since opening day in 1996.</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <div class="add-services-list text-center">
-                    <div class="add-number">03.</div>
-                    <h3>Events</h3>
-                    <p>When you sit down with one of our pharmacists, you receive one hour of his/her attention. Our pharmacist will listen to your concerns. </p>
+                    <p>{!! setting('vision') !!}</p>
                 </div>
             </div>
         </div>
@@ -82,11 +99,13 @@
                 </div>
             </div>
         </div>
+        @if (strlen(setting('home_video_link')) > 4)
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <iframe width="1000" height="500" src="https://www.youtube.com/embed/LSR4pyiLfZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="1000" height="500" src="{{ setting('home_video_link') }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
+            @endif
     </div>
 </section>
 

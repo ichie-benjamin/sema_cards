@@ -17,6 +17,13 @@
         footer {
             background: #561193!important;
         }
+        .h-items {
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+        .blog-image {
+            width: 25%;
+        }
         .nav-small{
             display: none;
         }

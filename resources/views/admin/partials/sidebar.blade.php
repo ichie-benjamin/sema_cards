@@ -89,6 +89,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('categories.index') }}"><i class="ti-control-record"></i>Categories</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('setting.about') }}"><i class="ti-control-record"></i>About page</a>
+                    </li>
 
                 </ul>
             </li>

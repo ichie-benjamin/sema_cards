@@ -98,22 +98,24 @@
     </div>
 </section>
 
-<section class="gallery">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="section-title text-center">
-                    <h3>Video</h3>
+@if (strlen(setting('home_video_link')) > 4)
+    <section class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title text-center">
+                        <h3>Video</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <iframe width="100%" height="500" src="{{ setting('home_video_link') }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/LSR4pyiLfZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+@endif
 
 
 

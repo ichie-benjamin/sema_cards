@@ -74,11 +74,20 @@ Export Data
                             <thead>
                             <tr>
                                 <th>Provider Name</th>
+                                <th> Name (AR)</th>
                                 <th >CR No</th>
                                 <th>Email </th>
-                                <th >Contact </th>
-                                <th width="15%" >Status</th>
                                 <th >Category</th>
+                                <th >Category (AR)</th>
+                                <th >Contact </th>
+                                <th >Contact 2 </th>
+                                <th >Place </th>
+                                <th >Place (AR) </th>
+                                <th >Address </th>
+                                <th >Website </th>
+                                <th >Logo </th>
+
+                                <th width="15%" >Status</th>
                                 <th>Expiry Date</th>
                             </tr>
 
@@ -87,13 +96,22 @@ Export Data
                             @foreach($hospitals as $item)
                                 <tr>
                                     <td class="text-capitalize">{{ $item->provider_name }}</td>
+                                    <td class="text-capitalize">{{ $item->ar_provider_name }}</td>
                                     <td>{{ $item->cpr_no }}</td>
                                     <td>{{ $item->email }}</td>
+                                    <td>{{ $item->category }}</td>
+                                    <td>{{ optional($item->cat)->name_ar }}</td>
                                     <td> {{ $item->contact }}</td>
+                                    <td> {{ $item->contact2 }}</td>
+                                    <td> {{ $item->place }}</td>
+                                    <td> {{ $item->ar_place }}</td>
+                                    <td> {{ $item->address }}</td>
+                                    <td> {{ $item->website }}</td>
+                                    <td> {{ $item->logo }}</td>
                                     <td class=" text-uppercase">
                                         {{ $item->status }}
                                     </td>
-                                    <td>{{ $item->category }}</td>
+
                                     <td>{{ $item->expiry_date }}</td>
                                 </tr>
                             @endforeach

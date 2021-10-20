@@ -31,8 +31,9 @@ class PagesController extends Controller
         if($request->get('lang')){
             $lang = $request->get('lang');
         }
-        $hospitals = Hospital::all();
-        return view('pages.hospital-listing',compact('lang','hospitals'));
+        $cat = $request->get('category') ?? '';
+        $hospitals = Hospital::paginate('50');
+        return view('pages.hospital-listing',compact('lang','hospitals','cat'));
     }
 
     public function hShow(Request $request){

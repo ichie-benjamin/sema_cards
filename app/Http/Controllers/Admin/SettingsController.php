@@ -13,6 +13,9 @@ class SettingsController extends Controller
     public function home(){
         return view('admin.settings.home');
     }
+    public function about(){
+        return view('admin.settings.about');
+    }
     public function mails(){
         return view('admin.settings.mails');
     }

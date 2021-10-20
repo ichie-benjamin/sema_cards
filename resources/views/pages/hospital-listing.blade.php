@@ -42,12 +42,12 @@
 
                         <div class="sidebar-box">
                             <div class="sidebar-title">
-                                <h3>Specialties</h3> </div>
+                                <h3>{{ __('Category') }}</h3> </div>
                             <div class="sidebar-content">
                                 <ul>
-                                    <li class="active"><a href="#">Dentist </a></li>
-                                    <li><a href="#">Neurologist</a></li>
-                                    <li><a href="#">Cosmetics</a></li>
+                                    @foreach(\App\Models\Category::all() as $item)
+                                    <li class="{{ $cat == $item->name  ? 'active' : '' }}"><a href="{{ route('hospital_listing') }}?category={{ $item->name }}">{{ $item->name }} </a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -57,17 +57,44 @@
 
                 <div class="col-md-8 col-sm-12">
                     <div class="blog-content">
-                        @foreach ($hospitals as $item)
-                            <div style="box-shadow: 0 0 15px 0 rgba(86, 17, 147);" class="blog-item">
-                                <div class="blog-image"> <img src="{{ $item->image }}" alt="Image"> </div>
-                                <div class="news-content pad-top-20">
-                                    <div class="news-title">
-                                        <h3><a href="{{ route('hospital.show',$item->id) }}">{{ $item->provider_name }}</a></h3> </div>
-                                    <div class="tagcloud mar-bottom-10">
-                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ $item->category }}</a>
-{{--                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">health</a>--}}
-                                    </div>
+{{--                        @foreach ($hospitals as $item)--}}
+{{--                            <div style="box-shadow: 0 0 15px 0 rgba(86, 17, 147);" class="blog-item">--}}
+{{--                                <div class="blog-image">--}}
+{{--                                    <img src="{{ $item->image }}" alt="Image" />--}}
+{{--                                    <div class="tagcloud">--}}
+{{--                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ $item->category }}</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="news-content pad-top-20">--}}
+{{--                                    <div class="news-title">--}}
+{{--                                        <h3><a href="{{ route('hospital.show',$item->id) }}">{{ $item->provider_name }}</a></h3>--}}
+{{--                                    </div>--}}
+{{--                                    <p>{{ $item->short_desc }}.</p>--}}
+{{--                                    <hr>--}}
+{{--                                    <ul class="mar-top-10">--}}
+{{--                                        <li class="mar-bottom-0 mar-right-10"><i class="fa fa-phone" aria-hidden="true"></i>--}}
+{{--                                            {{ $item->contact }}  {{ $item->contact2 ? ' - '. $item->contact2 : '' }}</li>--}}
+{{--                                    </ul>--}}
+{{--                                    <ul class="mar-top-10">--}}
+{{--                                        <li class="mar-bottom-0 mar-right-10"><i class="fa fa-map-marker" aria-hidden="true"></i>--}}
+{{--                                            {{ $item->address }}</li>--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
 
+                        @foreach ($hospitals as $item)
+                            <div style="box-shadow: 0 0 15px 0 rgba(86, 17, 147);" class="row h-items">
+                                <div class="col-xs-3">
+                                    <img src="{{ $item->image }}" alt="Image" />
+                                    <div class="tagcloud">
+                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ $item->category }}</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-9">
+                                    <div class="news-title">
+                                        <h3><a href="{{ route('hospital.show',$item->id) }}">{{ $item->provider_name }}</a></h3>
+                                    </div>
                                     <p>{{ $item->short_desc }}.</p>
                                     <hr>
                                     <ul class="mar-top-10">
@@ -82,8 +109,8 @@
                             </div>
                         @endforeach
 
-                        <div class="pagination__wrapper">
-                            //
+                        <div class="pagination__wrapper" style="margin-top: 20px; padding: 20px">
+                            {!! $hospitals->links() !!}
                         </div>
                     </div>
                 </div>

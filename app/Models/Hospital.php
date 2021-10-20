@@ -15,23 +15,7 @@ class Hospital extends Model
 
     protected $appends = ['edit_url'];
 
-//    public $translatable = [
-//        'provider_name',
-//        'cpr_no',
-//        'contact',
-//        'contact2',
-//        'email',
-//        'address',
-//        'website',
-//        'category',
-//        'specialist',
-//        'contract_file',
-//        'contract_date',
-//        'logo',
-//        'image',
-//        'description'
-//    ];
-
+    protected $with = ['cat'];
 
     protected $fillable = [
         'provider_name',
@@ -50,7 +34,7 @@ class Hospital extends Model
         'contract_file',
         'logo',
         'image',
-        'description'
+        'description', 'ar_provider_name', 'ar_place', 'place', 'ar_address', 'ar_description'
     ];
 
     public function getEditUrlAttribute(){
@@ -59,6 +43,11 @@ class Hospital extends Model
 
     public function services(){
         return $this->hasMany(Service::class);
+    }
+
+
+    public function cat(){
+        return $this->belongsTo(Category::class,'category','name');
     }
 
 
