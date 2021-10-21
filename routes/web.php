@@ -49,7 +49,7 @@ Route::get('/be_a_partner', [PagesController::class, 'partnerPage'])->name('part
 Route::get('/contact-us', [PagesController::class, 'contact'])->name('contact');
 Route::get('/about-us', [PagesController::class, 'about'])->name('about');
 Route::get('/hospital-listing', [PagesController::class, 'hListing'])->name('hospital_listing');
-Route::get('/hospital/{slug}', [PagesController::class, 'hShow'])->name('hospital.show');
+Route::get('/hospital/{slug}', [PagesController::class, 'hShow'])->name('hospital.view');
 
 
 

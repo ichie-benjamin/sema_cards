@@ -36,12 +36,15 @@ class PagesController extends Controller
         return view('pages.hospital-listing',compact('lang','hospitals','cat'));
     }
 
-    public function hShow(Request $request){
+    public function hShow(Request $request, $id){
         $lang = 'en';
         if($request->get('lang')){
             $lang = $request->get('lang');
         }
-        return view('pages.view-hospital',compact('lang'));
+        $hospital = Hospital::with('services','contacts')->findOrFail($id);
+        $services = $hospital->services;
+        $contacts = $hospital->contacts;
+        return view('pages.view-hospital',compact('lang', 'hospital','services','contacts'));
     }
 
 

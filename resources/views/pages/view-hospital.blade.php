@@ -7,10 +7,10 @@
             <div class="breadcrumb-outer">
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">Hospital page</li>
+{{--                        <li class="breadcrumb-item active" aria-current="page">Hospital page</li>--}}
                     </ul>
                 </nav>
-                <h4>{{ $hospital->provider_name }}</h4>
+                <h4>{{ lan($hospital->provider_name, $hospital->ar_provider_name) }}</h4>
             </div>
         </div>
     </section>
@@ -18,17 +18,27 @@
     <section class="doctor-detail">
         <div class="container">
             <div class="doctor-title">
-                <div class="doctor-image">
-                    <img src="{{ $hospital->image }}" alt="Image">
-                </div>
+{{--                <div class="doctor-image">--}}
+{{--                    <img src="{{ $hospital->image }}" alt="Image">--}}
+{{--                </div>--}}
                 <div class="doctor-title-content">
                     <div class="dt-outer">
-                        <h2>{{ $hospital->provider_name }} Info</h2>
-                        <ul>
-                            <li><strong>Provider name :</strong> {{ $hospital->provider_name }}</li>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <img style="max-height: 70px" src="{{ $hospital->image }}" alt="Image">
+                            </div>
+                            <div class="col-xs-9">
+                                <h2>{{ lan($hospital->provider_name, $hospital->ar_provider_name) }} Info</h2>
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 20px">
+                            <li><strong>Provider name :</strong> {{ lan($hospital->provider_name, $hospital->ar_provider_name) }}</li>
+                            <li><strong>CR No :</strong> {{ $hospital->cpr_no }}</li>
                             <li><strong>Phone :</strong> {{ $hospital->contact }} {{ $hospital->contact2 ? ' - ' .$hospital->contact2 : '' }}</li>
                             <li><strong>E-mail:</strong> {{ $hospital->email }}</li>
-                            <li><strong>Address :</strong> {{ $hospital->address }}</li>
+                            <li><strong>Address :</strong> {{ lan($hospital->address, $hospital->ar_address)  }}</li>
+                            <li><strong>Place :</strong> {{ lan($hospital->place, $hospital->ar_place)  }}</li>
                             <li><strong>Website :</strong> {{ $hospital->website }}</li>
 
                         </ul>
@@ -66,7 +76,7 @@
                                         @foreach ($services as $item)
                                             <tr>
                                                 <td>{{ $loop->index+1 }}</td>
-                                                <td>{{ $item->name }}</td>
+                                                <td>{{ lan($item->name, $item->ar_name) }}</td>
                                                 <td>BD{{ $item->price }}</td>
                                                 <td>{{ $item->discount }}%</td>
                                                 <td>BD{{ $item->price }}</td>
@@ -116,7 +126,7 @@
                         <div class="detail-sidebar">
                             <div class="sidebar-box">
                                 <div class="sidebar-title">
-                                    <h3>Fix Appointment</h3>
+                                    <h3>Contacts</h3>
                                 </div>
                                 @foreach($contacts as $item)
                                 <form>
@@ -152,26 +162,26 @@
         </div>
     </section>
 
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="subscribe-form">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <h3 class="white">Subscribe to newsletter</h3>
-                            <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem repellendus.</p>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <form>
-                                <input type="email" placeholder="abc@xyz.com">
-                                <a href="#">Subscribe</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="newsletter">--}}
+{{--        <div class="container">--}}
+{{--            <div class="newsletter-content">--}}
+{{--                <div class="subscribe-form">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-md-6 col-sm-6 col-xs-12">--}}
+{{--                            <h3 class="white">Subscribe to newsletter</h3>--}}
+{{--                            <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem repellendus.</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md-6 col-sm-6 col-xs-12">--}}
+{{--                            <form>--}}
+{{--                                <input type="email" placeholder="abc@xyz.com">--}}
+{{--                                <a href="#">Subscribe</a>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
 @endsection

@@ -113,6 +113,11 @@
             height: 400px!important;
         }
 
+
+        .doctor-title-content {
+            width: 85%!important;
+        }
+
             @media (max-width: 767px){
 
                 .nav-small{
@@ -134,6 +139,8 @@
                     top: 0;
                     right: 0;
                 }
+
+
 
                 section.slider #x_023_animated_layers {
                     height: 270px!important;
@@ -356,6 +363,14 @@
 <script src="{{ asset('frontpage/js/main.js') }}"></script>
 <script src="{{ asset('frontpage/js/custom-lightbox.js') }}"></script>
 <script src="{{ asset('frontpage/js/custom-nav.js') }}"></script>
+
+<script>
+    $('.lang_change').on("click",function(){
+        var lang =  $(this).attr("id");
+        window.location.href = "/lang/"+lang;
+    })
+</script>
+
 <script type="text/javascript">
 (function() {
 window['__CF$cv$params'] = {

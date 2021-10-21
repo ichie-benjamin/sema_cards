@@ -84,7 +84,7 @@ return [
 
     'available_locales' => [
         'English' => 'en',
-        'Russian' => 'ru',
+        'Arabic' => 'ar',
     ],
 
     /*

@@ -13,7 +13,7 @@ class Hospital extends Model
 
     public $translatable = [ ];
 
-    protected $appends = ['edit_url'];
+    protected $appends = ['edit_url', 'short_desc','short_desc_ar'];
 
     protected $with = ['cat'];
 
@@ -40,9 +40,21 @@ class Hospital extends Model
     public function getEditUrlAttribute(){
         return route('hospital.edit', $this->id);
     }
+    public function getShortDescAttribute(){
+        return str_limit($this->description, 150);
+    }
+
+    public function getShortDescArAttribute(){
+        return str_limit($this->ar_description, 150);
+    }
 
     public function services(){
         return $this->hasMany(Service::class);
+    }
+
+
+    public function contacts(){
+        return $this->hasMany(Contact::class);
     }
 
 

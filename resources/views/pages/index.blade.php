@@ -15,8 +15,8 @@
                     <div class="item {{ $loop->index == 0 ? 'active' : '' }} ">
                         <div class="x_023_animated_layers_content {{ $loop->index != 0 ? 'x_023_animated_layers_content_right' : '' }}">
                             <div class="x_023_animated_layers_txt">
-                                <h4 data-animation="animated fadeInLeft">{{ $item->head_en }}</h4>
-                                <p data-animation="animated fadeInLeft">{{ $item->sub_head_en }}</p>
+                                <h4 data-animation="animated fadeInLeft">{{ lan($item->head_en, $item->head_ar) }}</h4>
+                                <p data-animation="animated fadeInLeft">{{ lan($item->sub_head_en, $item->sub_head_ar) }}</p>
                                 {{--                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>--}}
                                 {{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
                             </div>
@@ -53,49 +53,96 @@
 </section>
 
 <section class="services pad-top-0">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-3 col-sm-6 col-xs-6 align-self-end">
-                <a href="{{ route('apply') }}">
-                <div class="service-ite " style="background-image: url('/icons/apply.jpeg')">
+    @if (current_lan() == 'en')
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-sm-6 col-xs-6 align-self-end">
+                    <a href="{{ route('apply') }}">
+                        <div class="service-ite " style="background-image: url('/icons/apply.jpeg')">
+                        </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 ">
-                <a href="{{ route('check') }}">
-                <div class="service-ite" style="background-image: url('/icons/search.jpeg')">
+                <div class="col-md-3 col-sm-6 col-xs-6 ">
+                    <a href="{{ route('check') }}">
+                        <div class="service-ite" style="background-image: url('/icons/search.jpeg')">
+                        </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <a href="{{ route('partner') }}">
-                <div class="service-ite " style="background-image: url('/icons/partner.jpeg')">
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <a href="{{ route('partner') }}">
+                        <div class="service-ite " style="background-image: url('/icons/partner.jpeg')">
+                        </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
-                <a  href="{{ route('hospital_listing') }}">
-                <div class="service-ite " style="background-image: url('/icons/hospital.jpeg')">
+                <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
+                    <a  href="{{ route('hospital_listing') }}">
+                        <div class="service-ite " style="background-image: url('/icons/hospital.jpeg')">
+                        </div>
+                    </a>
                 </div>
-                </a>
-            </div>
 
-            <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
-                <a  href="#">
-                <div class="service-ite " style="background-image: url('/whatsap.jpeg')">
+                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
+                    <a  href="#">
+                        <div class="service-ite " style="background-image: url('/whatsap.jpeg')">
+                        </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
-                <a  href="#">
-                <div class="service-ite " style="background-image: url('/insta.jpeg')">
+                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
+                    <a  href="#">
+                        <div class="service-ite " style="background-image: url('/insta.jpeg')">
+                        </div>
+                    </a>
                 </div>
-                </a>
+
             </div>
 
         </div>
+    @else
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-sm-6 col-xs-6 align-self-end">
+                    <a href="{{ route('apply') }}">
+                        <div class="service-ite " style="background-image: url('/icons/apply_ar.jpeg')">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 ">
+                    <a href="{{ route('check') }}">
+                        <div class="service-ite" style="background-image: url('/icons/search_ar.jpeg')">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <a href="{{ route('partner') }}">
+                        <div class="service-ite " style="background-image: url('/icons/partner_ar.jpeg')">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 align-self-start">
+                    <a  href="{{ route('hospital_listing') }}">
+                        <div class="service-ite " style="background-image: url('/icons/hospital_ar.jpeg')">
+                        </div>
+                    </a>
+                </div>
 
-    </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
+                    <a  href="#">
+                        <div class="service-ite " style="background-image: url('/whatsap.jpeg')">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
+                    <a  href="#">
+                        <div class="service-ite " style="background-image: url('/insta.jpeg')">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    @endif
+
 </section>
 
 @if (strlen(setting('home_video_link')) > 4)

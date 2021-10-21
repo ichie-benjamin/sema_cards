@@ -46,7 +46,7 @@
                             <div class="sidebar-content">
                                 <ul>
                                     @foreach(\App\Models\Category::all() as $item)
-                                    <li class="{{ $cat == $item->name  ? 'active' : '' }}"><a href="{{ route('hospital_listing') }}?category={{ $item->name }}">{{ $item->name }} </a></li>
+                                    <li class="{{ $cat == $item->name  ? 'active' : '' }}"><a href="{{ route('hospital_listing') }}?category={{ $item->name }}">{{ lan($item->name, $item->name_ar) }} </a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -88,14 +88,14 @@
                                 <div class="col-xs-3">
                                     <img src="{{ $item->image }}" alt="Image" />
                                     <div class="tagcloud">
-                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ $item->category }}</a>
+                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ lan($item->category, optional($item->cat)->name_ar) }}</a>
                                     </div>
                                 </div>
                                 <div class="col-xs-9">
                                     <div class="news-title">
-                                        <h3><a href="{{ route('hospital.show',$item->id) }}">{{ $item->provider_name }}</a></h3>
+                                        <h3><a href="{{ route('hospital.view',$item->id) }}">{{ lan($item->provider_name, $item->ar_provider_name) }}</a></h3>
                                     </div>
-                                    <p>{{ $item->short_desc }}.</p>
+                                    <p>{{ lan($item->short_desc, $item->short_desc_ar) }}.</p>
                                     <hr>
                                     <ul class="mar-top-10">
                                         <li class="mar-bottom-0 mar-right-10"><i class="fa fa-phone" aria-hidden="true"></i>
@@ -103,7 +103,7 @@
                                     </ul>
                                     <ul class="mar-top-10">
                                         <li class="mar-bottom-0 mar-right-10"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            {{ $item->address }}</li>
+                                            {{ lan($item->address, $item->ar_address) }}</li>
                                     </ul>
                                 </div>
                             </div>

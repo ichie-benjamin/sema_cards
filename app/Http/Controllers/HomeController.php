@@ -31,7 +31,6 @@ class HomeController extends Controller
         if (isset($locale) && in_array($locale, config('app.available_locales'))) {
             app()->setLocale($locale);
             session()->put('locale', $locale);
-//            return $locale;
         }
         return redirect()->back();
     }
