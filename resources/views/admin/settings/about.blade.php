@@ -68,7 +68,7 @@
                                         <tr>
                                             <td class="text-capitalize">Mission</td>
                                             <td>
-                                                <textarea class="form-control" width="70%" name="site_info" type="text"  required>
+                                                <textarea class="form-control" width="70%" name="mission" type="text"  required>
                                                     {{ setting('mission') }}
                                                 </textarea>
                                             </td>

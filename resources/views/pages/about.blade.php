@@ -22,7 +22,7 @@
                 <div class="about-content">
                     <div class="section-title mar-bottom-15">
                         <h3>About Us</h3>
-                        {!! setting('about_heading') !!}
+                        {!!  setting('about_heading')  !!}
                     </div>
                     {!! setting('about') !!}
                 </div>
@@ -30,8 +30,6 @@
             <div class="col-md-6">
                 <div class="about-us-image"> <img src="{{ setting('about_image',asset('frontpage/images/home/slider/slider5.jpg')) }}" alt="Image"> </div>
             </div>
-
-            <hr/>
 
         </div>
 
