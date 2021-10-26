@@ -1,802 +1,683 @@
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swasthya | Medical and Health HTML template</title>
 
-    <title>Medley | Responsive HTML 5 Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 
-    <!-- Stylesheets -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="css/plugin.css" rel="stylesheet" type="text/css">
+
+    <link href="fonts/flaticon.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<body>
 
-<!-- page wrapper -->
-<body class="page-wrapper">
+<div id="preloader">
+    <div id="status"></div>
+</div>
 
-<!-- .preloader -->
-<div class="preloader"></div>
-<!-- /.preloader -->
 
-<!-- main header area -->
-<header class="main-header">
-
-    <!-- header upper -->
-    <div class="header-upper">
+<header class="main_header_area">
+    <div class="top-bar">
         <div class="container">
-            <div class="wrapper-box">
-                <div>
-                    <div class="text">The Best Medics, Doctors & Physicians for A Healing Touch</div>
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> 123-456-79459</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a8c1c6cec7e8dbdfc9dbdcc0d1c986cbc7c5">[email&#160;protected]</a></p>
                 </div>
-                <div>
-                    <div class="top-right">
-                        <div class="location-address"><span class="fa fa-map-marker"></span>201, Reynolds Neck Str, NY USA</div>
-                        <a href="#" class="btn-one style-one">book appointment</a>
-                    </div>
+                <div class="header-links">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="header-middile">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="logo-box">
-                        <a href="index.html"><img src="images/logo/logo1.png" alt=""></a>
-                    </div>
+    <div class="header_menu affix-top">
+        <nav class="navbar navbar-default">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo-white.png" alt="logo1">
+                        <img src="images/logo.png" alt="logo1">
+                    </a>
                 </div>
-                <div class="col-md-8">
-                    <div class="wrapper-box">
-                        <div class="contact-info-two">
-                            <div class="info-box">
-                                <div class="icon-box"><span class="fa fa-phone"></span></div>
-                                <h5>Make a call</h5>
-                                <div class="text">+888 234 56 7890</div>
-                            </div>
-                            <div class="info-box">
-                                <div class="icon-box"><span class="fa fa-clock-o"></span></div>
-                                <h5>Mon - Sat: 9am to 6pm</h5>
-                                <div class="text">Sunday Holiday</div>
-                            </div>
-                        </div>
-                        <ul class="social-icon-one">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </div>
-
-    <!-- header lower -->
-    <div class="header-lower theme_menu stricky">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-12">
-                    <div class="menu-bar">
-                        <nav class="main-menu">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="navbar-collapse collapse clearfix">
-                                <ul class="navigation clearfix">
-                                    <li class="current"><a href="index.html">Home</a></li>
-                                    <li class="dropdown"><a href="#">About</a>
-                                        <ul class="submenu">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Service</a>
-                                        <ul class="submenu">
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="doctors.html">doctors</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="our-blog.html">Our Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-
-                                <!-- mobile menu -->
-                                <ul class="mobile-menu clearfix">
-                                    <li class="current"><a href="index.html">Home</a></li>
-                                    <li class="dropdown"><a href="#">About</a>
-                                        <ul>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="doctors.html">doctors</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                        <ul>
-                                            <li><a href="our-blog.html">Our Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                        <div class="info-box">
-                            <div class="search-box-outer">
-                                <div class="dropdown">
-                                    <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
-                                    <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
-                                        <li class="panel-outer">
-                                            <div class="form-container">
-                                                <form method="post" action="blog.html">
-                                                    <div class="form-group">
-                                                        <input type="search" name="field-name" value="" placeholder="Search...." required="">
-                                                        <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </li>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="responsive-menu">
+                        <li class="dropdown submenu active">
+                            <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Home Slider</a></li>
+                                <li><a href="index-dental.html">Home Dental</a></li>
+                                <li><a href="index-ophthalmology.html">Home Ophthalmology</a></li>
+                                <li><a href="index-physio.html">Home Physio</a></li>
+                                <li><a href="index-child.html">Home Child Care</a></li>
+                                <li><a href="index-clinic.html">Home Clinic</a></li>
+                                <li><a href="index-surgery.html">Home Surgery</a></li>
+                                <li><a href="index-cardiology.html">Home Cardiology</a></li>
+                                <li><a href="index-nutrition.html">Home Nutrition</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="submenu dropdown">
+                                    <a href="department.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Department<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="department.html">Department One</a></li>
+                                        <li><a href="department1.html">Department Two</a></li>
+                                        <li><a href="department-detail.html">Department Detail</a></li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </li>
+                                <li class="submenu dropdown">
+                                    <a href="service.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="service.html">Service</a></li>
+                                        <li><a href="service-detail.html">Service Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu dropdown">
+                                    <a href="team.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctor<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="team.html">Doctors One</a></li>
+                                        <li><a href="team1.html">Doctors Two</a></li>
+                                        <li><a href="doctor-detail.html">Doctors Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu dropdown">
+                                    <a href="aboutus.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="aboutus.html">About One</a></li>
+                                        <li><a href="aboutus1.html">About Two</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu dropdown">
+                                    <a href="events.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="events.html">Events One</a></li>
+                                        <li><a href="events1.html">Events Two</a></li>
+                                        <li><a href="blogdetail.html">Events Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu dropdown">
+                                    <a href="gallery.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="gallery.html">Gallery One</a></li>
+                                        <li><a href="gallery1.html">Gallery Two</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="comingsoon.html">Coming Soon</a></li>
+                                <li class="submenu dropdown">
+                                    <a href="contact.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="contact.html">Contact One</a></li>
+                                        <li><a href="contact1.html">Contact Two</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="faq.html">Faq</a></li>
+                                <li><a href="error.html">404 Error</a></li>
+                                <li><a href="timetable.html">Time Table</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop.html">Shop List</a></li>
+                                <li><a href="shop-detail.html">Shop Single</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="login.html">Account</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu dropdown">
+                            <a href="blog-home.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-home.html">Blog - Home</a></li>
+                                <li><a href="blog-full.html">Blog - Fullwidth</a></li>
+                                <li><a href="blog-right.html">Blog - Right Sidebar</a></li>
+                                <li><a href="blog-left.html">Blog - Left Sidebar</a></li>
+                                <li><a href="blog-grid.html">Blog - Grid</a></li>
+                                <li><a href="blogdetail.html">Blog Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboard<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="dashboard-my-profile.html">Dashboard Profile</a></li>
+                                <li><a href="dashboard-booking.html">Dashboard Bookings</a></li>
+                                <li><a href="dashboard-history.html">Dashboard History</a></li>
+                                <li><a href="dashboard-list.html">Dashboard Listing</a></li>
+                                <li><a href="dashboard-addtour.html">Dashboard Add Tour</a></li>
+                                <li><a href="dashboard-reviews.html">Dashboard Reviews</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+                            <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
+                        </li>
+                        <li class="dropdown submenu">
+                            <a href="#" class="mt_cart"><i class="fa fa-shopping-cart"></i><span class="number-cart">1</span></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            <div id="slicknav-mobile"></div>
+        </nav>
     </div>
 </header>
-<!-- end header area -->
 
 
-<!-- main-slider -->
-<section class="main-slider">
+<section class="slider">
 
-    <div class="main-slider-carousel owl-carousel owl-theme">
+    <div id="x_023_animated_layers" class="carousel slide x_023_animated_layers_indicators x_023_animated_layers_control_button thumb_scroll_x swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="8000" data-duration="2000">
 
-        <div class="slide" style="background-image:url(images/slider/1.jpg)">
-            <div class="container">
-                <div class="content">
-                    <div class="banner-title">WE ARE TAKE CARE OF YOU</div>
-                    <h1>High Quality Medicines <br>at Lowest Rates</h1>
-                    <div class="tp-btn">
-                        <a href="#" class="btn-three style-three">Find a Doctor</a>
-                        <a href="#" class="btn-two style-two">make an appointment</a>
+        <ol class="carousel-indicators">
+
+            <li data-target="#x_023_animated_layers" data-slide-to="0" class="active"></li>
+
+            <li data-target="#x_023_animated_layers" data-slide-to="1"></li>
+
+            <li data-target="#x_023_animated_layers" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+
+                <div class="x_023_animated_layers_content">
+                    <div class="x_023_animated_layers_txt">
+                        <h1 data-animation="animated fadeInLeft">Medial Services that you can trust</h1>
+                        <p data-animation="animated fadeInLeft">Need professional help? Our support staff will answer your questions.</p>
+                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
+                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a>
+                    </div>
+                    <div class="x_023_animated_layers_img" data-animation="animated fadeInUp">
+                        <img src="images/home/slider/doc-slider2.png" alt="x_023_animated_layers_image_01">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="x_023_animated_layers_content x_023_animated_layers_content_right">
+                    <div class="x_023_animated_layers_txt">
+                        <h1 data-animation="animated fadeInLeft">We make quality health care</h1>
+                        <p data-animation="animated fadeInLeft">Passionate About Medicine. Compassionate About People.</p>
+                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>
+                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a>
+                    </div>
+                    <div class="x_023_animated_layers_img" data-animation="animated fadeInDown">
+                        <img src="images/home/slider/doc-slider1.png" alt="x_023_animated_layers_image_02">
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="x_023_animated_layers_content x_023_animated_layers_content_right">
+                    <div class="x_023_animated_layers_txt">
+                        <h1 data-animation="animated fadeInLeft">Modern Technology Treatment</h1>
+                        <p data-animation="animated fadeInLeft">Doctor’s for health</p>
+                        <p data-animation="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a>
+                    </div>
+                    <div class="x_023_animated_layers_img" data-animation="animated fadeInDown">
+                        <img src="images/home/slider/doc-slider3.png" alt="x_023_animated_layers_image_02">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="slide" style="background-image:url(images/slider/2.jpg)">
-            <div class="container">
-                <div class="content">
-                    <div class="banner-title">WE ARE TAKE CARE OF YOU</div>
-                    <h1>High Quality Medicines <br>at Lowest Rates</h1>
-                    <div class="tp-btn">
-                        <a href="#" class="btn-three style-three">Find a Doctor</a>
-                        <a href="#" class="btn-two style-two">view services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <a class="left carousel-control" href="#x_023_animated_layers" role="button" data-slide="prev">
+            <span class="fa fa-angle-left"></span>
+        </a>
 
+        <a class="right carousel-control" href="#x_023_animated_layers" role="button" data-slide="next">
+            <span class="fa fa-angle-right"></span>
+        </a>
     </div>
+    <div class="overlay"></div>
 </section>
-<!-- main-slider end -->
 
 
-<!-- intro section -->
-<section class="intro-section centered sec-pad">
-    <div class="container">
-        <div class="intro-title">
-            <div class="section-title"><h2>Our team is dedicated to provide you<br />
-                    with the best <span>Dental Services</span></h2></div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12 intro-colmun">
-                <div class="single-item">
-                    <div class="icon-box">
-                        <i class="flaticon-pair-of-molars"></i>
-                    </div>
-                    <div class="single-content">
-                        <h5><a href="service-details.html">Affordable Services</a></h5>
-                        <div class="text">
-                            <p>Dolor sit am consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag dolore magna aliquat enim
-                                sed ad minim veniam nostrud.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 intro-colmun">
-                <div class="single-item">
-                    <div class="icon-box">
-                        <i class="flaticon-medical"></i>
-                    </div>
-                    <div class="single-content">
-                        <h5><a href="service-details.html">25+ Years Experience</a></h5>
-                        <div class="text">
-                            <p>Dolor sit am consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag dolore magna aliquat enim
-                                sed ad minim veniam nostrud.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 intro-colmun">
-                <div class="single-item">
-                    <div class="icon-box">
-                        <i class="flaticon-credit-card"></i>
-                    </div>
-                    <div class="single-content">
-                        <h5><a href="service-details.html">Flexible Payments</a></h5>
-                        <div class="text">
-                            <p>Dolor sit am consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag dolore magna aliquat enim
-                                sed ad minim veniam nostrud.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- intro section end -->
-
-<!-- appointment section -->
-<section class="appointment-section" style="background-image: url(images/home/appointment-bg.jpg);">
+<section class="about-us icon-right">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 appointment-colmun">
-                <div class="appointment-content">
-                    <div class="title">Request An Appointment</div>
-                    <h2>We Offers Care, Attention &
-                        Treatment You Deserve</h2>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod diuas
-                            magna aliqua enim veniam sed do eiusmod tempor incididunt labore magna
-                            enim ad minim veniam quis nostrud exercitation.</p>
-                        <h3>Call us: (231) 500 4987</h3>
+            <div class="col-md-8 col-sm-12">
+                <div class="section-title">
+                    <h3>What we are</h3>
+                    <h2>Find your <span>medical solutions</span> quick and easy at <span>Swasthye</span></h2>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="about-content">
+                    <div class="content-box">
+                        <div class="about-item">
+                            <div class="about-icon">
+                                <i class="flaticon-028-vaccine"></i>
+                            </div>
+                            <div class="about-desc">
+                                <h3><a href="service-detail.html">Respite Care</a></h3>
+                                <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-icon child-2">
+                                <i class="flaticon-016-stethoscope"></i>
+                            </div>
+                            <div class="about-desc">
+                                <h3><a href="service-detail.html">Intensive Care</a></h3>
+                                <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-icon child-3">
+                                <i class="flaticon-007-mri"></i>
+                            </div>
+                            <div class="about-desc">
+                                <h3><a href="service-detail.html">Neuorology Care</a></h3>
+                                <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 appointment-colmun">
-                <div class="appointment-form">
-                    <form action="#" method="post" class="form-area">
+            <div class="col-md-5 col-sm-12">
+                <div class="about-us-image">
+                    <img src="images/home/slider/slider5.jpg" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="services pad-top-0 icon-left">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <h3>WE OFFER SERVICES</h3>
+                    <h2>Special <span>High-quality</span> Services</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-item">
+                    <div class="service-icon mar-bottom-20">
+                        <i class="flaticon-018-vaccine"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><a href="department-detail.html">Specialised Support</a></h3>
+                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-item">
+                    <div class="service-icon mar-bottom-20 child-2">
+                        <i class="flaticon-023-otoscope"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><a href="department-detail.html">Medical Investigate</a></h3>
+                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-item">
+                    <div class="service-icon mar-bottom-20 child-3">
+                        <i class="flaticon-003-blood-sample"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><a href="department-detail.html">Medical & Surgical</a></h3>
+                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-item">
+                    <div class="service-icon mar-bottom-20 child-2">
+                        <i class="flaticon-025-serum"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><a href="department-detail.html">Intensive care</a></h3>
+                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-item">
+                    <div class="service-icon mar-bottom-20 child-3">
+                        <i class="flaticon-020-examine"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><a href="department-detail.html">Specialised Support</a></h3>
+                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-item">
+                    <div class="service-icon mar-bottom-20">
+                        <i class="flaticon-003-blood-sample"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><a href="department-detail.html">Medical & Surgical</a></h3>
+                        <p>The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="text-center">Don’t hesitate, contact us for better help and services.<a href="#"><u>Let’s get started</u></a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="section-title">
+                    <h3>OUR MEDICAL</h3>
+                    <h2>We’re Setting the Standards in <span>Research & Clinical Care</span></h2>
+                </div>
+                <div class="action-content">
+                    <p>Nemo ipsam egestas volute turpis dolores ut aliquam quaerat sodales sapien undo pretium purus feugiat dolor impedit. Gravida quis vehicula magna luctus tempor quisque vel laoreet turpis urna augue, viverra a augue eget dictum.</p><br>
+                    <p>We provide the most full medical services, so every person could have the opportunity to receive qualitative medical help. Our Clinic has grown to provide a world class facility for the treatment of tooth loss, dental cosmetics and bore advanced restorative dentistry. We are among the most qualified implant providers in the USA with over 35 years of quality training and experience.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="video-outer">
+                    <div class="video-content">
+                        <img src="images/home/video-content.jpg" alt="images">
+                        <div class="video-overlay">
+                            <button type="button" class="play-btn js-video-button" data-video-id='152879427' data-channel="vimeo"><i class="fa fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="video-figure"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="specialist icon-right pad-top-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <h3>MEET OUR EXPERIENCED TEAM</h3>
+                    <h2>Our Dedicated <span>Doctors</span> Team</h2>
+                </div>
+            </div>
+        </div>
+        <div class="specialist-slider row">
+            <div class="col-xs-12">
+                <div class="special-main">
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="images/home/specialist.jpg" alt="image">
+                            <div class="special-links">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="special-content">
+                            <h4>Alexander Kola</h4>
+                            <p>Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="special-main">
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="images/home/specialist2.jpg" alt="image">
+                            <div class="special-links">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="special-content">
+                            <h4>Sam Smiths</h4>
+                            <p>Dentist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="special-main">
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="images/home/specialist3.jpg" alt="image">
+                            <div class="special-links">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="special-content">
+                            <h4>Randall Clover</h4>
+                            <p>Neurologist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="special-main">
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="images/home/specialist1.jpg" alt="image">
+                            <div class="special-links">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="special-content">
+                            <h4>Riley Goon</h4>
+                            <p>Consultant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="special-main">
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="images/home/specialist2.jpg" alt="image">
+                            <div class="special-links">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="special-content">
+                            <h4>Haliam Dicola</h4>
+                            <p>Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="special-main">
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="images/home/specialist3.jpg" alt="image">
+                            <div class="special-links">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="special-content">
+                            <h4>Phumdon Haman</h4>
+                            <p>Consultant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="counter">
+    <div class="container">
+        <div class="counter-outer">
+            <div class="row">
+                <div class="col-md-7 col-sm-12">
+                    <div class="counter-main">
                         <div class="row">
-                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
-                                <label>first name</label>
-                                <input type="text" name="name" required="">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
-                                <label>last name</label>
-                                <input type="text" name="subject" required="">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
-                                <label>email address</label>
-                                <input type="email" name="email" required="">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
-                                <label>phone no.</label>
-                                <input type="text" name="phone" required="">
-                            </div>
-                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <label>appointment date</label>
-                                <input type="text" name="date" placeholder="" id="datepicker">
-                            </div>
-                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <label>message</label>
-                                <textarea name="message" required=""></textarea>
-                            </div>
-                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn-one style-one">send request</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- appointment section -->
-
-<!-- service section -->
-<section class="service-section">
-    <div class="container-fullwidth">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <div class="offers-content">
-                    <div class="section-title left"><h2>Services <span>We Offers</span></h2></div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt
-                            labore et dolore magna aliqua enim ad minim veniams quis nostrud exercitation ullamco
-                            aspums nisi ut aliquip ex ea commodo consequat ipsum duial. </p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit ese cillum dolore eau fugiat nulla
-                            pariatur excepteur sint occaecat cupidatat non proident.</p>
-                    </div>
-                    <div class="button">
-                        <a href="service-details.html" class="btn-one style-one">view details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12 col-xs-12">
-                <div class="icon-area centered">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12 service-colmun">
-                            <div class="single-item">
-                                <div class="icon-box"><a href="service-details.html"><i class="flaticon-medical-1"></i></a></div>
-                                <h5><a href="service-details.html">Teeth Cleaning</a></h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 service-colmun">
-                            <div class="single-item">
-                                <div class="icon-box"><a href="service-details.html"><i class="flaticon-medical-2"></i></a></div>
-                                <h5><a href="service-details.html">Dental Fillings</a></h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 service-colmun">
-                            <div class="single-item">
-                                <div class="icon-box"><a href="service-details.html"><i class="flaticon-molar-inside-a-shield"></i></a></div>
-                                <h5><a href="service-details.html">Tooth Extraction</a></h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 service-colmun">
-                            <div class="single-item">
-                                <div class="icon-box"><a href="service-details.html"><i class="flaticon-brush"></i></a></div>
-                                <h5><a href="service-details.html">Teeth Whitening</a></h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 service-colmun">
-                            <div class="single-item">
-                                <div class="icon-box"><a href="service-details.html"><i class="flaticon-head"></i></a></div>
-                                <h5><a href="service-details.html">Family Dentistry</a></h5>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 service-colmun">
-                            <div class="single-item">
-                                <div class="icon-box"><a href="service-details.html"><i class="flaticon-medical-4"></i></a></div>
-                                <h5><a href="service-details.html">Cosmetic Dentistry</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- service section end -->
-
-<!-- feature section -->
-<section class="feature-section sec-pad" style="background-image: url(images/home/feature-bg.jpg);">
-    <div class="container">
-        <div class="feature-title centered">
-            <div class="section-title uppercase"><h2>Featured <span>cases</span></h2></div>
-            <p>Dolor sit am consectetur adipisicing elit eiusmod  tempor cididunt laboret mag dolore magna aliquat<br />
-                enim sed ad minim veniam nostrud eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-8 col-xs-12 feature-colmun">
-                <div class="img-box wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <figure><img src="images/home/feature.png" alt=""></figure>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-8 col-xs-12 feature-colmun">
-                <div class="feature-content">
-                    <div class="title">Dental Veneer Treatment</div>
-                    <div class="text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p></div>
-                    <ul class="list">
-                        <li><i class="flaticon-tooth"></i> Dolore eu fugiat nulla pariatur excepteur</li>
-                        <li><i class="flaticon-tooth"></i> Laborum sed ut perspiciatis unde omnis nat</li>
-                        <li><i class="flaticon-tooth"></i> Adipisicing elit eiusmod tempor incididunt</li>
-                    </ul>
-                    <div class="button">
-                        <a href="#" class="btn-one style-one">view service</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- feature section end -->
-
-<!-- team section -->
-<section class="team-section sec-pad">
-    <div class="container">
-        <div class="team-title centered">
-            <div class="section-title uppercase"><h2>dedicated <span>team</span></h2></div>
-            <p>Dolor sit am consectetur adipisicing elit eiusmod  tempor cididunt laboret mag dolore magna aliquat<br />
-                enim sed ad minim veniam nostrud eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12 team-colmun">
-                <div class="single-item">
-                    <div class="img-box">
-                        <a href="doctors.html"><figure><img src="images/team/1.jpg" alt=""></figure></a>
-                        <ul class="list centered">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h5><a href="doctors.html">dr. Mark Zerberg</a></h5>
-                        <span>Head Doctor</span>
-                        <div class="text"><p>Consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 team-colmun">
-                <div class="single-item">
-                    <div class="img-box">
-                        <a href="doctors.html"><figure><img src="images/team/2.jpg" alt=""></figure></a>
-                        <ul class="list centered">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h5><a href="doctors.html">dr. charles kins</a></h5>
-                        <span>Dental Care</span>
-                        <div class="text"><p>Consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 team-colmun">
-                <div class="single-item">
-                    <div class="img-box">
-                        <a href="doctors.html"><figure><img src="images/team/3.jpg" alt=""></figure></a>
-                        <ul class="list centered">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h5><a href="doctors.html">dr. sophia lauren</a></h5>
-                        <span>Tooth Surgeon</span>
-                        <div class="text"><p>Consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 team-colmun">
-                <div class="single-item">
-                    <div class="img-box">
-                        <a href="doctors.html"><figure><img src="images/team/4.jpg" alt=""></figure></a>
-                        <ul class="list centered">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h5><a href="doctors.html">dr. John michael</a></h5>
-                        <span>X-Ray Specialist</span>
-                        <div class="text"><p>Consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- team section end -->
-
-<!-- catagories section -->
-<section class="catagories-section" style="background-image: url(images/home/1.jpg);">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-12 col-xs-12 catagories-colmun">
-                <div class="left-colmun text-right">
-                    <div class="single-item">
-                        <div class="title">Convenient Consultations</div>
-                        <div class="text"><p>Dolor sit am consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag dolore magna aliquat enim</p></div>
-                    </div>
-                    <div class="single-item">
-                        <div class="title">Always Focus on Patients</div>
-                        <div class="text"><p>Dolor sit am consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag dolore magna aliquat enim</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 catagories-colmun">
-                <div  class="img-holder wow zoomIn animated">
-                    <div class="img-box centered">
-                        <figure><img src="images/home/3.png" alt=""></figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xs-12 catagories-colmun">
-                <div class="right-colmun">
-                    <div class="single-item">
-                        <div class="title">Free Dental Exam & X-Rays</div>
-                        <div class="text"><p>Dolor sit am consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag dolore magna aliquat enim</p></div>
-                    </div>
-                    <div class="single-item">
-                        <div class="title">Your Smile, Our Passion</div>
-                        <div class="text"><p>Dolor sit am consectetur adipisicing elit eiusmod
-                                tempor cididunt laboret mag dolore magna aliquat enim</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- catagories section end -->
-
-<!-- testimonials section -->
-<section class="testimonials-section sec-pad">
-    <div class="container">
-        <div class="testimonials-title centered">
-            <div class="section-title uppercase"><h2>what <span>patient saying</span></h2></div>
-            <p>Dolor sit am consectetur adipisicing elit eiusmod  tempor cididunt laboret mag dolore magna aliquat<br />
-                enim sed ad minim veniam nostrud eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <div class="three-column-carousel">
-            <div class="single-item">
-                <div class="text">Dolor sitam consectetur sed adipisicing
-                    eiusmod tempor cididunt laboret mag
-                    magn aliquat enim sed minim veniam
-                    nostrud lorem ipsum dolor.</div>
-                <div class="author-info">
-                    <div class="author-img"><figure><img src="images/testimonial/1.png" alt=""></figure></div>
-                    <div class="author-thumb">
-                        <h5>Adrian Faith</h5>
-                        <span>Patient</span>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="text">Dolor sitam consectetur sed adipisicing
-                    eiusmod tempor cididunt laboret mag
-                    magn aliquat enim sed minim veniam
-                    nostrud lorem ipsum dolor.</div>
-                <div class="author-info">
-                    <div class="author-img"><figure><img src="images/testimonial/2.png" alt=""></figure></div>
-                    <div class="author-thumb">
-                        <h5>Emma Olivia</h5>
-                        <span>Patient</span>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="text">Dolor sitam consectetur sed adipisicing
-                    eiusmod tempor cididunt laboret mag
-                    magn aliquat enim sed minim veniam
-                    nostrud lorem ipsum dolor.</div>
-                <div class="author-info">
-                    <div class="author-img"><figure><img src="images/testimonial/3.png" alt=""></figure></div>
-                    <div class="author-thumb">
-                        <h5>Scott Irvine</h5>
-                        <span>Patient</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- testimonial section end -->
-
-
-<!-- faqs & news section -->
-<section class="faqs-section news-section sec-pad">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 faqs-colmun">
-                <div class="faqs-content">
-                    <div class="section-title left"><h2>Read <span>FAQ’s</span></h2></div>
-                    <div class="accordion-box">
-                        <div class="accordion animated out" data-delay="0" data-animation="fadeInUp">
-                            <div class="acc-btn active">
-                                <h5>How safe are dental X-rays?</h5>
-                                <div class="toggle-icon">
-                                    <i class="plus fa fa-plus"></i><i class="minus fa fa-minus"></i>
+                            <div class="col-xs-12">
+                                <div class="section-title">
+                                    <h3 class="white">ABOUT MEDICAL</h3>
+                                    <h2 class="white">Powered By Over 1,503 Patients Trust Us With Their Sweet Love.</h2>
                                 </div>
                             </div>
-                            <div class="acc-content collapsed">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor
-                                    labore et dolore magna aliqua enim minim veniams quis nostrud exercitation
-                                    nisi ut aliquip ex ea commodo consequat ipsum.</p>
-                            </div>
-                        </div>
-                        <div class="accordion animated out" data-delay="0" data-animation="fadeInUp">
-                            <div class="acc-btn">
-                                <h5>When will drill-less dentistry become a reality?</h5>
-                                <div class="toggle-icon">
-                                    <i class="plus fa fa-plus"></i><i class="minus fa fa-minus"></i>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="counter-item">
+                                    <div class="counter-icon">
+                                        <i class="flaticon-005-checklist"></i>
+                                    </div>
+                                    <div class="counter-content">
+                                        <h2 class="patient">264</h2>
+                                        <p>Happy Patients</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="acc-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor
-                                    labore et dolore magna aliqua enim minim veniams quis nostrud exercitation
-                                    nisi ut aliquip ex ea commodo consequat ipsum.</p>
-                            </div>
-                        </div>
-                        <div class="accordion animated out" data-delay="0" data-animation="fadeInUp">
-                            <div class="acc-btn">
-                                <h5>Why I have a terrible fear of going to the dentist?</h5>
-                                <div class="toggle-icon">
-                                    <i class="plus fa fa-plus"></i><i class="minus fa fa-minus"></i>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="counter-item">
+                                    <div class="counter-icon">
+                                        <i class="flaticon-006-medical-appointment"></i>
+                                    </div>
+                                    <div class="counter-content">
+                                        <h2 class="doctor">264</h2>
+                                        <p>Qualified Doctors</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="acc-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor
-                                    labore et dolore magna aliqua enim minim veniams quis nostrud exercitation
-                                    nisi ut aliquip ex ea commodo consequat ipsum.</p>
+                            <div class="col-md-6 col-sm-6 col-xs-12 mar-top-20">
+                                <div class="counter-item">
+                                    <div class="counter-icon">
+                                        <i class="flaticon-012-eye-test"></i>
+                                    </div>
+                                    <div class="counter-content">
+                                        <h2 class="room">264</h2>
+                                        <p>Clinic Rooms</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="text"><p>Could not fine the answer of your question? <a href="#">Ask Our Doctors.</a></p></div>
-                    <div class="button"><a href="#" class="btn-one style-one">ask a question</a></div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 news-colmun">
-                <div class="news-content">
-                    <div class="section-title left"><h2>Latest <span>News</span></h2></div>
-                    <div class="single-item">
-                        <div class="row">
-                            <div class="col-md-5 col-sm-6 col-xs-12">
-                                <div class="img-box"><a href="blog-details.html"><figure><img src="images/news/n1.jpg" alt=""></figure></a></div>
-                            </div>
-                            <div class="col-md-7 col-sm-8 col-xs-12">
-                                <div class="single-content">
-                                    <h5><a href="blog-details.html">We are your Family Dentist</a></h5>
-                                    <ul class="meta">
-                                        <li>By: <span>Admin</span></li>
-                                        <li>On: <span>15 May 2019</span></li>
-                                    </ul>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                                            magna aliqua enim minim veniams nostrud exercitation
-                                            nisi ut aliquip consequat ipsum.</p>
+                            <div class="col-md-6 col-sm-6 col-xs-12 mar-top-20">
+                                <div class="counter-item">
+                                    <div class="counter-icon">
+                                        <i class="flaticon-010-water"></i>
+                                    </div>
+                                    <div class="counter-content">
+                                        <h2 class="partner">264</h2>
+                                        <p>Local Partners</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="single-item">
-                        <div class="row">
-                            <div class="col-md-5 col-sm-6 col-xs-12">
-                                <div class="img-box"><a href="blog-details.html"><figure><img src="images/news/n2.jpg" alt=""></figure></a></div>
-                            </div>
-                            <div class="col-md-7 col-sm-8 col-xs-12">
-                                <div class="single-content">
-                                    <h5><a href="blog-details.html">Professional Teeth Whitening</a></h5>
-                                    <ul class="meta">
-                                        <li>By: <span>Admin</span></li>
-                                        <li>On: <span>15 Jul 2019</span></li>
-                                    </ul>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                                            magna aliqua enim minim veniams nostrud exercitation
-                                            nisi ut aliquip consequat ipsum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button"><a href="blog-details.html" class="btn-one style-one">View more news</a></div>
                 </div>
+                <div class="col-md-5 col-sm-12"></div>
             </div>
         </div>
     </div>
 </section>
-<!-- faqs & news section end -->
 
-<!-- call section -->
-<section class="call-section" style="background-image: url(images/home/call-bg.jpg);">
+
+<section class="appointment pad-bottom-0">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-12 col-xs-12 call-calmun">
-                <div class="call-content">
-                    <div class="img-box"><figure><img src="images/home/call.png" alt=""></figure></div>
-                    <div class="title">Need Emergancy Care? Get Help Now!</div>
-                    <h5>Get quick help when you need it the most !</h5>
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <h3>We are specialists</h3>
+                    <h2>Book An <span>Appoinment</span></h2>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 call-calmun">
-                <div class="call-us centered">
-                    <div class="text"><a href="#">schedure a same day appointment</a></div>
-                    <h5><a href="#">Call us: (231) 500 4987</a></h5>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- call section -->
-
-<!-- main footer area -->
-<footer class="main-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12 footer-colmun">
-                <div class="logo-widget footer-widget">
-                    <div class="footer-logo">
-                        <a href="index.html"><figure><img src="images/footer/logo1.png" alt=""></figure></a>
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="appointment-image">
+                        <img src="images/home/appointment.png" alt="image">
                     </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur magna aliqua
-                            enim min veniams nostrud nisi duis aliquip consequat
-                            ipsum adipisicing elit sed eiusmod tempor.</p>
-                    </div>
-                    <ul class="list">
-                        <li><i class="fa fa-map-marker"></i><p>Plot 35, Blue Area, NY, 21038</p></li>
-                        <li><i class="fa fa-phone"></i><p>Call Free:  <span>(067) 123 8765</span></p></li>
-                        <li><i class="fa fa-envelope"></i><p>support@medley.com</p></li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-md-2 col-sm-6 col-xs-12 footer-colmun">
-                <div class="service-widget footer-widget">
-                    <div class="footer-title"><h5>our services</h5></div>
-                    <ul class="list">
-                        <li><a href="service-details.html">Pediatric Dentistry</a></li>
-                        <li><a href="service-details.html">Orthodontics</a></li>
-                        <li><a href="service-details.html">Gum Disease</a></li>
-                        <li><a href="service-details.html">Tooth Extraction</a></li>
-                        <li><a href="service-details.html">Root Canal</a></li>
-                        <li><a href="service-details.html">Affordable Dentures</a></li>
-                        <li><a href="service-details.html">Implants</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 footer-colmun">
-                <div class="shediul-widget footer-widget">
-                    <div class="footer-title"><h5>opening hours</h5></div>
-                    <div class="single-item"><p>Monday - Friday : 9.00 - 18.00</p></div>
-                    <div class="single-item"><p>Saturday : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9.00 - 15.00</p></div>
-                    <div class="single-item"><p>Sunday : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Emergency Only</p></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 footer-colmun">
-                <div class="subscribe-widget footer-widget">
-                    <div class="footer-title"><h5>send message</h5></div>
-                    <div class="subscribe-form">
-                        <form action="contact.html" method="post">
+                <div class="col-md-7 col-sm-12">
+                    <div class="appointment-form">
+                        <form>
                             <div class="row">
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <input type="text" name="name" placeholder="Your Name" required="">
+                                <div class="form-group col-xs-6">
+                                    <label>Name:</label>
+                                    <input type="text" placeholder="Sam smiths">
                                 </div>
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <input type="email" name="email" placeholder="Email" required="">
+                                <div class="form-group col-xs-6">
+                                    <label>Email:</label>
+                                    <input type="text" placeholder="abc@xyz.com">
                                 </div>
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <textarea placeholder="Message" name="message" required=""></textarea>
+                                <div class="form-group col-xs-6">
+                                    <label>Gender</label>
+                                    <select>
+                                        <option>Choose Option</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
                                 </div>
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <button type="submit" class="btn-one style-one">Submit</button>
+                                <div class="form-group col-xs-6">
+                                    <label>Department</label>
+                                    <select>
+                                        <option>Choose option</option>
+                                        <option>Neurology</option>
+                                        <option>Opthalmology</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    <label>Your Message</label>
+                                    <textarea>Enter your message here</textarea>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-btn">
+                                        <a class="btn">Submit</a>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -805,50 +686,570 @@
             </div>
         </div>
     </div>
-</footer>
-<!-- main footer area end -->
+</section>
 
-<!-- footer bottom -->
-<section class="footer-bottom">
+
+<section class="gallery">
     <div class="container">
-        <div class="copyright">Copyright © 2019 <a href="#">Medley.</a> All rights reserved.</div>
-        <ul class="footer-social">
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-skype"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-        </ul>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <h3>Our Gallery</h3>
+                    <h2>Check Our Beautiful <span>Gallery</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="gallery-main">
+                    <div class="gallery-item">
+                        <a href="images/gallery/gallery1.jpg"><img src="images/gallery/gallery1.jpg" alt="Image" title="Cardiology"></a>
+                        <div class="gallery-content">
+                            <div class="gallery-inner">
+                                <h3><a href="images/gallery/gallery1.jpg">Cardiology</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="images/gallery/gallery2.jpg"><img src="images/gallery/gallery2.jpg" alt="Image" title="Radiology"></a>
+                        <div class="gallery-content">
+                            <div class="gallery-inner">
+                                <h3><a href="images/gallery/gallery2.jpg">Radiology</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="gallery-main">
+                    <div class="gallery-item">
+                        <a href="images/gallery/gallery4.jpg"><img src="images/gallery/gallery4.jpg" alt="Image" title="Dental"></a>
+                        <div class="gallery-content">
+                            <div class="gallery-inner">
+                                <h3><a href="images/gallery/gallery4.jpg">Dental</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="images/gallery/gallery5.jpg"><img src="images/gallery/gallery5.jpg" alt="Image" title="Surgery"></a>
+                        <div class="gallery-content">
+                            <div class="gallery-inner">
+                                <h3><a href="images/gallery/gallery5.jpg">Surgery</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="gallery-main">
+                    <div class="gallery-item item-large">
+                        <a href="images/gallery/gallery3.jpg"><img src="images/gallery/gallery3.jpg" alt="Image" title="Physiotherapy"></a>
+                        <div class="gallery-content">
+                            <div class="gallery-inner">
+                                <h3><a href="images/gallery/gallery3.jpg">Physiotherapy</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 mar-top-30">
+                <div class="gallery-btn text-center"><a href="gallery.html" class="btn">Load More</a></div>
+            </div>
+        </div>
     </div>
 </section>
-<!-- footer bottom end -->
 
 
-<!--End pagewrapper-->
+<section class="call-to-action-1">
+    <div class="call-action">
+        <div class="action-outer action-1">
+            <div class="action-item action-content">
+                <h2 class="white">Have Any Questions?</h2>
+                <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <a class="btn">View FAQ</a>
+            </div>
+            <div class="overlay"></div>
+        </div>
+        <div class="action-outer action-2">
+            <div class="action-item action-content">
+                <h2 class="white">Need Emergency Help?</h2>
+                <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <a class="btn btn-black">Contact Us</a>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</section>
 
 
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target=".main-header"><span class="icon fa fa-angle-up"></span></div>
+<section class="events icon-left">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <h3>Occaional Events</h3>
+                    <h2>Our Recent <span>Events</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="event-outer">
+                    <div class="event-item mar-bottom-60">
+                        <div class="event-content">
+                            <div class="event-title clearfix">
+                                <div class="event-date">
+                                    <p class="pad-top-15"><span>24</span> June</p>
+                                </div>
+                                <div class="event-author">
+                                    <h4>National Health Care Centre</h4>
+                                </div>
+                            </div>
+                            <div class="event-detail pad-top-15">
+                                <div class="event-list">
+                                    <div class="event-image mar-bottom-10">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <h3 class="mar-0"><a href="#">European Conclave on Neonatology and Pediatrics</a></h3>
+                                </div>
+                                <ul class="mar-top-10">
+                                    <li class="mar-bottom-0 mar-right-10"><i class="fa fa-map-marker" aria-hidden="true"></i> Destiny Hall, 5th Floor</li>
+                                    <li class="mar-bottom-0"><i class="fa fa-clock-o" aria-hidden="true"></i> 8am to 5pm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-content">
+                            <div class="event-title clearfix">
+                                <div class="event-date">
+                                    <p class="pad-top-15"><span>24</span> June</p>
+                                </div>
+                                <div class="event-author">
+                                    <h4>Advantage Home Health Services</h4>
+                                </div>
+                            </div>
+                            <div class="event-detail pad-top-15">
+                                <div class="event-list">
+                                    <div class="event-image mar-bottom-10">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <h3 class="mar-0"><a href="#">30th International Pediatrics Conference 2019</a></h3>
+                                </div>
+                                <ul class="mar-top-10">
+                                    <li class="mar-right-10 mar-bottom-0"><i class="fa fa-map-marker" aria-hidden="true"></i> Destiny Hall, 5th Floor</li>
+                                    <li class="mar-bottom-0"><i class="fa fa-clock-o" aria-hidden="true"></i> 9am to 1pm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="event-outer">
+                    <div class="event-item mar-bottom-60">
+                        <div class="event-content">
+                            <div class="event-title clearfix">
+                                <div class="event-date">
+                                    <p class="pad-top-15"><span>24</span> June</p>
+                                </div>
+                                <div class="event-author">
+                                    <h4>Cadence Research & Consulting</h4>
+                                </div>
+                            </div>
+                            <div class="event-detail pad-top-15">
+                                <div class="event-list">
+                                    <div class="event-image mar-bottom-10">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <h3 class="mar-0"><a href="#">Global Conference on Addiction and Behavioral</a></h3>
+                                </div>
+                                <ul class="mar-top-10">
+                                    <li class="mar-right-10 mar-bottom-0"><i class="fa fa-map-marker" aria-hidden="true"></i> Destiny Hall, 5th Floor</li>
+                                    <li class="mar-bottom-0"><i class="fa fa-clock-o" aria-hidden="true"></i> 12am to 5pm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-content">
+                            <div class="event-title clearfix">
+                                <div class="event-date">
+                                    <p class="pad-top-15"><span>24</span> June</p>
+                                </div>
+                                <div class="event-author">
+                                    <h4>Code Right Medical Supply</h4>
+                                </div>
+                            </div>
+                            <div class="event-detail pad-top-15">
+                                <div class="event-list">
+                                    <div class="event-image mar-bottom-10">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <h3 class="mar-0"><a href="#">Annual World Dental and Oral Health Congress</a></h3>
+                                </div>
+                                <ul class="mar-top-10">
+                                    <li class="mar-right-10 mar-bottom-0"><i class="fa fa-map-marker" aria-hidden="true"></i> Destiny Hall, 5th Floor</li>
+                                    <li class="mar-bottom-0"><i class="fa fa-clock-o" aria-hidden="true"></i> 12am to 3pm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-<!--jquery js -->
+<section class="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <div class="section-title title-white mar-0">
+                    <h3>CLIENTS</h3>
+                    <h2>Happy <span>Patients & Clients</span></h2>
+                    <p>If you need any medical help we are available for you. Lorem ipsum dolor sit amet, sectetur adipiscing elit, sed do eiusmod tempor the incididunt ut labore et dolore.</p>
+                    <a href="#" class="btn mar-top-30">View more Details <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="row testimonial-slider">
+                    <div class="col-xs-12">
+                        <div class="slider-item">
+                            <div class="slider-content">
+                                <div class="quote-icon">
+                                    <img src="images/quote-icon-1.png" alt="Image">
+                                </div>
+                                <div class="slider-author clearfix">
+                                    <div class="testimonial-image mar-bottom-20">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <div class="author-content pad-top-10">
+                                        <h3 class="mar-bottom-0">John Davis</h3>
+                                        <p>CEO at HealthClinic</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="slider-item">
+                            <div class="slider-content">
+                                <div class="quote-icon">
+                                    <img src="images/quote-icon-1.png" alt="Image">
+                                </div>
+                                <div class="slider-author clearfix">
+                                    <div class="testimonial-image mar-bottom-20">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <div class="author-content pad-top-10">
+                                        <h3 class="mar-bottom-0">Nathan Ake</h3>
+                                        <p>Manager at Health Worker</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="slider-item">
+                            <div class="slider-content">
+                                <div class="quote-icon">
+                                    <img src="images/quote-icon-1.png" alt="Image">
+                                </div>
+                                <div class="slider-author clearfix">
+                                    <div class="testimonial-image mar-bottom-20">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <div class="author-content pad-top-10">
+                                        <h3 class="mar-bottom-0">John Davis</h3>
+                                        <p>CEO at HealthClinic</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="slider-item">
+                            <div class="slider-content">
+                                <div class="quote-icon">
+                                    <img src="images/quote-icon-1.png" alt="Image">
+                                </div>
+                                <div class="slider-author clearfix">
+                                    <div class="testimonial-image mar-bottom-20">
+                                        <img src="images/home/about-us.jpg" alt="Image">
+                                    </div>
+                                    <div class="author-content pad-top-10">
+                                        <h3 class="mar-bottom-0">Nathan Ake</h3>
+                                        <p>Manager at Health Worker</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
 
 
-<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<section class="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <h3>OUR BLOG</h3>
+                    <h2>Recent <span>Articles</span> and <span>News</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/home/blog1.jpg" alt="Image">
+                        <div class="news-date">
+                            <p class="white"><span>15</span> Nov</p>
+                        </div>
+                    </div>
+                    <div class="news-content pad-top-20">
+                        <div class="news-author mar-bottom-10">
+                            <a href="#" class="link text-uppercase">Dental,</a>
+                            <a href="#" class="link text-uppercase">Medicine</a>
+                        </div>
+                        <h3><a href="#">Should i go for a smile design?</a></h3>
+                        <div class="news-author mar-bottom-15 meta-post">
+                            <a href="#" class="link"><i class="fa fa-comment"></i> 3 Comments, </a>
+                            <a href="#" class="link"><i class="fa fa-user"></i> User</a>
+                        </div>
+                        <p>No one rejects, dislikes our avoids pleasures itself, because it is all pleasure.</p>
+                        <a href="blogdetail.html" class="mar-top-15 link">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/home/blog2.jpg" alt="Image">
+                        <div class="news-date">
+                            <p class="white"><span>15</span> Nov</p>
+                        </div>
+                    </div>
+                    <div class="news-content pad-top-20">
+                        <div class="news-author mar-bottom-10">
+                            <a href="#" class="link text-uppercase">Dental,</a>
+                            <a href="#" class="link text-uppercase">Medicine</a>
+                        </div>
+                        <h3><a href="#">How much aspirin to take for stroke</a></h3>
+                        <div class="news-author mar-bottom-15 meta-post">
+                            <a href="#" class="link"><i class="fa fa-comment"></i> 3 Comments, </a>
+                            <a href="#" class="link"><i class="fa fa-user"></i> User</a>
+                        </div>
+                        <p>No one rejects, dislikes our avoids pleasures itself, because it is all pleasure.</p>
+                        <a href="blogdetail.html" class="mar-top-15 link">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/home/blog3.jpg" alt="Image">
+                        <div class="news-date">
+                            <p class="white"><span>15</span> Nov</p>
+                        </div>
+                    </div>
+                    <div class="news-content pad-top-20">
+                        <div class="news-author mar-bottom-10">
+                            <a href="#" class="link text-uppercase">Dental,</a>
+                            <a href="#" class="link text-uppercase">Medicine</a>
+                        </div>
+                        <h3><a href="#">5 Benefits Of Integrative Medicine</a></h3>
+                        <div class="news-author mar-bottom-15 meta-post">
+                            <a href="#" class="link"><i class="fa fa-comment"></i> 3 Comments, </a>
+                            <a href="#" class="link"><i class="fa fa-user"></i> User</a>
+                        </div>
+                        <p>No one rejects, dislikes our avoids pleasures itself, because it is all pleasure.</p>
+                        <a href="blogdetail.html" class="mar-top-15 link">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="newsletter">
+    <div class="container">
+        <div class="newsletter-content">
+            <div class="subscribe-form">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h3 class="white">Subscribe to newsletter</h3>
+                        <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem repellendus.</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <form>
+                            <input type="email" placeholder="abc@xyz.com">
+                            <a href="#">Subscribe</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="container">
+        <div class="f-contact mar-bottom-50">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="f-contact-inner">
+                        <div class="contact-icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="contact-title">
+                            <span class="white">+123-456-79459</span>
+                            <span class="white">Have a question? call us now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="f-contact-inner">
+                        <div class="contact-icon">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                        <div class="contact-title">
+                            <span class="white"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5bcbbb3ba95a6a2b4a6a1bdacb4fbb6bab8">[email&#160;protected]</a></span>
+                            <span class="white">Need support? Drop us an email</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="f-contact-inner">
+                        <div class="contact-icon">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        <div class="contact-title">
+                            <span class="white">323 Wintergreen, NJ 07631, USA</span>
+                            <span class="white">You can find here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="lower-footer pad-bottom-50">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <div class="footer-contact mar-right-15">
+                            <div class="footer-logo text-center mar-bottom-15">
+                                <img src="images/logo.png" alt="Image">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br>
+                                We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12">
+                        <div class="departments">
+                            <h3>Departments</h3>
+                            <ul>
+                                <li><a href="#">Radiology</a></li>
+                                <li><a href="#">Pedodontics</a></li>
+                                <li><a href="#">Pedodontics</a></li>
+                                <li><a href="#">Dental Implants</a></li>
+                                <li><a href="#">Oral & Maxsillosacial</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="facility">
+                            <h3>Facilities</h3>
+                            <ul>
+                                <li><a href="#">Blood Bank</a></li>
+                                <li><a href="#">Intensive Care Unit</a></li>
+                                <li><a href="#">Laboratories</a></li>
+                                <li><a href="#">Tooth Care</a></li>
+                                <li><a href="#">Scale and Clean</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-12">
+                        <div class="work-time">
+                            <h3>Work Time</h3>
+                            <ul>
+                                <li>Monday<span>10 AM - 3 PM</span></li>
+                                <li>Tuesday<span>11 AM - 2 PM</span></li>
+                                <li>Wednesday<span>10 AM - 3:30 PM</span></li>
+                                <li>Thursday<span>9 AM - 2 PM</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p>Copyright © 2019 Swasthye by <a href="https://www.cyclonethemes.com" target="_blank">Cyclone Themes</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div id="back-to-top">
+    <a href="#"></a>
+</div>
+
+
+<div id="search1">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script src="js/isotope.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
-<script src="js/validation.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script type="text/javascript" src="js/SmoothScroll.js"></script>
-<script src="js/script.js"></script>
-
-<!-- End of .page_wrapper -->
+<script src="js/plugin.js"></script>
+<script src="js/main.js"></script>
+<script src="js/custom-lightbox.js"></script>
+<script src="js/custom-nav.js"></script>
 </body>
 </html>

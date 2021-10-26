@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html dir="{{ c_dir() }}"  lang="{{ current_lan() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +10,23 @@
     <link href="{{ asset('frontpage/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('frontpage/css/plugin.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('frontpage/fonts/flaticon.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js'></script>
+
+    @if (current_lan() == 'ar')
+    <link href="{{ asset('css/arabic.css') }}" rel="stylesheet" type="text/css">
+    @endif
+
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
+{{--    <script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js'></script>--}}
+
+    @if (current_lan() == 'ar')
+        <style>
+            body {
+                /*margin: 50px;*/
+                direction: rtl;
+            }
+        </style>
+
+    @endif
 
     <style>
         footer {
@@ -198,7 +213,7 @@
         <div class="container">
             <div class="top-bar-content">
                 <div class="contact-info">
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> {{ setting('site_phone') }}</p>
+                    <p><i class="fa fa-phone" aria-hidden="true">  </i> {{ setting('site_phone') }}</p>
 {{--                    <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b12151d143b080c1a080f13021a55181416">[email&#160;protected]</a></p>--}}
                 </div>
                 <div class="header-links">

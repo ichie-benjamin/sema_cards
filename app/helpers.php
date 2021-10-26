@@ -14,3 +14,12 @@ if(!function_exists('current_lan')){
         return app()->getLocale();
     }
 }
+if(!function_exists('c_dir')){
+    function c_dir(){
+        if(current_lan() == 'ar'){
+            return 'rtl';
+        }else{
+            return '';
+        }
+    }
+}

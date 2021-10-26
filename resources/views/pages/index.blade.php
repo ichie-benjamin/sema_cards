@@ -81,19 +81,6 @@
                     </a>
                 </div>
 
-                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
-                    <a  href="#">
-                        <div class="service-ite " style="background-image: url('/whatsap.jpeg')">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
-                    <a  href="#">
-                        <div class="service-ite " style="background-image: url('/insta.jpeg')">
-                        </div>
-                    </a>
-                </div>
-
             </div>
 
         </div>
@@ -125,18 +112,6 @@
                     </a>
                 </div>
 
-                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
-                    <a  href="#">
-                        <div class="service-ite " style="background-image: url('/whatsap.jpeg')">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-6 mx-auto">
-                    <a  href="#">
-                        <div class="service-ite " style="background-image: url('/insta.jpeg')">
-                        </div>
-                    </a>
-                </div>
 
             </div>
 
