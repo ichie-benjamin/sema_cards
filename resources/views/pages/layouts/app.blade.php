@@ -148,6 +148,15 @@
 
             @media (max-width: 767px){
 
+                .slider-img {
+                    top: 0;
+                    width: 100%;
+                    height: 70%;
+                    margin: auto;
+                    position: absolute;
+                }
+
+
                 .nav-small{
                     display: block;
                 }
