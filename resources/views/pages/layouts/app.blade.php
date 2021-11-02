@@ -97,6 +97,19 @@
             background: #3f1998!important;
         }
 
+        .slider-img {
+            top: 0;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            bottom: 0;
+            /*right: 8%;*/
+            width: 100%;
+            height: 50%;
+            margin: auto;
+            position: absolute;
+        }
+
         .service-ite {
             margin:  5px 0;
             height: 200px;

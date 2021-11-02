@@ -12,7 +12,8 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 @foreach($sliders as $item)
-                    <div class="item {{ $loop->index == 0 ? 'active' : '' }} ">
+                    <div  class="item slider-img {{ $loop->index == 0 ? 'active' : '' }} ">
+                    <div style="background-image: url({{ $item->img }})"  class="slider-img">
                         <div class="x_023_animated_layers_content {{ $loop->index != 0 ? 'x_023_animated_layers_content_right' : '' }}">
                             <div class="x_023_animated_layers_txt">
                                 <h4 data-animation="animated fadeInLeft">{{ lan($item->head_en, $item->head_ar) }}</h4>
@@ -20,8 +21,9 @@
                                 {{--                        <p data-animation="animated fadeInLeft">Visit us Now or Make an Appointment! </p>--}}
                                 {{--                        <a href="#" data-animation="animated fadeInRight" class="btn mar-top-15">Make An Appointment</a> --}}
                             </div>
-                            <div class="x_023_animated_layers_img" data-animation="animated fadeInUp"> <img src="{{ $item->img }}" alt="x_023_animated_layers_image_01"> </div>
+{{--                            <div class="x_023_animated_layers_img" data-animation="animated fadeInUp"> <img src="{{ $item->img }}" alt="x_023_animated_layers_image_01"> </div>--}}
                         </div>
+                    </div>
                     </div>
                 @endforeach
             </div>

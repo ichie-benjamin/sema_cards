@@ -62,3 +62,4 @@ class HospitalImport implements ToCollection, WithHeadingRow
     }
 
 }
+
