@@ -49,7 +49,7 @@ class Hospital extends Model
     }
 
     public function services(){
-        return $this->hasMany(Service::class);
+        return $this->hasMany(Service::class,'hospital_cr','cpr_no');
     }
 
 

@@ -69,7 +69,7 @@ class HospitalController extends Controller
     }
     public function show($id){
         $hospital = Hospital::findOrFail($id);
-        $services = Service::where('hospital_id', $id)->get();
+        $services = Service::where('hospital_cr', $hospital->cpr_no)->get();
         $contacts = Contact::where('hospital_id', $id)->get();
         return view('pages.view-hospital', compact('hospital', 'services','contacts'));
     }
@@ -77,7 +77,7 @@ class HospitalController extends Controller
         $hospital = Hospital::findOrFail($id);
         $categories = $this->h_cats();
 //        $services = Service::all();
-        $services = Service::whereHospitalId($id)->get();
+        $services = Service::whereHospitalCr($hospital->cpr_no)->get();
         $contacts = Contact::whereHospitalId($id)->get();
         return view('admin.hospital.edit', compact('hospital','services','contacts','categories'));
     }

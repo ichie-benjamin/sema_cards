@@ -13,7 +13,7 @@
                     <form action="{{ route('service.update', $item->id) }}" method="POST" class="form-parsley">
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="PUT">
-                        <input name="hospital_id" type="hidden" value="{{ $item->hospital_id }}">
+                        <input name="hospital_cr" type="hidden" value="{{ $item->hospital_cpr_no }}">
 
                         <div class="row">
                             <div class="col-12">

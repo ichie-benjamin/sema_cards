@@ -286,13 +286,13 @@
 </li>
 <li >
     <a href="{{ route('about') }}" >
-        About Us
+        {{ lan('Home','من نحن') }}
     </a>
 
 </li>
 <li >
     <a href="{{ route('contact') }}" >
-        Contact Us
+        {{ lan('Contact Us','تواصل معانا') }}
     </a>
 </li>
 

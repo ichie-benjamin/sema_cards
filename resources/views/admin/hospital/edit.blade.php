@@ -316,7 +316,7 @@
                                         <div class="card-body p-0">
                                             <form action="{{ route('service.store') }}" method="POST" class="form-parsley">
                                                 {{ csrf_field() }}
-                                                <input type="hidden" value="{{ $hospital->id }}" name="hospital_id">
+                                                <input type="hidden" value="{{ $hospital->cpr_no }}" name="hospital_cr">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group "><label>The service In English</label>

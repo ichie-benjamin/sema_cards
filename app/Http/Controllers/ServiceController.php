@@ -29,7 +29,7 @@ class ServiceController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-            'hospital_id' => 'required',
+            'hospital_cr' => 'required',
             'ar_name' => 'string|required',
             'name' => 'string|required',
             'price' => 'required',
