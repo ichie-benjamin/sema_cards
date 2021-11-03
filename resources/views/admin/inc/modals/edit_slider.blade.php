@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-md-12 col-12">
                                 <div class="form-group "><label>Image </label>
-                                    @include('admin.inc.image-upload',['field' => 'img','id' => 'Image', 'image' => $item->img])
+                                    @include('admin.inc.image-upload',['field' => 'img','id' => $item->id, 'image' => $item->img])
                                 </div>
                             </div>
 
