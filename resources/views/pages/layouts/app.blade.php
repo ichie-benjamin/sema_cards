@@ -99,9 +99,9 @@
 
         .slider-img {
             top: 0;
-            background-size: cover;
+            background-size: contain;
             background-position: center center;
-            background-repeat: no-repeat;
+            /*background-repeat: no-repeat;*/
             bottom: 0;
             /*right: 8%;*/
             width: 100%;
