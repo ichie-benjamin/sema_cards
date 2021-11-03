@@ -26,13 +26,13 @@
             </div>
         </div>
     </section>
-    <div class="container">
-        <div class="tagcloud recent-item">
-            <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">doctor<span class="badge"> 23</span></a>
-            <a style="background-color: #561193; color: white"  href="#" class="tag-cloud-link">health <span class="badge">20</span></a>
-            <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">hospital <span class="badge">20</span></a>
-        </div>
-    </div>
+{{--    <div class="container">--}}
+{{--        <div class="tagcloud recent-item">--}}
+{{--            <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">doctor<span class="badge"> 23</span></a>--}}
+{{--            <a style="background-color: #561193; color: white"  href="#" class="tag-cloud-link">health <span class="badge">20</span></a>--}}
+{{--            <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">hospital <span class="badge">20</span></a>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <section class="blog">
         <div class="container">
@@ -85,17 +85,19 @@
 
                         @foreach ($hospitals as $item)
                             <div style="box-shadow: 0 0 15px 0 rgba(86, 17, 147);" class="row h-items">
-                                <div class="col-xs-3">
+                                <div class="col-xs-3" style="padding: 0; padding-left: 5px">
                                     <img src="{{ $item->image }}" alt="Image" />
-                                    <div class="tagcloud">
-                                        <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ lan($item->category, optional($item->cat)->name_ar) }}</a>
-                                    </div>
+                                    @if ($item->category)
+                                        <div class="tagcloud" style="margin-top: 10px">
+                                            <a style="background-color: #561193; color: white" href="#" class="tag-cloud-link">{{ lan($item->category, optional($item->cat)->name_ar) }}</a>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="col-xs-9">
                                     <div class="news-title">
                                         <h3><a href="{{ route('hospital.view',$item->id) }}">{{ lan($item->provider_name, $item->ar_provider_name) }}</a></h3>
                                     </div>
-                                    <p>{{ lan($item->short_desc, $item->short_desc_ar) }}.</p>
+{{--                                    <p>{{ lan($item->short_desc, $item->short_desc_ar) }}.</p>--}}
                                     <hr>
                                     <ul class="mar-top-10">
                                         <li class="mar-bottom-0 mar-right-10"><i class="fa fa-phone" aria-hidden="true"></i>

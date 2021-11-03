@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inc/modals/edit_slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inc/modals/edit_slider.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="7fa95e79-fa15-42c1-8148-e21acaf6e0c0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -332,7 +330,7 @@
       <workItem from="1635711874095" duration="1169000" />
       <workItem from="1635748144915" duration="1305000" />
       <workItem from="1635808550497" duration="2991000" />
-      <workItem from="1635881004848" duration="5223000" />
+      <workItem from="1635881004848" duration="5676000" />
     </task>
     <servers />
   </component>
